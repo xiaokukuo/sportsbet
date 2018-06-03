@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.sport.bet.bean.dto.SportMenuDTO;
 import com.sport.bet.bean.model.SportModule;
+import com.sport.bet.bean.model.SportModuleGame;
 
 public abstract class GenericParser {
 	
@@ -13,6 +14,8 @@ public abstract class GenericParser {
 	
 	abstract List<SportMenuDTO> parseMenu(String url);
 	
-	abstract List<SportModule> parseSportModule(String sportId, int resourceId);
+	abstract List<SportModule> parseSportModule(String url, int resourceId);
+	
+	abstract List<SportModuleGame> parseSportModuleGame(String url, int moduleId,String name);
 	
 }

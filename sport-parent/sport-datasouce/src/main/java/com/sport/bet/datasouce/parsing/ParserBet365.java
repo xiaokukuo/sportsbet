@@ -1,12 +1,14 @@
 package com.sport.bet.datasouce.parsing;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
 
 import com.sport.bet.bean.dto.SportMenuDTO;
 import com.sport.bet.bean.model.SportModule;
+import com.sport.bet.bean.model.SportModuleGame;
 import com.sport.bet.common.utils.HttpTool;
 
 @Component
@@ -21,9 +23,7 @@ public class ParserBet365 extends GenericParser{
 	private static String  SEPARATOR_PA = "\\|PA;";
 	
 	private static String  EV= "|EV;";
-	
-	
-	
+
 	@Override
 	public List<SportMenuDTO> parseMenu(String url) {
 		
@@ -84,6 +84,51 @@ public class ParserBet365 extends GenericParser{
 		}
 		
 		return sportModuleList;
+	}
+	
+	@Override
+	public List<SportModuleGame> parseSportModuleGame(String url, int moduleId ,String name) {
+		List<SportModuleGame> gameTeamList = new ArrayList<SportModuleGame>();
+		SportModuleGame gameTeam = null;
+		
+		String response = HttpTool.getSport365(url);
+		
+		
+		String [] gameLines = response.split(SEPARATOR_MA);
+		
+		for (String gameline : gameLines) {
+			
+			int timeIndex = gameline.indexOf(";BC");
+			if(timeIndex > 0){
+				
+				gameline = gameline.substring(gameline.indexOf("PA;NA")+6);
+				String[] teams = gameline.split("PA;NA=");
+				for (int i = 0; i < teams.length; i=i+2) {
+					
+					String item1 = teams[i];
+					String item2 = teams[i+1];
+					
+					int index = item1.indexOf("PD");
+					timeIndex = item1.indexOf("BC");
+					if(index > 0 && timeIndex > 0){
+						gameTeam = new SportModuleGame();
+						gameTeam.setTeamName1(item1.substring(0, item1.indexOf(";"))); 
+						gameTeam.setTeamName2(item2.substring(0, item2.indexOf(";"))); 
+						
+						item1 = item1.substring(item1.indexOf("BC"));
+						item2 = item2.substring(item2.indexOf("PD"));
+						
+						gameTeam.setGameTime(item1.substring(3,item1.indexOf(";")));
+						gameTeam.setDeailPd(item2.substring(3,item2.indexOf(";")));
+						gameTeamList.add(gameTeam);
+						
+					}
+				}
+				
+			}
+		}
+		
+		return gameTeamList;
 	}
 	
 	private void parseGroupLine(String line,SportModule sportModule){

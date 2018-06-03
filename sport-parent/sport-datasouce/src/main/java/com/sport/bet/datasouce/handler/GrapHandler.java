@@ -12,6 +12,7 @@ import org.springframework.stereotype.Component;
 import com.sport.bet.bean.dto.SportMenuDTO;
 import com.sport.bet.bean.model.Resource;
 import com.sport.bet.bean.model.SportModule;
+import com.sport.bet.bean.model.SportModuleGame;
 import com.sport.bet.core.service.impl.ResourceServiceImpl;
 import com.sport.bet.datasouce.parsing.ParserBet365;
 import com.sport.bet.datasouce.service.Bet365Service;
@@ -59,16 +60,33 @@ public class GrapHandler {
 			
 			sport.setResourceId(map.get(sport.getSportName()));
 			
-			String moduleUrl = URL+URLEncoder.encode(sport.getSportPd(), "UTF-8");
-			
-			List<SportModule> sportModuleList = parserBet365.parseSportModule(moduleUrl, sport.getResourceId());
+			List<SportModule> sportModuleList = parserBet365.parseSportModule(getUrl(sport.getSportPd()), sport.getResourceId());
 			
 			for (SportModule sportModule : sportModuleList) {
-				System.err.println(sportModule.toString());
+				if(sportModule.getGroupName().equals("智利SAESA联赛")){
+					
+					List<SportModuleGame> teamList = parserBet365.parseSportModuleGame(getUrl(sportModule.getGameLinesPd()), 1,sportModule.getGroupName());
+					for (SportModuleGame sportModuleGame : teamList) {
+						System.err.println(sportModuleGame.toString());
+					}
+					break;
+				}
+				/*List<SportModuleGame> teamList = parserBet365.parseSportModuleGame(getUrl(sportModule.getGameLinesPd()), 1,sportModule.getGroupName());
+				for (SportModuleGame sportModuleGame : teamList) {
+					System.err.println(sportModuleGame.toString());
+				}*/
 			}
 				
 		}
 	}
 
+	public String getUrl(String pd){
+		try {
+			return URL+URLEncoder.encode(pd, "UTF-8");
+		} catch (UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 	
 }

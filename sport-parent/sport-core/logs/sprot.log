@@ -1,0 +1,990 @@
+2018-06-02 14:43:47.792 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ResourceServiceImplTest on USER-20170225NV with PID 8404 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-02 14:43:47.794 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:43:48.479 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ResourceServiceImplTest in 0.821 seconds (JVM running for 1.247)
+2018-06-02 14:45:42.322 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ResourceServiceImplTest on USER-20170225NV with PID 444 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-02 14:45:42.324 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:45:43.021 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ResourceServiceImplTest in 0.834 seconds (JVM running for 1.244)
+2018-06-02 14:47:32.078 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ResourceServiceImplTest on USER-20170225NV with PID 3772 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-02 14:47:32.080 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:47:32.763 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ResourceServiceImplTest in 0.826 seconds (JVM running for 1.249)
+2018-06-02 14:48:05.253 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ResourceServiceImplTest on USER-20170225NV with PID 5480 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-02 14:48:05.255 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:48:05.473 [WARN ] [org.mybatis.spring.mapper.ClassPathMapperScanner:166] - No MyBatis mapper was found in '[com.sport.bet.core.test.base]' package. Please check your configuration.
+2018-06-02 14:48:05.667 [WARN ] [org.springframework.context.support.AbstractApplicationContext:551] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'resourceServiceImpl': Unsatisfied dependency expressed through field 'resourceMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.sport.bet.core.mapper.ResourceMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2018-06-02 14:48:05.725 [ERROR] [org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter:42] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field resourceMapper in com.sport.bet.core.service.impl.ResourceServiceImpl required a bean of type 'com.sport.bet.core.mapper.ResourceMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.sport.bet.core.mapper.ResourceMapper' in your configuration.
+
+2018-06-02 14:48:05.728 [ERROR] [org.springframework.test.context.TestContextManager:234] - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@5c00384f] to prepare test instance [com.sport.bet.core.test.ResourceServiceImplTest@3b7ff809]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192) [.cp/:na]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'resourceServiceImpl': Unsatisfied dependency expressed through field 'resourceMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.sport.bet.core.mapper.ResourceMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120) ~[spring-boot-test-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	... 25 common frames omitted
+Caused by: org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.sport.bet.core.mapper.ResourceMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.raiseNoMatchingBeanFound(DefaultListableBeanFactory.java:1493) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1104) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	... 43 common frames omitted
+2018-06-02 14:48:35.478 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ResourceServiceImplTest on USER-20170225NV with PID 7628 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-02 14:48:35.481 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:48:36.169 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ResourceServiceImplTest in 0.833 seconds (JVM running for 1.233)
+2018-06-02 14:48:36.391 [ERROR] [org.apache.juli.logging.DirectJDKLog:181] - Unable to create initial connections of pool.
+java.sql.SQLException: Access denied for user 'root1'@'localhost' (using password: YES)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:964) ~[mysql-connector-java-5.1.40.jar:5.1.40]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3970) ~[mysql-connector-java-5.1.40.jar:5.1.40]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3906) ~[mysql-connector-java-5.1.40.jar:5.1.40]
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:873) ~[mysql-connector-java-5.1.40.jar:5.1.40]
+	at com.mysql.jdbc.MysqlIO.proceedHandshakeWithPluggableAuthentication(MysqlIO.java:1710) ~[mysql-connector-java-5.1.40.jar:5.1.40]
+	at com.mysql.jdbc.MysqlIO.doHandshake(MysqlIO.java:1226) ~[mysql-connector-java-5.1.40.jar:5.1.40]
+	at com.mysql.jdbc.ConnectionImpl.coreConnect(ConnectionImpl.java:2253) ~[mysql-connector-java-5.1.40.jar:5.1.40]
+	at com.mysql.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:2284) ~[mysql-connector-java-5.1.40.jar:5.1.40]
+	at com.mysql.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:2083) ~[mysql-connector-java-5.1.40.jar:5.1.40]
+	at com.mysql.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:806) ~[mysql-connector-java-5.1.40.jar:5.1.40]
+	at com.mysql.jdbc.JDBC4Connection.<init>(JDBC4Connection.java:47) ~[mysql-connector-java-5.1.40.jar:5.1.40]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[na:1.8.0_151]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[na:1.8.0_151]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[na:1.8.0_151]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[na:1.8.0_151]
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425) ~[mysql-connector-java-5.1.40.jar:5.1.40]
+	at com.mysql.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:410) ~[mysql-connector-java-5.1.40.jar:5.1.40]
+	at com.mysql.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:328) ~[mysql-connector-java-5.1.40.jar:5.1.40]
+	at org.apache.tomcat.jdbc.pool.PooledConnection.connectUsingDriver(PooledConnection.java:310) ~[tomcat-jdbc-8.5.23.jar:na]
+	at org.apache.tomcat.jdbc.pool.PooledConnection.connect(PooledConnection.java:203) ~[tomcat-jdbc-8.5.23.jar:na]
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.createConnection(ConnectionPool.java:735) [tomcat-jdbc-8.5.23.jar:na]
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.borrowConnection(ConnectionPool.java:667) [tomcat-jdbc-8.5.23.jar:na]
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.init(ConnectionPool.java:482) [tomcat-jdbc-8.5.23.jar:na]
+	at org.apache.tomcat.jdbc.pool.ConnectionPool.<init>(ConnectionPool.java:154) [tomcat-jdbc-8.5.23.jar:na]
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.pCreatePool(DataSourceProxy.java:118) [tomcat-jdbc-8.5.23.jar:na]
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.createPool(DataSourceProxy.java:107) [tomcat-jdbc-8.5.23.jar:na]
+	at org.apache.tomcat.jdbc.pool.DataSourceProxy.getConnection(DataSourceProxy.java:131) [tomcat-jdbc-8.5.23.jar:na]
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:111) [spring-jdbc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:77) [spring-jdbc-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.openConnection(SpringManagedTransaction.java:82) [mybatis-spring-1.3.1.jar:1.3.1]
+	at org.mybatis.spring.transaction.SpringManagedTransaction.getConnection(SpringManagedTransaction.java:68) [mybatis-spring-1.3.1.jar:1.3.1]
+	at org.apache.ibatis.executor.BaseExecutor.getConnection(BaseExecutor.java:336) [mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.executor.SimpleExecutor.prepareStatement(SimpleExecutor.java:84) [mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:62) [mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324) [mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156) [mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109) [mybatis-3.4.1.jar:3.4.1]
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:141) [pagehelper-5.0.0.jar:na]
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61) [mybatis-3.4.1.jar:3.4.1]
+	at com.sun.proxy.$Proxy60.query(Unknown Source) [na:na]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148) [mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141) [mybatis-3.4.1.jar:3.4.1]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_151]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_151]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_151]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_151]
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433) [mybatis-spring-1.3.1.jar:1.3.1]
+	at com.sun.proxy.$Proxy53.selectList(Unknown Source) [na:na]
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230) [mybatis-spring-1.3.1.jar:1.3.1]
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:137) [mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:75) [mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:53) [mybatis-3.4.1.jar:3.4.1]
+	at com.sun.proxy.$Proxy54.selectAll(Unknown Source) [na:na]
+	at com.sport.bet.core.service.impl.ResourceServiceImpl.findAll(ResourceServiceImpl.java:20) [classes/:na]
+	at com.sport.bet.core.test.ResourceServiceImplTest.findAllTest(ResourceServiceImplTest.java:19) [test-classes/:na]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_151]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_151]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_151]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_151]
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50) [junit.jar:4.12]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47) [junit.jar:4.12]
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestMethodCallbacks.evaluate(RunBeforeTestMethodCallbacks.java:75) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestMethodCallbacks.evaluate(RunAfterTestMethodCallbacks.java:86) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.statements.SpringRepeat.evaluate(SpringRepeat.java:84) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:252) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192) [.cp/:na]
+2018-06-02 14:49:03.153 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ResourceServiceImplTest on USER-20170225NV with PID 8244 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-02 14:49:03.155 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:49:03.872 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ResourceServiceImplTest in 0.859 seconds (JVM running for 1.273)
+2018-06-02 14:50:44.386 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ResourceServiceImplTest on USER-20170225NV with PID 9092 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-02 14:50:44.388 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:50:45.077 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ResourceServiceImplTest in 0.831 seconds (JVM running for 1.237)
+2018-06-02 14:51:16.759 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ResourceServiceImplTest on USER-20170225NV with PID 8784 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-02 14:51:16.762 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:51:17.435 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ResourceServiceImplTest in 0.816 seconds (JVM running for 1.24)
+2018-06-02 14:52:44.368 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ResourceServiceImplTest on USER-20170225NV with PID 2996 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-02 14:52:44.370 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:52:45.051 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ResourceServiceImplTest in 0.824 seconds (JVM running for 1.234)
+2018-06-02 14:53:29.235 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ResourceServiceImplTest on USER-20170225NV with PID 3048 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-02 14:53:29.237 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:53:29.895 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ResourceServiceImplTest in 0.791 seconds (JVM running for 1.189)
+2018-06-02 14:54:10.614 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ResourceServiceImplTest on USER-20170225NV with PID 5452 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-02 14:54:10.616 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:54:11.302 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ResourceServiceImplTest in 0.828 seconds (JVM running for 1.234)
+2018-06-02 14:54:21.401 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ResourceServiceImplTest on USER-20170225NV with PID 7556 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-02 14:54:21.405 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:54:22.091 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ResourceServiceImplTest in 0.827 seconds (JVM running for 1.233)
+2018-06-02 14:55:02.483 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ResourceServiceImplTest on USER-20170225NV with PID 7020 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-02 14:55:02.485 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:55:02.523 [WARN ] [org.springframework.context.support.AbstractApplicationContext:551] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.sport.bet.core.test.base.Application]; nested exception is java.io.FileNotFoundException: class path resource [config/jdbc-test.properties] cannot be opened because it does not exist
+2018-06-02 14:55:02.527 [ERROR] [org.springframework.beans.factory.support.DefaultSingletonBeanRegistry:581] - Destroy method on bean with name 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory' threw an exception
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: org.springframework.context.annotation.AnnotationConfigApplicationContext@3cd3e762: startup date [Sat Jun 02 14:55:02 CST 2018]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:414) [spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.ApplicationListenerDetector.postProcessBeforeDestruction(ApplicationListenerDetector.java:97) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:253) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:578) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:554) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:961) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:523) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.FactoryBeanRegistrySupport.destroySingletons(FactoryBeanRegistrySupport.java:230) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:968) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1030) [spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:556) [spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120) [spring-boot-test-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192) [.cp/:na]
+2018-06-02 14:55:02.532 [ERROR] [org.springframework.boot.SpringApplication:771] - Application startup failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.sport.bet.core.test.base.Application]; nested exception is java.io.FileNotFoundException: class path resource [config/jdbc-test.properties] cannot be opened because it does not exist
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:181) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:308) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:228) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:272) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:92) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:687) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:525) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120) [spring-boot-test-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192) [.cp/:na]
+Caused by: java.io.FileNotFoundException: class path resource [config/jdbc-test.properties] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172) ~[spring-core-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.core.io.support.EncodedResource.getReader(EncodedResource.java:138) ~[spring-core-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:94) ~[spring-core-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:72) ~[spring-core-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.core.io.support.PropertiesLoaderUtils.loadProperties(PropertiesLoaderUtils.java:58) ~[spring-core-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.core.io.support.ResourcePropertySource.<init>(ResourcePropertySource.java:65) ~[spring-core-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.core.io.support.DefaultPropertySourceFactory.createPropertySource(DefaultPropertySourceFactory.java:36) ~[spring-core-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.processPropertySource(ConfigurationClassParser.java:440) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:271) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:245) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:198) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:167) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	... 37 common frames omitted
+2018-06-02 14:55:02.533 [ERROR] [org.springframework.test.context.TestContextManager:234] - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@71ba6d4e] to prepare test instance [com.sport.bet.core.test.ResourceServiceImplTest@738dc9b]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192) [.cp/:na]
+Caused by: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.sport.bet.core.test.base.Application]; nested exception is java.io.FileNotFoundException: class path resource [config/jdbc-test.properties] cannot be opened because it does not exist
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:181) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:308) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:228) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:272) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:92) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:687) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:525) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120) ~[spring-boot-test-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	... 25 common frames omitted
+Caused by: java.io.FileNotFoundException: class path resource [config/jdbc-test.properties] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172) ~[spring-core-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.core.io.support.EncodedResource.getReader(EncodedResource.java:138) ~[spring-core-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:94) ~[spring-core-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:72) ~[spring-core-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.core.io.support.PropertiesLoaderUtils.loadProperties(PropertiesLoaderUtils.java:58) ~[spring-core-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.core.io.support.ResourcePropertySource.<init>(ResourcePropertySource.java:65) ~[spring-core-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.core.io.support.DefaultPropertySourceFactory.createPropertySource(DefaultPropertySourceFactory.java:36) ~[spring-core-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.processPropertySource(ConfigurationClassParser.java:440) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:271) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:245) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:198) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:167) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	... 37 common frames omitted
+2018-06-02 14:55:13.017 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ResourceServiceImplTest on USER-20170225NV with PID 8664 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-02 14:55:13.019 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:55:13.722 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ResourceServiceImplTest in 0.839 seconds (JVM running for 1.256)
+2018-06-02 14:55:43.798 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ResourceServiceImplTest on USER-20170225NV with PID 8320 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-02 14:55:43.800 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:55:44.480 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ResourceServiceImplTest in 0.821 seconds (JVM running for 1.251)
+2018-06-02 14:56:13.640 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ResourceServiceImplTest on USER-20170225NV with PID 5844 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-02 14:56:13.643 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:56:14.309 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ResourceServiceImplTest in 0.807 seconds (JVM running for 1.223)
+2018-06-02 14:56:50.562 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ResourceServiceImplTest on USER-20170225NV with PID 8300 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-02 14:56:50.564 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:56:51.238 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ResourceServiceImplTest in 0.818 seconds (JVM running for 1.232)
+2018-06-02 14:56:58.539 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ResourceServiceImplTest on USER-20170225NV with PID 6284 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-02 14:56:58.541 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:56:59.265 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ResourceServiceImplTest in 0.88 seconds (JVM running for 1.299)
+2018-06-02 14:57:25.669 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ResourceServiceImplTest on USER-20170225NV with PID 7644 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-02 14:57:25.670 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:57:26.342 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ResourceServiceImplTest in 0.823 seconds (JVM running for 1.241)
+2018-06-02 14:57:39.235 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 2564 (E:\SportsBetWork\sport-parent\sport-core\target\test-classes started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-02 14:57:39.237 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:57:39.962 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started Application in 0.873 seconds (JVM running for 1.137)
+2018-06-02 14:57:58.434 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ResourceServiceImplTest on USER-20170225NV with PID 3928 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-02 14:57:58.436 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:57:59.144 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ResourceServiceImplTest in 0.848 seconds (JVM running for 1.277)
+2018-06-02 15:13:30.085 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ResourceServiceImplTest on USER-20170225NV with PID 8716 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-02 15:13:30.087 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 15:13:30.777 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ResourceServiceImplTest in 0.825 seconds (JVM running for 1.236)
+2018-06-03 03:29:22.943 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ResourceServiceImplTest on USER-20170225NV with PID 7868 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 03:29:22.956 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 03:29:23.702 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ResourceServiceImplTest in 0.909 seconds (JVM running for 1.431)
+2018-06-03 03:30:19.650 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ResourceServiceImplTest on USER-20170225NV with PID 9768 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 03:30:19.654 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 03:30:20.415 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ResourceServiceImplTest in 0.914 seconds (JVM running for 1.346)
+2018-06-03 03:53:03.826 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportServiceImplTest on USER-20170225NV with PID 9220 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 03:53:03.828 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 03:53:04.479 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportServiceImplTest in 0.804 seconds (JVM running for 1.257)
+2018-06-03 03:54:45.627 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportServiceImplTest on USER-20170225NV with PID 8908 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 03:54:45.629 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 03:54:46.294 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportServiceImplTest in 0.81 seconds (JVM running for 1.244)
+2018-06-03 03:55:03.129 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ResourceServiceImplTest on USER-20170225NV with PID 9368 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 03:55:03.132 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 03:55:03.806 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ResourceServiceImplTest in 0.823 seconds (JVM running for 1.289)
+2018-06-03 03:55:44.127 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ResourceServiceImplTest on USER-20170225NV with PID 6908 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 03:55:44.129 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 03:55:44.880 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ResourceServiceImplTest in 0.892 seconds (JVM running for 1.323)
+2018-06-03 03:55:51.575 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportServiceImplTest on USER-20170225NV with PID 8664 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 03:55:51.578 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 03:55:52.325 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportServiceImplTest in 0.893 seconds (JVM running for 1.331)
+2018-06-03 03:57:16.251 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportServiceImplTest on USER-20170225NV with PID 11180 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 03:57:16.253 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 03:57:16.987 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportServiceImplTest in 0.882 seconds (JVM running for 1.29)
+2018-06-03 03:59:00.729 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportServiceImplTest on USER-20170225NV with PID 13280 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 03:59:00.731 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 03:59:01.466 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportServiceImplTest in 0.882 seconds (JVM running for 1.333)
+2018-06-03 04:03:53.894 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportServiceImplTest on USER-20170225NV with PID 3772 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 04:03:53.897 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 04:03:54.621 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportServiceImplTest in 0.869 seconds (JVM running for 1.313)
+2018-06-03 04:05:45.008 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportServiceImplTest on USER-20170225NV with PID 12940 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 04:05:45.010 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 04:05:45.820 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportServiceImplTest in 0.96 seconds (JVM running for 1.42)
+2018-06-03 04:07:10.570 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportServiceImplTest on USER-20170225NV with PID 4696 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 04:07:10.573 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 04:07:11.361 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportServiceImplTest in 0.942 seconds (JVM running for 1.404)
+2018-06-03 04:08:51.171 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportServiceImplTest on USER-20170225NV with PID 11232 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 04:08:51.173 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 04:08:51.983 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportServiceImplTest in 0.958 seconds (JVM running for 1.406)
+2018-06-03 04:09:50.650 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportServiceImplTest on USER-20170225NV with PID 1888 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 04:09:50.653 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 04:09:51.438 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportServiceImplTest in 0.933 seconds (JVM running for 1.383)
+2018-06-03 04:11:11.425 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportServiceImplTest on USER-20170225NV with PID 11480 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 04:11:11.427 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 04:11:12.233 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportServiceImplTest in 0.961 seconds (JVM running for 1.402)
+2018-06-03 04:12:15.620 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportServiceImplTest on USER-20170225NV with PID 9432 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 04:12:15.622 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 04:12:16.395 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportServiceImplTest in 0.924 seconds (JVM running for 1.352)
+2018-06-03 04:12:45.428 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportServiceImplTest on USER-20170225NV with PID 10412 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 04:12:45.430 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 04:12:46.212 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportServiceImplTest in 0.926 seconds (JVM running for 1.366)
+2018-06-03 04:27:40.846 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportServiceImplTest on USER-20170225NV with PID 3924 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 04:27:40.849 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 04:27:41.637 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportServiceImplTest in 0.932 seconds (JVM running for 1.38)
+2018-06-03 04:28:21.167 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportServiceImplTest on USER-20170225NV with PID 13180 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 04:28:21.169 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 04:28:21.967 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportServiceImplTest in 0.955 seconds (JVM running for 1.41)
+2018-06-03 04:30:40.842 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportServiceImplTest on USER-20170225NV with PID 9688 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 04:30:40.844 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 04:30:41.629 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportServiceImplTest in 0.934 seconds (JVM running for 1.373)
+2018-06-03 04:32:22.750 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportServiceImplTest on USER-20170225NV with PID 11464 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 04:32:22.754 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 04:32:23.564 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportServiceImplTest in 0.962 seconds (JVM running for 1.403)
+2018-06-03 04:33:18.968 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportServiceImplTest on USER-20170225NV with PID 880 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 04:33:18.970 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 04:33:19.763 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportServiceImplTest in 0.944 seconds (JVM running for 1.389)
+2018-06-03 04:34:01.743 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportServiceImplTest on USER-20170225NV with PID 12344 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 04:34:01.745 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 04:34:02.563 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportServiceImplTest in 0.965 seconds (JVM running for 1.431)
+2018-06-03 04:35:47.012 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportServiceImplTest on USER-20170225NV with PID 12312 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 04:35:47.016 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 04:35:48.044 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportServiceImplTest in 1.205 seconds (JVM running for 1.755)
+2018-06-03 04:36:11.700 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportServiceImplTest on USER-20170225NV with PID 12484 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 04:36:11.702 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 04:36:12.495 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportServiceImplTest in 0.948 seconds (JVM running for 1.417)
+2018-06-03 04:37:39.744 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportServiceImplTest on USER-20170225NV with PID 10424 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 04:37:39.746 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 04:37:40.531 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportServiceImplTest in 0.926 seconds (JVM running for 1.382)
+2018-06-03 04:37:54.303 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportServiceImplTest on USER-20170225NV with PID 7088 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 04:37:54.306 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 04:37:55.085 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportServiceImplTest in 0.938 seconds (JVM running for 1.421)
+2018-06-03 16:23:15.352 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportServiceImplTest on USER-20170225NV with PID 4232 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 16:23:15.360 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 16:23:16.107 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportServiceImplTest in 0.907 seconds (JVM running for 1.595)
+2018-06-03 16:33:59.796 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportServiceImplTest on USER-20170225NV with PID 11904 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 16:33:59.799 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 16:34:00.502 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportServiceImplTest in 0.843 seconds (JVM running for 1.273)
+2018-06-03 18:49:24.577 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportModuleServiceTest on USER-20170225NV with PID 15196 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 18:49:24.579 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 18:49:25.218 [ERROR] [org.mybatis.spring.mapper.MapperFactoryBean:82] - Error while adding the mapper 'interface com.sport.bet.core.mapper.SportModuleMapper' to configuration.
+org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'id' in 'class com.sport.bet.bean.model.SportModule'
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.loadXmlResource(MapperAnnotationBuilder.java:170) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.parse(MapperAnnotationBuilder.java:121) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.binding.MapperRegistry.addMapper(MapperRegistry.java:72) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.session.Configuration.addMapper(Configuration.java:713) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:80) ~[mybatis-spring-1.3.1.jar:1.3.1]
+	at org.springframework.dao.support.DaoSupport.afterPropertiesSet(DaoSupport.java:44) [spring-tx-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) [spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) [spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120) [spring-boot-test-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192) [.cp/:na]
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'id' in 'class com.sport.bet.bean.model.SportModule'
+	at org.apache.ibatis.reflection.Reflector.getGetterType(Reflector.java:437) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.reflection.MetaClass.getGetterType(MetaClass.java:97) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.reflection.MetaClass.getGetterType(MetaClass.java:88) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.MapperBuilderAssistant.resolveParameterJavaType(MapperBuilderAssistant.java:451) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.MapperBuilderAssistant.buildParameterMapping(MapperBuilderAssistant.java:164) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parameterMapElement(XMLMapperBuilder.java:234) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:115) ~[mybatis-3.4.1.jar:3.4.1]
+	... 62 common frames omitted
+2018-06-03 18:49:25.220 [WARN ] [org.springframework.context.support.AbstractApplicationContext:551] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sportModuleServiceImpl': Unsatisfied dependency expressed through field 'sportModuleMapper'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sportModuleMapper' defined in file [E:\SportsBetWork\sport-parent\sport-core\target\classes\com\sport\bet\core\mapper\SportModuleMapper.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'id' in 'class com.sport.bet.bean.model.SportModule'
+2018-06-03 18:49:25.235 [ERROR] [org.springframework.boot.SpringApplication:771] - Application startup failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sportModuleServiceImpl': Unsatisfied dependency expressed through field 'sportModuleMapper'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sportModuleMapper' defined in file [E:\SportsBetWork\sport-parent\sport-core\target\classes\com\sport\bet\core\mapper\SportModuleMapper.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'id' in 'class com.sport.bet.bean.model.SportModule'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120) [spring-boot-test-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192) [.cp/:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sportModuleMapper' defined in file [E:\SportsBetWork\sport-parent\sport-core\target\classes\com\sport\bet\core\mapper\SportModuleMapper.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'id' in 'class com.sport.bet.bean.model.SportModule'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	... 43 common frames omitted
+Caused by: java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'id' in 'class com.sport.bet.bean.model.SportModule'
+	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:83) ~[mybatis-spring-1.3.1.jar:1.3.1]
+	at org.springframework.dao.support.DaoSupport.afterPropertiesSet(DaoSupport.java:44) ~[spring-tx-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	... 53 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'id' in 'class com.sport.bet.bean.model.SportModule'
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.loadXmlResource(MapperAnnotationBuilder.java:170) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.parse(MapperAnnotationBuilder.java:121) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.binding.MapperRegistry.addMapper(MapperRegistry.java:72) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.session.Configuration.addMapper(Configuration.java:713) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:80) ~[mybatis-spring-1.3.1.jar:1.3.1]
+	... 56 common frames omitted
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'id' in 'class com.sport.bet.bean.model.SportModule'
+	at org.apache.ibatis.reflection.Reflector.getGetterType(Reflector.java:437) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.reflection.MetaClass.getGetterType(MetaClass.java:97) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.reflection.MetaClass.getGetterType(MetaClass.java:88) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.MapperBuilderAssistant.resolveParameterJavaType(MapperBuilderAssistant.java:451) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.MapperBuilderAssistant.buildParameterMapping(MapperBuilderAssistant.java:164) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parameterMapElement(XMLMapperBuilder.java:234) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:115) ~[mybatis-3.4.1.jar:3.4.1]
+	... 62 common frames omitted
+2018-06-03 18:49:25.241 [ERROR] [org.springframework.test.context.TestContextManager:234] - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@7d3430a7] to prepare test instance [com.sport.bet.core.test.SportModuleServiceTest@6f603e89]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192) [.cp/:na]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sportModuleServiceImpl': Unsatisfied dependency expressed through field 'sportModuleMapper'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sportModuleMapper' defined in file [E:\SportsBetWork\sport-parent\sport-core\target\classes\com\sport\bet\core\mapper\SportModuleMapper.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'id' in 'class com.sport.bet.bean.model.SportModule'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120) ~[spring-boot-test-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	... 25 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sportModuleMapper' defined in file [E:\SportsBetWork\sport-parent\sport-core\target\classes\com\sport\bet\core\mapper\SportModuleMapper.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'id' in 'class com.sport.bet.bean.model.SportModule'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	... 43 common frames omitted
+Caused by: java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'id' in 'class com.sport.bet.bean.model.SportModule'
+	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:83) ~[mybatis-spring-1.3.1.jar:1.3.1]
+	at org.springframework.dao.support.DaoSupport.afterPropertiesSet(DaoSupport.java:44) ~[spring-tx-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	... 53 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'id' in 'class com.sport.bet.bean.model.SportModule'
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.loadXmlResource(MapperAnnotationBuilder.java:170) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.parse(MapperAnnotationBuilder.java:121) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.binding.MapperRegistry.addMapper(MapperRegistry.java:72) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.session.Configuration.addMapper(Configuration.java:713) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:80) ~[mybatis-spring-1.3.1.jar:1.3.1]
+	... 56 common frames omitted
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'id' in 'class com.sport.bet.bean.model.SportModule'
+	at org.apache.ibatis.reflection.Reflector.getGetterType(Reflector.java:437) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.reflection.MetaClass.getGetterType(MetaClass.java:97) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.reflection.MetaClass.getGetterType(MetaClass.java:88) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.MapperBuilderAssistant.resolveParameterJavaType(MapperBuilderAssistant.java:451) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.MapperBuilderAssistant.buildParameterMapping(MapperBuilderAssistant.java:164) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parameterMapElement(XMLMapperBuilder.java:234) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:115) ~[mybatis-3.4.1.jar:3.4.1]
+	... 62 common frames omitted
+2018-06-03 18:51:35.790 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportModuleServiceTest on USER-20170225NV with PID 8880 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 18:51:35.792 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 18:51:36.460 [ERROR] [org.mybatis.spring.mapper.MapperFactoryBean:82] - Error while adding the mapper 'interface com.sport.bet.core.mapper.SportModuleMapper' to configuration.
+org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'id' in 'class com.sport.bet.bean.model.SportModule'
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.loadXmlResource(MapperAnnotationBuilder.java:170) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.parse(MapperAnnotationBuilder.java:121) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.binding.MapperRegistry.addMapper(MapperRegistry.java:72) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.session.Configuration.addMapper(Configuration.java:713) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:80) ~[mybatis-spring-1.3.1.jar:1.3.1]
+	at org.springframework.dao.support.DaoSupport.afterPropertiesSet(DaoSupport.java:44) [spring-tx-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) [spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) [spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) [spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120) [spring-boot-test-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192) [.cp/:na]
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'id' in 'class com.sport.bet.bean.model.SportModule'
+	at org.apache.ibatis.reflection.Reflector.getGetterType(Reflector.java:437) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.reflection.MetaClass.getGetterType(MetaClass.java:97) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.reflection.MetaClass.getGetterType(MetaClass.java:88) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.MapperBuilderAssistant.resolveParameterJavaType(MapperBuilderAssistant.java:451) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.MapperBuilderAssistant.buildParameterMapping(MapperBuilderAssistant.java:164) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parameterMapElement(XMLMapperBuilder.java:234) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:115) ~[mybatis-3.4.1.jar:3.4.1]
+	... 62 common frames omitted
+2018-06-03 18:51:36.461 [WARN ] [org.springframework.context.support.AbstractApplicationContext:551] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sportModuleServiceImpl': Unsatisfied dependency expressed through field 'sportModuleMapper'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sportModuleMapper' defined in file [E:\SportsBetWork\sport-parent\sport-core\target\classes\com\sport\bet\core\mapper\SportModuleMapper.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'id' in 'class com.sport.bet.bean.model.SportModule'
+2018-06-03 18:51:36.470 [ERROR] [org.springframework.boot.SpringApplication:771] - Application startup failed
+org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sportModuleServiceImpl': Unsatisfied dependency expressed through field 'sportModuleMapper'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sportModuleMapper' defined in file [E:\SportsBetWork\sport-parent\sport-core\target\classes\com\sport\bet\core\mapper\SportModuleMapper.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'id' in 'class com.sport.bet.bean.model.SportModule'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120) [spring-boot-test-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192) [.cp/:na]
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sportModuleMapper' defined in file [E:\SportsBetWork\sport-parent\sport-core\target\classes\com\sport\bet\core\mapper\SportModuleMapper.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'id' in 'class com.sport.bet.bean.model.SportModule'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	... 43 common frames omitted
+Caused by: java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'id' in 'class com.sport.bet.bean.model.SportModule'
+	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:83) ~[mybatis-spring-1.3.1.jar:1.3.1]
+	at org.springframework.dao.support.DaoSupport.afterPropertiesSet(DaoSupport.java:44) ~[spring-tx-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	... 53 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'id' in 'class com.sport.bet.bean.model.SportModule'
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.loadXmlResource(MapperAnnotationBuilder.java:170) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.parse(MapperAnnotationBuilder.java:121) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.binding.MapperRegistry.addMapper(MapperRegistry.java:72) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.session.Configuration.addMapper(Configuration.java:713) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:80) ~[mybatis-spring-1.3.1.jar:1.3.1]
+	... 56 common frames omitted
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'id' in 'class com.sport.bet.bean.model.SportModule'
+	at org.apache.ibatis.reflection.Reflector.getGetterType(Reflector.java:437) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.reflection.MetaClass.getGetterType(MetaClass.java:97) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.reflection.MetaClass.getGetterType(MetaClass.java:88) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.MapperBuilderAssistant.resolveParameterJavaType(MapperBuilderAssistant.java:451) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.MapperBuilderAssistant.buildParameterMapping(MapperBuilderAssistant.java:164) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parameterMapElement(XMLMapperBuilder.java:234) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:115) ~[mybatis-3.4.1.jar:3.4.1]
+	... 62 common frames omitted
+2018-06-03 18:51:36.472 [ERROR] [org.springframework.test.context.TestContextManager:234] - Caught exception while allowing TestExecutionListener [org.springframework.test.context.support.DependencyInjectionTestExecutionListener@773cbf4f] to prepare test instance [com.sport.bet.core.test.SportModuleServiceTest@6b54655f]
+java.lang.IllegalStateException: Failed to load ApplicationContext
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:124) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DefaultTestContext.getApplicationContext(DefaultTestContext.java:83) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.injectDependencies(DependencyInjectionTestExecutionListener.java:117) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.support.DependencyInjectionTestExecutionListener.prepareTestInstance(DependencyInjectionTestExecutionListener.java:83) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.TestContextManager.prepareTestInstance(TestContextManager.java:230) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.createTest(SpringJUnit4ClassRunner.java:228) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner$1.runReflectiveCall(SpringJUnit4ClassRunner.java:287) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.methodBlock(SpringJUnit4ClassRunner.java:289) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:247) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.runChild(SpringJUnit4ClassRunner.java:94) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58) [junit.jar:4.12]
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.statements.RunBeforeTestClassCallbacks.evaluate(RunBeforeTestClassCallbacks.java:61) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.junit4.statements.RunAfterTestClassCallbacks.evaluate(RunAfterTestClassCallbacks.java:70) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363) [junit.jar:4.12]
+	at org.springframework.test.context.junit4.SpringJUnit4ClassRunner.run(SpringJUnit4ClassRunner.java:191) [spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.eclipse.jdt.internal.junit4.runner.JUnit4TestReference.run(JUnit4TestReference.java:86) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.TestExecution.run(TestExecution.java:38) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:459) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.runTests(RemoteTestRunner.java:675) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.run(RemoteTestRunner.java:382) [.cp/:na]
+	at org.eclipse.jdt.internal.junit.runner.RemoteTestRunner.main(RemoteTestRunner.java:192) [.cp/:na]
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sportModuleServiceImpl': Unsatisfied dependency expressed through field 'sportModuleMapper'; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sportModuleMapper' defined in file [E:\SportsBetWork\sport-parent\sport-core\target\classes\com\sport\bet\core\mapper\SportModuleMapper.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'id' in 'class com.sport.bet.bean.model.SportModule'
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:588) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:88) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessPropertyValues(AutowiredAnnotationBeanPostProcessor.java:366) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1264) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:553) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:761) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:867) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.test.context.SpringBootContextLoader.loadContext(SpringBootContextLoader.java:120) ~[spring-boot-test-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContextInternal(DefaultCacheAwareContextLoaderDelegate.java:98) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate.loadContext(DefaultCacheAwareContextLoaderDelegate.java:116) ~[spring-test-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	... 25 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'sportModuleMapper' defined in file [E:\SportsBetWork\sport-parent\sport-core\target\classes\com\sport\bet\core\mapper\SportModuleMapper.class]: Invocation of init method failed; nested exception is java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'id' in 'class com.sport.bet.bean.model.SportModule'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1628) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:202) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:208) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1138) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1066) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:585) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	... 43 common frames omitted
+Caused by: java.lang.IllegalArgumentException: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'id' in 'class com.sport.bet.bean.model.SportModule'
+	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:83) ~[mybatis-spring-1.3.1.jar:1.3.1]
+	at org.springframework.dao.support.DaoSupport.afterPropertiesSet(DaoSupport.java:44) ~[spring-tx-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1687) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1624) ~[spring-beans-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	... 53 common frames omitted
+Caused by: org.apache.ibatis.builder.BuilderException: Error parsing Mapper XML. Cause: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'id' in 'class com.sport.bet.bean.model.SportModule'
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:120) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parse(XMLMapperBuilder.java:92) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.loadXmlResource(MapperAnnotationBuilder.java:170) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.annotation.MapperAnnotationBuilder.parse(MapperAnnotationBuilder.java:121) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.binding.MapperRegistry.addMapper(MapperRegistry.java:72) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.session.Configuration.addMapper(Configuration.java:713) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.mybatis.spring.mapper.MapperFactoryBean.checkDaoConfig(MapperFactoryBean.java:80) ~[mybatis-spring-1.3.1.jar:1.3.1]
+	... 56 common frames omitted
+Caused by: org.apache.ibatis.reflection.ReflectionException: There is no getter for property named 'id' in 'class com.sport.bet.bean.model.SportModule'
+	at org.apache.ibatis.reflection.Reflector.getGetterType(Reflector.java:437) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.reflection.MetaClass.getGetterType(MetaClass.java:97) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.reflection.MetaClass.getGetterType(MetaClass.java:88) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.MapperBuilderAssistant.resolveParameterJavaType(MapperBuilderAssistant.java:451) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.MapperBuilderAssistant.buildParameterMapping(MapperBuilderAssistant.java:164) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.parameterMapElement(XMLMapperBuilder.java:234) ~[mybatis-3.4.1.jar:3.4.1]
+	at org.apache.ibatis.builder.xml.XMLMapperBuilder.configurationElement(XMLMapperBuilder.java:115) ~[mybatis-3.4.1.jar:3.4.1]
+	... 62 common frames omitted
+2018-06-03 18:52:05.517 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportModuleServiceTest on USER-20170225NV with PID 14528 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 18:52:05.520 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 18:52:06.284 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportModuleServiceTest in 0.914 seconds (JVM running for 1.35)
+2018-06-03 18:53:11.160 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportModuleServiceTest on USER-20170225NV with PID 14808 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 18:53:11.162 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 18:53:11.931 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportModuleServiceTest in 0.912 seconds (JVM running for 1.353)
+2018-06-03 18:53:27.572 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportModuleServiceTest on USER-20170225NV with PID 15088 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 18:53:27.574 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 18:53:28.344 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportModuleServiceTest in 0.922 seconds (JVM running for 1.363)
+2018-06-03 18:54:55.849 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportModuleServiceTest on USER-20170225NV with PID 14452 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 18:54:55.851 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 18:54:56.611 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportModuleServiceTest in 0.905 seconds (JVM running for 1.342)
+2018-06-03 18:55:09.474 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportModuleServiceTest on USER-20170225NV with PID 1844 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 18:55:09.477 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 18:55:10.242 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportModuleServiceTest in 0.908 seconds (JVM running for 1.374)
+2018-06-03 18:55:36.161 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportModuleServiceTest on USER-20170225NV with PID 6736 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 18:55:36.163 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 18:55:36.913 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportModuleServiceTest in 0.895 seconds (JVM running for 1.335)
+2018-06-03 18:56:30.145 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportModuleServiceTest on USER-20170225NV with PID 7052 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 18:56:30.147 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 18:56:30.915 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportModuleServiceTest in 0.912 seconds (JVM running for 1.371)
+2018-06-03 18:59:31.839 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportModuleServiceTest on USER-20170225NV with PID 11216 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 18:59:31.841 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 18:59:32.608 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportModuleServiceTest in 0.91 seconds (JVM running for 1.374)
+2018-06-03 18:59:52.413 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportModuleServiceTest on USER-20170225NV with PID 10568 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 18:59:52.415 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 18:59:53.180 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportModuleServiceTest in 0.906 seconds (JVM running for 1.351)
+2018-06-03 19:00:38.887 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportModuleServiceTest on USER-20170225NV with PID 15236 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 19:00:38.889 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 19:00:39.631 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportModuleServiceTest in 0.879 seconds (JVM running for 1.322)
+2018-06-03 19:01:23.956 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting SportModuleServiceTest on USER-20170225NV with PID 14340 (started by Administrator in E:\SportsBetWork\sport-parent\sport-core)
+2018-06-03 19:01:23.958 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 19:01:24.690 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started SportModuleServiceTest in 0.883 seconds (JVM running for 1.312)

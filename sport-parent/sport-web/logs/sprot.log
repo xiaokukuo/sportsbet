@@ -1,0 +1,774 @@
+2018-06-02 12:36:48.293 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 7552 (E:\SportsBetWork\sport-parent\sport-web\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-02 12:36:48.293 [INFO ] [org.springframework.boot.SpringApplication:661] - No active profile set, falling back to default profiles: default
+2018-06-02 12:36:48.364 [WARN ] [org.springframework.context.support.AbstractApplicationContext:550] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.sport.bet.web.Application]; nested exception is java.io.FileNotFoundException: class path resource [config/jdbc.properties] cannot be opened because it does not exist
+2018-06-02 12:36:48.370 [ERROR] [org.springframework.beans.factory.support.DefaultSingletonBeanRegistry:581] - Destroy method on bean with name 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory' threw an exception
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1bd4fdd: startup date [Sat Jun 02 12:36:48 CST 2018]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:404) [spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.ApplicationListenerDetector.postProcessBeforeDestruction(ApplicationListenerDetector.java:97) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:253) ~[spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:578) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:554) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:959) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:523) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:966) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1033) [spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:555) [spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at com.sport.bet.web.Application.main(Application.java:15) [classes/:na]
+2018-06-02 12:36:48.376 [ERROR] [org.springframework.boot.SpringApplication:839] - Application startup failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.sport.bet.web.Application]; nested exception is java.io.FileNotFoundException: class path resource [config/jdbc.properties] cannot be opened because it does not exist
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:180) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:308) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:228) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:270) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:93) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:686) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:524) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at com.sport.bet.web.Application.main(Application.java:15) [classes/:na]
+Caused by: java.io.FileNotFoundException: class path resource [config/jdbc.properties] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.EncodedResource.getReader(EncodedResource.java:138) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:94) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:72) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.PropertiesLoaderUtils.loadProperties(PropertiesLoaderUtils.java:58) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.ResourcePropertySource.<init>(ResourcePropertySource.java:65) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.DefaultPropertySourceFactory.createPropertySource(DefaultPropertySourceFactory.java:36) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.processPropertySource(ConfigurationClassParser.java:381) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:253) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:230) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:197) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:166) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	... 13 common frames omitted
+2018-06-02 12:36:59.245 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 5176 (E:\SportsBetWork\sport-parent\sport-web\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-02 12:36:59.246 [INFO ] [org.springframework.boot.SpringApplication:661] - No active profile set, falling back to default profiles: default
+2018-06-02 12:36:59.323 [WARN ] [org.springframework.context.support.AbstractApplicationContext:550] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.sport.bet.web.Application]; nested exception is java.io.FileNotFoundException: class path resource [classpath*:/config/jdbc.properties] cannot be opened because it does not exist
+2018-06-02 12:36:59.329 [ERROR] [org.springframework.beans.factory.support.DefaultSingletonBeanRegistry:581] - Destroy method on bean with name 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory' threw an exception
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@1bd4fdd: startup date [Sat Jun 02 12:36:59 CST 2018]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:404) [spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.ApplicationListenerDetector.postProcessBeforeDestruction(ApplicationListenerDetector.java:97) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:253) ~[spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:578) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:554) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:959) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:523) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:966) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1033) [spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:555) [spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at com.sport.bet.web.Application.main(Application.java:15) [classes/:na]
+2018-06-02 12:36:59.334 [ERROR] [org.springframework.boot.SpringApplication:839] - Application startup failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.sport.bet.web.Application]; nested exception is java.io.FileNotFoundException: class path resource [classpath*:/config/jdbc.properties] cannot be opened because it does not exist
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:180) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:308) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:228) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:270) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:93) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:686) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:524) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at com.sport.bet.web.Application.main(Application.java:15) [classes/:na]
+Caused by: java.io.FileNotFoundException: class path resource [classpath*:/config/jdbc.properties] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.EncodedResource.getReader(EncodedResource.java:138) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:94) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:72) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.PropertiesLoaderUtils.loadProperties(PropertiesLoaderUtils.java:58) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.ResourcePropertySource.<init>(ResourcePropertySource.java:65) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.DefaultPropertySourceFactory.createPropertySource(DefaultPropertySourceFactory.java:36) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.processPropertySource(ConfigurationClassParser.java:381) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:253) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:230) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:197) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:166) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	... 13 common frames omitted
+2018-06-02 12:37:59.182 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 6152 (E:\SportsBetWork\sport-parent\sport-web\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-02 12:37:59.183 [INFO ] [org.springframework.boot.SpringApplication:661] - No active profile set, falling back to default profiles: default
+2018-06-02 12:37:59.275 [WARN ] [org.springframework.context.support.AbstractApplicationContext:550] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.sport.bet.web.Application]; nested exception is java.io.FileNotFoundException: class path resource [classpath*:/config/jdbc.properties] cannot be opened because it does not exist
+2018-06-02 12:37:59.280 [ERROR] [org.springframework.beans.factory.support.DefaultSingletonBeanRegistry:581] - Destroy method on bean with name 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory' threw an exception
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@74f0ea28: startup date [Sat Jun 02 12:37:59 CST 2018]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:404) [spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.ApplicationListenerDetector.postProcessBeforeDestruction(ApplicationListenerDetector.java:97) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:253) ~[spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:578) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:554) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:959) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:523) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:966) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1033) [spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:555) [spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at com.sport.bet.web.Application.main(Application.java:15) [classes/:na]
+2018-06-02 12:37:59.284 [ERROR] [org.springframework.boot.SpringApplication:839] - Application startup failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.sport.bet.web.Application]; nested exception is java.io.FileNotFoundException: class path resource [classpath*:/config/jdbc.properties] cannot be opened because it does not exist
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:180) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:308) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:228) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:270) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:93) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:686) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:524) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at com.sport.bet.web.Application.main(Application.java:15) [classes/:na]
+Caused by: java.io.FileNotFoundException: class path resource [classpath*:/config/jdbc.properties] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.EncodedResource.getReader(EncodedResource.java:138) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:94) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:72) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.PropertiesLoaderUtils.loadProperties(PropertiesLoaderUtils.java:58) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.ResourcePropertySource.<init>(ResourcePropertySource.java:65) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.DefaultPropertySourceFactory.createPropertySource(DefaultPropertySourceFactory.java:36) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.processPropertySource(ConfigurationClassParser.java:381) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:253) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:230) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:197) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:166) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	... 13 common frames omitted
+2018-06-02 12:38:55.083 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 6584 (E:\SportsBetWork\sport-parent\sport-web\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-02 12:38:55.083 [INFO ] [org.springframework.boot.SpringApplication:661] - No active profile set, falling back to default profiles: default
+2018-06-02 12:38:55.152 [WARN ] [org.springframework.context.support.AbstractApplicationContext:550] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.sport.bet.web.Application]; nested exception is java.io.FileNotFoundException: class path resource [classpath*:/config/jdbc.properties] cannot be opened because it does not exist
+2018-06-02 12:38:55.157 [ERROR] [org.springframework.beans.factory.support.DefaultSingletonBeanRegistry:581] - Destroy method on bean with name 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory' threw an exception
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@74f0ea28: startup date [Sat Jun 02 12:38:55 CST 2018]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:404) [spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.ApplicationListenerDetector.postProcessBeforeDestruction(ApplicationListenerDetector.java:97) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:253) ~[spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:578) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:554) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:959) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:523) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:966) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1033) [spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:555) [spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at com.sport.bet.web.Application.main(Application.java:15) [classes/:na]
+2018-06-02 12:38:55.162 [ERROR] [org.springframework.boot.SpringApplication:839] - Application startup failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.sport.bet.web.Application]; nested exception is java.io.FileNotFoundException: class path resource [classpath*:/config/jdbc.properties] cannot be opened because it does not exist
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:180) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:308) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:228) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:270) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:93) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:686) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:524) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at com.sport.bet.web.Application.main(Application.java:15) [classes/:na]
+Caused by: java.io.FileNotFoundException: class path resource [classpath*:/config/jdbc.properties] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.EncodedResource.getReader(EncodedResource.java:138) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:94) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:72) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.PropertiesLoaderUtils.loadProperties(PropertiesLoaderUtils.java:58) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.ResourcePropertySource.<init>(ResourcePropertySource.java:65) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.DefaultPropertySourceFactory.createPropertySource(DefaultPropertySourceFactory.java:36) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.processPropertySource(ConfigurationClassParser.java:381) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:253) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:230) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:197) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:166) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	... 13 common frames omitted
+2018-06-02 12:46:58.494 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 7584 (E:\SportsBetWork\sport-parent\sport-web\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-02 12:46:58.495 [INFO ] [org.springframework.boot.SpringApplication:661] - No active profile set, falling back to default profiles: default
+2018-06-02 12:46:58.563 [WARN ] [org.springframework.context.support.AbstractApplicationContext:550] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.sport.bet.web.Application]; nested exception is java.io.FileNotFoundException: class path resource [classpath*:/config/jdbc.properties] cannot be opened because it does not exist
+2018-06-02 12:46:58.569 [ERROR] [org.springframework.beans.factory.support.DefaultSingletonBeanRegistry:581] - Destroy method on bean with name 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory' threw an exception
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@74f0ea28: startup date [Sat Jun 02 12:46:58 CST 2018]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:404) [spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.ApplicationListenerDetector.postProcessBeforeDestruction(ApplicationListenerDetector.java:97) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:253) ~[spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:578) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:554) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:959) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:523) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:966) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1033) [spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:555) [spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at com.sport.bet.web.Application.main(Application.java:15) [classes/:na]
+2018-06-02 12:46:58.575 [ERROR] [org.springframework.boot.SpringApplication:839] - Application startup failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.sport.bet.web.Application]; nested exception is java.io.FileNotFoundException: class path resource [classpath*:/config/jdbc.properties] cannot be opened because it does not exist
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:180) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:308) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:228) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:270) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:93) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:686) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:524) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at com.sport.bet.web.Application.main(Application.java:15) [classes/:na]
+Caused by: java.io.FileNotFoundException: class path resource [classpath*:/config/jdbc.properties] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.EncodedResource.getReader(EncodedResource.java:138) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:94) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:72) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.PropertiesLoaderUtils.loadProperties(PropertiesLoaderUtils.java:58) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.ResourcePropertySource.<init>(ResourcePropertySource.java:65) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.DefaultPropertySourceFactory.createPropertySource(DefaultPropertySourceFactory.java:36) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.processPropertySource(ConfigurationClassParser.java:381) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:253) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:230) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:197) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:166) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	... 13 common frames omitted
+2018-06-02 12:47:06.114 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 3048 (E:\SportsBetWork\sport-parent\sport-web\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-02 12:47:06.114 [INFO ] [org.springframework.boot.SpringApplication:661] - No active profile set, falling back to default profiles: default
+2018-06-02 12:47:06.188 [WARN ] [org.springframework.context.support.AbstractApplicationContext:550] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.sport.bet.web.Application]; nested exception is java.io.FileNotFoundException: class path resource [classpath*:/config/jdbc.properties] cannot be opened because it does not exist
+2018-06-02 12:47:06.194 [ERROR] [org.springframework.beans.factory.support.DefaultSingletonBeanRegistry:581] - Destroy method on bean with name 'org.springframework.boot.autoconfigure.internalCachingMetadataReaderFactory' threw an exception
+java.lang.IllegalStateException: ApplicationEventMulticaster not initialized - call 'refresh' before multicasting events via the context: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@74f0ea28: startup date [Sat Jun 02 12:47:06 CST 2018]; root of context hierarchy
+	at org.springframework.context.support.AbstractApplicationContext.getApplicationEventMulticaster(AbstractApplicationContext.java:404) [spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.ApplicationListenerDetector.postProcessBeforeDestruction(ApplicationListenerDetector.java:97) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DisposableBeanAdapter.destroy(DisposableBeanAdapter.java:253) ~[spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroyBean(DefaultSingletonBeanRegistry.java:578) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingleton(DefaultSingletonBeanRegistry.java:554) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingleton(DefaultListableBeanFactory.java:959) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.destroySingletons(DefaultSingletonBeanRegistry.java:523) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.destroySingletons(DefaultListableBeanFactory.java:966) [spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.destroyBeans(AbstractApplicationContext.java:1033) [spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:555) [spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at com.sport.bet.web.Application.main(Application.java:15) [classes/:na]
+2018-06-02 12:47:06.198 [ERROR] [org.springframework.boot.SpringApplication:839] - Application startup failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [com.sport.bet.web.Application]; nested exception is java.io.FileNotFoundException: class path resource [classpath*:/config/jdbc.properties] cannot be opened because it does not exist
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:180) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:308) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:228) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:270) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:93) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:686) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:524) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at com.sport.bet.web.Application.main(Application.java:15) [classes/:na]
+Caused by: java.io.FileNotFoundException: class path resource [classpath*:/config/jdbc.properties] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:172) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.EncodedResource.getReader(EncodedResource.java:138) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:94) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.PropertiesLoaderUtils.fillProperties(PropertiesLoaderUtils.java:72) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.PropertiesLoaderUtils.loadProperties(PropertiesLoaderUtils.java:58) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.ResourcePropertySource.<init>(ResourcePropertySource.java:65) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.core.io.support.DefaultPropertySourceFactory.createPropertySource(DefaultPropertySourceFactory.java:36) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.processPropertySource(ConfigurationClassParser.java:381) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:253) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:230) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:197) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:166) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	... 13 common frames omitted
+2018-06-02 12:47:43.968 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 7612 (E:\SportsBetWork\sport-parent\sport-web\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-02 12:47:43.969 [INFO ] [org.springframework.boot.SpringApplication:661] - No active profile set, falling back to default profiles: default
+2018-06-02 12:47:45.079 [INFO ] [org.springframework.boot.context.embedded.EmbeddedWebApplicationContext:276] - Root WebApplicationContext: initialization completed in 1080 ms
+2018-06-02 12:47:45.378 [INFO ] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter:534] - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@74f0ea28: startup date [Sat Jun 02 12:47:43 CST 2018]; root of context hierarchy
+2018-06-02 12:47:45.422 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/]}" onto java.lang.String com.sport.bet.web.controller.BaseController.home()
+2018-06-02 12:47:45.425 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-06-02 12:47:45.426 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-06-02 12:47:45.449 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:354] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-02 12:47:45.449 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:354] - Mapped URL path [/resources/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-02 12:47:45.532 [WARN ] [org.springframework.context.support.AbstractApplicationContext:550] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Tomcat.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.tomcat.jdbc.pool.DataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.IllegalStateException: Cannot load driver class: com.mysql.jdbc.Driver
+2018-06-02 12:47:45.551 [ERROR] [org.springframework.boot.SpringApplication:839] - Application startup failed
+org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Tomcat.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.tomcat.jdbc.pool.DataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.IllegalStateException: Cannot load driver class: com.mysql.jdbc.Driver
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:599) ~[spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1134) ~[spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1028) ~[spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:513) ~[spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:483) ~[spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory$1.getObject(AbstractBeanFactory.java:306) ~[spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:230) ~[spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:302) ~[spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:197) ~[spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.preInstantiateSingletons(DefaultListableBeanFactory.java:759) ~[spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.finishBeanFactoryInitialization(AbstractApplicationContext.java:866) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:542) ~[spring-context-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:761) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:371) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:315) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1186) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1175) [spring-boot-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at com.sport.bet.web.Application.main(Application.java:15) [classes/:na]
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.apache.tomcat.jdbc.pool.DataSource]: Factory method 'dataSource' threw exception; nested exception is java.lang.IllegalStateException: Cannot load driver class: com.mysql.jdbc.Driver
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:189) ~[spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:588) ~[spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	... 18 common frames omitted
+Caused by: java.lang.IllegalStateException: Cannot load driver class: com.mysql.jdbc.Driver
+	at org.springframework.util.Assert.state(Assert.java:392) ~[spring-core-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceProperties.determineDriverClassName(DataSourceProperties.java:230) ~[spring-boot-autoconfigure-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceProperties.initializeDataSourceBuilder(DataSourceProperties.java:182) ~[spring-boot-autoconfigure-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration.createDataSource(DataSourceConfiguration.java:42) ~[spring-boot-autoconfigure-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceConfiguration$Tomcat.dataSource(DataSourceConfiguration.java:53) ~[spring-boot-autoconfigure-1.4.3.RELEASE.jar:1.4.3.RELEASE]
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:1.8.0_151]
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62) ~[na:1.8.0_151]
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:1.8.0_151]
+	at java.lang.reflect.Method.invoke(Method.java:498) ~[na:1.8.0_151]
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:162) ~[spring-beans-4.3.5.RELEASE.jar:4.3.5.RELEASE]
+	... 19 common frames omitted
+2018-06-02 12:49:20.603 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 7480 (E:\SportsBetWork\sport-parent\sport-web\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-02 12:49:20.604 [INFO ] [org.springframework.boot.SpringApplication:661] - No active profile set, falling back to default profiles: default
+2018-06-02 12:49:21.720 [INFO ] [org.springframework.boot.context.embedded.EmbeddedWebApplicationContext:276] - Root WebApplicationContext: initialization completed in 1088 ms
+2018-06-02 12:49:21.998 [INFO ] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter:534] - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c19aaa5: startup date [Sat Jun 02 12:49:20 CST 2018]; root of context hierarchy
+2018-06-02 12:49:22.035 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/]}" onto java.lang.String com.sport.bet.web.controller.BaseController.home()
+2018-06-02 12:49:22.037 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-06-02 12:49:22.037 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-06-02 12:49:22.054 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:354] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-02 12:49:22.054 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:354] - Mapped URL path [/resources/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-02 12:49:22.323 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started Application in 1.963 seconds (JVM running for 2.235)
+2018-06-02 12:49:28.283 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 9184 (E:\SportsBetWork\sport-parent\sport-web\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-02 12:49:28.284 [INFO ] [org.springframework.boot.SpringApplication:661] - No active profile set, falling back to default profiles: default
+2018-06-02 12:49:29.379 [INFO ] [org.springframework.boot.context.embedded.EmbeddedWebApplicationContext:276] - Root WebApplicationContext: initialization completed in 1060 ms
+2018-06-02 12:49:29.699 [INFO ] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter:534] - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@3c19aaa5: startup date [Sat Jun 02 12:49:28 CST 2018]; root of context hierarchy
+2018-06-02 12:49:29.739 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/]}" onto java.lang.String com.sport.bet.web.controller.BaseController.home()
+2018-06-02 12:49:29.742 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-06-02 12:49:29.742 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-06-02 12:49:29.760 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:354] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-02 12:49:29.761 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:354] - Mapped URL path [/resources/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-02 12:49:30.034 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started Application in 1.994 seconds (JVM running for 2.264)
+2018-06-02 14:13:47.816 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 8652 (E:\SportsBetWork\sport-parent\sport-web\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-02 14:13:47.816 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:13:48.258 [WARN ] [org.mybatis.spring.mapper.ClassPathMapperScanner:166] - No MyBatis mapper was found in '[com.sport.bet.web]' package. Please check your configuration.
+2018-06-02 14:13:48.917 [INFO ] [org.springframework.boot.context.embedded.EmbeddedWebApplicationContext:276] - Root WebApplicationContext: initialization completed in 1065 ms
+2018-06-02 14:13:49.051 [WARN ] [org.springframework.context.support.AbstractApplicationContext:551] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'resourceServiceImpl': Unsatisfied dependency expressed through field 'resourceMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.sport.bet.core.mapper.ResourceMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2018-06-02 14:13:49.064 [WARN ] [org.apache.juli.logging.DirectJDKLog:179] - The web application [sprot#bet] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+ com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:43)
+2018-06-02 14:13:49.135 [ERROR] [org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter:42] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field resourceMapper in com.sport.bet.core.service.impl.ResourceServiceImpl required a bean of type 'com.sport.bet.core.mapper.ResourceMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.sport.bet.core.mapper.ResourceMapper' in your configuration.
+
+2018-06-02 14:17:41.909 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 5636 (E:\SportsBetWork\sport-parent\sport-web\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-02 14:17:41.910 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:17:42.311 [WARN ] [org.mybatis.spring.mapper.ClassPathMapperScanner:166] - No MyBatis mapper was found in '[com.sport.bet.web]' package. Please check your configuration.
+2018-06-02 14:17:46.375 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 7472 (E:\SportsBetWork\sport-parent\sport-web\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-02 14:17:46.376 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:17:46.791 [WARN ] [org.mybatis.spring.mapper.ClassPathMapperScanner:166] - No MyBatis mapper was found in '[com.sport.bet.web]' package. Please check your configuration.
+2018-06-02 14:17:47.446 [INFO ] [org.springframework.boot.context.embedded.EmbeddedWebApplicationContext:276] - Root WebApplicationContext: initialization completed in 1035 ms
+2018-06-02 14:17:47.592 [WARN ] [org.springframework.context.support.AbstractApplicationContext:551] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'resourceServiceImpl': Unsatisfied dependency expressed through field 'resourceMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.sport.bet.core.mapper.ResourceMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2018-06-02 14:17:47.615 [WARN ] [org.apache.juli.logging.DirectJDKLog:179] - The web application [sprot#bet] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+ com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:43)
+2018-06-02 14:17:47.701 [ERROR] [org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter:42] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field resourceMapper in com.sport.bet.core.service.impl.ResourceServiceImpl required a bean of type 'com.sport.bet.core.mapper.ResourceMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.sport.bet.core.mapper.ResourceMapper' in your configuration.
+
+2018-06-02 14:18:07.160 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 4436 (E:\SportsBetWork\sport-parent\sport-web\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-02 14:18:07.160 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:18:07.589 [WARN ] [org.mybatis.spring.mapper.ClassPathMapperScanner:166] - No MyBatis mapper was found in '[com.sport.bet.web]' package. Please check your configuration.
+2018-06-02 14:18:08.243 [INFO ] [org.springframework.boot.context.embedded.EmbeddedWebApplicationContext:276] - Root WebApplicationContext: initialization completed in 1051 ms
+2018-06-02 14:18:08.383 [WARN ] [org.springframework.context.support.AbstractApplicationContext:551] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'resourceServiceImpl': Unsatisfied dependency expressed through field 'resourceMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.sport.bet.core.mapper.ResourceMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2018-06-02 14:18:08.399 [WARN ] [org.apache.juli.logging.DirectJDKLog:179] - The web application [sprot#bet] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+ com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:43)
+2018-06-02 14:18:08.486 [ERROR] [org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter:42] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field resourceMapper in com.sport.bet.core.service.impl.ResourceServiceImpl required a bean of type 'com.sport.bet.core.mapper.ResourceMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.sport.bet.core.mapper.ResourceMapper' in your configuration.
+
+2018-06-02 14:18:13.354 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 7736 (E:\SportsBetWork\sport-parent\sport-web\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-02 14:18:13.355 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:18:13.749 [WARN ] [org.mybatis.spring.mapper.ClassPathMapperScanner:166] - No MyBatis mapper was found in '[com.sport.bet.web]' package. Please check your configuration.
+2018-06-02 14:18:14.376 [INFO ] [org.springframework.boot.context.embedded.EmbeddedWebApplicationContext:276] - Root WebApplicationContext: initialization completed in 987 ms
+2018-06-02 14:18:14.517 [WARN ] [org.springframework.context.support.AbstractApplicationContext:551] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'resourceServiceImpl': Unsatisfied dependency expressed through field 'resourceMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.sport.bet.core.mapper.ResourceMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2018-06-02 14:18:14.535 [WARN ] [org.apache.juli.logging.DirectJDKLog:179] - The web application [sprot#bet] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+ com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:43)
+2018-06-02 14:18:14.619 [ERROR] [org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter:42] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field resourceMapper in com.sport.bet.core.service.impl.ResourceServiceImpl required a bean of type 'com.sport.bet.core.mapper.ResourceMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.sport.bet.core.mapper.ResourceMapper' in your configuration.
+
+2018-06-02 14:19:24.750 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 6888 (E:\SportsBetWork\sport-parent\sport-web\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-02 14:19:24.750 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:19:25.143 [WARN ] [org.mybatis.spring.mapper.ClassPathMapperScanner:166] - No MyBatis mapper was found in '[com.sport.bet.web]' package. Please check your configuration.
+2018-06-02 14:19:25.794 [INFO ] [org.springframework.boot.context.embedded.EmbeddedWebApplicationContext:276] - Root WebApplicationContext: initialization completed in 1013 ms
+2018-06-02 14:19:25.938 [WARN ] [org.springframework.context.support.AbstractApplicationContext:551] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'resourceServiceImpl': Unsatisfied dependency expressed through field 'resourceMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.sport.bet.core.mapper.ResourceMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2018-06-02 14:19:25.956 [WARN ] [org.apache.juli.logging.DirectJDKLog:179] - The web application [sprot#bet] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+ com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:43)
+2018-06-02 14:19:26.035 [ERROR] [org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter:42] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field resourceMapper in com.sport.bet.core.service.impl.ResourceServiceImpl required a bean of type 'com.sport.bet.core.mapper.ResourceMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.sport.bet.core.mapper.ResourceMapper' in your configuration.
+
+2018-06-02 14:25:43.582 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 6820 (E:\SportsBetWork\sport-parent\sport-web\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-02 14:25:43.583 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:25:43.972 [WARN ] [org.mybatis.spring.mapper.ClassPathMapperScanner:166] - No MyBatis mapper was found in '[com.sport.bet.web]' package. Please check your configuration.
+2018-06-02 14:25:44.605 [INFO ] [org.springframework.boot.context.embedded.EmbeddedWebApplicationContext:276] - Root WebApplicationContext: initialization completed in 987 ms
+2018-06-02 14:25:44.723 [WARN ] [org.springframework.context.support.AbstractApplicationContext:551] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'resourceServiceImpl': Unsatisfied dependency expressed through field 'resourceMapper'; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'com.sport.bet.core.mapper.ResourceMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2018-06-02 14:25:44.738 [WARN ] [org.apache.juli.logging.DirectJDKLog:179] - The web application [sprot#bet] appears to have started a thread named [Abandoned connection cleanup thread] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ java.lang.Object.wait(Native Method)
+ java.lang.ref.ReferenceQueue.remove(ReferenceQueue.java:143)
+ com.mysql.jdbc.AbandonedConnectionCleanupThread.run(AbandonedConnectionCleanupThread.java:43)
+2018-06-02 14:25:44.797 [ERROR] [org.springframework.boot.diagnostics.LoggingFailureAnalysisReporter:42] - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field resourceMapper in com.sport.bet.core.service.impl.ResourceServiceImpl required a bean of type 'com.sport.bet.core.mapper.ResourceMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.sport.bet.core.mapper.ResourceMapper' in your configuration.
+
+2018-06-02 14:27:28.377 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 5772 (E:\SportsBetWork\sport-parent\sport-web\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-02 14:27:28.378 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:27:29.423 [INFO ] [org.springframework.boot.context.embedded.EmbeddedWebApplicationContext:276] - Root WebApplicationContext: initialization completed in 1011 ms
+2018-06-02 14:27:29.968 [INFO ] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter:534] - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@37e547da: startup date [Sat Jun 02 14:27:28 CST 2018]; root of context hierarchy
+2018-06-02 14:27:30.021 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/]}" onto java.lang.String com.sport.bet.web.controller.BaseController.home()
+2018-06-02 14:27:30.024 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-06-02 14:27:30.024 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-06-02 14:27:30.044 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-02 14:27:30.045 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:362] - Mapped URL path [/resources/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-02 14:27:30.337 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started Application in 2.131 seconds (JVM running for 2.413)
+2018-06-02 14:39:30.494 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ResourceServiceImplTest on USER-20170225NV with PID 6248 (started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-02 14:39:30.496 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:39:30.522 [INFO ] [org.springframework.context.support.AbstractApplicationContext:583] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@26b3fd41: startup date [Sat Jun 02 14:39:30 CST 2018]; root of context hierarchy
+2018-06-02 14:39:31.926 [INFO ] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter:534] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@26b3fd41: startup date [Sat Jun 02 14:39:30 CST 2018]; root of context hierarchy
+2018-06-02 14:39:31.984 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/]}" onto java.lang.String com.sport.bet.web.controller.BaseController.home()
+2018-06-02 14:39:31.987 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-06-02 14:39:31.988 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-06-02 14:39:32.016 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-02 14:39:32.016 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:362] - Mapped URL path [/resources/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-02 14:39:32.252 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ResourceServiceImplTest in 1.902 seconds (JVM running for 2.499)
+2018-06-02 14:39:32.625 [INFO ] [org.springframework.jdbc.support.SQLErrorCodesFactory:127] - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]
+2018-06-02 14:39:32.656 [INFO ] [org.springframework.context.support.AbstractApplicationContext:984] - Closing org.springframework.web.context.support.GenericWebApplicationContext@26b3fd41: startup date [Sat Jun 02 14:39:30 CST 2018]; root of context hierarchy
+2018-06-02 14:40:49.517 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ResourceServiceImplTest on USER-20170225NV with PID 3444 (started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-02 14:40:49.520 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 14:40:49.544 [INFO ] [org.springframework.context.support.AbstractApplicationContext:583] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@4c39bec8: startup date [Sat Jun 02 14:40:49 CST 2018]; root of context hierarchy
+2018-06-02 14:40:50.844 [INFO ] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter:534] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@4c39bec8: startup date [Sat Jun 02 14:40:49 CST 2018]; root of context hierarchy
+2018-06-02 14:40:50.903 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/]}" onto java.lang.String com.sport.bet.web.controller.BaseController.home()
+2018-06-02 14:40:50.906 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-06-02 14:40:50.906 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-06-02 14:40:50.940 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-02 14:40:50.941 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:362] - Mapped URL path [/resources/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-02 14:40:51.181 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ResourceServiceImplTest in 1.808 seconds (JVM running for 2.265)
+2018-06-02 14:40:51.489 [INFO ] [org.springframework.context.support.AbstractApplicationContext:984] - Closing org.springframework.web.context.support.GenericWebApplicationContext@4c39bec8: startup date [Sat Jun 02 14:40:49 CST 2018]; root of context hierarchy
+2018-06-02 15:14:45.094 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 7192 (E:\SportsBetWork\sport-parent\sport-web\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-02 15:14:45.094 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-02 15:14:45.297 [INFO ] [org.hibernate.validator.internal.util.Version:30] - HV000001: Hibernate Validator 5.3.5.Final
+2018-06-02 15:14:46.084 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Starting service [Tomcat]
+2018-06-02 15:14:46.085 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-06-02 15:14:46.160 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Initializing Spring embedded WebApplicationContext
+2018-06-02 15:14:46.161 [INFO ] [org.springframework.boot.context.embedded.EmbeddedWebApplicationContext:276] - Root WebApplicationContext: initialization completed in 1031 ms
+2018-06-02 15:14:46.731 [INFO ] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter:534] - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@2b6856dd: startup date [Sat Jun 02 15:14:45 CST 2018]; root of context hierarchy
+2018-06-02 15:14:46.780 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/]}" onto java.lang.String com.sport.bet.web.controller.BaseController.home()
+2018-06-02 15:14:46.782 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-06-02 15:14:46.782 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-06-02 15:14:46.801 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-02 15:14:46.801 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:362] - Mapped URL path [/resources/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-02 15:14:46.981 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Initializing ProtocolHandler ["http-nio-8081"]
+2018-06-02 15:14:46.995 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Starting ProtocolHandler ["http-nio-8081"]
+2018-06-02 15:14:47.008 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Using a shared selector for servlet write/read
+2018-06-02 15:14:47.028 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started Application in 2.106 seconds (JVM running for 2.388)
+2018-06-03 14:29:40.295 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 14272 (E:\SportsBetWork\sport-parent\sport-web\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-03 14:29:40.306 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 14:29:40.400 [WARN ] [org.springframework.context.support.AbstractApplicationContext:551] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start embedded container; nested exception is org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+2018-06-03 14:29:40.407 [ERROR] [org.springframework.boot.SpringApplication:771] - Application startup failed
+org.springframework.context.ApplicationContextException: Unable to start embedded container; nested exception is org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.onRefresh(EmbeddedWebApplicationContext.java:137) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:537) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at com.sport.bet.web.Application.main(Application.java:19) [classes/:na]
+Caused by: org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.getEmbeddedServletContainerFactory(EmbeddedWebApplicationContext.java:189) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.createEmbeddedServletContainer(EmbeddedWebApplicationContext.java:162) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.onRefresh(EmbeddedWebApplicationContext.java:134) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	... 8 common frames omitted
+2018-06-03 14:30:10.938 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ResourceServiceImplTest on USER-20170225NV with PID 13580 (started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-03 14:30:10.941 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 14:30:10.999 [INFO ] [org.springframework.context.support.AbstractApplicationContext:583] - Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1757cd72: startup date [Sun Jun 03 14:30:10 CST 2018]; root of context hierarchy
+2018-06-03 14:30:11.481 [INFO ] [org.hibernate.validator.internal.util.Version:30] - HV000001: Hibernate Validator 5.3.5.Final
+2018-06-03 14:30:13.639 [INFO ] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter:534] - Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@1757cd72: startup date [Sun Jun 03 14:30:10 CST 2018]; root of context hierarchy
+2018-06-03 14:30:13.695 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/]}" onto java.lang.String com.sport.bet.web.controller.BaseController.home()
+2018-06-03 14:30:13.698 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-06-03 14:30:13.698 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-06-03 14:30:13.727 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-03 14:30:13.727 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:362] - Mapped URL path [/resources/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-03 14:30:14.096 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ResourceServiceImplTest in 3.5 seconds (JVM running for 4.453)
+2018-06-03 14:30:14.691 [INFO ] [org.springframework.context.support.AbstractApplicationContext:984] - Closing org.springframework.web.context.support.GenericWebApplicationContext@1757cd72: startup date [Sun Jun 03 14:30:10 CST 2018]; root of context hierarchy
+2018-06-03 14:30:23.687 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 12772 (E:\SportsBetWork\sport-parent\sport-web\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-03 14:30:23.688 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 14:30:23.784 [WARN ] [org.springframework.context.support.AbstractApplicationContext:551] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start embedded container; nested exception is org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+2018-06-03 14:30:23.790 [ERROR] [org.springframework.boot.SpringApplication:771] - Application startup failed
+org.springframework.context.ApplicationContextException: Unable to start embedded container; nested exception is org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.onRefresh(EmbeddedWebApplicationContext.java:137) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:537) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at com.sport.bet.web.Application.main(Application.java:19) [classes/:na]
+Caused by: org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.getEmbeddedServletContainerFactory(EmbeddedWebApplicationContext.java:189) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.createEmbeddedServletContainer(EmbeddedWebApplicationContext.java:162) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.onRefresh(EmbeddedWebApplicationContext.java:134) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	... 8 common frames omitted
+2018-06-03 14:32:24.613 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 8512 (E:\SportsBetWork\sport-parent\sport-web\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-03 14:32:24.614 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 14:32:24.709 [WARN ] [org.springframework.context.support.AbstractApplicationContext:551] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start embedded container; nested exception is org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+2018-06-03 14:32:24.716 [ERROR] [org.springframework.boot.SpringApplication:771] - Application startup failed
+org.springframework.context.ApplicationContextException: Unable to start embedded container; nested exception is org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.onRefresh(EmbeddedWebApplicationContext.java:137) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:537) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at com.sport.bet.web.Application.main(Application.java:21) [classes/:na]
+Caused by: org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.getEmbeddedServletContainerFactory(EmbeddedWebApplicationContext.java:189) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.createEmbeddedServletContainer(EmbeddedWebApplicationContext.java:162) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.onRefresh(EmbeddedWebApplicationContext.java:134) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	... 8 common frames omitted
+2018-06-03 14:36:15.794 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 13136 (E:\SportsBetWork\sport-parent\sport-web\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-03 14:36:15.795 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 14:36:15.887 [WARN ] [org.springframework.context.support.AbstractApplicationContext:551] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start embedded container; nested exception is org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+2018-06-03 14:36:15.894 [ERROR] [org.springframework.boot.SpringApplication:771] - Application startup failed
+org.springframework.context.ApplicationContextException: Unable to start embedded container; nested exception is org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.onRefresh(EmbeddedWebApplicationContext.java:137) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:537) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at com.sport.bet.web.Application.main(Application.java:21) [classes/:na]
+Caused by: org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.getEmbeddedServletContainerFactory(EmbeddedWebApplicationContext.java:189) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.createEmbeddedServletContainer(EmbeddedWebApplicationContext.java:162) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.onRefresh(EmbeddedWebApplicationContext.java:134) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	... 8 common frames omitted
+2018-06-03 14:37:34.501 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 13192 (E:\SportsBetWork\sport-parent\sport-web\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-03 14:37:34.502 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 14:37:34.601 [WARN ] [org.springframework.context.support.AbstractApplicationContext:551] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start embedded container; nested exception is org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+2018-06-03 14:37:34.609 [ERROR] [org.springframework.boot.SpringApplication:771] - Application startup failed
+org.springframework.context.ApplicationContextException: Unable to start embedded container; nested exception is org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.onRefresh(EmbeddedWebApplicationContext.java:137) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:537) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at com.sport.bet.web.Application.main(Application.java:21) [classes/:na]
+Caused by: org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.getEmbeddedServletContainerFactory(EmbeddedWebApplicationContext.java:189) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.createEmbeddedServletContainer(EmbeddedWebApplicationContext.java:162) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.onRefresh(EmbeddedWebApplicationContext.java:134) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	... 8 common frames omitted
+2018-06-03 14:40:06.751 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 13664 (E:\SportsBetWork\sport-parent\sport-web\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-03 14:40:06.751 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 14:40:06.845 [WARN ] [org.springframework.context.support.AbstractApplicationContext:551] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start embedded container; nested exception is org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+2018-06-03 14:40:06.852 [ERROR] [org.springframework.boot.SpringApplication:771] - Application startup failed
+org.springframework.context.ApplicationContextException: Unable to start embedded container; nested exception is org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.onRefresh(EmbeddedWebApplicationContext.java:137) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:537) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at com.sport.bet.web.Application.main(Application.java:19) [classes/:na]
+Caused by: org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.getEmbeddedServletContainerFactory(EmbeddedWebApplicationContext.java:189) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.createEmbeddedServletContainer(EmbeddedWebApplicationContext.java:162) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.onRefresh(EmbeddedWebApplicationContext.java:134) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	... 8 common frames omitted
+2018-06-03 14:40:15.896 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 13472 (E:\SportsBetWork\sport-parent\sport-web\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-03 14:40:15.916 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 14:40:16.010 [WARN ] [org.springframework.context.support.AbstractApplicationContext:551] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start embedded container; nested exception is org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+2018-06-03 14:40:16.017 [ERROR] [org.springframework.boot.SpringApplication:771] - Application startup failed
+org.springframework.context.ApplicationContextException: Unable to start embedded container; nested exception is org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.onRefresh(EmbeddedWebApplicationContext.java:137) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:537) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at com.sport.bet.web.Application.main(Application.java:19) [classes/:na]
+Caused by: org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.getEmbeddedServletContainerFactory(EmbeddedWebApplicationContext.java:189) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.createEmbeddedServletContainer(EmbeddedWebApplicationContext.java:162) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.onRefresh(EmbeddedWebApplicationContext.java:134) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	... 8 common frames omitted
+2018-06-03 14:40:32.242 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 13396 (E:\SportsBetWork\sport-parent\sport-web\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-03 14:40:32.242 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 14:40:32.333 [WARN ] [org.springframework.context.support.AbstractApplicationContext:551] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start embedded container; nested exception is org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+2018-06-03 14:40:32.342 [ERROR] [org.springframework.boot.SpringApplication:771] - Application startup failed
+org.springframework.context.ApplicationContextException: Unable to start embedded container; nested exception is org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.onRefresh(EmbeddedWebApplicationContext.java:137) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:537) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at com.sport.bet.web.Application.main(Application.java:17) [classes/:na]
+Caused by: org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.getEmbeddedServletContainerFactory(EmbeddedWebApplicationContext.java:189) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.createEmbeddedServletContainer(EmbeddedWebApplicationContext.java:162) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.onRefresh(EmbeddedWebApplicationContext.java:134) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	... 8 common frames omitted
+2018-06-03 14:42:45.073 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 6996 (E:\SportsBetWork\sport-parent\sport-web\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-03 14:42:45.074 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 14:42:45.279 [INFO ] [org.hibernate.validator.internal.util.Version:30] - HV000001: Hibernate Validator 5.3.5.Final
+2018-06-03 14:42:46.241 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Starting service [Tomcat]
+2018-06-03 14:42:46.242 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-06-03 14:42:46.335 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Initializing Spring embedded WebApplicationContext
+2018-06-03 14:42:46.335 [INFO ] [org.springframework.boot.context.embedded.EmbeddedWebApplicationContext:276] - Root WebApplicationContext: initialization completed in 1223 ms
+2018-06-03 14:42:47.082 [INFO ] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter:534] - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@327b636c: startup date [Sun Jun 03 14:42:45 CST 2018]; root of context hierarchy
+2018-06-03 14:42:47.139 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/]}" onto java.lang.String com.sport.bet.web.controller.BaseController.home()
+2018-06-03 14:42:47.141 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-06-03 14:42:47.141 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-06-03 14:42:47.164 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-03 14:42:47.164 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:362] - Mapped URL path [/resources/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-03 14:42:47.420 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Initializing ProtocolHandler ["http-nio-8081"]
+2018-06-03 14:42:47.442 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Starting ProtocolHandler ["http-nio-8081"]
+2018-06-03 14:42:47.459 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Using a shared selector for servlet write/read
+2018-06-03 14:42:47.487 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started Application in 2.597 seconds (JVM running for 2.894)
+2018-06-03 14:51:51.857 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 13644 (E:\SportsBetWork\sport-parent\sport-web\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-web)
+2018-06-03 14:51:51.858 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 14:51:52.056 [INFO ] [org.hibernate.validator.internal.util.Version:30] - HV000001: Hibernate Validator 5.3.5.Final
+2018-06-03 14:51:52.927 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Starting service [Tomcat]
+2018-06-03 14:51:52.929 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-06-03 14:51:53.015 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Initializing Spring embedded WebApplicationContext
+2018-06-03 14:51:53.016 [INFO ] [org.springframework.boot.context.embedded.EmbeddedWebApplicationContext:276] - Root WebApplicationContext: initialization completed in 1119 ms
+2018-06-03 14:51:53.618 [INFO ] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter:534] - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@327b636c: startup date [Sun Jun 03 14:51:51 CST 2018]; root of context hierarchy
+2018-06-03 14:51:53.667 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/]}" onto java.lang.String com.sport.bet.web.controller.BaseController.home()
+2018-06-03 14:51:53.671 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-06-03 14:51:53.671 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-06-03 14:51:53.693 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-03 14:51:53.693 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:362] - Mapped URL path [/resources/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-03 14:51:53.920 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Initializing ProtocolHandler ["http-nio-8081"]
+2018-06-03 14:51:53.929 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Starting ProtocolHandler ["http-nio-8081"]
+2018-06-03 14:51:53.939 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Using a shared selector for servlet write/read
+2018-06-03 14:51:53.957 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started Application in 2.289 seconds (JVM running for 2.58)

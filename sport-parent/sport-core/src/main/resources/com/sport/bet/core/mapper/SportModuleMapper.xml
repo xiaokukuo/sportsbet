@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sport.bet.core.mapper.SportModuleMapper">
+
+	<resultMap id="SportModuleMap" type="com.sport.bet.bean.model.SportModule">
+		<id column="id" property="id"/>
+		<id column="resourceId" property="resource_id" />
+		<id column="groupName" property="group_name" />
+		<id column="gameLinesPd" property="game_lines_pd" />
+		<id column="firstHalfPd" property="first_half_pd" />
+		<id column="secondHalfPd" property="second_half_pd" />
+	</resultMap>
+
+	<!-- 保存一个Book -->
+	<insert id="insert">
+		insert into sport_module_${tableName}
+		(resource_id, group_name, game_lines_pd, first_half_pd, second_half_pd, create_time)
+		values
+		(#{sportModule.resourceId}, #{sportModule.groupName}, #{sportModule.gameLinesPd}, #{sportModule.firstHalfPd}, #{sportModule.secondHalfPd}, now())
+	</insert>
+
+
+</mapper>

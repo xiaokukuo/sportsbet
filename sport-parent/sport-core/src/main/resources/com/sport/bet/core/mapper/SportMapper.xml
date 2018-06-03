@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sport.bet.core.mapper.SportMapper">
+
+	<resultMap id="SportMap" type="com.sport.bet.bean.model.Sport">
+		<id column="id" property="id"/>
+		<id column="name" property="name" />
+		<id column="pd" property="pd" />
+
+	</resultMap>
+
+	<parameterMap type="com.sport.bet.bean.model.Sport" id="SportParameterMap">
+		<parameter property="id" resultMap="BookResultMap" />
+		<parameter property="name" resultMap="BookResultMap" />
+		<parameter property="pd" resultMap="BookResultMap" />
+	</parameterMap>
+
+	<select id="selectAll" parameterType="java.lang.String"
+		resultMap="SportMap">
+		select * from sport_${tableName};
+	</select>
+	
+	<select id="selectPdByResourceId" resultType="String">
+		select pd from sport_${tableName} where resource_id= #{resourceId};
+	</select>
+
+	<!-- 保存一个Book -->
+	<insert id="insert" parameterMap="SportParameterMap">
+		insert into sport_${tableName}
+		(name,pd,resource_id,create_time)
+		values
+		(#{name},#{pd},#{resourceId},now())
+	</insert>
+
+
+</mapper>

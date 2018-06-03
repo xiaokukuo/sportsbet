@@ -1,0 +1,124 @@
+2018-06-03 14:25:37.590 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 14112 (E:\SportsBetWork\sport-parent\sport-batch\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-batch)
+2018-06-03 14:25:37.591 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 14:25:38.095 [WARN ] [org.springframework.context.support.AbstractApplicationContext:551] - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start embedded container; nested exception is org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+2018-06-03 14:25:38.120 [ERROR] [org.springframework.boot.SpringApplication:771] - Application startup failed
+org.springframework.context.ApplicationContextException: Unable to start embedded container; nested exception is org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.onRefresh(EmbeddedWebApplicationContext.java:137) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:537) ~[spring-context-4.3.12.RELEASE.jar:4.3.12.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.refresh(EmbeddedWebApplicationContext.java:122) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:693) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:360) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1118) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1107) [spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at com.sport.bet.batch.Application.main(Application.java:19) [classes/:na]
+Caused by: org.springframework.context.ApplicationContextException: Unable to start EmbeddedWebApplicationContext due to missing EmbeddedServletContainerFactory bean.
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.getEmbeddedServletContainerFactory(EmbeddedWebApplicationContext.java:189) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.createEmbeddedServletContainer(EmbeddedWebApplicationContext.java:162) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	at org.springframework.boot.context.embedded.EmbeddedWebApplicationContext.onRefresh(EmbeddedWebApplicationContext.java:134) ~[spring-boot-1.5.8.RELEASE.jar:1.5.8.RELEASE]
+	... 8 common frames omitted
+2018-06-03 14:42:57.252 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 7644 (E:\SportsBetWork\sport-parent\sport-batch\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-batch)
+2018-06-03 14:42:57.253 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 14:42:57.501 [INFO ] [org.hibernate.validator.internal.util.Version:30] - HV000001: Hibernate Validator 5.3.5.Final
+2018-06-03 14:42:58.358 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Starting service [Tomcat]
+2018-06-03 14:42:58.359 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-06-03 14:42:58.440 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Initializing Spring embedded WebApplicationContext
+2018-06-03 14:42:58.441 [INFO ] [org.springframework.boot.context.embedded.EmbeddedWebApplicationContext:276] - Root WebApplicationContext: initialization completed in 1145 ms
+2018-06-03 14:42:59.058 [INFO ] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter:534] - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@327b636c: startup date [Sun Jun 03 14:42:57 CST 2018]; root of context hierarchy
+2018-06-03 14:42:59.117 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/bet365/grab/menu],methods=[POST]}" onto public java.util.List<com.sport.bet.bean.model.Sport> com.sport.bet.batch.controller.Bet365Controller.grabBet365Menu(java.lang.String)
+2018-06-03 14:42:59.119 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-06-03 14:42:59.120 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-06-03 14:42:59.145 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-03 14:42:59.145 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:362] - Mapped URL path [/resources/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-03 14:42:59.385 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Initializing ProtocolHandler ["http-nio-8081"]
+2018-06-03 14:42:59.393 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Starting ProtocolHandler ["http-nio-8081"]
+2018-06-03 14:42:59.406 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Using a shared selector for servlet write/read
+2018-06-03 14:42:59.423 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started Application in 2.35 seconds (JVM running for 2.655)
+2018-06-03 14:44:14.861 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-06-03 14:44:14.861 [INFO ] [org.springframework.web.servlet.FrameworkServlet:489] - FrameworkServlet 'dispatcherServlet': initialization started
+2018-06-03 14:44:14.893 [INFO ] [org.springframework.web.servlet.FrameworkServlet:508] - FrameworkServlet 'dispatcherServlet': initialization completed in 32 ms
+2018-06-03 14:44:14.979 [WARN ] [org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver:215] - Request method 'GET' not supported
+2018-06-03 14:53:46.924 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 9956 (E:\SportsBetWork\sport-parent\sport-batch\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-batch)
+2018-06-03 14:53:46.925 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 14:53:47.128 [INFO ] [org.hibernate.validator.internal.util.Version:30] - HV000001: Hibernate Validator 5.3.5.Final
+2018-06-03 14:53:48.010 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Starting service [Tomcat]
+2018-06-03 14:53:48.011 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-06-03 14:53:48.117 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Initializing Spring embedded WebApplicationContext
+2018-06-03 14:53:48.117 [INFO ] [org.springframework.boot.context.embedded.EmbeddedWebApplicationContext:276] - Root WebApplicationContext: initialization completed in 1146 ms
+2018-06-03 14:53:48.787 [INFO ] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter:534] - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@327b636c: startup date [Sun Jun 03 14:53:46 CST 2018]; root of context hierarchy
+2018-06-03 14:53:48.846 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/bet365/grab/menu],methods=[POST]}" onto public java.util.List<com.sport.bet.bean.model.Sport> com.sport.bet.batch.controller.Bet365Controller.grabBet365Menu()
+2018-06-03 14:53:48.849 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-06-03 14:53:48.849 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-06-03 14:53:48.873 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-03 14:53:48.873 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:362] - Mapped URL path [/resources/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-03 14:53:49.118 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Initializing ProtocolHandler ["http-nio-8081"]
+2018-06-03 14:53:49.129 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Starting ProtocolHandler ["http-nio-8081"]
+2018-06-03 14:53:49.142 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Using a shared selector for servlet write/read
+2018-06-03 14:53:49.161 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started Application in 2.42 seconds (JVM running for 2.716)
+2018-06-03 14:54:06.560 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-06-03 14:54:06.560 [INFO ] [org.springframework.web.servlet.FrameworkServlet:489] - FrameworkServlet 'dispatcherServlet': initialization started
+2018-06-03 14:54:06.572 [INFO ] [org.springframework.web.servlet.FrameworkServlet:508] - FrameworkServlet 'dispatcherServlet': initialization completed in 12 ms
+2018-06-03 14:54:06.640 [WARN ] [org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver:215] - Request method 'GET' not supported
+2018-06-03 14:55:48.691 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 13916 (E:\SportsBetWork\sport-parent\sport-batch\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-batch)
+2018-06-03 14:55:48.692 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 14:55:48.912 [INFO ] [org.hibernate.validator.internal.util.Version:30] - HV000001: Hibernate Validator 5.3.5.Final
+2018-06-03 14:55:49.776 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Starting service [Tomcat]
+2018-06-03 14:55:49.778 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-06-03 14:55:49.863 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Initializing Spring embedded WebApplicationContext
+2018-06-03 14:55:49.864 [INFO ] [org.springframework.boot.context.embedded.EmbeddedWebApplicationContext:276] - Root WebApplicationContext: initialization completed in 1136 ms
+2018-06-03 14:55:50.502 [INFO ] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter:534] - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@327b636c: startup date [Sun Jun 03 14:55:48 CST 2018]; root of context hierarchy
+2018-06-03 14:55:50.563 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/bet365/grab/menu],methods=[POST]}" onto public java.lang.String com.sport.bet.batch.controller.Bet365Controller.grabBet365Menu()
+2018-06-03 14:55:50.566 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-06-03 14:55:50.566 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-06-03 14:55:50.593 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-03 14:55:50.593 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:362] - Mapped URL path [/resources/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-03 14:55:50.830 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Initializing ProtocolHandler ["http-nio-8081"]
+2018-06-03 14:55:50.838 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Starting ProtocolHandler ["http-nio-8081"]
+2018-06-03 14:55:50.848 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Using a shared selector for servlet write/read
+2018-06-03 14:55:50.865 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started Application in 2.365 seconds (JVM running for 2.693)
+2018-06-03 14:55:57.134 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-06-03 14:55:57.135 [INFO ] [org.springframework.web.servlet.FrameworkServlet:489] - FrameworkServlet 'dispatcherServlet': initialization started
+2018-06-03 14:55:57.148 [INFO ] [org.springframework.web.servlet.FrameworkServlet:508] - FrameworkServlet 'dispatcherServlet': initialization completed in 13 ms
+2018-06-03 14:55:57.262 [WARN ] [org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver:215] - Request method 'GET' not supported
+2018-06-03 14:56:36.913 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 14172 (E:\SportsBetWork\sport-parent\sport-batch\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-batch)
+2018-06-03 14:56:36.914 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 14:56:37.138 [INFO ] [org.hibernate.validator.internal.util.Version:30] - HV000001: Hibernate Validator 5.3.5.Final
+2018-06-03 14:56:37.987 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Starting service [Tomcat]
+2018-06-03 14:56:37.988 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-06-03 14:56:38.069 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Initializing Spring embedded WebApplicationContext
+2018-06-03 14:56:38.069 [INFO ] [org.springframework.boot.context.embedded.EmbeddedWebApplicationContext:276] - Root WebApplicationContext: initialization completed in 1115 ms
+2018-06-03 14:56:38.731 [INFO ] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter:534] - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@327b636c: startup date [Sun Jun 03 14:56:36 CST 2018]; root of context hierarchy
+2018-06-03 14:56:38.796 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/bet365/grab/menu],methods=[GET]}" onto public java.lang.String com.sport.bet.batch.controller.Bet365Controller.grabBet365Menu()
+2018-06-03 14:56:38.798 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-06-03 14:56:38.799 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-06-03 14:56:38.822 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-03 14:56:38.823 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:362] - Mapped URL path [/resources/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-03 14:56:39.062 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Initializing ProtocolHandler ["http-nio-8081"]
+2018-06-03 14:56:39.072 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Starting ProtocolHandler ["http-nio-8081"]
+2018-06-03 14:56:39.083 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Using a shared selector for servlet write/read
+2018-06-03 14:56:39.100 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started Application in 2.375 seconds (JVM running for 2.685)
+2018-06-03 14:56:46.710 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-06-03 14:56:46.710 [INFO ] [org.springframework.web.servlet.FrameworkServlet:489] - FrameworkServlet 'dispatcherServlet': initialization started
+2018-06-03 14:56:46.722 [INFO ] [org.springframework.web.servlet.FrameworkServlet:508] - FrameworkServlet 'dispatcherServlet': initialization completed in 12 ms
+2018-06-03 14:56:49.026 [INFO ] [org.springframework.jdbc.support.SQLErrorCodesFactory:127] - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]
+2018-06-03 14:57:24.367 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting Application on USER-20170225NV with PID 12700 (E:\SportsBetWork\sport-parent\sport-batch\target\classes started by Administrator in E:\SportsBetWork\sport-parent\sport-batch)
+2018-06-03 14:57:24.368 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-03 14:57:24.595 [INFO ] [org.hibernate.validator.internal.util.Version:30] - HV000001: Hibernate Validator 5.3.5.Final
+2018-06-03 14:57:25.452 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Starting service [Tomcat]
+2018-06-03 14:57:25.453 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Starting Servlet Engine: Apache Tomcat/8.5.23
+2018-06-03 14:57:25.541 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Initializing Spring embedded WebApplicationContext
+2018-06-03 14:57:25.541 [INFO ] [org.springframework.boot.context.embedded.EmbeddedWebApplicationContext:276] - Root WebApplicationContext: initialization completed in 1128 ms
+2018-06-03 14:57:26.181 [INFO ] [org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter:534] - Looking for @ControllerAdvice: org.springframework.boot.context.embedded.AnnotationConfigEmbeddedWebApplicationContext@327b636c: startup date [Sun Jun 03 14:57:24 CST 2018]; root of context hierarchy
+2018-06-03 14:57:26.235 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/bet365/grab/menu],methods=[GET]}" onto public java.util.List<com.sport.bet.bean.model.Sport> com.sport.bet.batch.controller.Bet365Controller.grabBet365Menu()
+2018-06-03 14:57:26.239 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2018-06-03 14:57:26.240 [INFO ] [org.springframework.web.servlet.handler.AbstractHandlerMethodMapping$MappingRegistry:543] - Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2018-06-03 14:57:26.264 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:362] - Mapped URL path [/webjars/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-03 14:57:26.264 [INFO ] [org.springframework.web.servlet.handler.AbstractUrlHandlerMapping:362] - Mapped URL path [/resources/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2018-06-03 14:57:26.503 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Initializing ProtocolHandler ["http-nio-8081"]
+2018-06-03 14:57:26.513 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Starting ProtocolHandler ["http-nio-8081"]
+2018-06-03 14:57:26.523 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Using a shared selector for servlet write/read
+2018-06-03 14:57:26.542 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started Application in 2.36 seconds (JVM running for 2.659)
+2018-06-03 14:57:34.866 [INFO ] [org.apache.juli.logging.DirectJDKLog:179] - Initializing Spring FrameworkServlet 'dispatcherServlet'
+2018-06-03 14:57:34.866 [INFO ] [org.springframework.web.servlet.FrameworkServlet:489] - FrameworkServlet 'dispatcherServlet': initialization started
+2018-06-03 14:57:34.877 [INFO ] [org.springframework.web.servlet.FrameworkServlet:508] - FrameworkServlet 'dispatcherServlet': initialization completed in 11 ms
+2018-06-03 14:57:37.944 [INFO ] [org.springframework.jdbc.support.SQLErrorCodesFactory:127] - SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]

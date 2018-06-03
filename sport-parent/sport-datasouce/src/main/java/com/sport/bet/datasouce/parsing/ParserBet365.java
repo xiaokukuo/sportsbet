@@ -5,65 +5,50 @@ import java.util.List;
 
 import org.springframework.stereotype.Component;
 
-import com.sport.bet.bean.model.Sport;
+import com.sport.bet.bean.dto.SportMenuDTO;
 import com.sport.bet.bean.model.SportModule;
 import com.sport.bet.common.utils.HttpTool;
 
 @Component
-public class ParserBet365 extends GenericParser {
+public class ParserBet365 extends GenericParser{
 
-	public static String  menu_separator = "\\|CL;";
+	private static String  SEPARATOR_CL = "\\|CL;";
 	
-	public static String  sub_separator= "\\|EV;";
+	private static String  SEPARATOR_EV= "\\|EV;";
+	
+	private static String  EV= "|EV;";
+	
+	private static String  SEPARATOR_MA= "\\|MA;";
 	
 	@Override
-	public List<Sport> parseMenu(String url, int resourceId) {
-		List<Sport> sportList = new ArrayList<>();
-		String response = HttpTool.getSport365(url);
+	public List<SportMenuDTO> parseMenu(String url) {
 		
+		List<SportMenuDTO> sportMenuList = new ArrayList<SportMenuDTO>();
+		SportMenuDTO sprotMenu= null;
+		
+		String response = HttpTool.getSport365(url);
 		if(!response.startsWith("F|CL;") || !response.endsWith("|")){
 			System.err.println("返回报文错误");
 		}
 		
-		response = response.substring(5,response.length());
-		String [] strArr = response.split(menu_separator);
+		String [] menuLines = response.split(SEPARATOR_CL);
 		
-		Sport sport = null;
-		for (int i = 0; i < strArr.length; i++) {
-			String temp = strArr[i];
-			if(temp.contains(sub_separator)){
+		for (String menuLine : menuLines) {
+			if(menuLine.contains(EV) || menuLine.startsWith("F") || menuLine.substring(3).startsWith("-")){
 				continue;
 			}
 			
-			String[] subArr = temp.split("\\;");
+			String menuLineTemp = menuLine.substring(menuLine.indexOf("NA"));
+			String[] elements = menuLineTemp.split("\\;");
+
+			sprotMenu = new SportMenuDTO();
+			sprotMenu.setSportName(elements[0].substring(3));
+			sprotMenu.setSportPd(elements[1].substring(3));
 			
-			String key = null;
-			String value = null;
-			
-			for (int j = 0; j < subArr.length; j++) {
-				String subTemp = subArr[j].trim();
-				
-				if(subTemp.startsWith("ID") && subTemp.substring(3).startsWith("-")){
-					break;
-				}
-				
-				if(subTemp.startsWith("NA")){
-					key = subTemp.substring(3);
-				}
-				if(subTemp.startsWith("PD")){
-					value = subTemp;
-				}
-			}
-			if(key != null && value != null){
-				sport = new Sport();
-				sport.setName(key);
-				sport.setPd(value);
-				sportList.add(sport);
-			}
-			
+			sportMenuList.add(sprotMenu);
 		}
 		
-		return sportList;
+		return sportMenuList;
 	}
 
 	@Override
@@ -73,9 +58,8 @@ public class ParserBet365 extends GenericParser {
 		if(!response.startsWith("F|CL;") || !response.endsWith("|")){
 			System.err.println("返回报文错误");
 		}
-		//System.err.println(response);
 		
-		String [] strArr = response.split(sub_separator);
+		String [] strArr = response.split(SEPARATOR_EV);
 		
 		SportModule sportGame = null;
 		for (int i = 0; i < strArr.length; i++) {

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.sport.bet.bean.model.Sport;
+import com.sport.bet.bean.dto.SportMenuDTO;
 import com.sport.bet.datasouce.parsing.ParserBet365;
 import com.sport.bet.datasouce.service.Bet365Service;
 
@@ -24,11 +24,11 @@ public class Bet365Controller {
 	
 	@RequestMapping(method = {RequestMethod.GET}, value = "/grab/menu")
 	@ResponseBody
-	public List<Sport> grabBet365Menu() {
+	public List<SportMenuDTO> grabBet365Menu() {
 		
-		List<Sport> sportList = parserBet365.parseMenu("https://www.365sport365.com/SportsBook.API/web?lid=10&zid=0&pd=%23AL%23&cid=42&ctid=42",1);
+	//	List<Sport> sportList = parserBet365.parseMenu("https://www.365sport365.com/SportsBook.API/web?lid=10&zid=0&pd=%23AL%23&cid=42&ctid=42",1);
 		
-		return bet365Service.saveSportMenu(sportList);
+		return null;//bet365Service.saveSportMenu(sportList);
 		
 	}
 	

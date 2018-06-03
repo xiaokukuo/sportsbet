@@ -62,6 +62,10 @@ public class GrapHandler {
 			String moduleUrl = URL+URLEncoder.encode(sport.getSportPd(), "UTF-8");
 			
 			List<SportModule> sportModuleList = parserBet365.parseSportModule(moduleUrl, sport.getResourceId());
+			
+			for (SportModule sportModule : sportModuleList) {
+				System.err.println(sportModule.toString());
+			}
 				
 		}
 	}

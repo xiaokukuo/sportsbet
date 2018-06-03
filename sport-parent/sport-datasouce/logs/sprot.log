@@ -407,3 +407,54 @@ Caused by: org.springframework.boot.autoconfigure.jdbc.DataSourceProperties$Data
 2018-06-04 01:01:04.712 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ParserBet365Test on USER-20170225NV with PID 15968 (started by Administrator in E:\github\sportsbet\sport-parent\sport-datasouce)
 2018-06-04 01:01:04.714 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
 2018-06-04 01:01:05.533 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ParserBet365Test in 0.974 seconds (JVM running for 1.454)
+2018-06-04 01:26:11.189 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ParserBet365Test on USER-20170225NV with PID 10764 (started by Administrator in E:\github\sportsbet\sport-parent\sport-datasouce)
+2018-06-04 01:26:11.191 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-04 01:26:11.995 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ParserBet365Test in 0.957 seconds (JVM running for 1.429)
+2018-06-04 01:29:05.545 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ParserBet365Test on USER-20170225NV with PID 15556 (started by Administrator in E:\github\sportsbet\sport-parent\sport-datasouce)
+2018-06-04 01:29:05.548 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-04 01:29:06.370 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ParserBet365Test in 0.975 seconds (JVM running for 1.475)
+2018-06-04 01:29:58.496 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ParserBet365Test on USER-20170225NV with PID 924 (started by Administrator in E:\github\sportsbet\sport-parent\sport-datasouce)
+2018-06-04 01:29:58.501 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-04 01:29:59.300 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ParserBet365Test in 0.955 seconds (JVM running for 1.409)
+2018-06-04 01:32:03.584 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ParserBet365Test on USER-20170225NV with PID 10112 (started by Administrator in E:\github\sportsbet\sport-parent\sport-datasouce)
+2018-06-04 01:32:03.587 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-04 01:32:04.357 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ParserBet365Test in 0.916 seconds (JVM running for 1.373)
+2018-06-04 01:33:02.312 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ParserBet365Test on USER-20170225NV with PID 14872 (started by Administrator in E:\github\sportsbet\sport-parent\sport-datasouce)
+2018-06-04 01:33:02.315 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-04 01:33:03.116 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ParserBet365Test in 0.952 seconds (JVM running for 1.403)
+2018-06-04 01:45:51.730 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ParserBet365Test on USER-20170225NV with PID 15552 (started by Administrator in E:\github\sportsbet\sport-parent\sport-datasouce)
+2018-06-04 01:45:51.732 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-04 01:45:52.511 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ParserBet365Test in 0.924 seconds (JVM running for 1.378)
+2018-06-04 01:53:07.781 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ParserBet365Test on USER-20170225NV with PID 3588 (started by Administrator in E:\github\sportsbet\sport-parent\sport-datasouce)
+2018-06-04 01:53:07.784 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-04 01:53:08.616 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ParserBet365Test in 0.993 seconds (JVM running for 1.479)
+2018-06-04 01:53:20.365 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ParserBet365Test on USER-20170225NV with PID 10940 (started by Administrator in E:\github\sportsbet\sport-parent\sport-datasouce)
+2018-06-04 01:53:20.367 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-04 01:53:21.161 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ParserBet365Test in 0.947 seconds (JVM running for 1.401)
+2018-06-04 01:59:52.572 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ParserBet365Test on USER-20170225NV with PID 9544 (started by Administrator in E:\github\sportsbet\sport-parent\sport-datasouce)
+2018-06-04 01:59:52.575 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-04 01:59:53.366 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ParserBet365Test in 0.941 seconds (JVM running for 1.403)
+2018-06-04 02:01:44.939 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ParserBet365Test on USER-20170225NV with PID 15840 (started by Administrator in E:\github\sportsbet\sport-parent\sport-datasouce)
+2018-06-04 02:01:44.941 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-04 02:01:45.726 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ParserBet365Test in 0.934 seconds (JVM running for 1.415)
+2018-06-04 02:02:22.948 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ParserBet365Test on USER-20170225NV with PID 13272 (started by Administrator in E:\github\sportsbet\sport-parent\sport-datasouce)
+2018-06-04 02:02:22.950 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-04 02:02:23.724 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ParserBet365Test in 0.92 seconds (JVM running for 1.387)
+2018-06-04 02:03:17.202 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ParserBet365Test on USER-20170225NV with PID 16232 (started by Administrator in E:\github\sportsbet\sport-parent\sport-datasouce)
+2018-06-04 02:03:17.204 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-04 02:03:18.006 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ParserBet365Test in 0.941 seconds (JVM running for 1.398)
+2018-06-04 02:06:13.790 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ParserBet365Test on USER-20170225NV with PID 16220 (started by Administrator in E:\github\sportsbet\sport-parent\sport-datasouce)
+2018-06-04 02:06:13.794 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-04 02:06:14.613 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ParserBet365Test in 0.972 seconds (JVM running for 1.428)
+2018-06-04 02:24:21.177 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ParserBet365Test on USER-20170225NV with PID 4888 (started by Administrator in E:\github\sportsbet\sport-parent\sport-datasouce)
+2018-06-04 02:24:21.179 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-04 02:24:21.927 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ParserBet365Test in 0.889 seconds (JVM running for 1.342)
+2018-06-04 02:27:06.193 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting ParserBet365Test on USER-20170225NV with PID 14452 (started by Administrator in E:\github\sportsbet\sport-parent\sport-datasouce)
+2018-06-04 02:27:06.195 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-04 02:27:06.944 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started ParserBet365Test in 0.894 seconds (JVM running for 1.33)
+2018-06-04 02:35:15.421 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting GroupHandlerTest on USER-20170225NV with PID 13828 (started by Administrator in E:\github\sportsbet\sport-parent\sport-datasouce)
+2018-06-04 02:35:15.423 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-04 02:35:16.187 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started GroupHandlerTest in 0.909 seconds (JVM running for 1.348)
+2018-06-04 02:36:07.175 [INFO ] [org.springframework.boot.StartupInfoLogger:48] - Starting GroupHandlerTest on USER-20170225NV with PID 10824 (started by Administrator in E:\github\sportsbet\sport-parent\sport-datasouce)
+2018-06-04 02:36:07.178 [INFO ] [org.springframework.boot.SpringApplication:593] - No active profile set, falling back to default profiles: default
+2018-06-04 02:36:07.915 [INFO ] [org.springframework.boot.StartupInfoLogger:57] - Started GroupHandlerTest in 0.88 seconds (JVM running for 1.338)

@@ -14,11 +14,15 @@ public class ParserBet365 extends GenericParser{
 
 	private static String  SEPARATOR_CL = "\\|CL;";
 	
-	private static String  SEPARATOR_EV= "\\|EV;";
+	private static String  SEPARATOR_EV = "\\|EV;";
+	
+	private static String  SEPARATOR_MA = "\\|MA;";
+	
+	private static String  SEPARATOR_PA = "\\|PA;";
 	
 	private static String  EV= "|EV;";
 	
-	private static String  SEPARATOR_MA= "\\|MA;";
+	
 	
 	@Override
 	public List<SportMenuDTO> parseMenu(String url) {
@@ -51,37 +55,71 @@ public class ParserBet365 extends GenericParser{
 		return sportMenuList;
 	}
 
+	//https://www.365sport365.com/SportsBook.API/web?lid=10&zid=0&cid=42&ctid=42&pd=%23AS%23B18%23
 	@Override
 	public List<SportModule> parseSportModule(String url, int resourceId) {
-		List<SportModule> sprotGameList = new ArrayList<SportModule>();
+		List<SportModule> sportModuleList = new ArrayList<SportModule>();
+		SportModule sportModule = null;
+		
 		String response = HttpTool.getSport365(url);
+		
 		if(!response.startsWith("F|CL;") || !response.endsWith("|")){
 			System.err.println("返回报文错误");
 		}
 		
-		String [] strArr = response.split(SEPARATOR_EV);
+		String [] sportGroupLines = response.split(SEPARATOR_EV);
 		
-		SportModule sportGame = null;
-		for (int i = 0; i < strArr.length; i++) {
-			String temp = strArr[i];
+		for (String sportGroupLine : sportGroupLines) {
+			if(!sportGroupLine.contains("比赛投注")){
+				continue;
+			}
+			sportModule = new SportModule();
+			sportModule.setResourceId(resourceId);
+			String groupName = sportGroupLine.substring(0,sportGroupLine.indexOf(";DO"));
+			sportModule.setGroupName(groupName.split(";")[1].substring(3));
 			
-			if(temp.contains("比赛投注")){
-				sportGame = new SportModule();
-				sportGame.setResourceId(resourceId);
-				
-				String groupName = temp.substring(temp.indexOf("NA=")+3,temp.indexOf(";DO"));
-				sportGame.setGroupName(groupName);
-				
-				String gameLines = temp.substring(temp.indexOf("比赛投注"));
-				String gameLinesPd = gameLines.substring(gameLines.indexOf("PD"), gameLines.indexOf(";FF="));
-				sportGame.setGameLinesPd(gameLinesPd);
-				
-				sprotGameList.add(sportGame);
+			this.parseGroupLine(sportGroupLine, sportModule);
+			
+			sportModuleList.add(sportModule);
+		}
+		
+		return sportModuleList;
+	}
+	
+	private void parseGroupLine(String line,SportModule sportModule){
+		String [] elements = line.split(SEPARATOR_MA);
+		int lenght = 0;
+		for (String ele : elements) {
+			if(ele.contains("投注盘")){
+				String [] items = ele.split(SEPARATOR_PA);
+				for (String item : items) {
+					lenght = item.length()-5;
+					if(item.contains("比赛投注")){
+						sportModule.setGameLinesPd(item.substring(item.indexOf("PD")+3, lenght));
+					}
+					if(item.contains("上半场")){
+						sportModule.setFirstHalfPd(item.substring(item.indexOf("PD")+3, lenght));
+					}
+					if(item.contains("下半场")){
+						sportModule.setSecondHalfPd(item.substring(item.indexOf("PD")+3, lenght));
+					}
+					if(item.contains("第1赛节")){
+						sportModule.setFirstQuarterPd(item.substring(item.indexOf("PD")+3, lenght));
+					}
+					if(item.contains("第2赛节")){
+						sportModule.setSecondQuarterPd(item.substring(item.indexOf("PD")+3, lenght));
+					}
+					if(item.contains("第3赛节")){
+						sportModule.setThirdQuarterPd(item.substring(item.indexOf("PD")+3, lenght));
+					}
+					if(item.contains("第4赛节")){
+						sportModule.setFourthQuarterPd(item.substring(item.indexOf("PD")+3, lenght));
+					}
+				}
+				break;
 			}
 			
 		}
-		
-		return sprotGameList;
 	}
 	
 }

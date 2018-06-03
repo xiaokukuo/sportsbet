@@ -11,7 +11,7 @@ public abstract class GenericParser {
 	
 	public static String  SUB_SEPARATOR= "\\|EV;";
 	
-	abstract List<Sport> parseMenu(String url);
+	abstract List<Sport> parseMenu(String url, int resourceId);
 	
 	abstract List<SportModule> parseSportModule(String sportId, int resourceId);
 	

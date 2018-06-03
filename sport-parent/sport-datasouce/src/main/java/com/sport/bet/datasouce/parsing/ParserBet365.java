@@ -17,7 +17,7 @@ public class ParserBet365 extends GenericParser {
 	public static String  sub_separator= "\\|EV;";
 	
 	@Override
-	public List<Sport> parseMenu(String url) {
+	public List<Sport> parseMenu(String url, int resourceId) {
 		List<Sport> sportList = new ArrayList<>();
 		String response = HttpTool.getSport365(url);
 		
@@ -83,7 +83,7 @@ public class ParserBet365 extends GenericParser {
 			
 			if(temp.contains("比赛投注")){
 				sportGame = new SportModule();
-				sportGame.setResourceId(i);
+				sportGame.setResourceId(resourceId);
 				
 				String groupName = temp.substring(temp.indexOf("NA=")+3,temp.indexOf(";DO"));
 				sportGame.setGroupName(groupName);

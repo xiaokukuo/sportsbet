@@ -26,7 +26,7 @@ public class Bet365Controller {
 	@ResponseBody
 	public List<Sport> grabBet365Menu() {
 		
-		List<Sport> sportList = parserBet365.parseMenu("https://www.365sport365.com/SportsBook.API/web?lid=10&zid=0&pd=%23AL%23&cid=42&ctid=42");
+		List<Sport> sportList = parserBet365.parseMenu("https://www.365sport365.com/SportsBook.API/web?lid=10&zid=0&pd=%23AL%23&cid=42&ctid=42",1);
 		
 		return bet365Service.saveSportMenu(sportList);
 		

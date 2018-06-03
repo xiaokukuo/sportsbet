@@ -63,18 +63,11 @@ public class GrapHandler {
 			List<SportModule> sportModuleList = parserBet365.parseSportModule(getUrl(sport.getSportPd()), sport.getResourceId());
 			
 			for (SportModule sportModule : sportModuleList) {
-				if(sportModule.getGroupName().equals("智利SAESA联赛")){
-					
-					List<SportModuleGame> teamList = parserBet365.parseSportModuleGame(getUrl(sportModule.getGameLinesPd()), 1,sportModule.getGroupName());
-					for (SportModuleGame sportModuleGame : teamList) {
-						System.err.println(sportModuleGame.toString());
-					}
-					break;
-				}
-				/*List<SportModuleGame> teamList = parserBet365.parseSportModuleGame(getUrl(sportModule.getGameLinesPd()), 1,sportModule.getGroupName());
+
+				List<SportModuleGame> teamList = parserBet365.parseSportModuleGame(getUrl(sportModule.getGameLinesPd()), 1,sportModule.getGroupName());
 				for (SportModuleGame sportModuleGame : teamList) {
 					System.err.println(sportModuleGame.toString());
-				}*/
+				}
 			}
 				
 		}

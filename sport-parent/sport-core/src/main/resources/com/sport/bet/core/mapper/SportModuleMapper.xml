@@ -14,18 +14,22 @@
 	<!-- 保存一个Book -->
 	<insert id="insert" keyProperty="sportModule.id" useGeneratedKeys="true">
 		insert into sport_module_${tableName}
-		(resource_id, group_name, game_lines_pd, first_half_pd, second_half_pd, create_time)
+		(resource_id, group_name, game_lines_pd, first_half_pd, second_half_pd, first_quarter_pd, second_quarter_pd,
+		   third_quarter_pd, fourth_quarter_pd, create_time)
 		values
-		(#{sportModule.resourceId}, #{sportModule.groupName}, #{sportModule.gameLinesPd}, #{sportModule.firstHalfPd}, #{sportModule.secondHalfPd}, now())
+		(#{sportModule.resourceId}, #{sportModule.groupName}, #{sportModule.gameLinesPd}, #{sportModule.firstHalfPd}, #{sportModule.secondHalfPd},
+		#{sportModule.firstQuarterPd}, #{sportModule.secondQuarterPd}, #{sportModule.thirdQuarterPd}, #{sportModule.fourthQuarterPd} , now())
 	</insert>
 
 	<insert id="insertByBatch">
         insert into sport_module_${tableName}
-		(resource_id, group_name, game_lines_pd, first_half_pd, second_half_pd, create_time)
+		(resource_id, group_name, game_lines_pd, first_half_pd, second_half_pd, first_quarter_pd, second_quarter_pd,
+		   third_quarter_pd, fourth_quarter_pd, create_time)
         values
         <foreach collection="list" item="item" index="index" separator=",">
-           (#{item.resourceId}, #{item.groupName}, #{item.gameLinesPd}, #{item.firstHalfPd}, #{item.secondHalfPd}, now())
+           (#{item.resourceId}, #{item.groupName}, #{item.gameLinesPd}, #{item.firstHalfPd}, #{item.secondHalfPd},
+           #{item.firstQuarterPd}, #{item.secondQuarterPd}, #{item.thirdQuarterPd}, #{item.fourthQuarterPd} , now())
         </foreach>
     </insert>
-
+    
 </mapper>

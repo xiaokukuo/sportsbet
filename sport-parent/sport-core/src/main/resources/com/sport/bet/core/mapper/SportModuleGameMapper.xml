@@ -14,20 +14,20 @@
 	</resultMap>
 
 	<insert id="insert" keyProperty="sportGame.id" useGeneratedKeys="true">
-		insert into sport_module_${tbName}
+		insert into sport_module_game_${tbName}
 		(resource_id, sport_group_id, team_name1, team_name2, deail_pd, game_time,game_type, create_time)
 		values
-		(#{sportGame.resourceId}, #{sportGame.sprotGroupId}, #{sportGame.teamName1}, #{sportGame.teamName2},
+		(#{sportGame.resourceId}, #{sportGame.sportGroupId}, #{sportGame.teamName1}, #{sportGame.teamName2},
 		 #{sportGame.deailPd}, #{sportGame.gameTime}, #{sportGame.gameType}, now())
 	</insert>
 	
 	
 	<insert id="insertByBatch">
-        insert into sport_module_${tbName}
+        insert into sport_module_game_${tbName}
 		(resource_id, sport_group_id, team_name1, team_name2, deail_pd, game_time,game_type, create_time)
         values
         <foreach collection="list" item="item" index="index" separator=",">
-            (#{item.resourceId}, #{item.sprotGroupId}, #{item.teamName1}, #{item.teamName2},
+            (#{item.resourceId}, #{item.sportGroupId}, #{item.teamName1}, #{item.teamName2},
 		 		#{item.deailPd}, #{item.gameTime}, #{item.gameType}, now())
         </foreach>
     </insert>

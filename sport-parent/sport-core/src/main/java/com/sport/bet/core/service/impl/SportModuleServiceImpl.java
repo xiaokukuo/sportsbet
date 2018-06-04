@@ -15,7 +15,8 @@ public class SportModuleServiceImpl implements ISportModuleService {
 	
 	@Override
 	public int save(SportModule sportModule, String tableName) {
-		return sportModuleMapper.insert(sportModule, tableName);
+		sportModuleMapper.insert(sportModule, tableName);
+		return sportModule.getId();
 	}
 
 }

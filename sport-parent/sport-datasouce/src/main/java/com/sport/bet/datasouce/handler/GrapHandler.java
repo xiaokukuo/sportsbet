@@ -14,6 +14,7 @@ import com.sport.bet.bean.model.Resource;
 import com.sport.bet.bean.model.SportModule;
 import com.sport.bet.bean.model.SportModuleGame;
 import com.sport.bet.core.service.impl.ResourceServiceImpl;
+import com.sport.bet.core.service.impl.SportModuleServiceImpl;
 import com.sport.bet.datasouce.parsing.ParserBet365;
 import com.sport.bet.datasouce.service.Bet365Service;
 
@@ -27,22 +28,14 @@ public class GrapHandler {
 	private Bet365Service bet365Service;
 	
 	@Autowired
+	private SportModuleServiceImpl sportModuleService;
+	
+	@Autowired
 	private ResourceServiceImpl resourceService;
 	
 	private static String URL = "https://www.365sport365.com/SportsBook.API/web?lid=10&zid=0&cid=42&ctid=42&pd=";
 	
-	public void grabGpropGame(String pd, int resourceId){
-	
-		try {
-			URL = URL + URLEncoder.encode(pd.substring(3), "UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
-		
-		List<SportModule> sportGameList = parserBet365.parseSportModule(URL, resourceId);
-		
-		bet365Service.saveSportGame(sportGameList);
-	}
+	private static String TABALE_NAME_365 = "365";
 	
 	public void grabGroupModule() throws UnsupportedEncodingException{
 		List<Resource> listResource = resourceService.findAll();
@@ -63,6 +56,8 @@ public class GrapHandler {
 			List<SportModule> sportModuleList = parserBet365.parseSportModule(getUrl(sport.getSportPd()), sport.getResourceId());
 			
 			for (SportModule sportModule : sportModuleList) {
+				
+				int id = sportModuleService.save(sportModule, TABALE_NAME_365);
 
 				List<SportModuleGame> teamList = parserBet365.parseSportModuleGame(getUrl(sportModule.getGameLinesPd()), 1,sportModule.getGroupName());
 				for (SportModuleGame sportModuleGame : teamList) {

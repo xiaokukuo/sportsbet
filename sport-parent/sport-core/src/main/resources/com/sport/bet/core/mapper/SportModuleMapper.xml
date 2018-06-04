@@ -12,7 +12,7 @@
 	</resultMap>
 
 	<!-- 保存一个Book -->
-	<insert id="insert">
+	<insert id="insert" keyProperty="sportModule.id" useGeneratedKeys="true">
 		insert into sport_module_${tableName}
 		(resource_id, group_name, game_lines_pd, first_half_pd, second_half_pd, create_time)
 		values

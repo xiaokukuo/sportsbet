@@ -21,6 +21,7 @@ public class SportModuleServiceTest extends BaseTest {
 		sport.setGroupName("NBA");
 		sport.setGameLinesPd("psd");
 				
-		sportModuleService.save(sport,"365");
+		int id = sportModuleService.save(sport,"365");
+		System.out.println(id);
 	}
 }

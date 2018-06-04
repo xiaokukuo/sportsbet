@@ -13,7 +13,7 @@
 		<id column="gameType" property="game_type" />
 	</resultMap>
 
-	<insert id="insert">
+	<insert id="insert" keyProperty="sportGame.id" useGeneratedKeys="true">
 		insert into sport_module_${tbName}
 		(resource_id, sprot_group_id, team_name1, team_name2, deail_pd, game_time,game_type, create_time)
 		values

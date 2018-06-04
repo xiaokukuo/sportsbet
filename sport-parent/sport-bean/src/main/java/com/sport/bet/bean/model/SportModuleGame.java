@@ -2,6 +2,8 @@ package com.sport.bet.bean.model;
 
 public class SportModuleGame extends BaseBean {
 
+	private int resourceId;
+	
 	private int sprotGroupId;
 
 	private String teamName1;
@@ -13,6 +15,14 @@ public class SportModuleGame extends BaseBean {
 	private String gameType;
 
 	private String gameTime;
+	
+	public int getResourceId() {
+		return resourceId;
+	}
+
+	public void setResourceId(int resourceId) {
+		this.resourceId = resourceId;
+	}
 
 	public int getSprotGroupId() {
 		return sprotGroupId;

@@ -1,7 +1,6 @@
 package com.sport.bet.datasouce.parsing;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
@@ -111,6 +110,7 @@ public class ParserBet365 extends GenericParser{
 					timeIndex = item1.indexOf("BC");
 					if(index > 0 && timeIndex > 0){
 						gameTeam = new SportModuleGame();
+						gameTeam.setResourceId(resourceId);
 						gameTeam.setSportGroupId(moduleId);
 						gameTeam.setTeamName1(item1.substring(0, item1.indexOf(";"))); 
 						gameTeam.setTeamName2(item2.substring(0, item2.indexOf(";"))); 

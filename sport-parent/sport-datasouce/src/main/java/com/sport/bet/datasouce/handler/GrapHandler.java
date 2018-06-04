@@ -74,7 +74,10 @@ public class GrapHandler {
 				List<SportModuleGame> teamList = parserBet365.parseSportModuleGame(getUrl(sportModule.getGameLinesPd()),resourceId, moduleId);
 				
 				// 批量保存SportMoudleGame
-				sportModuleGameService.saveByBatch(teamList, TABALE_NAME_365);
+				if(teamList != null && teamList.size() > 0){
+					sportModuleGameService.saveByBatch(teamList, TABALE_NAME_365);
+				}
+				
 			}
 				
 		}

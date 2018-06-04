@@ -18,4 +18,6 @@ public abstract class GenericParser {
 	
 	abstract List<SportModuleGame> parseSportModuleGame(String url,int resourceId, int moduleId);
 	
+	abstract void parseSportGameScore(String url,int resourceId, int gameId);
+	
 }

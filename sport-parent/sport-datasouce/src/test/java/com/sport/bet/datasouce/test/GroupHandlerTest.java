@@ -18,4 +18,14 @@ public class GroupHandlerTest  extends BaseTest {
 		grapHandler.grabGroupModule();
 	}
 	
+	
+	
+	@Test
+	public void grapHandlerTeamSgao() throws UnsupportedEncodingException{
+		String Pd = "#AC#B18#C20559281#D19#E5757607#F19#P^48#Q^1#W^36";
+		
+		grapHandler.grabScore(Pd);
+		
+	}
+	
 }

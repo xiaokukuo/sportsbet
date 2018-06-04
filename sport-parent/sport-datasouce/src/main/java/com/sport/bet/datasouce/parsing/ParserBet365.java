@@ -131,6 +131,19 @@ public class ParserBet365 extends GenericParser{
 		return gameTeamList;
 	}
 	
+	@Override
+	public void parseSportGameScore(String url, int resourceId, int gameId) {
+		String response = HttpTool.getSport365(url);
+		String [] gameLines = response.split(SEPARATOR_EV);
+		
+		response = gameLines[1];
+		gameLines = response.split("\\|MG");
+		
+		for (String gameline : gameLines) {
+			System.out.println(gameline);
+		}
+	}
+	
 	private void parseGroupLine(String line,SportModule sportModule){
 		String [] elements = line.split(SEPARATOR_MA);
 		int lenght = 0;
@@ -166,5 +179,7 @@ public class ParserBet365 extends GenericParser{
 			
 		}
 	}
+
+	
 	
 }

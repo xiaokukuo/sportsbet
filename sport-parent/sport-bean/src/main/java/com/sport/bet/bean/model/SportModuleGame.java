@@ -4,7 +4,7 @@ public class SportModuleGame extends BaseBean {
 
 	private int resourceId;
 	
-	private int sprotGroupId;
+	private int sportGroupId;
 
 	private String teamName1;
 
@@ -24,12 +24,12 @@ public class SportModuleGame extends BaseBean {
 		this.resourceId = resourceId;
 	}
 
-	public int getSprotGroupId() {
-		return sprotGroupId;
+	public int getSportGroupId() {
+		return sportGroupId;
 	}
 
-	public void setSprotGroupId(int sprotGroupId) {
-		this.sprotGroupId = sprotGroupId;
+	public void setSportGroupId(int sportGroupId) {
+		this.sportGroupId = sportGroupId;
 	}
 
 	public String getTeamName1() {
@@ -74,8 +74,9 @@ public class SportModuleGame extends BaseBean {
 
 	@Override
 	public String toString() {
-		return "SportModuleGame [sprotGroupId=" + sprotGroupId + ", teamName1=" + teamName1 + ", teamName2=" + teamName2
-				+ ", deailPd=" + deailPd + ", gameType=" + gameType + ", gameTime=" + gameTime + "]";
+		return "SportModuleGame [resourceId=" + resourceId + ", sportGroupId=" + sportGroupId + ", teamName1="
+				+ teamName1 + ", teamName2=" + teamName2 + ", deailPd=" + deailPd + ", gameType=" + gameType
+				+ ", gameTime=" + gameTime + "]";
 	}
 
 }

@@ -87,12 +87,11 @@ public class ParserBet365 extends GenericParser{
 	}
 	
 	@Override
-	public List<SportModuleGame> parseSportModuleGame(String url, int moduleId ,String name) {
+	public List<SportModuleGame> parseSportModuleGame(String url,int resourceId, int moduleId) {
 		List<SportModuleGame> gameTeamList = new ArrayList<SportModuleGame>();
 		SportModuleGame gameTeam = null;
 		
 		String response = HttpTool.getSport365(url);
-		
 		
 		String [] gameLines = response.split(SEPARATOR_MA);
 		
@@ -112,6 +111,7 @@ public class ParserBet365 extends GenericParser{
 					timeIndex = item1.indexOf("BC");
 					if(index > 0 && timeIndex > 0){
 						gameTeam = new SportModuleGame();
+						gameTeam.setSportGroupId(moduleId);
 						gameTeam.setTeamName1(item1.substring(0, item1.indexOf(";"))); 
 						gameTeam.setTeamName2(item2.substring(0, item2.indexOf(";"))); 
 						

@@ -14,6 +14,7 @@ import com.sport.bet.bean.model.Resource;
 import com.sport.bet.bean.model.SportModule;
 import com.sport.bet.bean.model.SportModuleGame;
 import com.sport.bet.core.service.impl.ResourceServiceImpl;
+import com.sport.bet.core.service.impl.SportModuleGameServiceImpl;
 import com.sport.bet.core.service.impl.SportModuleServiceImpl;
 import com.sport.bet.datasouce.parsing.ParserBet365;
 import com.sport.bet.datasouce.service.Bet365Service;
@@ -33,6 +34,9 @@ public class GrapHandler {
 	@Autowired
 	private ResourceServiceImpl resourceService;
 	
+	@Autowired
+	private SportModuleGameServiceImpl sportModuleGameService;
+	
 	private static String URL = "https://www.365sport365.com/SportsBook.API/web?lid=10&zid=0&cid=42&ctid=42&pd=";
 	
 	private static String TABALE_NAME_365 = "365";
@@ -44,7 +48,11 @@ public class GrapHandler {
 			map.put(resource.getName(), resource.getId());
 		}
 		
+		//1、 获取网页菜单（）
 		List<SportMenuDTO> sportMenuList = parserBet365.parseMenu("https://www.365sport365.com/SportsBook.API/web?lid=10&zid=0&pd=%23AL%23&cid=42&ctid=42");
+		
+		int resourceId = 0;
+		int moduleId = 0;
 		
 		for (SportMenuDTO sport : sportMenuList) {
 			if(!map.containsKey(sport.getSportName())){
@@ -52,17 +60,21 @@ public class GrapHandler {
 			}
 			
 			sport.setResourceId(map.get(sport.getSportName()));
+			resourceId = sport.getResourceId();
 			
-			List<SportModule> sportModuleList = parserBet365.parseSportModule(getUrl(sport.getSportPd()), sport.getResourceId());
+			//2、 获取每个菜单对应的界面，及元素
+			List<SportModule> sportModuleList = parserBet365.parseSportModule(getUrl(sport.getSportPd()), resourceId);
 			
 			for (SportModule sportModule : sportModuleList) {
 				
-				int id = sportModuleService.save(sportModule, TABALE_NAME_365);
-
-				List<SportModuleGame> teamList = parserBet365.parseSportModuleGame(getUrl(sportModule.getGameLinesPd()), 1,sportModule.getGroupName());
-				for (SportModuleGame sportModuleGame : teamList) {
-					System.err.println(sportModuleGame.toString());
-				}
+				//保存sortModule
+				moduleId = sportModuleService.save(sportModule, TABALE_NAME_365);
+				
+				//3、获取比赛队伍
+				List<SportModuleGame> teamList = parserBet365.parseSportModuleGame(getUrl(sportModule.getGameLinesPd()),resourceId, moduleId);
+				
+				// 批量保存SportMoudleGame
+				sportModuleGameService.saveByBatch(teamList, TABALE_NAME_365);
 			}
 				
 		}

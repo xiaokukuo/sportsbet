@@ -1,5 +1,7 @@
 package com.sport.bet.core.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,11 @@ public class SportModuleServiceImpl implements ISportModuleService {
 	public int save(SportModule sportModule, String tableName) {
 		sportModuleMapper.insert(sportModule, tableName);
 		return sportModule.getId();
+	}
+
+	@Override
+	public void saveByBatch(List<SportModule> sportModuleList, String tableName) {
+		sportModuleMapper.insertByBatch(sportModuleList, tableName);
 	}
 
 }

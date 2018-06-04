@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sport.bet.core.mapper.SportModuleGameMapper">
+
+	<resultMap id="SportModuleGameMap" type="com.sport.bet.bean.model.SportModuleGame">
+		<id column="id" property="id"/>
+		<id column="resourceId" property="resource_id" />
+		<id column="sprotGroupId" property="sprot_group_id" />
+		<id column="teamName1" property="team_name1" />
+		<id column="teamName2" property="team_name2" />
+		<id column="deailPd" property="deail_pd" />
+		<id column="gameTime" property="game_time" />
+		<id column="gameType" property="game_type" />
+	</resultMap>
+
+	<insert id="insert">
+		insert into sport_module_${tbName}
+		(resource_id, sprot_group_id, team_name1, team_name2, deail_pd, game_time,game_type, create_time)
+		values
+		(#{sportGame.resourceId}, #{sportGame.sprotGroupId}, #{sportGame.teamName1}, #{sportGame.teamName2},
+		 #{sportGame.deailPd}, #{sportGame.gameTime}, #{sportGame.gameType}, now())
+	</insert>
+
+
+</mapper>

@@ -1,5 +1,8 @@
 package com.sport.bet.core.test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -15,12 +18,13 @@ public class SportModuleServiceTest extends BaseTest {
 	@Test
 	//@Rollback(value = true)
 	public void insertTest (){
-		
+		List<SportModule> list = new ArrayList<SportModule>();
 		SportModule sport = new SportModule();
 		sport.setResourceId(1);
 		sport.setGroupName("NBA");
 		sport.setGameLinesPd("psd");
+		list.add(sport);
 				
-		sportModuleService.save(sport,"365");
+		sportModuleService.saveByBatch(list, "365");
 	}
 }

@@ -1,7 +1,6 @@
 package com.sport.bet.datasouce.parsing;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.springframework.stereotype.Component;
@@ -87,12 +86,11 @@ public class ParserBet365 extends GenericParser{
 	}
 	
 	@Override
-	public List<SportModuleGame> parseSportModuleGame(String url, int moduleId ,String name) {
+	public List<SportModuleGame> parseSportModuleGame(String url,int resourceId, int moduleId) {
 		List<SportModuleGame> gameTeamList = new ArrayList<SportModuleGame>();
 		SportModuleGame gameTeam = null;
 		
 		String response = HttpTool.getSport365(url);
-		
 		
 		String [] gameLines = response.split(SEPARATOR_MA);
 		
@@ -112,6 +110,8 @@ public class ParserBet365 extends GenericParser{
 					timeIndex = item1.indexOf("BC");
 					if(index > 0 && timeIndex > 0){
 						gameTeam = new SportModuleGame();
+						gameTeam.setResourceId(resourceId);
+						gameTeam.setSportGroupId(moduleId);
 						gameTeam.setTeamName1(item1.substring(0, item1.indexOf(";"))); 
 						gameTeam.setTeamName2(item2.substring(0, item2.indexOf(";"))); 
 						
@@ -129,6 +129,19 @@ public class ParserBet365 extends GenericParser{
 		}
 		
 		return gameTeamList;
+	}
+	
+	@Override
+	public void parseSportGameScore(String url, int resourceId, int gameId) {
+		String response = HttpTool.getSport365(url);
+		String [] gameLines = response.split(SEPARATOR_EV);
+		
+		response = gameLines[1];
+		gameLines = response.split("\\|MG");
+		
+		for (String gameline : gameLines) {
+			System.out.println(gameline);
+		}
 	}
 	
 	private void parseGroupLine(String line,SportModule sportModule){
@@ -166,5 +179,7 @@ public class ParserBet365 extends GenericParser{
 			
 		}
 	}
+
+	
 	
 }

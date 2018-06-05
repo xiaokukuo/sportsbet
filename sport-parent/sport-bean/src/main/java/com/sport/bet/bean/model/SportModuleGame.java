@@ -2,7 +2,9 @@ package com.sport.bet.bean.model;
 
 public class SportModuleGame extends BaseBean {
 
-	private int sprotGroupId;
+	private int resourceId;
+	
+	private int sportGroupId;
 
 	private String teamName1;
 
@@ -13,13 +15,21 @@ public class SportModuleGame extends BaseBean {
 	private String gameType;
 
 	private String gameTime;
-
-	public int getSprotGroupId() {
-		return sprotGroupId;
+	
+	public int getResourceId() {
+		return resourceId;
 	}
 
-	public void setSprotGroupId(int sprotGroupId) {
-		this.sprotGroupId = sprotGroupId;
+	public void setResourceId(int resourceId) {
+		this.resourceId = resourceId;
+	}
+
+	public int getSportGroupId() {
+		return sportGroupId;
+	}
+
+	public void setSportGroupId(int sportGroupId) {
+		this.sportGroupId = sportGroupId;
 	}
 
 	public String getTeamName1() {
@@ -64,8 +74,9 @@ public class SportModuleGame extends BaseBean {
 
 	@Override
 	public String toString() {
-		return "SportModuleGame [sprotGroupId=" + sprotGroupId + ", teamName1=" + teamName1 + ", teamName2=" + teamName2
-				+ ", deailPd=" + deailPd + ", gameType=" + gameType + ", gameTime=" + gameTime + "]";
+		return "SportModuleGame [resourceId=" + resourceId + ", sportGroupId=" + sportGroupId + ", teamName1="
+				+ teamName1 + ", teamName2=" + teamName2 + ", deailPd=" + deailPd + ", gameType=" + gameType
+				+ ", gameTime=" + gameTime + "]";
 	}
 
 }

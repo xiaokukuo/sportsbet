@@ -84,7 +84,8 @@ public class GrapHandler {
 	}
 
 	public void grabScore(String pd){
-		parserBet365.parseSportGameScore(getUrl(pd), 1, 1);
+		String urls = "https://www.365sport365.com/SportsBook.API/web?lid=10&zid=0&pd=%23AC%23B18%23C20448857%23D19%23E5760231%23F19%23P%5E48%23Q%5E1%23W%5E36&cid=42&ctid=42";
+		parserBet365.parseSportGameScore(urls, 1, 1);
 	}
 	
 	public static String getUrl(String pd){

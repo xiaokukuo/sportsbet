@@ -9,6 +9,7 @@ import com.sport.bet.bean.dto.SportMenuDTO;
 import com.sport.bet.bean.model.SportModule;
 import com.sport.bet.bean.model.SportModuleGame;
 import com.sport.bet.common.utils.HttpTool;
+import com.sport.bet.datasouce.utils.HttpUtils;
 
 @Component
 public class ParserBet365 extends GenericParser{
@@ -134,13 +135,59 @@ public class ParserBet365 extends GenericParser{
 	@Override
 	public void parseSportGameScore(String url, int resourceId, int gameId) {
 		String response = HttpTool.getSport365(url);
-		String [] gameLines = response.split(SEPARATOR_EV);
+		String [] mgLines = response.split("\\|MG;");
 		
-		response = gameLines[1];
-		gameLines = response.split("\\|MG");
-		
-		for (String gameline : gameLines) {
-			System.out.println(gameline);
+		for (String mgLine : mgLines) {
+			
+			//比赛投注
+			/*if(mgLine.startsWith("ID=M1453")){
+				String[] maLines = mgLine.split("\\|MA;");
+				for (int i = 1; i < maLines.length; i++) {
+					System.err.println(maLines[i]);
+				}
+				continue;
+			}*/
+			//附加比赛总分
+			if(mgLine.startsWith("ID=G180114")){
+				System.err.println(mgLine);
+				String[] semicolonLines = mgLine.split(";");
+				for (String line : semicolonLines) {
+					if(line.startsWith("PD")){
+						String pd = line.substring(3);
+						String responseStr = HttpTool.getSport365(HttpUtils.getUrl356(pd));
+
+						String [] mgLinesG114 = responseStr.split("\\|MA;");
+						
+						//第n列
+						String[] column1 = mgLinesG114[1].split("\\|PA;");
+						String[] column2 = mgLinesG114[2].split("\\|PA;");
+						String[] column3 = mgLinesG114[3].split("\\|PA;");
+						String[] column4 = mgLinesG114[3].split("\\|PA;");
+						String[] column5 = mgLinesG114[3].split("\\|PA;");
+						String[] column6 = mgLinesG114[3].split("\\|PA;");
+						
+						int length = column1.length;
+						if(length > 1 && length == column2.length && length == column3.length 
+								&& length == column4.length && length == column5.length 
+								&& length == column6.length){
+							
+							for (int i = 1; i < length; i++) {
+								String tatalScore = column1[i];
+								String higher  = column2[2];
+								String lower = column3[2];
+							}
+						}
+						
+					}
+				}
+				continue;
+			}
+			//附加让分
+			/*if(mgLine.startsWith("ID=G180113")){
+				System.out.println(mgLine);
+				continue;
+			}*/
+			
 		}
 	}
 	

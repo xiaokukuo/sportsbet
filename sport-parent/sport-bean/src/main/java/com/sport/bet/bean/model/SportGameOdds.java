@@ -8,12 +8,48 @@ public class SportGameOdds extends BaseBean {
 	
 	private int score;
 	
-	private String higher;
+	private String oneOrHigher;
 	
-	private String lower;
+	private String twoOrLower;
 	
-	private String team1;
-	
-	private String team2;
+	public int getGameId() {
+		return gameId;
+	}
+
+	public void setGameId(int gameId) {
+		this.gameId = gameId;
+	}
+
+	public int getScoreType() {
+		return scoreType;
+	}
+
+	public void setScoreType(int scoreType) {
+		this.scoreType = scoreType;
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+
+	public String getOneOrHigher() {
+		return oneOrHigher;
+	}
+
+	public void setOneOrHigher(String oneOrHigher) {
+		this.oneOrHigher = oneOrHigher;
+	}
+
+	public String getTwoOrLower() {
+		return twoOrLower;
+	}
+
+	public void setTwoOrLower(String twoOrLower) {
+		this.twoOrLower = twoOrLower;
+	}
 
 }

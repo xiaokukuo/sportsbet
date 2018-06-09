@@ -6,6 +6,7 @@ import java.util.List;
 import org.springframework.stereotype.Component;
 
 import com.sport.bet.bean.dto.SportMenuDTO;
+import com.sport.bet.bean.model.SportGameOdds;
 import com.sport.bet.bean.model.SportModule;
 import com.sport.bet.bean.model.SportModuleGame;
 import com.sport.bet.common.utils.HttpTool;
@@ -132,11 +133,13 @@ public class ParserBet365 extends GenericParser{
 		return gameTeamList;
 	}
 	
+	@SuppressWarnings("unused")
 	@Override
 	public void parseSportGameScore(String url, int resourceId, int gameId) {
 		String response = HttpTool.getSport365(url);
 		String [] mgLines = response.split("\\|MG;");
 		
+		List<SportGameOdds> sportGameOddsList = new ArrayList<SportGameOdds>();
 		for (String mgLine : mgLines) {
 			
 			//比赛投注
@@ -149,32 +152,52 @@ public class ParserBet365 extends GenericParser{
 			}*/
 			//附加比赛总分
 			if(mgLine.startsWith("ID=G180114")){
-				System.err.println(mgLine);
 				String[] semicolonLines = mgLine.split(";");
 				for (String line : semicolonLines) {
 					if(line.startsWith("PD")){
 						String pd = line.substring(3);
 						String responseStr = HttpTool.getSport365(HttpUtils.getUrl356(pd));
-
+						
+						if(responseStr == null){
+							break;
+						}
+						
+						
+						System.err.println(responseStr);
 						String [] mgLinesG114 = responseStr.split("\\|MA;");
 						
 						//第n列
 						String[] column1 = mgLinesG114[1].split("\\|PA;");
 						String[] column2 = mgLinesG114[2].split("\\|PA;");
 						String[] column3 = mgLinesG114[3].split("\\|PA;");
-						String[] column4 = mgLinesG114[3].split("\\|PA;");
-						String[] column5 = mgLinesG114[3].split("\\|PA;");
-						String[] column6 = mgLinesG114[3].split("\\|PA;");
 						
-						int length = column1.length;
-						if(length > 1 && length == column2.length && length == column3.length 
-								&& length == column4.length && length == column5.length 
-								&& length == column6.length){
+						String[] column4 = mgLinesG114[4].split("\\|PA;");
+						String[] column5 = mgLinesG114[5].split("\\|PA;");
+						String[] column6 = mgLinesG114[6].split("\\|PA;");
+						
+						int length1 = column1.length;
+						int length2 = column4.length;
+						if(length1 > 1 && length1 == column2.length && length1 == column3.length 
+								&& length2>1 && length2 == column5.length 
+								&& length2 == column6.length){
 							
-							for (int i = 1; i < length; i++) {
-								String tatalScore = column1[i];
-								String higher  = column2[2];
-								String lower = column3[2];
+							SportGameOdds gameOdds = null;
+							
+							for (int i = 1; i < length1; i++) {
+								gameOdds = new SportGameOdds();
+								gameOdds.setScore(column1[i].split(";")[2].substring(3));
+								gameOdds.setOneOrHigher(column2[i].split(";")[2].substring(3));
+								gameOdds.setTwoOrLower(column3[i].split(";")[2].substring(3));
+								sportGameOddsList.add(gameOdds);
+								System.out.println(gameOdds.toString());
+							}
+							for (int i = 0; i < length2; i++) {
+								gameOdds = new SportGameOdds();
+								gameOdds.setScore(column4[i].split(";")[2].substring(3));
+								gameOdds.setOneOrHigher(column5[i].split(";")[2].substring(3));
+								gameOdds.setTwoOrLower(column6[i].split(";")[2].substring(3));
+								sportGameOddsList.add(gameOdds);
+								System.out.println(gameOdds.toString());
 							}
 						}
 						
@@ -228,5 +251,8 @@ public class ParserBet365 extends GenericParser{
 	}
 
 	
+	public static void main(String[] args) {
+		System.out.println(6/2);
+	}
 	
 }

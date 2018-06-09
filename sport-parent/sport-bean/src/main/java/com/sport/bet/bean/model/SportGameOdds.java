@@ -4,13 +4,17 @@ public class SportGameOdds extends BaseBean {
 	
 	private int gameId;
 	
-	private int scoreType;
+	private int scoreType; //1:让分，2：总分
 	
-	private int score;
+	private String score;
 	
 	private String oneOrHigher;
 	
 	private String twoOrLower;
+	
+	private String team1;
+	
+	private String team2;
 	
 	public int getGameId() {
 		return gameId;
@@ -28,11 +32,11 @@ public class SportGameOdds extends BaseBean {
 		this.scoreType = scoreType;
 	}
 
-	public int getScore() {
+	public String getScore() {
 		return score;
 	}
 
-	public void setScore(int score) {
+	public void setScore(String score) {
 		this.score = score;
 	}
 
@@ -51,5 +55,28 @@ public class SportGameOdds extends BaseBean {
 	public void setTwoOrLower(String twoOrLower) {
 		this.twoOrLower = twoOrLower;
 	}
+
+	public String getTeam1() {
+		return team1;
+	}
+
+	public void setTeam1(String team1) {
+		this.team1 = team1;
+	}
+
+	public String getTeam2() {
+		return team2;
+	}
+
+	public void setTeam2(String team2) {
+		this.team2 = team2;
+	}
+
+	@Override
+	public String toString() {
+		return "SportGameOdds [gameId=" + gameId + ", scoreType=" + scoreType + ", score=" + score + ", oneOrHigher="
+				+ oneOrHigher + ", twoOrLower=" + twoOrLower + ", team1=" + team1 + ", team2=" + team2 + "]";
+	}
+	
 
 }

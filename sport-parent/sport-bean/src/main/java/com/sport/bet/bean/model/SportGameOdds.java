@@ -1,20 +1,24 @@
 package com.sport.bet.bean.model;
 
 public class SportGameOdds extends BaseBean {
-	
+
 	private int gameId;
-	
-	private int scoreType; //1:让分，2：总分
-	
+
+	private int scoreType; // 1:让分，2：总分
+
 	private String score;
-	
-	private String oneOrHigher;
-	
-	private String twoOrLower;
-	
-	private String team1;
-	
-	private String team2;
+
+	private String higher;
+
+	private String lower;
+
+	private String team;
+
+	private String teamNa;
+
+	private String teamScore;
+
+	private String singleWinerScore;
 	
 	public int getGameId() {
 		return gameId;
@@ -40,43 +44,60 @@ public class SportGameOdds extends BaseBean {
 		this.score = score;
 	}
 
-	public String getOneOrHigher() {
-		return oneOrHigher;
+	public String getHigher() {
+		return higher;
 	}
 
-	public void setOneOrHigher(String oneOrHigher) {
-		this.oneOrHigher = oneOrHigher;
+	public void setHigher(String higher) {
+		this.higher = higher;
 	}
 
-	public String getTwoOrLower() {
-		return twoOrLower;
+	public String getLower() {
+		return lower;
 	}
 
-	public void setTwoOrLower(String twoOrLower) {
-		this.twoOrLower = twoOrLower;
+	public void setLower(String lower) {
+		this.lower = lower;
 	}
 
-	public String getTeam1() {
-		return team1;
+	public String getTeam() {
+		return team;
 	}
 
-	public void setTeam1(String team1) {
-		this.team1 = team1;
+	public void setTeam(String team) {
+		this.team = team;
 	}
 
-	public String getTeam2() {
-		return team2;
+	public String getTeamNa() {
+		return teamNa;
 	}
 
-	public void setTeam2(String team2) {
-		this.team2 = team2;
+	public void setTeamNa(String teamNa) {
+		this.teamNa = teamNa;
+	}
+
+	public String getTeamScore() {
+		return teamScore;
+	}
+
+	public void setTeamScore(String teamScore) {
+		this.teamScore = teamScore;
+	}
+
+	public String getSingleWinerScore() {
+		return singleWinerScore;
+	}
+
+	public void setSingleWinerScore(String singleWinerScore) {
+		this.singleWinerScore = singleWinerScore;
 	}
 
 	@Override
 	public String toString() {
-		return "SportGameOdds [gameId=" + gameId + ", scoreType=" + scoreType + ", score=" + score + ", oneOrHigher="
-				+ oneOrHigher + ", twoOrLower=" + twoOrLower + ", team1=" + team1 + ", team2=" + team2 + "]";
+		return "SportGameOdds [gameId=" + gameId + ", scoreType=" + scoreType + ", score=" + score + ", higher="
+				+ higher + ", lower=" + lower + ", team=" + team + ", teamNa=" + teamNa + ", teamScore=" + teamScore
+				+ ", singleWinerScore=" + singleWinerScore + "]";
 	}
-	
 
+	
 }

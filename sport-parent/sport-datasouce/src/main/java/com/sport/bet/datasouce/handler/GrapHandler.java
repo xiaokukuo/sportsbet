@@ -11,6 +11,7 @@ import org.springframework.stereotype.Component;
 
 import com.sport.bet.bean.dto.SportMenuDTO;
 import com.sport.bet.bean.model.Resource;
+import com.sport.bet.bean.model.SportGameOdds;
 import com.sport.bet.bean.model.SportModule;
 import com.sport.bet.bean.model.SportModuleGame;
 import com.sport.bet.core.service.impl.ResourceServiceImpl;
@@ -85,7 +86,10 @@ public class GrapHandler {
 
 	public void grabScore(String pd){
 		String urls = "https://www.365sport365.com/SportsBook.API/web?lid=10&zid=0&pd=%23AC%23B18%23C20546858%23D19%23E5772893%23F19%23P%5E19%23Q%5E5772893%23I&cid=42&ctid=42";
-		parserBet365.parseSportGameScore(urls, 1, 1);
+		List<SportGameOdds>  list = parserBet365.parseSportGameScore(urls, 1, 1);
+		for (SportGameOdds sportGameOdds : list) {
+			System.out.println(sportGameOdds);
+		}
 	}
 	
 	public static String getUrl(String pd){

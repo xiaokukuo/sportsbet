@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sport.bet.core.mapper.SportGameOddsMapper">
+
+	<resultMap id="SportGameOddsMap" type="com.sport.bet.bean.model.SportGameOdds">
+		<id column="id" property="id"/>
+		<id column="gameId" property="game_id" />
+		<id column="scoreType" property="score_type" />
+		<id column="score" property="score" />
+		<id column="higher" property="higher" />
+		<id column="lower" property="lower" />
+		<id column="team" property="team" />
+		<id column="teamNa" property="team_na" />
+		<id column="teamScore" property="team_score" />
+		<id column="singleWinerScore" property="single_winer_score" />
+	</resultMap>
+
+	
+	<insert id="insertByBatch">
+        insert into sport_game_odds_${tableName}
+		(game_id, score_type, score, higher, lower, team, team_na, team_score, single_winer_score,create_time)
+        values
+        <foreach collection="list" item="item" index="index" separator=",">
+            (#{item.gameId}, #{item.scoreType}, #{item.score}, #{item.higher},
+		 		#{item.lower}, #{item.team}, #{item.teamNa},  #{item.teamScore},  #{item.singleWinerScore}, now())
+        </foreach>
+    </insert>
+
+
+</mapper>

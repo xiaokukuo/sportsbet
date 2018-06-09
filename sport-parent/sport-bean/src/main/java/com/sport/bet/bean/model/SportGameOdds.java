@@ -4,21 +4,21 @@ public class SportGameOdds extends BaseBean {
 
 	private int gameId;
 
-	private int scoreType; // 1:让分，2：总分
+	private int scoreType; // 1:让分，2：总分，3：强弱盘
 
-	private String score;
+	private String score; // 总分
 
-	private String higher;
+	private String higher; 
 
-	private String lower;
+	private String lower; 
 
-	private String team;
+	private String team; //队伍名称
 
-	private String teamNa;
+	private String teamNa; // 让分系数
 
-	private String teamScore;
+	private String teamScore; // 让分
 
-	private String singleWinerScore;
+	private String singleWinerScore; // 强弱盘
 	
 	public int getGameId() {
 		return gameId;

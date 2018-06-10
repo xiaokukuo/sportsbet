@@ -34,8 +34,8 @@
     <logger name="org.springframework.web" level="DEBUG"/>
     <logger name="org.springframework.data.redis" level="INFO"/>
     <logger name="org.springframework.transaction" level="INFO"/>
-    <logger name="org.springframework.orm.jpa" level="TRACE"/>
-    <logger name="org.springframework.jdbc" level="TRACE"/>
+    <logger name="org.springframework.orm.jpa" level="INFO"/>
+    <logger name="org.springframework.jdbc" level="INFO"/>
     <logger name="org.springframework.web.servlet.view.AbstractTemplateView" level="INFO"/>
 	<logger name="com.sport.bet" level="INFO" />
 	

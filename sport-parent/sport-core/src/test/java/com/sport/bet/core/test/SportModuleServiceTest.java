@@ -25,6 +25,6 @@ public class SportModuleServiceTest extends BaseTest {
 		sport.setGameLinesPd("psd");
 		list.add(sport);
 				
-		sportModuleService.saveByBatch(list, "365");
+		//sportModuleService.saveByBatch(list, "365");
 	}
 }

@@ -15,8 +15,24 @@
 		<id column="singleWinerScore" property="single_winer_score" />
 	</resultMap>
 
+	<select id="selectById" parameterType="java.lang.Integer" resultMap="SportGameOddsMap">
+		select * from sport_game_odds_${tbName}
+		where id = #{id}
+	</select>
+
+	<select id="selectAll" resultMap="SportGameOddsMap">
+		select * from sport_game_odds_${tableName}
+	</select>
+
+	<insert id="insert" keyProperty="id" useGeneratedKeys="true">
+		insert into sport_game_odds_${tableName}
+		(game_id, score_type, score, higher, lower, team, team_na, team_score, single_winer_score,create_time)
+		values
+		  (#{entity.gameId}, #{entity.scoreType}, #{entity.score}, #{entity.higher},
+		 		#{entity.lower}, #{entity.team}, #{entity.teamNa},  #{entity.teamScore},  #{entity.singleWinerScore}, now())
+	</insert>
 	
-	<insert id="insertByBatch">
+	<insert id="insertByBatch" keyProperty="id" useGeneratedKeys="true">
         insert into sport_game_odds_${tableName}
 		(game_id, score_type, score, higher, lower, team, team_na, team_score, single_winer_score,create_time)
         values
@@ -25,6 +41,9 @@
 		 		#{item.lower}, #{item.team}, #{item.teamNa},  #{item.teamScore},  #{item.singleWinerScore}, now())
         </foreach>
     </insert>
-
+    
+     <update id="truncateTable">
+        truncate table sport_game_odds_${tableName}
+     </update>
 
 </mapper>

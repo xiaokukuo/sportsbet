@@ -15,10 +15,10 @@ import com.sport.bet.bean.model.SportGameOdds;
 import com.sport.bet.bean.model.SportModule;
 import com.sport.bet.bean.model.SportModuleGame;
 import com.sport.bet.core.service.impl.ResourceServiceImpl;
+import com.sport.bet.core.service.impl.SportGameOddsServiceImpl;
 import com.sport.bet.core.service.impl.SportModuleGameServiceImpl;
 import com.sport.bet.core.service.impl.SportModuleServiceImpl;
 import com.sport.bet.datasouce.parsing.ParserBet365;
-import com.sport.bet.datasouce.service.Bet365Service;
 
 @Component
 public class GrapHandler {
@@ -27,13 +27,13 @@ public class GrapHandler {
 	private ParserBet365 parserBet365;
 	
 	@Autowired
-	private Bet365Service bet365Service;
+	private ResourceServiceImpl resourceService;
 	
 	@Autowired
 	private SportModuleServiceImpl sportModuleService;
 	
 	@Autowired
-	private ResourceServiceImpl resourceService;
+	private SportGameOddsServiceImpl sportGameOddsService;
 	
 	@Autowired
 	private SportModuleGameServiceImpl sportModuleGameService;
@@ -43,6 +43,8 @@ public class GrapHandler {
 	private static String TABALE_NAME_365 = "365";
 	
 	public void grabGroupModule() throws UnsupportedEncodingException{
+		long start = System.currentTimeMillis();
+		System.err.println(start);
 		List<Resource> listResource = resourceService.findAll();
 		Map<String, Integer> map = new HashMap<String, Integer>();
 		for (Resource resource : listResource) {
@@ -53,7 +55,6 @@ public class GrapHandler {
 		List<SportMenuDTO> sportMenuList = parserBet365.parseMenu("https://www.365sport365.com/SportsBook.API/web?lid=10&zid=0&pd=%23AL%23&cid=42&ctid=42");
 		
 		int resourceId = 0;
-		int moduleId = 0;
 		
 		for (SportMenuDTO sport : sportMenuList) {
 			if(!map.containsKey(sport.getSportName())){
@@ -69,19 +70,31 @@ public class GrapHandler {
 			for (SportModule sportModule : sportModuleList) {
 				
 				//保存sortModule
-				moduleId = sportModuleService.save(sportModule, TABALE_NAME_365);
+				SportModule sportTemp = sportModuleService.save(sportModule, TABALE_NAME_365);
 				
 				//3、获取比赛队伍
-				List<SportModuleGame> teamList = parserBet365.parseSportModuleGame(getUrl(sportModule.getGameLinesPd()),resourceId, moduleId);
+				List<SportModuleGame> teamList = parserBet365.parseSportModuleGame(getUrl(sportModule.getGameLinesPd()),resourceId, sportTemp.getId());
 				
 				// 批量保存SportMoudleGame
 				if(teamList != null && teamList.size() > 0){
-					sportModuleGameService.saveByBatch(teamList, TABALE_NAME_365);
+					sportModuleGameService.save(teamList, TABALE_NAME_365);
+				}
+				
+				for (SportModuleGame sportModuleGame : teamList) {
+					String urlscore = getUrl(sportModuleGame.getDeailPd());
+					List<SportGameOdds>  list = parserBet365.parseSportGameScore(urlscore, resourceId, sportModuleGame.getId());
+					
+					if(list != null && list.size() > 0){
+						sportGameOddsService.save(list, TABALE_NAME_365);
+					}
+				
 				}
 				
 			}
 				
 		}
+		long end = System.currentTimeMillis();
+		System.err.println("分数 sportGameOdds end："+ ( end- start));
 	}
 
 	public void grabScore(String pd){

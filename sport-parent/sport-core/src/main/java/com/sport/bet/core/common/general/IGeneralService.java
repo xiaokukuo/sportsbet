@@ -3,7 +3,14 @@ package com.sport.bet.core.common.general;
 import java.util.List;
 
 public interface IGeneralService<T> {
-
-	void save(List<T> list, String tableName);
 	
+	T findById(int id);
+	
+	List<T> findAll();
+
+	List<T> save(List<T> list, String tableName);
+	
+	T save(T entity, String tableName);
+	
+	int truncateTable(String tableName);
 }

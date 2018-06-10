@@ -1,5 +1,8 @@
 package com.sport.bet.core.test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -15,7 +18,7 @@ public class SportModuleGameImpl extends BaseTest {
 	@Test
 	//@Rollback(value = true)
 	public void insertTest (){
-		//List<SportModule> list = new ArrayList<SportModule>();
+		List<SportModuleGame> list = new ArrayList<SportModuleGame>();
 		SportModuleGame sport = new SportModuleGame();
 		sport.setResourceId(1);
 		sport.setSportGroupId(1);
@@ -23,9 +26,19 @@ public class SportModuleGameImpl extends BaseTest {
 		sport.setTeamName1("team1");
 		sport.setTeamName2("Team2");
 		sport.setGameTime("123123");
-		//list.add(sport);
+		
+		SportModuleGame sport1 = new SportModuleGame();
+		sport1.setResourceId(2);
+		sport1.setSportGroupId(2);
+		sport1.setDeailPd("22222");
+		sport1.setTeamName1("team2");
+		sport1.setTeamName2("Team4");
+		sport1.setGameTime("2222");
+		
+		list.add(sport);
+		list.add(sport1);
 				
-		sportModuleGameService.save(sport, "365");
+		//sportModuleGameService.saveByBatch(list, "365");
 	}
 	
 }

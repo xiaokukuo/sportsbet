@@ -144,18 +144,18 @@ public class ParserBet365 extends GenericParser {
 
 			// 比赛投注
 			if (mgLine.startsWith("ID=M1453")) {
-				this.getGameBet(mgLine);
+				this.getGameBet(mgLine, gameId);
 				continue;
 			}
 			// 附加比赛总分
 			if (mgLine.startsWith("ID=G180114")) {
-				this.getTotalScore(mgLine);
+				this.getTotalScore(mgLine, gameId);
 				continue;
 			}
 
 			// 附加让分
 			if (mgLine.startsWith("ID=G180113")) {
-				this.getExtraPoint(mgLine);
+				this.getExtraPoint(mgLine, gameId);
 				continue;
 			}
 
@@ -200,7 +200,7 @@ public class ParserBet365 extends GenericParser {
 	}
 
 	//比赛投注
-	public void getGameBet(String mgLine){
+	public void getGameBet(String mgLine, int gameId){
 		String[] teamArr = new String[2];
 		String[] maLines = mgLine.split("\\|MA;");
 		SportGameOdds sportGameOdds = null;
@@ -216,10 +216,15 @@ public class ParserBet365 extends GenericParser {
 			if(maLine.startsWith("ID=M-1453-2")){ // 让分
 				String[] paLines = maLine.split("\\|PA");
 				for (int i = 1; i < paLines.length; i++) {
+					String ha = super.getLineValue(paLines[i], "HA");
+					if( ha==null ||"+999".equals(ha) || "-999".equals(ha)){
+						break;
+					}
 					sportGameOdds = new SportGameOdds();
+					sportGameOdds.setGameId(gameId);
 					sportGameOdds.setScoreType(2);
 					sportGameOdds.setTeam(teamArr[i-1]);
-					sportGameOdds.setTeamNa(super.getLineValue(paLines[i], "NA"));
+					sportGameOdds.setTeamNa(ha);
 					sportGameOdds.setTeamScore(super.getLineValue(paLines[i], "OD"));
 					sportGameOddsList.add(sportGameOdds);
 				}
@@ -228,30 +233,46 @@ public class ParserBet365 extends GenericParser {
 			
 			if(maLine.startsWith("ID=M-1454-3")){ // 总分
 				String[] paLines = maLine.split("\\|PA");
+				
 				sportGameOdds = new SportGameOdds();
+				sportGameOdds.setGameId(gameId);
 				sportGameOdds.setScoreType(1);
-				for (String paLine : paLines) {
-					String[] elements = paLine.split(";");
+				String ha = null;
+				for (int i = 1; i < paLines.length; i++) {
+					String[] elements = paLines[i].split(";");
+					ha = super.getLineValue(elements, "HA");
+					if( ha==null ||"+999".equals(ha) || "-999".equals(ha)){
+						ha = null;
+						break;
+					}					
 					String na = super.getLineValue(elements, "NA");
 					if(na.startsWith("高")){
-						sportGameOdds.setScore(super.getLineValue(elements, "HA"));
+						sportGameOdds.setScore(ha);
 						sportGameOdds.setHigher(super.getLineValue(elements, "OD"));
 					}
 					if(na.startsWith("低")){
 						sportGameOdds.setLower(super.getLineValue(elements, "OD"));
 					}
 				}
-				sportGameOddsList.add(sportGameOdds);
+				if(ha != null){
+					sportGameOddsList.add(sportGameOdds);
+				}
+				
 				continue;
 			}
 			
 			if(maLine.startsWith("ID=M-960-4")){ // 强弱盘赔率 赌赢盘
 				String[] paLines = maLine.split("\\|PA");
 				for (int i = 1; i < paLines.length; i++) {
+					String od = super.getLineValue(paLines[i], "OD");
+					if(od == null || od.length() == 0 || od.trim() == ""){
+						break;
+					}
 					sportGameOdds = new SportGameOdds();
+					sportGameOdds.setGameId(gameId);
 					sportGameOdds.setScoreType(3);
 					sportGameOdds.setTeam(teamArr[i-1]);
-					sportGameOdds.setSingleWinerScore(super.getLineValue(paLines[i], "OD"));
+					sportGameOdds.setSingleWinerScore(od);
 					sportGameOddsList.add(sportGameOdds);
 				}
 				continue;
@@ -260,7 +281,7 @@ public class ParserBet365 extends GenericParser {
 	}
 	
 	// 总分
-	public void getTotalScore(String mgLine) {
+	public void getTotalScore(String mgLine, int gameId) {
 		String[] semicolonLines = mgLine.split(";");
 		for (String line : semicolonLines) {
 			if (line.startsWith("PD")) {
@@ -289,6 +310,7 @@ public class ParserBet365 extends GenericParser {
 
 					for (int i = 1; i < length1; i++) {
 						gameOdds = new SportGameOdds();
+						gameOdds.setGameId(gameId);
 						gameOdds.setScoreType(1);
 						gameOdds.setScore(column1[i].split(";")[2].substring(3));
 						gameOdds.setHigher(column2[i].split(";")[2].substring(3));
@@ -297,6 +319,7 @@ public class ParserBet365 extends GenericParser {
 					}
 					for (int i = 1; i < length2; i++) {
 						gameOdds = new SportGameOdds();
+						gameOdds.setGameId(gameId);
 						gameOdds.setScoreType(1);
 						gameOdds.setScore(column4[i].split(";")[2].substring(3));
 						gameOdds.setHigher(column5[i].split(";")[2].substring(3));
@@ -310,7 +333,7 @@ public class ParserBet365 extends GenericParser {
 	}
 
 	// 附加分
-	public void getExtraPoint(String mgLine) {
+	public void getExtraPoint(String mgLine, int gameId) {
 		String[] semicolonLines = mgLine.split(";");
 		for (String line : semicolonLines) {
 			if (line.startsWith("PD")) {
@@ -334,16 +357,18 @@ public class ParserBet365 extends GenericParser {
 				String teamName2 = getLineValue(column2[0].split(";"), "NA=");
 
 				for (int i = 1; i < length; i++) {
-					gameOdds = new SportGameOdds();
 					String[] colLines = column1[i].split(";");
+					gameOdds = new SportGameOdds();
+					gameOdds.setGameId(gameId);
 					gameOdds.setScoreType(2);
 					gameOdds.setTeam(teamName1);
 					gameOdds.setTeamNa(super.getLineValue(colLines, "NA="));
 					gameOdds.setTeamScore(super.getLineValue(colLines, "OD="));
 					sportGameOddsList.add(gameOdds);
 
-					gameOdds = new SportGameOdds();
 					String[] colLines2 = column2[i].split(";");
+					gameOdds = new SportGameOdds();
+					gameOdds.setGameId(gameId);
 					gameOdds.setScoreType(2);
 					gameOdds.setTeam(teamName2);
 					gameOdds.setTeamNa(super.getLineValue(colLines2, "NA="));

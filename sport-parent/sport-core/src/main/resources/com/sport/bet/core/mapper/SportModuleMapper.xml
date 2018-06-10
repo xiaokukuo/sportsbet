@@ -10,18 +10,25 @@
 		<id column="firstHalfPd" property="first_half_pd" />
 		<id column="secondHalfPd" property="second_half_pd" />
 	</resultMap>
+	
+	<select id="selectById" parameterType="java.lang.Integer" resultMap="SportModuleMap">
+		select * from sport_module_${tbName} where id = #{id}
+	</select>
 
-	<!-- 保存一个Book -->
-	<insert id="insert" keyProperty="sportModule.id" useGeneratedKeys="true">
+	<select id="selectAll" resultMap="SportModuleMap">
+		select * from sport_module_${tbName}
+	</select>
+
+	<insert id="insert" keyProperty="id" useGeneratedKeys="true">
 		insert into sport_module_${tableName}
 		(resource_id, group_name, game_lines_pd, first_half_pd, second_half_pd, first_quarter_pd, second_quarter_pd,
 		   third_quarter_pd, fourth_quarter_pd, create_time)
 		values
-		(#{sportModule.resourceId}, #{sportModule.groupName}, #{sportModule.gameLinesPd}, #{sportModule.firstHalfPd}, #{sportModule.secondHalfPd},
-		#{sportModule.firstQuarterPd}, #{sportModule.secondQuarterPd}, #{sportModule.thirdQuarterPd}, #{sportModule.fourthQuarterPd} , now())
+		(#{entity.resourceId}, #{entity.groupName}, #{entity.gameLinesPd}, #{entity.firstHalfPd}, #{entity.secondHalfPd},
+		#{entity.firstQuarterPd}, #{entity.secondQuarterPd}, #{entity.thirdQuarterPd}, #{entity.fourthQuarterPd} , now())
 	</insert>
 
-	<insert id="insertByBatch">
+	<insert id="insertByBatch" keyProperty="id" useGeneratedKeys="true">
         insert into sport_module_${tableName}
 		(resource_id, group_name, game_lines_pd, first_half_pd, second_half_pd, first_quarter_pd, second_quarter_pd,
 		   third_quarter_pd, fourth_quarter_pd, create_time)
@@ -31,5 +38,9 @@
            #{item.firstQuarterPd}, #{item.secondQuarterPd}, #{item.thirdQuarterPd}, #{item.fourthQuarterPd} , now())
         </foreach>
     </insert>
+    
+    <update id="truncateTable">
+        truncate table sport_module_${tableName}
+     </update>
     
 </mapper>

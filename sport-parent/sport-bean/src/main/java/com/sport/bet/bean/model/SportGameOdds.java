@@ -2,6 +2,11 @@ package com.sport.bet.bean.model;
 
 public class SportGameOdds extends BaseBean {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7610480322189511109L;
+
 	private int gameId;
 
 	private int scoreType; // 1:让分，2：总分，3：强弱盘

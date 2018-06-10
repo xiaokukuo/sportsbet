@@ -38,7 +38,26 @@ public class SportModuleGameImpl extends BaseTest {
 		list.add(sport);
 		list.add(sport1);
 				
-		//sportModuleGameService.saveByBatch(list, "365");
+		list = sportModuleGameService.save(list, "365");
+		
+		for (SportModuleGame sportModuleGame : list) {
+			System.out.println(sportModuleGame.toString());
+		}
+	}
+	
+	@Test
+	public void findAll (){
+		List<SportModuleGame> list = sportModuleGameService.findAll("365");
+		for (SportModuleGame sportModuleGame : list) {
+			System.err.println(sportModuleGame.toString());
+		}
+		
+	}
+	
+	@Test
+	public void findById (){
+		SportModuleGame sport = sportModuleGameService.findById(1, "365");
+		System.out.println(sport.toString());
 	}
 	
 }

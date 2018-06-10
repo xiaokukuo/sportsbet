@@ -16,7 +16,7 @@ public class ResourceServiceImplTest extends BaseTest {
 	
 	@Test
 	public void findAllTest (){
-		List<Resource> resourceList = resourceService.findAll();
+		List<Resource> resourceList = resourceService.findAll(null);
 		
 		System.out.println(resourceList.get(0).getId());
 	}

@@ -14,16 +14,16 @@
 	</resultMap>
 
 	<select id="selectById" parameterType="java.lang.Integer" resultMap="SportModuleGameMap">
-		select * from sport_module_game_${tbName}
+		select * from sport_module_game_${tableName}
 		where id = #{id}
 	</select>
 
 	<select id="selectAll" resultMap="SportModuleGameMap">
-		select * from sport_module_game_${tbName}
+		select * from sport_module_game_${tableName}
 	</select>
 
 	<insert id="insert" keyProperty="id" useGeneratedKeys="true">
-		insert into sport_module_game_${tbName}
+		insert into sport_module_game_${tableName}
 		(resource_id, sport_group_id, team_name1, team_name2, deail_pd, game_time,game_type, create_time)
 		values
 		(#{entity.resourceId}, #{entity.sportGroupId}, #{entity.teamName1}, #{entity.teamName2},
@@ -32,7 +32,7 @@
 	
 	
 	<insert id="insertByBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into sport_module_game_${tbName}
+        insert into sport_module_game_${tableName}
 		(resource_id, sport_group_id, team_name1, team_name2, deail_pd, game_time,game_type, create_time)
         values
         <foreach collection="list" item="item" index="index" separator=",">

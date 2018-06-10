@@ -4,9 +4,9 @@ import java.util.List;
 
 public interface IGeneralService<T> {
 	
-	T findById(int id);
+	T findById(int id, String tableName);
 	
-	List<T> findAll();
+	List<T> findAll(String tableName);
 
 	List<T> save(List<T> list, String tableName);
 	

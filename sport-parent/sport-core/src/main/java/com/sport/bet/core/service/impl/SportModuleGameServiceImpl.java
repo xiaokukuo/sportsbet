@@ -19,6 +19,4 @@ public class SportModuleGameServiceImpl extends GeneralServiceImpl<SportModuleGa
 		return sportGameMapper;
 	}
 	
-	
-
 }

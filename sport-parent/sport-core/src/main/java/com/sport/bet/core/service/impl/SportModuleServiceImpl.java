@@ -18,6 +18,4 @@ public class SportModuleServiceImpl extends GeneralServiceImpl<SportModule> {
 	public GeneralMapper<SportModule> getGeneralMapper() {
 		return sportModuleMapper;
 	}
-
-	
 }

@@ -1,7 +1,5 @@
 package com.sport.bet.core.service.impl;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -24,15 +22,9 @@ public class ResourceServiceImpl extends GeneralServiceImpl<Resource> implements
 	}
 	
 	@Override
-	public List<Resource> findAll() {
-		return resourceMapper.selectAll();
-	}
-	
-	@Override
 	public int getIdByName(String name) {
 		return resourceMapper.selectIdByName(name);
 	}
-
 	
 
 }

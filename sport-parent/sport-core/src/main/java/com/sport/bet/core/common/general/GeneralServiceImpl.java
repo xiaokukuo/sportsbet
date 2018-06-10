@@ -7,13 +7,13 @@ public abstract class GeneralServiceImpl<T> implements IGeneralService<T>{
 	public abstract GeneralMapper<T> getGeneralMapper();
 
 	@Override
-	public T findById(int id) {
-		return getGeneralMapper().selectById(id);
+	public T findById(int id, String tableName) {
+		return getGeneralMapper().selectById(id, tableName);
 	}
 	
 	@Override
-	public List<T> findAll() {
-		return getGeneralMapper().selectAll();
+	public List<T> findAll(String tableName) {
+		return getGeneralMapper().selectAll(tableName);
 	}
 	
 	@Override

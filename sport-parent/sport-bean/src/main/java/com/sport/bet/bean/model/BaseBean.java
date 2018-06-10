@@ -1,8 +1,11 @@
 package com.sport.bet.bean.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class BaseBean {
+public class BaseBean implements Serializable {
+
+	private static final long serialVersionUID = -8335524559221845087L;
 
 	private int id;
 	

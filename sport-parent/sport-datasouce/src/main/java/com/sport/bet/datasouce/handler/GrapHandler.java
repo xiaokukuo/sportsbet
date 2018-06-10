@@ -45,7 +45,7 @@ public class GrapHandler {
 	public void grabGroupModule() throws UnsupportedEncodingException{
 		long start = System.currentTimeMillis();
 		System.err.println(start);
-		List<Resource> listResource = resourceService.findAll();
+		List<Resource> listResource = resourceService.findAll(null);
 		Map<String, Integer> map = new HashMap<String, Integer>();
 		for (Resource resource : listResource) {
 			map.put(resource.getName(), resource.getId());

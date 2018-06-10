@@ -6,9 +6,9 @@ import org.apache.ibatis.annotations.Param;
 
 public interface GeneralMapper<T>{
 	 
-	T selectById(int id);
+	T selectById(@Param("id") int id, @Param("tableName") String tableName);
 	
-	List<T> selectAll();
+	List<T> selectAll(@Param("tableName") String tableName);
 	
 	int insert(@Param("entity")T entity, @Param("tableName") String tableName);
 	

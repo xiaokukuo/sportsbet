@@ -2,6 +2,8 @@ package com.sport.bet.bean.model;
 
 public class SportModuleGame extends BaseBean {
 
+	private static final long serialVersionUID = 4703139339492040458L;
+
 	private int resourceId;
 	
 	private int sportGroupId;
@@ -74,7 +76,7 @@ public class SportModuleGame extends BaseBean {
 
 	@Override
 	public String toString() {
-		return "SportModuleGame [resourceId=" + resourceId + ", sportGroupId=" + sportGroupId + ", teamName1="
+		return "SportModuleGame [id="+getId()+", resourceId=" + resourceId + ", sportGroupId=" + sportGroupId + ", teamName1="
 				+ teamName1 + ", teamName2=" + teamName2 + ", deailPd=" + deailPd + ", gameType=" + gameType
 				+ ", gameTime=" + gameTime + "]";
 	}

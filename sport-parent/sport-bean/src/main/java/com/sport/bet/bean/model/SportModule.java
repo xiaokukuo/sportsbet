@@ -2,6 +2,11 @@ package com.sport.bet.bean.model;
 
 public class SportModule extends BaseBean {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5298370904243632295L;
+
 	private int resourceId;
 
 	private String groupName;

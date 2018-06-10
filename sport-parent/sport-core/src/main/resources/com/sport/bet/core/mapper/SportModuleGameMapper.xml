@@ -13,12 +13,12 @@
 		<id column="gameType" property="game_type" />
 	</resultMap>
 
-	<select id="selectById" parameterType="java.lang.Integer" resultMap="SportGameOddsMap">
+	<select id="selectById" parameterType="java.lang.Integer" resultMap="SportModuleGameMap">
 		select * from sport_module_game_${tbName}
 		where id = #{id}
 	</select>
 
-	<select id="selectAll" resultMap="SportGameOddsMap">
+	<select id="selectAll" resultMap="SportModuleGameMap">
 		select * from sport_module_game_${tbName}
 	</select>
 

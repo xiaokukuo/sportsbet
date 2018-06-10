@@ -39,7 +39,7 @@
     <logger name="org.springframework.web.servlet.view.AbstractTemplateView" level="INFO"/>
 	<logger name="com.sport.bet" level="INFO" />
 	
-	<root level="INFO">
+	<root level="TRACE">
 		<appender-ref ref="STDOUT" />
 		<appender-ref ref="INFO-OUT" />
 	</root>

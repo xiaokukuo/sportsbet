@@ -12,11 +12,11 @@ import com.sport.bet.core.mapper.SportModuleGameMapper;
 public class SportModuleGameServiceImpl extends GeneralServiceImpl<SportModuleGame> {
 
 	@Autowired
-	private SportModuleGameMapper sportGameMapper;
+	private SportModuleGameMapper sportModuleGameMapper;
 
 	@Override
 	public GeneralMapper<SportModuleGame> getGeneralMapper() {
-		return sportGameMapper;
+		return sportModuleGameMapper;
 	}
 	
 }

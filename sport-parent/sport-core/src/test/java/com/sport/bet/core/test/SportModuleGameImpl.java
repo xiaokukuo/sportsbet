@@ -60,4 +60,8 @@ public class SportModuleGameImpl extends BaseTest {
 		System.out.println(sport.toString());
 	}
 	
+	@Test
+	public void truncateTable(){
+		sportModuleGameService.truncateTable("365");
+	}
 }

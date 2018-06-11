@@ -62,9 +62,6 @@ public class GrapHandler {
 		
 		for (SportModule sportModule : sportModuleList) {
 			
-			//保存sortModule
-			SportModule sportTemp = sportModuleService.save(sportModule, TABALE_NAME_365);
-			
 			String url =getUrl(sportModule.getGameLinesPd());
 			String responseStr = HttpTool.getSport365(url);
 			

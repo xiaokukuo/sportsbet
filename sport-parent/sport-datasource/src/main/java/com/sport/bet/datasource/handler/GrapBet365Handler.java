@@ -21,7 +21,7 @@ import com.sport.bet.datasource.parsing.bet365.PageGroupTeamPaser;
 import com.sport.bet.datasource.parsing.bet365.PagePaser;
 
 @Component
-public class GrapHandler {
+public class GrapBet365Handler {
 	
 	@Autowired
 	private PagePaser pagePaser;
@@ -52,40 +52,37 @@ public class GrapHandler {
 		
 		//List<Resource> listResource = resourceService.findAll(null);
 		
-		Resource resource = new Resource();
+		Resource resource = resourceService.findByCode("basketball");
 		String pageStr = HttpTool.getSport365(resource.getUrl());
 		
-		//获取
+		//获取篮球页面的数据--group
 		List<SportModule> sportModuleList = pagePaser.parsed(pageStr);
-		
 		sportModuleList = sportModuleService.save(sportModuleList, TABALE_NAME_365);
 		
+		List<SportModuleGame> teamList = null;
+		//遍历每个篮球模块，获取对应模块的比赛队伍
 		for (SportModule sportModule : sportModuleList) {
-			
 			String url =getUrl(sportModule.getGameLinesPd());
 			String responseStr = HttpTool.getSport365(url);
-			
-			//3、获取比赛队伍
-			List<SportModuleGame> teamList = pageGroupPaser.parsed(responseStr);
-			
-			// 批量保存SportMoudleGame
+		
+			//解析比赛队伍
+			teamList = pageGroupPaser.parsed(responseStr);
 			if(teamList != null && teamList.size() > 0){
-				sportModuleGameService.save(teamList, TABALE_NAME_365);
+				teamList = sportModuleGameService.save(teamList, TABALE_NAME_365);
 			}
+		}
+		
+		//遍历比赛队伍，获取比赛队伍的信息
+		for (SportModuleGame sportModuleGame : teamList) {
 			
-			for (SportModuleGame sportModuleGame : teamList) {
-				
-				String urlscore = getUrl(sportModuleGame.getDeailPd());
-				String pageScoreResponse = HttpTool.getSport365(urlscore);
-				
-				List<SportGameOdds>  list = pageGroupTeamPaser.parsed(pageScoreResponse);
-				
-				if(list != null && list.size() > 0){
-					sportGameOddsService.save(list, TABALE_NAME_365);
-				}
+			String urlscore = getUrl(sportModuleGame.getDeailPd());
+			String pageScoreResponse = HttpTool.getSport365(urlscore);
 			
+			//解析比赛分数
+			List<SportGameOdds>  list = pageGroupTeamPaser.parsed(pageScoreResponse);
+			if(list != null && list.size() > 0){
+				sportGameOddsService.save(list, TABALE_NAME_365);
 			}
-			
 		}
 				
 	}
@@ -99,12 +96,5 @@ public class GrapHandler {
 		return null;
 	}
 	
-	public static void main(String[] args) {
-		String Pd = "#AC#B18#C20448857#D19#E5760231#F19#G180114#H4#M74340490#O3#S^1#";
-		
-		System.out.println(getUrl(Pd));
-		
-		//https://www.365sport365.com/SportsBook.API/web?lid=10&zid=0&cid=42&ctid=42&pd=%23AC%23B18%23C20448857%23D19%23E5760231%23F19%23G180114%23H4%23M74340490%23O3%23S%5E1%23
-		//https://www.365sport365.com/SportsBook.API/web?lid=10&zid=0&cid=42&ctid=42&pd=%23AC%23B18%23C20448857%23D19%23E5760231%23F19%23G180114%23H4%23M74340490%23O3%23S%5E1
-	}
+
 }

@@ -6,7 +6,12 @@
 		<id column="id" property="id" jdbcType="INTEGER" />
 		<id column="name" property="name"/>
 		<id column="code" property="code"/>
+		<id column="url" property="url"/>
 	</resultMap>
+
+	<select id="selectById" parameterType="java.lang.String" resultMap="ResourceMap">
+		select id, name,code, url from resource where code = #{code}
+	</select>
 
 	<select id="selectById" parameterType="java.lang.Integer" resultMap="ResourceMap">
 		select * from resource where id = #{id}

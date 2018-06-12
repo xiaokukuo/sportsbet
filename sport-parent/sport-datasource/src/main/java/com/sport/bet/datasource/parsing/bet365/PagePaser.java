@@ -2,12 +2,14 @@ package com.sport.bet.datasource.parsing.bet365;
 
 import java.util.List;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import com.sport.bet.bean.model.SportModule;
 import com.sport.bet.datasource.parsing.AbstractPaser;
 
 @Component
+@Scope
 public class PagePaser extends AbstractPaser<SportModule> {
 	
 	private int resourceId;

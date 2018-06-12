@@ -10,4 +10,6 @@ public interface ResourceMapper extends GeneralMapper<Resource> {
 
 	int selectIdByName(String name);
 	
+	Resource selectByCode(String code);
+	
 }

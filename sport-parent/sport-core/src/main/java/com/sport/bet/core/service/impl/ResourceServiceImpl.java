@@ -25,6 +25,11 @@ public class ResourceServiceImpl extends GeneralServiceImpl<Resource> implements
 	public int getIdByName(String name) {
 		return resourceMapper.selectIdByName(name);
 	}
+
+	@Override
+	public Resource findByCode(String code) {
+		return resourceMapper.selectByCode(code);
+	}
 	
 
 }

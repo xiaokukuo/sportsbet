@@ -1,7 +1,6 @@
 package com.sport.bet.datasource.handler;
 
 import java.io.UnsupportedEncodingException;
-import java.net.URLEncoder;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -21,7 +20,9 @@ import com.sport.bet.core.service.impl.SportModuleServiceImpl;
 import com.sport.bet.datasource.parsing.bet365.PageGroupPaser;
 import com.sport.bet.datasource.parsing.bet365.PageGroupTeamPaser;
 import com.sport.bet.datasource.parsing.bet365.PagePaser;
+import com.sport.bet.datasource.utils.HttpUtils;
 import com.sport.bet.datasource.utils.ListUtils;
+import com.sport.bet.datasource.utils.TableConstant;
 
 @Component
 public class GrapBet365Handler {
@@ -49,9 +50,7 @@ public class GrapBet365Handler {
 	@Autowired
 	private SportModuleGameServiceImpl sportModuleGameService;
 	
-	private static String URL = "https://www.365sport365.com/SportsBook.API/web?lid=10&zid=0&cid=42&ctid=42&pd=";
-	
-	private static String TABALE_NAME_365 = "365";
+	//private static String URL = "https://www.365sport365.com/SportsBook.API/web?lid=10&zid=0&cid=42&ctid=42&pd=";
 	
 	public void grabGroupModule() throws UnsupportedEncodingException{
 		
@@ -65,13 +64,12 @@ public class GrapBet365Handler {
 			logger.error("篮球版块数据异常");
 			return;
 		}
-		
-		sportModuleList = sportModuleService.save(sportModuleList, TABALE_NAME_365);
+		sportModuleList = sportModuleService.save(sportModuleList, TableConstant.TABALE_NAME_365);
 		
 		//2、遍历每个篮球模块，获取对应模块的比赛队伍
 		List<SportModuleGame> teamList = null;
 		for (SportModule sportModule : sportModuleList) {
-			String url =getUrl(sportModule.getGameLinesPd());
+			String url = HttpUtils.getUrl356(sportModule.getGameLinesPd());
 			String responseStr = HttpTool.getSport365(url);
 			//解析比赛队伍
 			teamList = pageGroupPaser.parsed(responseStr);
@@ -80,13 +78,12 @@ public class GrapBet365Handler {
 				logger.error("{}——篮球版块的数据发生异常",sportModule.getGroupName());
 				return;
 			}
-			
-			teamList = sportModuleGameService.save(teamList, TABALE_NAME_365);
+			teamList = sportModuleGameService.save(teamList, TableConstant.TABALE_NAME_365);
 		}
 		
 		//3、遍历比赛队伍，获取比赛队伍的信息
 		for (SportModuleGame sportModuleGame : teamList) {
-			String urlscore = getUrl(sportModuleGame.getDeailPd());
+			String urlscore = HttpUtils.getUrl356(sportModuleGame.getDeailPd());
 			String pageScoreResponse = HttpTool.getSport365(urlscore);
 			
 			//解析比赛分数
@@ -95,19 +92,9 @@ public class GrapBet365Handler {
 				logger.error("{}——队伍分数数据发生异常",sportModuleGame.getTeamName1()+" V "+sportModuleGame.getTeamName2());
 				return;
 			}
-			sportGameOddsService.save(gameOddsList, TABALE_NAME_365);
+			sportGameOddsService.save(gameOddsList, TableConstant.TABALE_NAME_365);
 		}
 				
 	}
-	
-	public static String getUrl(String pd){
-		try {
-			return URL+URLEncoder.encode(pd, "UTF-8");
-		} catch (UnsupportedEncodingException e) {
-			e.printStackTrace();
-		}
-		return null;
-	}
-	
 
 }

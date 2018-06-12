@@ -41,14 +41,15 @@ public class PagePaser extends AbstractPaser<SportModule> {
 				continue;
 			}
 			
-			String groupName = StringUtils.substring(sportGroupLine, "NA=", ";DO");
-			sportGroupLine = StringUtils.substring(sportGroupLine, "|MA;");
+			String[] titles =  sportGroupLine.split(SEPARATOR_MA);
+			
+			String groupName = StringUtils.substring(titles[0], "NA=", ";DO");
 			
 			sportModule = new SportModule();
 			sportModule.setResourceId(resourceId);
 			sportModule.setGroupName(groupName);
 
-			this.parseGroupLine(sportGroupLine, sportModule);
+			this.parseGroupLine(titles[1], sportModule);
 			list.add(sportModule);
 		}
 		return list;
@@ -56,8 +57,9 @@ public class PagePaser extends AbstractPaser<SportModule> {
 	
 	private void parseGroupLine(String line, SportModule sportModule) {
 		String[] items = line.split(SEPARATOR_PA);
-		for (String item : items) {
-			String na = StringUtils.substring(item, "NA=", ";DO");
+		for (int i = 1; i < items.length; i++) {
+			String item = items[i];
+			String na = StringUtils.substring(item, "NA=", ";XB");
 			String pd = StringUtils.substring(item, "PD=", ";FF");
 			switch (na) {
 				case "比赛投注": sportModule.setGameLinesPd(pd);
@@ -77,6 +79,8 @@ public class PagePaser extends AbstractPaser<SportModule> {
 				default:
 					break;
 			}
+			
 		}
+		
 	}
 }

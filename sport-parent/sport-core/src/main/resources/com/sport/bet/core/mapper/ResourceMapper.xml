@@ -9,7 +9,7 @@
 		<id column="url" property="url"/>
 	</resultMap>
 
-	<select id="selectById" parameterType="java.lang.String" resultMap="ResourceMap">
+	<select id="selectByCode" parameterType="java.lang.String" resultMap="ResourceMap">
 		select id, name,code, url from resource where code = #{code}
 	</select>
 

@@ -1,22 +1,25 @@
 package com.sport.bet.datasource.parsing.bet365;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.context.annotation.Scope;
-import org.springframework.stereotype.Component;
 
 import com.sport.bet.bean.model.SportModule;
 import com.sport.bet.datasource.parsing.AbstractPaser;
 
-@Component
-@Scope
 public class PagePaser extends AbstractPaser<SportModule> {
 	
 	Logger logger = LoggerFactory.getLogger(PagePaser.class);
 	
 	private int resourceId;
+	
+	public static HashMap<String, String> maItem = new HashMap<String, String>();
+	
+	static{
+		maItem.put("","");
+	}
 	
 	@Override
 	public List<SportModule> parsed(String page) {

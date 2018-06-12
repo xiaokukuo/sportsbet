@@ -2,6 +2,8 @@ package com.sport.bet.datasource.parsing.bet365;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
@@ -12,6 +14,8 @@ import com.sport.bet.datasource.parsing.AbstractPaser;
 @Scope
 public class PagePaser extends AbstractPaser<SportModule> {
 	
+	Logger logger = LoggerFactory.getLogger(PagePaser.class);
+	
 	private int resourceId;
 	
 	@Override
@@ -19,8 +23,9 @@ public class PagePaser extends AbstractPaser<SportModule> {
 		
 		SportModule sportModule = null;
 
-		if (!page.startsWith("F|CL;") || !page.endsWith("|")) {
-			System.err.println("返回报文错误");
+		if (!page.startsWith("F|CL") || !page.endsWith("|")) {
+			logger.error("返回报文错误");
+			return null;
 		}
 
 		String[] sportGroupLines = page.split(SEPARATOR_EV);

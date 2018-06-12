@@ -2,10 +2,15 @@ package com.sport.bet.datasource.parsing.bet365;
 
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import com.sport.bet.bean.model.SportModuleGame;
 import com.sport.bet.datasource.parsing.AbstractPaser;
 
 public class PageGroupPaser extends AbstractPaser<SportModuleGame> {
+	
+	Logger logger = LoggerFactory.getLogger(PageGroupPaser.class);
 	
 	private int resourceId;
 	

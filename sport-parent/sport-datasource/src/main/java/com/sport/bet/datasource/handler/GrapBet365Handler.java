@@ -4,6 +4,8 @@ import java.io.UnsupportedEncodingException;
 import java.net.URLEncoder;
 import java.util.List;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -19,9 +21,12 @@ import com.sport.bet.core.service.impl.SportModuleServiceImpl;
 import com.sport.bet.datasource.parsing.bet365.PageGroupPaser;
 import com.sport.bet.datasource.parsing.bet365.PageGroupTeamPaser;
 import com.sport.bet.datasource.parsing.bet365.PagePaser;
+import com.sport.bet.datasource.utils.ListUtils;
 
 @Component
 public class GrapBet365Handler {
+	
+	Logger logger = LoggerFactory.getLogger(GrapBet365Handler.class);
 	
 	@Autowired
 	private PagePaser pagePaser;
@@ -50,39 +55,47 @@ public class GrapBet365Handler {
 	
 	public void grabGroupModule() throws UnsupportedEncodingException{
 		
-		//List<Resource> listResource = resourceService.findAll(null);
-		
 		Resource resource = resourceService.findByCode("basketball");
-		String pageStr = HttpTool.getSport365(resource.getUrl());
 		
-		//获取篮球页面的数据--group
+		//1、获取篮球页面的数据--group
+		String pageStr = HttpTool.getSport365(resource.getUrl());
 		List<SportModule> sportModuleList = pagePaser.parsed(pageStr);
+		
+		if(ListUtils.isEmpty(sportModuleList)){
+			logger.error("篮球版块数据异常");
+			return;
+		}
+		
 		sportModuleList = sportModuleService.save(sportModuleList, TABALE_NAME_365);
 		
+		//2、遍历每个篮球模块，获取对应模块的比赛队伍
 		List<SportModuleGame> teamList = null;
-		//遍历每个篮球模块，获取对应模块的比赛队伍
 		for (SportModule sportModule : sportModuleList) {
 			String url =getUrl(sportModule.getGameLinesPd());
 			String responseStr = HttpTool.getSport365(url);
-		
 			//解析比赛队伍
 			teamList = pageGroupPaser.parsed(responseStr);
-			if(teamList != null && teamList.size() > 0){
-				teamList = sportModuleGameService.save(teamList, TABALE_NAME_365);
+			
+			if(ListUtils.isEmpty(teamList)){
+				logger.error("{}——篮球版块的数据发生异常",sportModule.getGroupName());
+				return;
 			}
+			
+			teamList = sportModuleGameService.save(teamList, TABALE_NAME_365);
 		}
 		
-		//遍历比赛队伍，获取比赛队伍的信息
+		//3、遍历比赛队伍，获取比赛队伍的信息
 		for (SportModuleGame sportModuleGame : teamList) {
-			
 			String urlscore = getUrl(sportModuleGame.getDeailPd());
 			String pageScoreResponse = HttpTool.getSport365(urlscore);
 			
 			//解析比赛分数
-			List<SportGameOdds>  list = pageGroupTeamPaser.parsed(pageScoreResponse);
-			if(list != null && list.size() > 0){
-				sportGameOddsService.save(list, TABALE_NAME_365);
+			List<SportGameOdds>  gameOddsList = pageGroupTeamPaser.parsed(pageScoreResponse);
+			if(ListUtils.isEmpty(teamList)){
+				logger.error("{}——队伍分数数据发生异常",sportModuleGame.getTeamName1()+" V "+sportModuleGame.getTeamName2());
+				return;
 			}
+			sportGameOddsService.save(gameOddsList, TABALE_NAME_365);
 		}
 				
 	}

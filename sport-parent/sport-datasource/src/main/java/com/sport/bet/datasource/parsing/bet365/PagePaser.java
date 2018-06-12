@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 
 import com.sport.bet.bean.model.SportModule;
 import com.sport.bet.datasource.parsing.AbstractPaser;
+import com.sport.bet.datasource.utils.StringUtils;
 
 public class PagePaser extends AbstractPaser<SportModule> {
 	
@@ -32,57 +33,50 @@ public class PagePaser extends AbstractPaser<SportModule> {
 		}
 
 		String[] sportGroupLines = page.split(SEPARATOR_EV);
-
-		for (String sportGroupLine : sportGroupLines) {
-			if (!sportGroupLine.contains("比赛投注")) {
+		
+		for (int i = 1; i < sportGroupLines.length; i++) {
+			
+			String sportGroupLine = sportGroupLines[i];
+			if(!sportGroupLine.startsWith("IT=-")){
 				continue;
 			}
+			
+			String groupName = StringUtils.substring(sportGroupLine, "NA=", ";DO");
+			sportGroupLine = StringUtils.substring(sportGroupLine, "|MA;");
+			
 			sportModule = new SportModule();
 			sportModule.setResourceId(resourceId);
-			String groupName = sportGroupLine.substring(0, sportGroupLine.indexOf(";DO"));
-			sportModule.setGroupName(groupName.split(";")[1].substring(3));
+			sportModule.setGroupName(groupName);
 
 			this.parseGroupLine(sportGroupLine, sportModule);
-
 			list.add(sportModule);
 		}
-
 		return list;
 	}
 	
 	private void parseGroupLine(String line, SportModule sportModule) {
-		String[] elements = line.split(SEPARATOR_MA);
-		int lenght = 0;
-		for (String ele : elements) {
-			if (ele.contains("投注盘")) {
-				String[] items = ele.split(SEPARATOR_PA);
-				for (String item : items) {
-					lenght = item.length() - 5;
-					if (item.contains("比赛投注")) {
-						sportModule.setGameLinesPd(item.substring(item.indexOf("PD") + 3, lenght));
-					}
-					if (item.contains("上半场")) {
-						sportModule.setFirstHalfPd(item.substring(item.indexOf("PD") + 3, lenght));
-					}
-					if (item.contains("下半场")) {
-						sportModule.setSecondHalfPd(item.substring(item.indexOf("PD") + 3, lenght));
-					}
-					if (item.contains("第1赛节")) {
-						sportModule.setFirstQuarterPd(item.substring(item.indexOf("PD") + 3, lenght));
-					}
-					if (item.contains("第2赛节")) {
-						sportModule.setSecondQuarterPd(item.substring(item.indexOf("PD") + 3, lenght));
-					}
-					if (item.contains("第3赛节")) {
-						sportModule.setThirdQuarterPd(item.substring(item.indexOf("PD") + 3, lenght));
-					}
-					if (item.contains("第4赛节")) {
-						sportModule.setFourthQuarterPd(item.substring(item.indexOf("PD") + 3, lenght));
-					}
-				}
-				break;
+		String[] items = line.split(SEPARATOR_PA);
+		for (String item : items) {
+			String na = StringUtils.substring(item, "NA=", ";DO");
+			String pd = StringUtils.substring(item, "PD=", ";FF");
+			switch (na) {
+				case "比赛投注": sportModule.setGameLinesPd(pd);
+					break;
+				case "上半场": sportModule.setFirstHalfPd(pd);
+					break;
+				case "下半场": sportModule.setSecondHalfPd(pd);
+					break;
+				case "第1赛节": sportModule.setFirstQuarterPd(pd);
+					break;
+				case "第2赛节": sportModule.setSecondQuarterPd(pd);
+					break;
+				case "第3赛节": sportModule.setThirdQuarterPd(pd);
+					break;
+				case "第4赛节": sportModule.setFourthQuarterPd(pd);
+					break;
+				default:
+					break;
 			}
-
 		}
 	}
 }

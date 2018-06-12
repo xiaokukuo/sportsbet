@@ -17,6 +17,7 @@ public class PagePaserTest extends BaseTest{
 		String url = "https://www.365sport365.com/SportsBook.API/web?lid=10&zid=0&pd=%23AS%23B18%23&cid=42&ctid=42";
 		String pageStr = HttpTool.getSport365(url);
 		List<SportModule> sportModuleList = pagePaser.parsed(pageStr);
+		System.out.println(sportModuleList);
 	}
 
 }

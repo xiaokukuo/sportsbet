@@ -70,5 +70,6 @@
 		<module>sport-common</module>
 		<module>sport-bean</module>
     <module>sport-datasouce</module>
+    <module>sport-datasource</module>
   </modules>
 </project>

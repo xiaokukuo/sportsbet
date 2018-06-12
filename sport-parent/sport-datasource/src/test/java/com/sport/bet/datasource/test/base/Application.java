@@ -12,7 +12,7 @@ import com.sport.bet.common.utils.mybatis.MapperNameGenerator;
 		"com.sport.bet.batch.controller", 
 		"com.sport.bet.core.service",
 		"com.sport.bet.core.mapper",
-		"com.sport.bet.datasouce"
+		"com.sport.bet.datasource"
 		
 })
 @PropertySources({

@@ -4,21 +4,23 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import com.sport.bet.bean.model.SportModuleGame;
 import com.sport.bet.datasource.parsing.AbstractPaser;
 
+@Component
 public class PageGroupPaser extends AbstractPaser<SportModuleGame> {
 	
 	Logger logger = LoggerFactory.getLogger(PageGroupPaser.class);
 	
-	private int resourceId;
+	private volatile int resourceId;
 	
-	private int moduleId;
+	private volatile int moduleId;
 	
 	@Override
 	public List<SportModuleGame> parsed(String groupPage) {
-		
+		//list.clear();
 		SportModuleGame gameTeam = null;
 
 		String[] gameLines = groupPage.split(SEPARATOR_MA);
@@ -58,6 +60,22 @@ public class PageGroupPaser extends AbstractPaser<SportModuleGame> {
 		}
 
 		return list;
+	}
+
+	public int getResourceId() {
+		return resourceId;
+	}
+
+	public void setResourceId(int resourceId) {
+		this.resourceId = resourceId;
+	}
+
+	public int getModuleId() {
+		return moduleId;
+	}
+
+	public void setModuleId(int moduleId) {
+		this.moduleId = moduleId;
 	}
 
 }

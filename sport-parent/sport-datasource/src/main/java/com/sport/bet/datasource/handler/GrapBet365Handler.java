@@ -55,9 +55,11 @@ public class GrapBet365Handler {
 	public void grabGroupModule() throws UnsupportedEncodingException{
 		
 		Resource resource = resourceService.findByCode("basketball");
-		
+		int resourceId = resource.getId();
 		//1、获取篮球页面的数据--group
 		String pageStr = HttpTool.getSport365(resource.getUrl());
+		
+		pagePaser.setResourceId(resourceId);
 		List<SportModule> sportModuleList = pagePaser.parsed(pageStr);
 		
 		if(ListUtils.isEmpty(sportModuleList)){
@@ -72,20 +74,25 @@ public class GrapBet365Handler {
 			String url = HttpUtils.getUrl356(sportModule.getGameLinesPd());
 			String responseStr = HttpTool.getSport365(url);
 			//解析比赛队伍
+			pageGroupPaser.setModuleId(sportModule.getId());
+			pageGroupPaser.setResourceId(resourceId);
 			teamList = pageGroupPaser.parsed(responseStr);
 			
-			if(ListUtils.isEmpty(teamList)){
-				logger.error("{}——篮球版块的数据发生异常",sportModule.getGroupName());
-				return;
-			}
-			teamList = sportModuleGameService.save(teamList, TableConstant.TABALE_NAME_365);
+			/*if(ListUtils.isEmpty(teamList)){
+				logger.error("{}——篮球版块的没有比赛",sportModule.getGroupName());
+				continue;
+			}*/
+			
 		}
+		teamList = sportModuleGameService.save(teamList, TableConstant.TABALE_NAME_365);
+		logger.info("end");
 		
 		//3、遍历比赛队伍，获取比赛队伍的信息
-		for (SportModuleGame sportModuleGame : teamList) {
+	/*	for (SportModuleGame sportModuleGame : teamList) {
 			String urlscore = HttpUtils.getUrl356(sportModuleGame.getDeailPd());
 			String pageScoreResponse = HttpTool.getSport365(urlscore);
 			
+			pageGroupTeamPaser.setGameId(sportModuleGame.getId());
 			//解析比赛分数
 			List<SportGameOdds>  gameOddsList = pageGroupTeamPaser.parsed(pageScoreResponse);
 			if(ListUtils.isEmpty(teamList)){
@@ -93,7 +100,7 @@ public class GrapBet365Handler {
 				return;
 			}
 			sportGameOddsService.save(gameOddsList, TableConstant.TABALE_NAME_365);
-		}
+		}*/
 				
 	}
 

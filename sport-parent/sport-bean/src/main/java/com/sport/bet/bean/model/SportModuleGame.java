@@ -8,9 +8,9 @@ public class SportModuleGame extends BaseBean {
 	
 	private int sportGroupId;
 	
-	private String cid;
+	private String cid; // 篮球的那个板块id
 	
-	private String eid;
+	private String eid; // 篮球板块中队伍Id
 
 	private String teamName1;
 

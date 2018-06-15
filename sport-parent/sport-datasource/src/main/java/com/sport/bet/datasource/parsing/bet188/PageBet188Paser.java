@@ -25,16 +25,13 @@ public class PageBet188Paser extends AbstractPaser<SportModule> {
 			
 			if("basketball".equals(psmdJsonObj.getString("sen"))){
 				JSONArray pucArray = psmdJsonObj.getJSONArray("puc");
-				
+				SportModule module = null;
 				for (Object pubObj : pucArray) {
 					JSONObject pubJsonObj = (JSONObject) pubObj;
-					String groupCid = pubJsonObj.getString("cid");
-					String groupCn = pubJsonObj.getString("cn");
-					
-					SportModule module = new SportModule();
+					module = new SportModule();
 					module.setResourceId(resourceId);
-					module.setGroupName(groupCn);
-					module.setCid(groupCid);
+					module.setGroupName( pubJsonObj.getString("cn")); // 模块名称
+					module.setCid(pubJsonObj.getString("cid")); // 模块ID
 					list.add(module);
 				}
 				

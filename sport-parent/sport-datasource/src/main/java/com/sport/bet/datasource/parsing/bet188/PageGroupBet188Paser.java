@@ -39,10 +39,12 @@ Logger logger = LoggerFactory.getLogger(PageGroupPaser.class);
 				}
 				moduleGame = new SportModuleGame();
 				moduleGame.setResourceId(resourceId);
-				moduleGame.setSportGroupId(Integer.parseInt(groupCid));
+				
+				moduleGame.setCid(groupCid); //板块ID
+				moduleGame.setEid(cesJsonObj.getString("eid"));  // 板块下队伍的 Id
 				moduleGame.setTeamName1(cesJsonObj.getString("ht"));
 				moduleGame.setTeamName2(cesJsonObj.getString("at"));
-				moduleGame.setEid(cesJsonObj.getString("eid"));
+				
 				
 				moduleGame.setGameTime(cesJsonObj.getString("esd")+","+cesJsonObj.getString("est"));
 				

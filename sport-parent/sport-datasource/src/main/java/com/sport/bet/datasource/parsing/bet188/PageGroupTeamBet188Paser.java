@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.stereotype.Component;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
@@ -11,40 +12,82 @@ import com.sport.bet.bean.model.SportGameOdds;
 import com.sport.bet.datasource.parsing.AbstractPaser;
 import com.sport.bet.datasource.parsing.bet365.PageGroupTeamPaser;
 
+@Component
 public class PageGroupTeamBet188Paser extends AbstractPaser<SportGameOdds> {
 
 	Logger logger = LoggerFactory.getLogger(PageGroupTeamPaser.class);
 
-	private volatile int gameId;
-	
 	@Override
 	public List<SportGameOdds> parsed(String pageJson) {
-		SportGameOdds sportGameOdds = new SportGameOdds();
-		JSONArray moddcArray =  JSONObject.parseArray(pageJson);
-		for (Object moddcObj : moddcArray) {
-			JSONObject moddcJsonObj = (JSONObject) moddcObj;
-			
-			
-			String groupName = moddcJsonObj.getString("n");
-			String groupk = moddcJsonObj.getString("k");
-			System.out.println(groupName+"---" + groupk);
-			
-			JSONObject eobj = (JSONObject) moddcJsonObj.getJSONArray("e").get(0);
-			
-			JSONObject gameOdds = eobj.getJSONObject("o");
-			
-			String teamPk = eobj.getString("pk");
-			System.out.println(teamPk);
-			
-			
-			sportGameOdds.setPkid(teamPk);
-			sportGameOdds
-			
-			/*JSONObject eobj =  (JSONObject) eArray.get(0);
-			JSONObject o = eobj.getJSONObject("o");
-			System.out.println(o.toJSONString());*/
+		SportGameOdds sportGameOdds = null;
+		
+		// 篮球的板块集合
+		JSONArray moddcArray = JSONObject.parseArray(pageJson);
+		for (Object modcObj : moddcArray) {
+			JSONObject modcJsonObj = (JSONObject) modcObj;
+
+			//String groupName = modcJsonObj.getString("n"); // 模块名称
+			String cid = modcJsonObj.getString("k"); // d-c -k 篮球板块ID
+ 
+			//板块下的队伍集合
+			JSONArray modeArray = modcJsonObj.getJSONArray("e");
+			for (Object modeObj : modeArray) {
+				JSONObject modeJsonObj = (JSONObject) modeObj;
+				if(!modeJsonObj.getBoolean("hasParlay")){
+					 continue;
+				} 
+				
+				String eid = modeJsonObj.getString("k"); // 篮球板块下队伍ID
+				JSONObject gameOdds = modeJsonObj.getJSONObject("o"); // 比分集合类
+				
+				JSONArray ahArray = gameOdds.getJSONArray("ah"); // 让分
+				if(ahArray !=null && ahArray.size()>0){
+					for (int i = 0; i < ahArray.size(); i=i+8) {
+						sportGameOdds = new SportGameOdds();
+						sportGameOdds.setCid(cid); // 篮球的那个板块id
+						sportGameOdds.setEid(eid); // 篮球板块中队伍Id
+						
+						sportGameOdds.setScoreType(1);
+						sportGameOdds.setTeamNa(ahArray.getString(i+1)); //让分系数
+						sportGameOdds.setTeamScore(ahArray.getString(i+5));
+						list.add(sportGameOdds);
+						
+						
+						sportGameOdds = new SportGameOdds();
+						sportGameOdds.setCid(cid); // 篮球的那个板块id
+						sportGameOdds.setEid(eid); // 篮球板块中队伍Id
+						sportGameOdds.setScoreType(1);
+						sportGameOdds.setTeamNa(ahArray.getString(i+3)); //让分系数
+						sportGameOdds.setTeamScore(ahArray.getString(i+7));
+						list.add(sportGameOdds);
+					
+					}
+				}
+				
+				JSONArray ouArray = gameOdds.getJSONArray("ou"); // 总分
+				
+				if(ouArray !=null && ouArray.size()>0){
+					//1:让分，2：总分，3：强弱盘
+					for (int i = 0; i < ouArray.size(); i=i+8) {
+						sportGameOdds = new SportGameOdds();
+						sportGameOdds.setCid(cid); // 篮球的那个板块id
+						sportGameOdds.setEid(eid); // 篮球板块中队伍Id
+
+						
+						sportGameOdds.setScoreType(2);
+						sportGameOdds.setScore(ouArray.getString(i+1));
+						sportGameOdds.setHigher(ouArray.getString(i+5));
+						sportGameOdds.setLower(ouArray.getString(i+7));
+						list.add(sportGameOdds);
+						
+					}
+				}
+				
+			}
+			//JSONArray mlArray = gameOdds.getJSONArray("ml"); // 独赢盘
+			//JSONArray oeArray = gameOdds.getJSONArray("oe"); // 总分:单 / 双
 		}
-		return null;
+		return list;
 	}
 
 }

@@ -9,7 +9,7 @@ public class SportModule extends BaseBean {
 
 	private int resourceId;
 	
-	private String cid;
+	private String cid; // 篮球的那个板块id
 
 	private String groupName;
 

@@ -1,10 +1,13 @@
 package com.sport.bet.datasource.handler;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
+import com.sport.bet.bean.model.SportGameOdds;
 import com.sport.bet.common.utils.HttpTool;
 import com.sport.bet.datasource.parsing.bet188.PageBet188Paser;
 import com.sport.bet.datasource.parsing.bet188.PageGroupBet188Paser;
@@ -29,7 +32,11 @@ public class GrapBet188Handler {
 		
 		JSONObject jsonObject = JSONObject.parseObject(pageJosn);
 		JSONObject lpd = jsonObject.getJSONObject("lpd");
+		
 		JSONObject mod = jsonObject.getJSONObject("mod");
+		if(mod == null){
+			mod = jsonObject.getJSONObject("mbd");
+		}
 		
 		/*JSONArray psmdArray = lpd.getJSONObject("psm").getJSONArray("psmd");
 		pageBet188Paser.setResourceId(1);
@@ -52,8 +59,11 @@ public class GrapBet188Handler {
 		
 		JSONArray moddcArray = mod.getJSONObject("d").getJSONArray("c");
 		
-		pageGroupTeamBet188Paser.parsed(moddcArray.toJSONString());
+		List<SportGameOdds> sportGameOddsList =  pageGroupTeamBet188Paser.parsed(moddcArray.toJSONString());
 		
+		for (SportGameOdds sportGameOdds : sportGameOddsList) {
+			System.out.println(sportGameOdds.toString());
+		}
 	}
 	
 }

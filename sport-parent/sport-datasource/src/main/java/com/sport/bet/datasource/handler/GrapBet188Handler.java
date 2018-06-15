@@ -8,6 +8,8 @@ import org.springframework.stereotype.Component;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.sport.bet.bean.model.SportGameOdds;
+import com.sport.bet.bean.model.SportModule;
+import com.sport.bet.bean.model.SportModuleGame;
 import com.sport.bet.common.utils.HttpTool;
 import com.sport.bet.datasource.parsing.bet188.PageBet188Paser;
 import com.sport.bet.datasource.parsing.bet188.PageGroupBet188Paser;
@@ -38,31 +40,33 @@ public class GrapBet188Handler {
 			mod = jsonObject.getJSONObject("mbd");
 		}
 		
-		/*JSONArray psmdArray = lpd.getJSONObject("psm").getJSONArray("psmd");
+		JSONArray psmdArray = lpd.getJSONObject("psm").getJSONArray("psmd");
 		pageBet188Paser.setResourceId(1);
 		List<SportModule> moduleList = pageBet188Paser.parsed(psmdArray.toJSONString());
 		
 		for (SportModule sportModule : moduleList) {
 			System.err.println(sportModule.toString());
 			
-			System.err.println("-------------------------");
+			
 		}
+		
+		System.err.println("-------------------------");
 		
 		pageGroupBet188Paser.setResourceId(1);
 		
 		List<SportModuleGame>  sportModuleGameList = pageGroupBet188Paser.parsed(pageBet188Paser.getNext().toJSONString());
 		
 		for (SportModuleGame sportModuleGame : sportModuleGameList) {
-			System.err.println(sportModuleGame.toString());
-		}*/
-		
+			System.out.println(sportModuleGame.toString());
+		}
+		System.err.println("-------------------------");
 		
 		JSONArray moddcArray = mod.getJSONObject("d").getJSONArray("c");
 		
 		List<SportGameOdds> sportGameOddsList =  pageGroupTeamBet188Paser.parsed(moddcArray.toJSONString());
 		
 		for (SportGameOdds sportGameOdds : sportGameOddsList) {
-			System.out.println(sportGameOdds.toString());
+			System.err.println(sportGameOdds.toString());
 		}
 	}
 	

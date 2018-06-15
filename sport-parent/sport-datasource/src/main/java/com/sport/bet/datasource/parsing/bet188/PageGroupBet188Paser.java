@@ -22,9 +22,9 @@ Logger logger = LoggerFactory.getLogger(PageGroupPaser.class);
 	private volatile int moduleId;
 	
 	@Override
-	public List<SportModuleGame> parsed(String pagjson) {
+	public List<SportModuleGame> parsed(String pageJson) {
 		SportModuleGame moduleGame = null;
-		JSONArray pucArray =  JSONObject.parseArray(pagjson);
+		JSONArray pucArray =  JSONObject.parseArray(pageJson);
 		
 		for (Object pubObj : pucArray) {
 			JSONObject pubJsonObj = (JSONObject) pubObj;
@@ -42,7 +42,7 @@ Logger logger = LoggerFactory.getLogger(PageGroupPaser.class);
 				moduleGame.setSportGroupId(Integer.parseInt(groupCid));
 				moduleGame.setTeamName1(cesJsonObj.getString("ht"));
 				moduleGame.setTeamName2(cesJsonObj.getString("at"));
-				moduleGame.setDeailPd(cesJsonObj.getString("eid"));
+				moduleGame.setEid(cesJsonObj.getString("eid"));
 				
 				moduleGame.setGameTime(cesJsonObj.getString("esd")+","+cesJsonObj.getString("est"));
 				

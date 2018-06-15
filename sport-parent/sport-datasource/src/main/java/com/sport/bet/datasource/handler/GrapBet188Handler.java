@@ -8,6 +8,7 @@ import com.alibaba.fastjson.JSONObject;
 import com.sport.bet.common.utils.HttpTool;
 import com.sport.bet.datasource.parsing.bet188.PageBet188Paser;
 import com.sport.bet.datasource.parsing.bet188.PageGroupBet188Paser;
+import com.sport.bet.datasource.parsing.bet188.PageGroupTeamBet188Paser;
 
 @Component
 public class GrapBet188Handler {
@@ -17,6 +18,9 @@ public class GrapBet188Handler {
 	
 	@Autowired
 	private PageGroupBet188Paser pageGroupBet188Paser;
+	
+	@Autowired
+	private PageGroupTeamBet188Paser pageGroupTeamBet188Paser;
 
 	String url = "https://landing-sb.prdasbb18a1.com/zh-cn/Service/CentralService?GetData&ts=1528967723534";
 	public void grabGroup(){
@@ -26,29 +30,6 @@ public class GrapBet188Handler {
 		JSONObject jsonObject = JSONObject.parseObject(pageJosn);
 		JSONObject lpd = jsonObject.getJSONObject("lpd");
 		JSONObject mod = jsonObject.getJSONObject("mod");
-		
-		JSONArray moddcArray = mod.getJSONObject("d").getJSONArray("c");
-		
-		
-		
-		for (Object moddcObj : moddcArray) {
-			JSONObject moddcJsonObj = (JSONObject) moddcObj;
-			
-			
-			String n = moddcJsonObj.getString("n");
-			String k = moddcJsonObj.getString("k");
-			System.out.println(n+"---"+k);
-			
-			JSONObject eobj = (JSONObject) moddcJsonObj.getJSONArray("e").get(0);
-			JSONObject o = eobj.getJSONObject("o");
-			
-			String teamPk = eobj.getString("pk");
-			System.out.println(teamPk);
-			
-			/*JSONObject eobj =  (JSONObject) eArray.get(0);
-			JSONObject o = eobj.getJSONObject("o");
-			System.out.println(o.toJSONString());*/
-		}
 		
 		/*JSONArray psmdArray = lpd.getJSONObject("psm").getJSONArray("psmd");
 		pageBet188Paser.setResourceId(1);
@@ -68,6 +49,10 @@ public class GrapBet188Handler {
 			System.err.println(sportModuleGame.toString());
 		}*/
 		
+		
+		JSONArray moddcArray = mod.getJSONObject("d").getJSONArray("c");
+		
+		pageGroupTeamBet188Paser.parsed(moddcArray.toJSONString());
 		
 	}
 	

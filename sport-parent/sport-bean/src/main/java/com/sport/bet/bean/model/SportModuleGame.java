@@ -8,6 +8,8 @@ public class SportModuleGame extends BaseBean {
 	
 	private int sportGroupId;
 	
+	private String cid;
+	
 	private String eid;
 
 	private String teamName1;
@@ -84,12 +86,19 @@ public class SportModuleGame extends BaseBean {
 		this.eid = eid;
 	}
 
-	@Override
-	public String toString() {
-		return "SportModuleGame [resourceId=" + resourceId + ", sportGroupId=" + sportGroupId + ", eid=" + eid
-				+ ", teamName1=" + teamName1 + ", teamName2=" + teamName2 + ", deailPd=" + deailPd + ", gameType="
-				+ gameType + ", gameTime=" + gameTime + "]";
+	public String getCid() {
+		return cid;
 	}
 
+	public void setCid(String cid) {
+		this.cid = cid;
+	}
 
+	@Override
+	public String toString() {
+		return "SportModuleGame [resourceId=" + resourceId + ", sportGroupId=" + sportGroupId + ", cid=" + cid
+				+ ", eid=" + eid + ", teamName1=" + teamName1 + ", teamName2=" + teamName2 + ", deailPd=" + deailPd
+				+ ", gameType=" + gameType + ", gameTime=" + gameTime + "]";
+	}
+	
 }

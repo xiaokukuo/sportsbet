@@ -34,7 +34,7 @@ public class PageBet188Paser extends AbstractPaser<SportModule> {
 					SportModule module = new SportModule();
 					module.setResourceId(resourceId);
 					module.setGroupName(groupCn);
-					module.setGameLinesPd(groupCid);
+					module.setCid(groupCid);
 					list.add(module);
 				}
 				

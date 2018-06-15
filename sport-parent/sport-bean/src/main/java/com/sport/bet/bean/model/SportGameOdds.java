@@ -9,6 +9,10 @@ public class SportGameOdds extends BaseBean {
 
 	private int gameId;
 	
+	private String cid;
+	
+	private String eid;
+	
 	private String pkid;
 
 	private int scoreType; // 1:让分，2：总分，3：强弱盘
@@ -107,12 +111,27 @@ public class SportGameOdds extends BaseBean {
 		this.pkid = pkid;
 	}
 
-	@Override
-	public String toString() {
-		return "SportGameOdds [gameId=" + gameId + ", pkid=" + pkid + ", scoreType=" + scoreType + ", score=" + score
-				+ ", higher=" + higher + ", lower=" + lower + ", team=" + team + ", teamNa=" + teamNa + ", teamScore="
-				+ teamScore + ", singleWinerScore=" + singleWinerScore + "]";
+	public String getCid() {
+		return cid;
 	}
 
+	public void setCid(String cid) {
+		this.cid = cid;
+	}
+
+	public String getEid() {
+		return eid;
+	}
+
+	public void setEid(String eid) {
+		this.eid = eid;
+	}
+
+	@Override
+	public String toString() {
+		return "SportGameOdds [gameId=" + gameId + ", cid=" + cid + ", eid=" + eid + ", pkid=" + pkid + ", scoreType="
+				+ scoreType + ", score=" + score + ", higher=" + higher + ", lower=" + lower + ", team=" + team
+				+ ", teamNa=" + teamNa + ", teamScore=" + teamScore + ", singleWinerScore=" + singleWinerScore + "]";
+	}
 	
 }

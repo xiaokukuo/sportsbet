@@ -8,6 +8,8 @@ public class SportModule extends BaseBean {
 	private static final long serialVersionUID = 5298370904243632295L;
 
 	private int resourceId;
+	
+	private String cid;
 
 	private String groupName;
 
@@ -97,10 +99,19 @@ public class SportModule extends BaseBean {
 		this.fourthQuarterPd = fourthQuarterPd;
 	}
 
+	
+	public String getCid() {
+		return cid;
+	}
+
+	public void setCid(String cid) {
+		this.cid = cid;
+	}
+
 	@Override
 	public String toString() {
-		return "SportModule [resourceId=" + resourceId + ", groupName=" + groupName + ", gameLinesPd=" + gameLinesPd
-				+ ", firstHalfPd=" + firstHalfPd + ", secondHalfPd=" + secondHalfPd + ", firstQuarterPd="
+		return "SportModule [resourceId=" + resourceId + ", cid=" + cid + ", groupName=" + groupName + ", gameLinesPd="
+				+ gameLinesPd + ", firstHalfPd=" + firstHalfPd + ", secondHalfPd=" + secondHalfPd + ", firstQuarterPd="
 				+ firstQuarterPd + ", secondQuarterPd=" + secondQuarterPd + ", thirdQuarterPd=" + thirdQuarterPd
 				+ ", fourthQuarterPd=" + fourthQuarterPd + "]";
 	}

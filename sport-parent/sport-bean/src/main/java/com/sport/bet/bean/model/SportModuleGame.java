@@ -7,6 +7,8 @@ public class SportModuleGame extends BaseBean {
 	private int resourceId;
 	
 	private int sportGroupId;
+	
+	private String eid;
 
 	private String teamName1;
 
@@ -74,11 +76,20 @@ public class SportModuleGame extends BaseBean {
 		this.gameTime = gameTime;
 	}
 
+	public String getEid() {
+		return eid;
+	}
+
+	public void setEid(String eid) {
+		this.eid = eid;
+	}
+
 	@Override
 	public String toString() {
-		return "SportModuleGame [id="+getId()+", resourceId=" + resourceId + ", sportGroupId=" + sportGroupId + ", teamName1="
-				+ teamName1 + ", teamName2=" + teamName2 + ", deailPd=" + deailPd + ", gameType=" + gameType
-				+ ", gameTime=" + gameTime + "]";
+		return "SportModuleGame [resourceId=" + resourceId + ", sportGroupId=" + sportGroupId + ", eid=" + eid
+				+ ", teamName1=" + teamName1 + ", teamName2=" + teamName2 + ", deailPd=" + deailPd + ", gameType="
+				+ gameType + ", gameTime=" + gameTime + "]";
 	}
+
 
 }

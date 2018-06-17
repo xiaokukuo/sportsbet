@@ -25,6 +25,22 @@ public class SportModuleServiceTest extends BaseTest {
 		sport.setGameLinesPd("psd");
 		list.add(sport);
 				
+		list = sportModuleService.save(list, "365");
+		
+		
+		for (SportModule sportModule : list) {
+			System.out.println(sportModule);
+		}
+	}
+	
+	@Test
+	//@Rollback(value = true)
+	public void findTest (){
+		List<SportModule> list = sportModuleService.findAll("188");
+			
+		for (SportModule sportModule : list) {
+			System.out.println(sportModule);
+		}
 		//sportModuleService.saveByBatch(list, "365");
 	}
 }

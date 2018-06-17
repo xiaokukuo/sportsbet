@@ -28,4 +28,44 @@ public class SportGameOddsServiceImplTest  extends BaseTest {
 				
 		sportGameOddsService.save(list, "365");
 	}
+	
+	@Test
+	public void findTest (){
+		List<SportGameOdds> list = sportGameOddsService.listJoinGameByEid(0, "2634265", "188");
+		
+		List<SportGameOdds> list2 = sportGameOddsService.listJoinGameByEid(1, null, "365");
+		
+		for (SportGameOdds odds : list) {
+			if(odds.getScoreType() == 1){
+				for (SportGameOdds odds2 : list2) {
+					if(odds2.getScoreType() == 2){
+						if(paserDouble(odds2.getTeamNa())+paserDouble(odds.getTeamNa()) <0.00001
+								
+								&& paserDouble(odds2.getTeamNa())+paserDouble(odds.getTeamNa()) > -0.00001){
+							System.out.println(odds.getTeamNa() +": "+odds.getTeamScore() +"  ---"+odds2.getTeamNa() +": "+odds2.getTeamScore() );
+						}
+						
+					}
+				}
+				
+				
+			}
+			
+		}
+		
+	}
+	
+	
+	public static Double paserDouble(String str){
+		if(str.startsWith("+")){
+			return Double.parseDouble(str.substring(1));
+		}
+		if(str.startsWith("-")){
+			return 0-Double.parseDouble(str.substring(1));
+		}
+		
+		return 0d;
+		
+	}
+	
 }

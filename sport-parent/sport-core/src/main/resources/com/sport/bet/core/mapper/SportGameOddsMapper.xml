@@ -4,27 +4,42 @@
 
 	<resultMap id="SportGameOddsMap" type="com.sport.bet.bean.model.SportGameOdds">
 		<id column="id" property="id"/>
-		<id column="gameId" property="game_id" />
+		<id column="game_id" property="gameId" />
 		<id column="cid" property="cid" />
 		<id column="eid" property="eid" />
-		<id column="scoreType" property="score_type" />
+		<id column="score_type" property="scoreType" />
 		<id column="score" property="score" />
 		<id column="higher" property="higher" />
 		<id column="lower" property="lower" />
 		<id column="team" property="team" />
-		<id column="teamNa" property="team_na" />
-		<id column="teamScore" property="team_score" />
-		<id column="singleWinerScore" property="single_winer_score" />
+		<id column="team_na" property="teamNa" />
+		<id column="team_score" property="teamScore" />
+		<id column="single_winer_score" property="singleWinerScore" />
 	</resultMap>
 
 	<select id="selectById" parameterType="java.lang.Integer" resultMap="SportGameOddsMap">
-		select * from sport_game_odds_${tbName}
+		select * from sport_game_odds_${tableName}
 		where id = #{id}
 	</select>
 
 	<select id="selectAll" resultMap="SportGameOddsMap">
 		select * from sport_game_odds_${tableName}
 	</select>
+	
+	<select id="selectJoinGameByEidOrGameId" resultMap="SportGameOddsMap">
+		SELECT * FROM sport_game_odds_${tableName}  o
+		left join sport_module_game_${tableName} g
+		<if test="tableName == '188' ">
+			on o.eid = g.eid
+			where g.eid = #{eid}; 
+		</if>
+		<if test="tableName == '365' ">
+			on o.game_id = g.id
+			where g.id = #{gameId}; 
+		</if>
+		
+	</select>
+	
 
 	<insert id="insert" keyProperty="id" useGeneratedKeys="true">
 		insert into sport_game_odds_${tableName}

@@ -4,15 +4,15 @@
 
 	<resultMap id="SportModuleGameMap" type="com.sport.bet.bean.model.SportModuleGame">
 		<id column="id" property="id"/>
-		<id column="resourceId" property="resource_id" />
+		<id column="resource_id" property="resourceId" />
 		<id column="cid" property="cid" />
 		<id column="eid" property="eid" />
-		<id column="sportGroupId" property="sport_group_id" />
-		<id column="teamName1" property="team_name1" />
-		<id column="teamName2" property="team_name2" />
-		<id column="deailPd" property="deail_pd" />
-		<id column="gameTime" property="game_time" />
-		<id column="gameType" property="game_type" />
+		<id column="sport_group_id" property="sportGroupId" />
+		<id column="team_name1" property="teamName1" />
+		<id column="team_name2" property="teamName2" />
+		<id column="deail_pd" property="deailPd" />
+		<id column="game_time" property="gameTime" />
+		<id column="game_type" property="gameType" />
 	</resultMap>
 
 	<select id="selectById" parameterType="java.lang.Integer" resultMap="SportModuleGameMap">

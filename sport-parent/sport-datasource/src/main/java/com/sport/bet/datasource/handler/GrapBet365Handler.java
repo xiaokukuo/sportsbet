@@ -57,8 +57,10 @@ public class GrapBet365Handler {
 		Resource resource = resourceService.findByCode("basketball");
 		int resourceId = resource.getId();
 		//1、获取篮球页面的数据--group
-		String pageStr = HttpTool.getSport365(resource.getUrl());
+		String pageStr = HttpTool.getSport365(resource.getUrl365());
 		
+		List<SportModule> sportModule188List = sportModuleService.findAll(TableConstant.TABALE_NAME_188);
+		pagePaser.setSportModule188List(sportModule188List);
 		pagePaser.setResourceId(resourceId);
 		List<SportModule> sportModuleList = pagePaser.parsed(pageStr);
 		
@@ -66,6 +68,7 @@ public class GrapBet365Handler {
 			logger.error("篮球版块数据异常");
 			return;
 		}
+		
 		sportModuleList = sportModuleService.save(sportModuleList, TableConstant.TABALE_NAME_365);
 		
 		//2、遍历每个篮球模块，获取对应模块的比赛队伍
@@ -88,19 +91,20 @@ public class GrapBet365Handler {
 		logger.info("end");
 		
 		//3、遍历比赛队伍，获取比赛队伍的信息
+		List<SportGameOdds>  gameOddsList = null;
 		for (SportModuleGame sportModuleGame : teamList) {
 			String urlscore = HttpUtils.getUrl356(sportModuleGame.getDeailPd());
 			String pageScoreResponse = HttpTool.getSport365(urlscore);
 			
 			pageGroupTeamPaser.setGameId(sportModuleGame.getId());
 			//解析比赛分数
-			List<SportGameOdds>  gameOddsList = pageGroupTeamPaser.parsed(pageScoreResponse);
+			gameOddsList = pageGroupTeamPaser.parsed(pageScoreResponse);
 			if(ListUtils.isEmpty(teamList)){
 				logger.error("{}——队伍分数数据发生异常",sportModuleGame.getTeamName1()+" V "+sportModuleGame.getTeamName2());
 				return;
 			}
-			sportGameOddsService.save(gameOddsList, TableConstant.TABALE_NAME_365);
 		}
+		sportGameOddsService.save(gameOddsList, TableConstant.TABALE_NAME_365);
 				
 	}
 

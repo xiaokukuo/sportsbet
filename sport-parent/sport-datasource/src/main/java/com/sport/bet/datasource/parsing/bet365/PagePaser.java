@@ -17,6 +17,8 @@ public class PagePaser extends AbstractPaser<SportModule> {
 	
 	private volatile int resourceId;
 	
+	private List<SportModule> sportModule188List;
+	
 	@Override
 	public List<SportModule> parsed(String page) {
 		
@@ -39,17 +41,31 @@ public class PagePaser extends AbstractPaser<SportModule> {
 			String[] titles =  sportGroupLine.split(SEPARATOR_MA);
 			
 			String groupName = StringUtils.substring(titles[0], "NA=", ";DO");
-			
-			sportModule = new SportModule();
-			sportModule.setResourceId(resourceId);
-			sportModule.setGroupName(groupName);
+			String likeName = null;
+			for (SportModule sportModule188 : sportModule188List) {
+				likeName = sportModule188.getGroupName().substring(0, 2);
+				if(groupName.startsWith(likeName)){
+					sportModule = new SportModule();
+					sportModule.setResourceId(resourceId);
+					sportModule.setGroupName(groupName);
 
-			this.parseGroupLine(titles[1], sportModule);
-			list.add(sportModule);
+					this.parseGroupLine(titles[1], sportModule);
+					list.add(sportModule);
+				}
+			}
+			
 		}
 		return list;
 	}
 	
+	public List<SportModule> getSportModule188List() {
+		return sportModule188List;
+	}
+
+	public void setSportModule188List(List<SportModule> sportModule188List) {
+		this.sportModule188List = sportModule188List;
+	}
+
 	private void parseGroupLine(String line, SportModule sportModule) {
 		String[] items = line.split(SEPARATOR_PA);
 		for (int i = 1; i < items.length; i++) {

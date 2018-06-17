@@ -11,7 +11,9 @@ public class Resource extends BaseBean{
 	
 	private String code;
 	
-	private String url;
+	private String url365;
+	
+	private String url188;
 	
 
 	public String getName() {
@@ -30,13 +32,21 @@ public class Resource extends BaseBean{
 		this.code = code;
 	}
 
-	public String getUrl() {
-		return url;
+	public String getUrl365() {
+		return url365;
 	}
 
-	public void setUrl(String url) {
-		this.url = url;
+	public void setUrl365(String url365) {
+		this.url365 = url365;
 	}
-	
+
+	public String getUrl188() {
+		return url188;
+	}
+
+	public void setUrl188(String url188) {
+		this.url188 = url188;
+	}
+
 	
 }

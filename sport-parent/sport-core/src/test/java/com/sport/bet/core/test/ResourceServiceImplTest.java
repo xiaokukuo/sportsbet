@@ -18,7 +18,10 @@ public class ResourceServiceImplTest extends BaseTest {
 	public void findAllTest (){
 		List<Resource> resourceList = resourceService.findAll(null);
 		
-		System.out.println(resourceList.get(0).getId());
+		for (Resource resource : resourceList) {
+			System.out.println(resource.toString());
+		}
+		
 	}
 	
 	@Test

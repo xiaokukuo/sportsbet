@@ -7,9 +7,9 @@ public class BaseBean implements Serializable {
 
 	private static final long serialVersionUID = -8335524559221845087L;
 
-	private int id;
+	protected int id;
 	
-	private Date createTime;
+	protected Date createTime;
 
 	public int getId() {
 		return id;

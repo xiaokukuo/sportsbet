@@ -6,11 +6,12 @@
 		<id column="id" property="id" jdbcType="INTEGER" />
 		<id column="name" property="name"/>
 		<id column="code" property="code"/>
-		<id column="url" property="url"/>
+		<id column="url_365" property="url365"/>
+		<id column="url_188" property="url188"/>
 	</resultMap>
 
 	<select id="selectByCode" parameterType="java.lang.String" resultMap="ResourceMap">
-		select id, name,code, url from resource where code = #{code}
+		select * from resource where code = #{code}
 	</select>
 
 	<select id="selectById" parameterType="java.lang.Integer" resultMap="ResourceMap">
@@ -22,16 +23,16 @@
 	</select>
     
     <insert id="insert" keyProperty="entity.id" useGeneratedKeys="true">
-		insert into resource (name, code, url, create_time)
+		insert into resource (name, code, url_365, url_188, create_time)
 		values
-		(#{entity.name}, #{entity.code}, #{entity.url}, now())
+		(#{entity.name}, #{entity.code}, #{entity.url365}, #{entity.url188}, now())
 	</insert>
 	
 	<insert id="insertByBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into resource (name, code, url, create_time)
+        insert into resource (name, code, url_365, url_188, create_time)
         values
         <foreach collection="list" item="item" index="index" separator=",">
-            (#{item.name}, #{item.code}, #{item.url}, now())
+            (#{item.name}, #{item.code}, #{item.url365}, #{item.url188}, now())
         </foreach>
     </insert>
 	

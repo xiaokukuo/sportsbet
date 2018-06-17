@@ -4,39 +4,32 @@
 
 	<resultMap id="SportModuleMap" type="com.sport.bet.bean.model.SportModule">
 		<id column="id" property="id"/>
-		<id column="resourceId" property="resource_id" />
+		<id column="resource_id" property="resourceId" />
 		<id column="cid" property="cid" />
-		<id column="groupName" property="group_name" />
-		<id column="gameLinesPd" property="game_lines_pd" />
-		<id column="firstHalfPd" property="first_half_pd" />
-		<id column="secondHalfPd" property="second_half_pd" />
+		<id column="group_name" property="groupName" />
 	</resultMap>
 	
 	<select id="selectById" parameterType="java.lang.Integer" resultMap="SportModuleMap">
-		select * from sport_module_${tbName} where id = #{id}
+		select id, resource_id, cid, group_name from sport_module_${tableName} where id = #{id}
 	</select>
 
 	<select id="selectAll" resultMap="SportModuleMap">
-		select * from sport_module_${tbName}
+		select id, resource_id, cid, group_name from sport_module_${tableName}
 	</select>
 
 	<insert id="insert" keyProperty="id" useGeneratedKeys="true">
 		insert into sport_module_${tableName}
-		(resource_id, cid, group_name, game_lines_pd, first_half_pd, second_half_pd, first_quarter_pd, second_quarter_pd,
-		   third_quarter_pd, fourth_quarter_pd, create_time)
+		(resource_id, cid, group_name, game_lines_pd, create_time)
 		values
-		(#{entity.resourceId}, #{entity.cid},  #{entity.groupName}, #{entity.gameLinesPd}, #{entity.firstHalfPd}, #{entity.secondHalfPd},
-		#{entity.firstQuarterPd}, #{entity.secondQuarterPd}, #{entity.thirdQuarterPd}, #{entity.fourthQuarterPd} , now())
+		(#{entity.resourceId}, #{entity.cid},  #{entity.groupName}, #{entity.gameLinesPd} , now())
 	</insert>
 
 	<insert id="insertByBatch" keyProperty="id" useGeneratedKeys="true">
         insert into sport_module_${tableName}
-		(resource_id, cid, group_name, game_lines_pd, first_half_pd, second_half_pd, first_quarter_pd, second_quarter_pd,
-		   third_quarter_pd, fourth_quarter_pd, create_time)
+		(resource_id, cid, group_name, game_lines_pd, create_time)
         values
         <foreach collection="list" item="item" index="index" separator=",">
-           (#{item.resourceId},  #{item.cid}, #{item.groupName}, #{item.gameLinesPd}, #{item.firstHalfPd}, #{item.secondHalfPd},
-           #{item.firstQuarterPd}, #{item.secondQuarterPd}, #{item.thirdQuarterPd}, #{item.fourthQuarterPd} , now())
+           (#{item.resourceId},  #{item.cid}, #{item.groupName}, #{item.gameLinesPd}, now())
         </foreach>
     </insert>
     

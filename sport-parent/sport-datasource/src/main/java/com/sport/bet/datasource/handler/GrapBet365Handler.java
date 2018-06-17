@@ -27,7 +27,7 @@ import com.sport.bet.datasource.utils.TableConstant;
 @Component
 public class GrapBet365Handler {
 	
-	Logger logger = LoggerFactory.getLogger(GrapBet365Handler.class);
+	private Logger logger = LoggerFactory.getLogger(GrapBet365Handler.class);
 	
 	@Autowired
 	private PagePaser pagePaser;
@@ -88,7 +88,7 @@ public class GrapBet365Handler {
 		logger.info("end");
 		
 		//3、遍历比赛队伍，获取比赛队伍的信息
-	/*	for (SportModuleGame sportModuleGame : teamList) {
+		for (SportModuleGame sportModuleGame : teamList) {
 			String urlscore = HttpUtils.getUrl356(sportModuleGame.getDeailPd());
 			String pageScoreResponse = HttpTool.getSport365(urlscore);
 			
@@ -100,7 +100,7 @@ public class GrapBet365Handler {
 				return;
 			}
 			sportGameOddsService.save(gameOddsList, TableConstant.TABALE_NAME_365);
-		}*/
+		}
 				
 	}
 

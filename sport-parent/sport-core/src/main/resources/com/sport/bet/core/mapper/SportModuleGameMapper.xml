@@ -5,6 +5,8 @@
 	<resultMap id="SportModuleGameMap" type="com.sport.bet.bean.model.SportModuleGame">
 		<id column="id" property="id"/>
 		<id column="resourceId" property="resource_id" />
+		<id column="cid" property="cid" />
+		<id column="eid" property="eid" />
 		<id column="sportGroupId" property="sport_group_id" />
 		<id column="teamName1" property="team_name1" />
 		<id column="teamName2" property="team_name2" />
@@ -24,19 +26,19 @@
 
 	<insert id="insert" keyProperty="id" useGeneratedKeys="true">
 		insert into sport_module_game_${tableName}
-		(resource_id, sport_group_id, team_name1, team_name2, deail_pd, game_time,game_type, create_time)
+		(resource_id, cid, eid, sport_group_id, team_name1, team_name2, deail_pd, game_time,game_type, create_time)
 		values
-		(#{entity.resourceId}, #{entity.sportGroupId}, #{entity.teamName1}, #{entity.teamName2},
+		(#{entity.resourceId}, #{entity.cid}, #{entity.eid}, #{entity.sportGroupId}, #{entity.teamName1}, #{entity.teamName2},
 		 #{entity.deailPd}, #{entity.gameTime}, #{entity.gameType}, now())
 	</insert>
 	
 	
 	<insert id="insertByBatch" keyProperty="id" useGeneratedKeys="true">
         insert into sport_module_game_${tableName}
-		(resource_id, sport_group_id, team_name1, team_name2, deail_pd, game_time,game_type, create_time)
+		(resource_id, cid, eid, sport_group_id, team_name1, team_name2, deail_pd, game_time,game_type, create_time)
         values
         <foreach collection="list" item="item" index="index" separator=",">
-            (#{item.resourceId}, #{item.sportGroupId}, #{item.teamName1}, #{item.teamName2},
+            (#{item.resourceId}, #{item.cid}, #{item.eid}, #{item.sportGroupId}, #{item.teamName1}, #{item.teamName2},
 		 		#{item.deailPd}, #{item.gameTime}, #{item.gameType}, now())
         </foreach>
     </insert>

@@ -5,6 +5,8 @@
 	<resultMap id="SportGameOddsMap" type="com.sport.bet.bean.model.SportGameOdds">
 		<id column="id" property="id"/>
 		<id column="gameId" property="game_id" />
+		<id column="cid" property="cid" />
+		<id column="eid" property="eid" />
 		<id column="scoreType" property="score_type" />
 		<id column="score" property="score" />
 		<id column="higher" property="higher" />
@@ -26,18 +28,18 @@
 
 	<insert id="insert" keyProperty="id" useGeneratedKeys="true">
 		insert into sport_game_odds_${tableName}
-		(game_id, score_type, score, higher, lower, team, team_na, team_score, single_winer_score,create_time)
+		(game_id, cid, eid, score_type, score, higher, lower, team, team_na, team_score, single_winer_score,create_time)
 		values
-		  (#{entity.gameId}, #{entity.scoreType}, #{entity.score}, #{entity.higher},
+		  (#{entity.gameId}, #{entity.cid}, #{entity.eid}, #{entity.scoreType}, #{entity.score}, #{entity.higher},
 		 		#{entity.lower}, #{entity.team}, #{entity.teamNa},  #{entity.teamScore},  #{entity.singleWinerScore}, now())
 	</insert>
 	
 	<insert id="insertByBatch" keyProperty="id" useGeneratedKeys="true">
         insert into sport_game_odds_${tableName}
-		(game_id, score_type, score, higher, lower, team, team_na, team_score, single_winer_score,create_time)
+		(game_id, cid, eid, score_type, score, higher, lower, team, team_na, team_score, single_winer_score,create_time)
         values
         <foreach collection="list" item="item" index="index" separator=",">
-            (#{item.gameId}, #{item.scoreType}, #{item.score}, #{item.higher},
+            (#{item.gameId}, #{item.cid}, #{item.eid}, #{item.scoreType}, #{item.score}, #{item.higher},
 		 		#{item.lower}, #{item.team}, #{item.teamNa},  #{item.teamScore},  #{item.singleWinerScore}, now())
         </foreach>
     </insert>

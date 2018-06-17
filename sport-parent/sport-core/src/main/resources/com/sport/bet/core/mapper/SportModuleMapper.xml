@@ -5,6 +5,7 @@
 	<resultMap id="SportModuleMap" type="com.sport.bet.bean.model.SportModule">
 		<id column="id" property="id"/>
 		<id column="resourceId" property="resource_id" />
+		<id column="cid" property="cid" />
 		<id column="groupName" property="group_name" />
 		<id column="gameLinesPd" property="game_lines_pd" />
 		<id column="firstHalfPd" property="first_half_pd" />
@@ -21,20 +22,20 @@
 
 	<insert id="insert" keyProperty="id" useGeneratedKeys="true">
 		insert into sport_module_${tableName}
-		(resource_id, group_name, game_lines_pd, first_half_pd, second_half_pd, first_quarter_pd, second_quarter_pd,
+		(resource_id, cid, group_name, game_lines_pd, first_half_pd, second_half_pd, first_quarter_pd, second_quarter_pd,
 		   third_quarter_pd, fourth_quarter_pd, create_time)
 		values
-		(#{entity.resourceId}, #{entity.groupName}, #{entity.gameLinesPd}, #{entity.firstHalfPd}, #{entity.secondHalfPd},
+		(#{entity.resourceId}, #{entity.cid},  #{entity.groupName}, #{entity.gameLinesPd}, #{entity.firstHalfPd}, #{entity.secondHalfPd},
 		#{entity.firstQuarterPd}, #{entity.secondQuarterPd}, #{entity.thirdQuarterPd}, #{entity.fourthQuarterPd} , now())
 	</insert>
 
 	<insert id="insertByBatch" keyProperty="id" useGeneratedKeys="true">
         insert into sport_module_${tableName}
-		(resource_id, group_name, game_lines_pd, first_half_pd, second_half_pd, first_quarter_pd, second_quarter_pd,
+		(resource_id, cid, group_name, game_lines_pd, first_half_pd, second_half_pd, first_quarter_pd, second_quarter_pd,
 		   third_quarter_pd, fourth_quarter_pd, create_time)
         values
         <foreach collection="list" item="item" index="index" separator=",">
-           (#{item.resourceId}, #{item.groupName}, #{item.gameLinesPd}, #{item.firstHalfPd}, #{item.secondHalfPd},
+           (#{item.resourceId},  #{item.cid}, #{item.groupName}, #{item.gameLinesPd}, #{item.firstHalfPd}, #{item.secondHalfPd},
            #{item.firstQuarterPd}, #{item.secondQuarterPd}, #{item.thirdQuarterPd}, #{item.fourthQuarterPd} , now())
         </foreach>
     </insert>

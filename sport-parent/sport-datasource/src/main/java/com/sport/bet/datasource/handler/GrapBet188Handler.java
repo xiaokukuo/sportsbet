@@ -101,7 +101,7 @@ public class GrapBet188Handler {
 			logger.error("比分异常");
 			return;
 		}
-		sportGameOddsService.save(sportGameOddsList, TableConstant.TABALE_NAME_365);
+		sportGameOddsService.save(sportGameOddsList, TableConstant.TABALE_NAME_188);
 	}
 	
 }

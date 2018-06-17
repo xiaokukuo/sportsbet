@@ -15,7 +15,7 @@ public class SportModule extends BaseBean {
 
 	private String gameLinesPd;
 
-	private String firstHalfPd; //上半场
+	/*private String firstHalfPd; //上半场
 
 	private String secondHalfPd; //下半场
 	
@@ -25,7 +25,7 @@ public class SportModule extends BaseBean {
 	
 	private String thirdQuarterPd;
 	
-	private String fourthQuarterPd;
+	private String fourthQuarterPd;*/
 
 	public int getResourceId() {
 		return resourceId;
@@ -51,55 +51,6 @@ public class SportModule extends BaseBean {
 		this.gameLinesPd = gameLinesPd;
 	}
 
-	public String getFirstHalfPd() {
-		return firstHalfPd;
-	}
-
-	public void setFirstHalfPd(String firstHalfPd) {
-		this.firstHalfPd = firstHalfPd;
-	}
-
-	public String getSecondHalfPd() {
-		return secondHalfPd;
-	}
-
-	public void setSecondHalfPd(String secondHalfPd) {
-		this.secondHalfPd = secondHalfPd;
-	}
-
-	public String getFirstQuarterPd() {
-		return firstQuarterPd;
-	}
-
-	public void setFirstQuarterPd(String firstQuarterPd) {
-		this.firstQuarterPd = firstQuarterPd;
-	}
-
-	public String getSecondQuarterPd() {
-		return secondQuarterPd;
-	}
-
-	public void setSecondQuarterPd(String secondQuarterPd) {
-		this.secondQuarterPd = secondQuarterPd;
-	}
-
-	public String getThirdQuarterPd() {
-		return thirdQuarterPd;
-	}
-
-	public void setThirdQuarterPd(String thirdQuarterPd) {
-		this.thirdQuarterPd = thirdQuarterPd;
-	}
-
-	public String getFourthQuarterPd() {
-		return fourthQuarterPd;
-	}
-
-	public void setFourthQuarterPd(String fourthQuarterPd) {
-		this.fourthQuarterPd = fourthQuarterPd;
-	}
-
-	
 	public String getCid() {
 		return cid;
 	}
@@ -111,9 +62,8 @@ public class SportModule extends BaseBean {
 	@Override
 	public String toString() {
 		return "SportModule [resourceId=" + resourceId + ", cid=" + cid + ", groupName=" + groupName + ", gameLinesPd="
-				+ gameLinesPd + ", firstHalfPd=" + firstHalfPd + ", secondHalfPd=" + secondHalfPd + ", firstQuarterPd="
-				+ firstQuarterPd + ", secondQuarterPd=" + secondQuarterPd + ", thirdQuarterPd=" + thirdQuarterPd
-				+ ", fourthQuarterPd=" + fourthQuarterPd + "]";
+				+ gameLinesPd + "]";
 	}
+
 
 }

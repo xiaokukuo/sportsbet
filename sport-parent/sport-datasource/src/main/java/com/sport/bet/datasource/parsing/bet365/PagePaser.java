@@ -55,26 +55,30 @@ public class PagePaser extends AbstractPaser<SportModule> {
 		for (int i = 1; i < items.length; i++) {
 			String item = items[i];
 			String na = StringUtils.substring(item, "NA=", ";XB");
-			String pd = StringUtils.substring(item, "PD=", ";FF");
-			switch (na) {
-				case "比赛投注": sportModule.setGameLinesPd(pd);
-					break;
-				case "上半场": sportModule.setFirstHalfPd(pd);
-					break;
-				case "下半场": sportModule.setSecondHalfPd(pd);
-					break;
-				case "第1赛节": sportModule.setFirstQuarterPd(pd);
-					break;
-				case "第2赛节": sportModule.setSecondQuarterPd(pd);
-					break;
-				case "第3赛节": sportModule.setThirdQuarterPd(pd);
-					break;
-				case "第4赛节": sportModule.setFourthQuarterPd(pd);
-					break;
-				default:
-					break;
+			if("比赛投注".equals(na)){
+				String pd = StringUtils.substring(item, "PD=", ";FF");
+				 sportModule.setGameLinesPd(pd);
 			}
 			
+//			/*switch (na) {
+//				case "比赛投注":
+//					break;
+//				case "上半场": sportModule.setFirstHalfPd(pd);
+//					break;
+//				case "下半场": sportModule.setSecondHalfPd(pd);
+//					break;
+//				case "第1赛节": sportModule.setFirstQuarterPd(pd);
+//					break;
+//				case "第2赛节": sportModule.setSecondQuarterPd(pd);
+//					break;
+//				case "第3赛节": sportModule.setThirdQuarterPd(pd);
+//					break;
+//				case "第4赛节": sportModule.setFourthQuarterPd(pd);
+//					break;
+//				default:
+//					break;
+//			}
+//			*/
 		}
 		
 	}

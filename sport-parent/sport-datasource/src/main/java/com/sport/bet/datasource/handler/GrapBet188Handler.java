@@ -57,7 +57,7 @@ public class GrapBet188Handler {
 		Resource resource = resourceService.findByCode("basketball");
 		int resourceId = resource.getId();
 		
-		String pageJosn = HttpTool.getSport188(resource.getUrl());
+		String pageJosn = HttpTool.getSport188(url);
 		
 		JSONObject jsonObject = JSONObject.parseObject(pageJosn);
 		JSONObject lpd = jsonObject.getJSONObject("lpd");

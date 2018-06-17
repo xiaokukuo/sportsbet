@@ -69,7 +69,7 @@ public class PageGroupTeamPaser extends AbstractPaser<SportGameOdds> {
 					}
 					sportGameOdds = new SportGameOdds();
 					sportGameOdds.setGameId(gameId);
-					sportGameOdds.setScoreType(2);
+					sportGameOdds.setScoreType(1);
 					sportGameOdds.setTeam(teamArr[i - 1]);
 					sportGameOdds.setTeamNa(ha);
 					sportGameOdds.setTeamScore(super.getLineValue(paLines[i], "OD"));
@@ -83,7 +83,7 @@ public class PageGroupTeamPaser extends AbstractPaser<SportGameOdds> {
 
 				sportGameOdds = new SportGameOdds();
 				sportGameOdds.setGameId(gameId);
-				sportGameOdds.setScoreType(1);
+				sportGameOdds.setScoreType(2);
 				String ha = null;
 				for (int i = 1; i < paLines.length; i++) {
 					String[] elements = paLines[i].split(";");
@@ -158,7 +158,7 @@ public class PageGroupTeamPaser extends AbstractPaser<SportGameOdds> {
 					for (int i = 1; i < length1; i++) {
 						gameOdds = new SportGameOdds();
 						gameOdds.setGameId(gameId);
-						gameOdds.setScoreType(1);
+						gameOdds.setScoreType(2);
 						gameOdds.setScore(column1[i].split(";")[2].substring(3));
 						gameOdds.setHigher(column2[i].split(";")[2].substring(3));
 						gameOdds.setLower(column3[i].split(";")[2].substring(3));
@@ -167,7 +167,7 @@ public class PageGroupTeamPaser extends AbstractPaser<SportGameOdds> {
 					for (int i = 1; i < length2; i++) {
 						gameOdds = new SportGameOdds();
 						gameOdds.setGameId(gameId);
-						gameOdds.setScoreType(1);
+						gameOdds.setScoreType(2);
 						gameOdds.setScore(column4[i].split(";")[2].substring(3));
 						gameOdds.setHigher(column5[i].split(";")[2].substring(3));
 						gameOdds.setLower(column6[i].split(";")[2].substring(3));
@@ -207,7 +207,7 @@ public class PageGroupTeamPaser extends AbstractPaser<SportGameOdds> {
 					String[] colLines = column1[i].split(";");
 					gameOdds = new SportGameOdds();
 					gameOdds.setGameId(gameId);
-					gameOdds.setScoreType(2);
+					gameOdds.setScoreType(1);
 					gameOdds.setTeam(teamName1);
 					gameOdds.setTeamNa(super.getLineValue(colLines, "NA="));
 					gameOdds.setTeamScore(super.getLineValue(colLines, "OD="));
@@ -216,7 +216,7 @@ public class PageGroupTeamPaser extends AbstractPaser<SportGameOdds> {
 					String[] colLines2 = column2[i].split(";");
 					gameOdds = new SportGameOdds();
 					gameOdds.setGameId(gameId);
-					gameOdds.setScoreType(2);
+					gameOdds.setScoreType(1);
 					gameOdds.setTeam(teamName2);
 					gameOdds.setTeamNa(super.getLineValue(colLines2, "NA="));
 					gameOdds.setTeamScore(super.getLineValue(colLines2, "OD="));

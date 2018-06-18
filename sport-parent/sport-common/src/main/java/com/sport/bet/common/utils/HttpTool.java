@@ -13,7 +13,6 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.message.BasicNameValuePair;
 import org.apache.http.util.EntityUtils;
@@ -143,30 +142,79 @@ public class HttpTool {
 		return null;
 	}
 	
-	 public static HttpResponse post(Map<String,String> map,String url){
-	      HttpClient client = (HttpClient)HttpClients.createDefault(); //获取链接对象.
-	      HttpPost post = new HttpPost(url); //创建表单.
-	      ArrayList<BasicNameValuePair> pairs = new ArrayList<BasicNameValuePair>();//用于存放表单数据.
+	
+	private static HttpGet newHttpGetPin111(String url){
+		HttpGet request = new HttpGet(url); // 创建httget
+		request.addHeader("User-Agent","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36");
+		return request;
+	}
+	
+	public static String getSportPin111(String url){
+		HttpGet request = newHttpGetPin111(url);
+		try {
+			
+			HttpClient httpclient = HttpClients.createDefault(); // 创建httpclient
+			HttpResponse response = httpclient.execute(request);
+			
+			StatusLine statusLine = response.getStatusLine();
 
-	      //遍历map 将其中的数据转化为表单数据
-	      for (Map.Entry<String,String> entry:
-	          map.entrySet()) {
-	         pairs.add(new BasicNameValuePair(entry.getKey(),entry.getValue()));
-	      }
+			if (statusLine.getStatusCode() == HttpStatus.SC_OK) {
+				HttpEntity entity = response.getEntity();
+				String responseStr = EntityUtils.toString(entity);
+				return responseStr;
+			} 
+			
+			System.err.println("发送失败");
+		
+		} catch (IOException e) {
+			System.err.println("发送失败"+e);
+		}
+		return null;
+	}
+	
+	
+	private static HttpGet newHttpGetU16888(String url){
+		
+		String cookie = "_ga=GA1.2.935692521.1529271305; _gid=GA1.2.1130277983.1529271305; bs-info=; ASP.NET_SessionId=zhqey125fdzextjqozlxpitn; odnbv9=16843018.20480.0000; tag-id=/PTEyJHSN5ylUd6X00HK+g==; ting=3";
+		
+		HttpGet request = new HttpGet(url); // 创建httget
+		request.addHeader("User-Agent","Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0");
+		request.addHeader("Cookie",cookie);
+		request.addHeader("Host", "www.u16888.com");
+		request.addHeader("Accept-Language", "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2");
+		request.addHeader("Accept-Encoding", "gzip, deflate");
+		request.addHeader("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8");
+		
+		request.addHeader("Referer", "http://www.u16888.com/zh-cn/euro");
+		request.addHeader("Origin", "https://landing-sb.prdasbb18a1.com");
+		request.addHeader("Upgrade-Insecure-Requests", "1");
+		
+		return request;
+	}
+	
+	public static String getSportU16888(String url){
+		HttpGet request = newHttpGetU16888(url);
+		try {
+			
+			HttpClient httpclient = HttpClients.createDefault(); // 创建httpclient
+			
+			
+			HttpResponse response = httpclient.execute(request);
+			
+			StatusLine statusLine = response.getStatusLine();
 
-	      try {
-	         //对表单数据进行url编码
-	         UrlEncodedFormEntity urlEncodedFormEntity = new UrlEncodedFormEntity(pairs);
-	         post.setEntity(urlEncodedFormEntity);
-
-	         HttpResponse response = client.execute(post);//发送数据.提交表单
-
-	         return response;
-	      } catch (Exception e) {
-	         e.printStackTrace();
-	         return null;
-	      }
-	      
-	 }
+			if (statusLine.getStatusCode() == HttpStatus.SC_OK) {
+				HttpEntity entity = response.getEntity();
+				String responseStr = EntityUtils.toString(entity);
+				return responseStr;
+			} 
+			
+			System.err.println("发送失败");
+		
+		} catch (IOException e) {
+			System.err.println("发送失败"+e);
+		}
+		return null;
+	}
 	
 }

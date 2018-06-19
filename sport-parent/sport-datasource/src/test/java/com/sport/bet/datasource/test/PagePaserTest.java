@@ -14,6 +14,7 @@ import com.sport.bet.common.utils.HttpTool;
 import com.sport.bet.datasource.handler.GrapBet365Handler;
 import com.sport.bet.datasource.parsing.bet365.PagePaser;
 import com.sport.bet.datasource.test.base.BaseTest;
+import com.sport.bet.datasource.utils.Native2AsciiUtils;
 
 public class PagePaserTest extends BaseTest{
 	
@@ -47,37 +48,32 @@ public class PagePaserTest extends BaseTest{
 	
 	@Test
 	public void testUrl1688() throws XPatherException {
-		HttpTool.getSportU16888("http://www.u16888.com/zh-cn/data/favourite?tk=ec7ddc67,0,0&act=g&uid=0");
-		HttpTool.getSportU16888("http://www.u16888.com/zh-cn/data/right-promo?act=g&sid=2");
-		String pageJosnU188 = HttpTool.getSportU16888("http://www.u16888.com/zh-cn/euro/篮球/美国");
+		String pageJosnU188 = HttpTool.getSportU16888("http://www.u16888.com/zh-cn/euro/篮球");
+		
 		HtmlCleaner hc = new HtmlCleaner();         
 		TagNode tn = hc.clean(pageJosnU188); 
-		
-		
-		
-		System.out.println(pageJosnU188);
-		
-		/*String xpath = "//li[@id='ms-all-sp-2']//div[@id='ms-all-res-2']//ul[@id='ms-all-res-ul-2']//li[@class='UnSel']";        
+		String xpath = "//script[]";        
 		Object[] objarr = null; 
 		objarr = tn.evaluateXPath(xpath); 
 		if (objarr != null && objarr.length > 0) { 
 			 for (Object obj : objarr) { 
-				 TagNode tntr = (TagNode) obj;                 
-				 String xptr = "//a//div"; 
-				 Object[] objarrtr = null;                 
-				 objarrtr = tntr.evaluateXPath(xptr); 
-				 
-				 if (objarrtr != null && objarrtr.length > 0) { 
-					 for (Object obja : objarrtr) { 
-						 TagNode tna = (TagNode) obja;                         
-						 String str = tna.getText().toString(); 
-						 
-						 System.err.println(str);
-					 }
+				
+				 TagNode tna = (TagNode) obj;                         
+				 String str = tna.getText().toString(); 
+				 if(str.startsWith("function initiateOddsDisplay()")){
+					 
+					str = str.substring(str.indexOf("["), str.indexOf("])")+1);
+					str = Native2AsciiUtils.ascii2Native(str);
+					
+					String []  a = str.split("\\[2,");
+					for (String s : a) {
+						System.err.println(s);
+					}
 				 }
+				
 			 }
 			
-		}*/
+		}
 		
 	}
 }

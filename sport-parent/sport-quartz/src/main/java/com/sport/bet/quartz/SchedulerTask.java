@@ -45,17 +45,10 @@ public class SchedulerTask {
 		task.setTaskName("Job1");
 		task.setTaskGroup("group1");
 		task.setCron("0/2 * * * * ?");
-		task.setClassName("com.msa.framework.batch.quartz.job.SimpleJob");
+		task.setClassName("com.sport.bet.quartz.job.JobA");
 		
-		BatchTaskInfo task1 = new BatchTaskInfo();
-		task1.setId("1234567wewe8");
-		task1.setTaskName("Job12222");
-		task1.setTaskGroup("group1222");
-		task1.setCron("0/2 * * * * ?");
-		task1.setClassName("com.msa.framework.batch.quartz.job.JobA");
 		flushJob(task, scheduler);
-		scheduler = schedulerFactory.getScheduler();
-		flushJob(task1, scheduler);
+		
 	}
 
 	private void flushJob(BatchTaskInfo task,Scheduler scheduler) throws Exception {

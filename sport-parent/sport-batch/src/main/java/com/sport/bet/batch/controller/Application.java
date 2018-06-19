@@ -10,7 +10,10 @@ import org.springframework.context.annotation.ComponentScan;
 	@PropertySource(encoding="UTF-8",value={"classpath:/config/jdbc.properties"}),
 })*/
 @ComponentScan
-@SpringBootApplication(scanBasePackages={"com.sport.bet.batch.controller", "com.sport.bet.quartz"})
+@SpringBootApplication(scanBasePackages={"com.sport.bet.batch", "com.sport.bet.quartz"})
+/*@PropertySources({
+	@PropertySource(encoding="UTF-8",value={"classpath:/config/quar.properties"}),
+})*/
 public class Application {
 
 	public static void main(String[] args) {

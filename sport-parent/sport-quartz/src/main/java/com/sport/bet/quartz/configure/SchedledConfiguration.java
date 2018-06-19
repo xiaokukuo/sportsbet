@@ -70,7 +70,7 @@ public class SchedledConfiguration {
 	@Bean
     public Properties quartzProperties() throws IOException {
         PropertiesFactoryBean propertiesFactoryBean = new PropertiesFactoryBean();
-        propertiesFactoryBean.setLocation(new ClassPathResource("/config/quartz.properties"));
+        propertiesFactoryBean.setLocation(new ClassPathResource("/quartz.properties"));
         return propertiesFactoryBean.getObject();
     }
     

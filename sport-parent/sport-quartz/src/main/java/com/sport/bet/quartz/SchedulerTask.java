@@ -12,10 +12,8 @@ import org.quartz.Scheduler;
 import org.quartz.Trigger;
 import org.quartz.TriggerBuilder;
 import org.quartz.TriggerKey;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 import org.springframework.stereotype.Component;
 
 import com.sport.bet.quartz.task.BatchTaskInfo;
@@ -26,11 +24,13 @@ import com.sport.bet.quartz.task.BatchTaskInfo;
 @EnableScheduling // 该注解必须要加
 public class SchedulerTask {
 
-	@Autowired
-	private SchedulerFactoryBean schedulerFactory;
+	/*@Autowired
+	private SchedulerFactoryBean schedulerFactory;*/
 
 	public void execute() throws JobExecutionException, Exception {
-		Scheduler scheduler = schedulerFactory.getScheduler();
+		
+		System.err.println("44444444444444444444");
+		/*Scheduler scheduler = schedulerFactory.getScheduler();
 		
 		BatchTaskInfo task = new BatchTaskInfo();
 		task.setId("12345678");
@@ -40,7 +40,7 @@ public class SchedulerTask {
 		task.setClassName("com.sport.bet.quartz.job.JobA");
 		
 		
-		flushJob(task, scheduler);
+		flushJob(task, scheduler);*/
 		
 	}
 

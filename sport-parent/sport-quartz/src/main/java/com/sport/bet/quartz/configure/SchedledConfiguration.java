@@ -7,6 +7,7 @@ import org.springframework.beans.factory.config.PropertiesFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.scheduling.quartz.CronTriggerFactoryBean;
 import org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
@@ -69,9 +70,15 @@ public class SchedledConfiguration {
 	
 	@Bean
     public Properties quartzProperties() throws IOException {
-        PropertiesFactoryBean propertiesFactoryBean = new PropertiesFactoryBean();
-        propertiesFactoryBean.setLocation(new ClassPathResource("/quartz.properties"));
-        return propertiesFactoryBean.getObject();
+		 PropertiesFactoryBean propertiesFactoryBean = new PropertiesFactoryBean();
+	        
+	        Resource resource = new ClassPathResource("/quartz.properties");
+	        
+	        propertiesFactoryBean.setLocation(resource);
+	        
+	        //在quartz.properties中的属性被读取并注入后再初始化对象
+	        propertiesFactoryBean.afterPropertiesSet();
+	        return propertiesFactoryBean.getObject();
     }
     
    /* @Bean

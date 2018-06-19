@@ -1,4 +1,4 @@
-package com.sport.bet.quartz.common;
+/*package com.sport.bet.quartz.common;
 
 public class JobResult {
 
@@ -14,3 +14,4 @@ public class JobResult {
 	
 	
 }
+*/

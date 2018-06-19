@@ -7,6 +7,7 @@ import org.springframework.beans.factory.config.PropertiesFactoryBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
+import org.springframework.core.io.Resource;
 import org.springframework.scheduling.quartz.CronTriggerFactoryBean;
 import org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
@@ -20,6 +21,8 @@ public class SchedledConfiguration {
 	 */
 	@Bean(name = "jobDetail")
 	public MethodInvokingJobDetailFactoryBean detailFactoryBean(SchedulerTask task) {// ScheduleTask为需要执行的任务
+		System.err.println("MethodInvokingJobDetailFactoryBean---------");
+		
 		MethodInvokingJobDetailFactoryBean jobDetail = new MethodInvokingJobDetailFactoryBean();
 
 		jobDetail.setConcurrent(false);// 是否并发执行
@@ -44,7 +47,7 @@ public class SchedledConfiguration {
 	public CronTriggerFactoryBean cronJobTrigger(MethodInvokingJobDetailFactoryBean jobDetail) {
 		CronTriggerFactoryBean tigger = new CronTriggerFactoryBean();
 		tigger.setJobDetail(jobDetail.getObject());
-		tigger.setCronExpression("0/50 * * * * ?");// 初始时的cron表达式 ，没5分钟执行一次
+		tigger.setCronExpression("0/10 * * * * ?");// 初始时的cron表达式 ，没5分钟执行一次
 		tigger.setName("overTimeNoticeTrigger");// trigger的name
 		return tigger;
 
@@ -62,17 +65,23 @@ public class SchedledConfiguration {
 		// 延时启动，应用启动1秒后
 		schedulerFactory.setStartupDelay(2);
 		schedulerFactory.setTriggers(cronTriggerBean.getObject());
-		schedulerFactory.setQuartzProperties(quartzProperties());
+		//schedulerFactory.setQuartzProperties(quartzProperties());
 
 		return schedulerFactory;
 	}
 	
-	@Bean
+	/*@Bean
     public Properties quartzProperties() throws IOException {
         PropertiesFactoryBean propertiesFactoryBean = new PropertiesFactoryBean();
-        propertiesFactoryBean.setLocation(new ClassPathResource("/quartz.properties"));
+        
+        Resource resource = new ClassPathResource("/config/quartz.properties");
+        
+        propertiesFactoryBean.setLocation(resource);
+        
+        //在quartz.properties中的属性被读取并注入后再初始化对象
+        propertiesFactoryBean.afterPropertiesSet();
         return propertiesFactoryBean.getObject();
-    }
+    }*/
     
    /* @Bean
     public QuartzInitializerListener executorListener() {

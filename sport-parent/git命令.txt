@@ -1,0 +1,7 @@
+$ git rm --cached -r .settings
+git commit -m "remove settings"
+git push
+
+xiaokukuo
+xiaokukuo549812
+

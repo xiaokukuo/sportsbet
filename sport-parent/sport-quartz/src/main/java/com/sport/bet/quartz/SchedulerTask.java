@@ -20,23 +20,11 @@ import org.springframework.stereotype.Component;
 
 import com.sport.bet.quartz.task.BatchTaskInfo;
 
-/*
-@Component // 此注解必加  
 
-*/
-/*@Component // 此注解必加  
-@EnableScheduling // 此注解必加
-*/
 @Configuration
 @Component
 @EnableScheduling // 该注解必须要加
 public class SchedulerTask {
-
-	// @Autowired可以使用spring的bean
-
-	/**
-	 * 发送告警通知
-	 */
 
 	@Autowired
 	private SchedulerFactoryBean schedulerFactory;

@@ -71,6 +71,6 @@
 		<module>sport-common</module>
 		<module>sport-bean</module>
     	<module>sport-datasource</module>
-    <module>sport-quartz</module>
+    	<module>sport-quartz</module>
   </modules>
 </project>

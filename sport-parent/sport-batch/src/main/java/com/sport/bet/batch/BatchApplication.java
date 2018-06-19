@@ -14,8 +14,7 @@ import com.sport.bet.common.utils.mybatis.MapperNameGenerator;
 		"com.sport.bet.quartz",
 		"com.sport.bet.batch"})
 @PropertySources({
-	@PropertySource(encoding="UTF-8",value={"classpath:/config/jdbc.properties"}),
-	@PropertySource(encoding="UTF-8",value={"classpath:/config/quartz.properties"})
+	@PropertySource(encoding="UTF-8",value={"classpath:/config/jdbc.properties"})
 })
 @MapperScan(value = {"com.sport.bet.core.mapper"},nameGenerator = MapperNameGenerator.class)
 public class BatchApplication {

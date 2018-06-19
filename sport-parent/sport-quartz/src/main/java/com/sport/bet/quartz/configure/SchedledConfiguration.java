@@ -65,23 +65,23 @@ public class SchedledConfiguration {
 		// 延时启动，应用启动1秒后
 		schedulerFactory.setStartupDelay(2);
 		schedulerFactory.setTriggers(cronTriggerBean.getObject());
-		//schedulerFactory.setQuartzProperties(quartzProperties());
+		schedulerFactory.setQuartzProperties(quartzProperties());
 
 		return schedulerFactory;
 	}
 	
-	/*@Bean
+	@Bean
     public Properties quartzProperties() throws IOException {
         PropertiesFactoryBean propertiesFactoryBean = new PropertiesFactoryBean();
         
-        Resource resource = new ClassPathResource("/config/quartz.properties");
+        Resource resource = new ClassPathResource("/quartz.properties");
         
         propertiesFactoryBean.setLocation(resource);
         
         //在quartz.properties中的属性被读取并注入后再初始化对象
         propertiesFactoryBean.afterPropertiesSet();
         return propertiesFactoryBean.getObject();
-    }*/
+    }
     
    /* @Bean
     public QuartzInitializerListener executorListener() {

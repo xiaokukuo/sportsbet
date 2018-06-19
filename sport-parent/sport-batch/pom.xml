@@ -17,12 +17,6 @@
 	</properties>
 	
 	<dependencies>
-		<dependency>
-			<groupId>com.sport.bet</groupId>
-			<artifactId>sport-view</artifactId>
-			<version>${project.version}</version>
-		</dependency>
-		
 		<dependency>  
             <groupId>com.sport.bet</groupId>  
             <artifactId>sport-quartz</artifactId> 

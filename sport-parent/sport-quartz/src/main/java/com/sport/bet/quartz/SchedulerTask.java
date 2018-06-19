@@ -14,7 +14,9 @@ import org.quartz.TriggerBuilder;
 import org.quartz.TriggerKey;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
+import org.springframework.stereotype.Component;
 
 import com.sport.bet.quartz.task.BatchTaskInfo;
 
@@ -26,6 +28,8 @@ import com.sport.bet.quartz.task.BatchTaskInfo;
 @EnableScheduling // 此注解必加
 */
 @Configuration
+@Component
+@EnableScheduling // 该注解必须要加
 public class SchedulerTask {
 
 	// @Autowired可以使用spring的bean

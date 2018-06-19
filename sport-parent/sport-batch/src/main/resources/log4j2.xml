@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<appenders>
+		<File name="file" fileName="E:\\logs\\rpc-client.log">
+			<PatternLayout pattern="%d{HH:mm:ss,SSS} %p %c (%L) - %m%n"/>
+		</File>
+		 <Console name="console_out_appender" target="SYSTEM_OUT">
+            <!-- 控制台只输出level及以上级别的信息(onMatch),其他的直接拒绝(onMismatch) . -->
+            <ThresholdFilter level="DEBUG" onMatch="ACCEPT"
+                onMismatch="DENY" />
+            <!-- 输出日志的格式 -->
+            <PatternLayout pattern="%5p [%t] %d{yyyy-MM-dd HH:mm:ss} (%F:%L) %m%n" />
+        </Console>
+	</appenders>
+	
+	<loggers>
+		<root level="INFO">
+			<!-- <appender-ref ref="file"/> -->
+			<appender-ref ref="console_out_appender"/>
+		</root>
+		<logger name="com.sport.bet" level="DEBUG"/>
+		<logger name="org.springframework" level="INFO"/>
+	</loggers>
+</configuration>

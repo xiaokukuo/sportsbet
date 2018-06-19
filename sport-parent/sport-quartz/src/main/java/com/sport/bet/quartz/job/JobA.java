@@ -1,5 +1,6 @@
 package com.sport.bet.quartz.job;
 
+import java.io.Serializable;
 import java.util.Date;
 
 import org.quartz.DisallowConcurrentExecution;
@@ -11,8 +12,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 @DisallowConcurrentExecution
-public class JobA implements Job {
+public class JobA implements Job,Serializable {
 	
+	private static final long serialVersionUID = -4606059280525720090L;
 	private static Logger _log = LoggerFactory.getLogger(JobA.class);
 
 	public void execute(JobExecutionContext context) throws JobExecutionException {

@@ -1,6 +1,7 @@
 package com.sport.bet.quartz.configure;
 
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.Properties;
 
 import org.springframework.beans.factory.config.PropertiesFactoryBean;
@@ -15,7 +16,9 @@ import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 import com.sport.bet.quartz.SchedulerTask;
 
 @Configuration
-public class SchedledConfiguration {
+public class SchedledConfiguration implements Serializable{
+	private static final long serialVersionUID = 4067226730947086867L;
+
 	/**
 	 * attention: Details：配置定时任务
 	 */

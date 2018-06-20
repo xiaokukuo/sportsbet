@@ -66,7 +66,7 @@ public class SchedledConfiguration implements Serializable{
 		// 延时启动，应用启动1秒后
 		schedulerFactory.setStartupDelay(2);
 		schedulerFactory.setTriggers(cronTriggerBean.getObject());
-		schedulerFactory.setQuartzProperties(quartzProperties());
+		//schedulerFactory.setQuartzProperties(quartzProperties());
 
 		return schedulerFactory;
 	}

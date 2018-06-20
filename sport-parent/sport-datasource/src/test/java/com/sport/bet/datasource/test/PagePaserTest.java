@@ -9,10 +9,12 @@ import org.htmlcleaner.XPatherException;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.sport.bet.bean.model.SportGameOdds;
 import com.sport.bet.bean.model.SportModule;
 import com.sport.bet.common.utils.HttpTool;
 import com.sport.bet.datasource.handler.GrapBet365Handler;
 import com.sport.bet.datasource.parsing.bet365.PagePaser;
+import com.sport.bet.datasource.parsing.betu1688.PageU1688Paser;
 import com.sport.bet.datasource.test.base.BaseTest;
 import com.sport.bet.datasource.utils.Native2AsciiUtils;
 
@@ -20,6 +22,9 @@ public class PagePaserTest extends BaseTest{
 	
 	@Autowired
 	private GrapBet365Handler grapBet365Handler;
+	
+	@Autowired
+	private PageU1688Paser pageU1688Paser;
 	
 	@Test
 	public void paserTest(){
@@ -47,32 +52,12 @@ public class PagePaserTest extends BaseTest{
 	}
 	
 	@Test
-	public void testUrl1688() throws XPatherException {
+	public void testUrl1688() throws XPatherException, InterruptedException {
 		String pageJosnU188 = HttpTool.getSportU16888("http://www.u16888.com/zh-cn/euro/篮球");
 		
-		HtmlCleaner hc = new HtmlCleaner();         
-		TagNode tn = hc.clean(pageJosnU188); 
-		String xpath = "//script[]";        
-		Object[] objarr = null; 
-		objarr = tn.evaluateXPath(xpath); 
-		if (objarr != null && objarr.length > 0) { 
-			 for (Object obj : objarr) { 
-				
-				 TagNode tna = (TagNode) obj;                         
-				 String str = tna.getText().toString(); 
-				 if(str.startsWith("function initiateOddsDisplay()")){
-					 
-					str = str.substring(str.indexOf("["), str.indexOf("])")+1);
-					str = Native2AsciiUtils.ascii2Native(str);
-					
-					String []  a = str.split("\\[2,");
-					for (String s : a) {
-						System.err.println(s);
-					}
-				 }
-				
-			 }
-			
+		List<SportGameOdds> gameOddslist = pageU1688Paser.parsed(pageJosnU188);
+		for (SportGameOdds sportGameOdds : gameOddslist) {
+			System.out.println(sportGameOdds.toString());
 		}
 		
 	}

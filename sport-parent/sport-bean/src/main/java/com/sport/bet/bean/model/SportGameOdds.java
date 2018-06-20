@@ -22,6 +22,8 @@ public class SportGameOdds extends BaseBean {
 	private String lower; 
 	
 	private String team; //队伍名称
+	
+	private String team2; //队伍名称
 
 	private String teamNa; // 让分系数
 
@@ -75,6 +77,14 @@ public class SportGameOdds extends BaseBean {
 
 	public void setTeam(String team) {
 		this.team = team;
+	}
+
+	public String getTeam2() {
+		return team2;
+	}
+
+	public void setTeam2(String team2) {
+		this.team2 = team2;
 	}
 
 	public String getTeamNa() {

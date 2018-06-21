@@ -78,6 +78,7 @@ public class PageU1688Paser extends AbstractPaser<SportGameOdds> {
 							gameOdds.setTeam2(team2Name);
 							gameOdds.setScoreType(1);
 							gameOdds.setTeamScore(odds[j]);
+							gameOdds.setGameTime(gameTime);
 							if (j == 1) {
 								gameOdds.setTeamNa(coefficient); // 系数
 							}

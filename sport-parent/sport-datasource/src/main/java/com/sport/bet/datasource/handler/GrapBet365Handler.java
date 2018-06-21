@@ -25,7 +25,7 @@ import com.sport.bet.datasource.utils.ListUtils;
 import com.sport.bet.datasource.utils.TableConstant;
 
 @Component
-public class GrapBet365Handler {
+public class GrapBet365Handler extends AbstractGrapHandler{
 	
 	private Logger logger = LoggerFactory.getLogger(GrapBet365Handler.class);
 	
@@ -51,8 +51,8 @@ public class GrapBet365Handler {
 	private SportModuleGameServiceImpl sportModuleGameService;
 	
 	//private static String URL = "https://www.365sport365.com/SportsBook.API/web?lid=10&zid=0&cid=42&ctid=42&pd=";
-	
-	public void grabGroupModule() throws UnsupportedEncodingException{
+	@Override
+	public void grabData() throws UnsupportedEncodingException{
 		
 		Resource resource = resourceService.findByCode("basketball");
 		int resourceId = resource.getId();

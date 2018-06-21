@@ -1,5 +1,8 @@
 package com.sport.bet.quartz;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.quartz.CronScheduleBuilder;
 import org.quartz.CronTrigger;
 import org.quartz.Job;
@@ -14,48 +17,46 @@ import org.quartz.TriggerBuilder;
 import org.quartz.TriggerKey;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
+import org.springframework.stereotype.Component;
 
 import com.sport.bet.quartz.task.BatchTaskInfo;
 
-/*
-@Component // 此注解必加  
 
-*/
-/*@Component // 此注解必加  
-@EnableScheduling // 此注解必加
-*/
 @Configuration
+@Component
+@EnableScheduling // 该注解必须要加
 public class SchedulerTask {
-
-	// @Autowired可以使用spring的bean
-
-	/**
-	 * 发送告警通知
-	 */
 
 	@Autowired
 	private SchedulerFactoryBean schedulerFactory;
 
 	public void execute() throws JobExecutionException, Exception {
+		
+		System.err.println("44444444444444444444");
 		Scheduler scheduler = schedulerFactory.getScheduler();
 		
 		BatchTaskInfo task = new BatchTaskInfo();
-		task.setId("12345678");
+		task.setId(111);
 		task.setTaskName("Job1");
 		task.setTaskGroup("group1");
 		task.setCron("0/2 * * * * ?");
-		task.setClassName("com.msa.framework.batch.quartz.job.SimpleJob");
+		task.setClassName("com.sport.bet.quartz.job.JobA");
 		
-		BatchTaskInfo task1 = new BatchTaskInfo();
-		task1.setId("1234567wewe8");
-		task1.setTaskName("Job12222");
-		task1.setTaskGroup("group1222");
-		task1.setCron("0/2 * * * * ?");
-		task1.setClassName("com.msa.framework.batch.quartz.job.JobA");
-		flushJob(task, scheduler);
-		scheduler = schedulerFactory.getScheduler();
-		flushJob(task1, scheduler);
+		
+		List<BatchTaskInfo> taskInfos = new ArrayList<BatchTaskInfo>();
+		taskInfos.add(task);
+		//List<BatchTaskInfo> taskInfos= batchTaskInfoDao.findAll();
+		
+		for (BatchTaskInfo taskInfo : taskInfos) {
+				if ("N".equals(taskInfo.getStatus())) {
+					deleteJob(taskInfo, scheduler);
+				} else{
+					flushJob(taskInfo, scheduler);
+				}
+		}
+		
 	}
 
 	private void flushJob(BatchTaskInfo task,Scheduler scheduler) throws Exception {

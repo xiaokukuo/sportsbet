@@ -25,7 +25,7 @@ import com.sport.bet.datasource.utils.ListUtils;
 import com.sport.bet.datasource.utils.TableConstant;
 
 @Component
-public class GrapBet188Handler {
+public class GrapBet188Handler extends AbstractGrapHandler{
 	
 	private Logger logger = LoggerFactory.getLogger(GrapBet188Handler.class);
 	
@@ -52,7 +52,7 @@ public class GrapBet188Handler {
 	private SportModuleGameServiceImpl sportModuleGameService;
 
 	String url = "https://landing-sb.prdasbb18a1.com/zh-cn/Service/CentralService?GetData&ts=1528967723534";
-	public void grabGroup(){
+	public void grabData(){
 		
 		Resource resource = resourceService.findByCode("basketball");
 		int resourceId = resource.getId();

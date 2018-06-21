@@ -4,5 +4,5 @@ import java.io.UnsupportedEncodingException;
 
 public abstract class AbstractGrapHandler {
 
-	abstract void grabData() throws UnsupportedEncodingException;
+	abstract void grabData(int resourceId, String url) throws UnsupportedEncodingException;
 }

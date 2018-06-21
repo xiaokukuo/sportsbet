@@ -8,12 +8,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import com.sport.bet.bean.model.Resource;
 import com.sport.bet.bean.model.SportGameOdds;
 import com.sport.bet.bean.model.SportModule;
 import com.sport.bet.bean.model.SportModuleGame;
 import com.sport.bet.common.utils.HttpTool;
-import com.sport.bet.core.service.impl.ResourceServiceImpl;
 import com.sport.bet.core.service.impl.SportGameOddsServiceImpl;
 import com.sport.bet.core.service.impl.SportModuleGameServiceImpl;
 import com.sport.bet.core.service.impl.SportModuleServiceImpl;
@@ -39,25 +37,20 @@ public class GrapBet365Handler extends AbstractGrapHandler{
 	private PageGroupTeamPaser pageGroupTeamPaser;
 	
 	@Autowired
-	private ResourceServiceImpl resourceService;
-	
-	@Autowired
 	private SportModuleServiceImpl sportModuleService;
-	
-	@Autowired
-	private SportGameOddsServiceImpl sportGameOddsService;
 	
 	@Autowired
 	private SportModuleGameServiceImpl sportModuleGameService;
 	
+	@Autowired
+	private SportGameOddsServiceImpl sportGameOddsService;
+	
 	//private static String URL = "https://www.365sport365.com/SportsBook.API/web?lid=10&zid=0&cid=42&ctid=42&pd=";
 	@Override
-	public void grabData() throws UnsupportedEncodingException{
+	public void grabData(int resourceId, String url) throws UnsupportedEncodingException{
 		
-		Resource resource = resourceService.findByCode("basketball");
-		int resourceId = resource.getId();
 		//1、获取篮球页面的数据--group
-		String pageStr = HttpTool.getSport365(resource.getUrl365());
+		String pageStr = HttpTool.getSport365(url);
 		
 		List<SportModule> sportModule188List = sportModuleService.findAll(TableConstant.TABALE_NAME_188);
 		pagePaser.setSportModule188List(sportModule188List);
@@ -74,8 +67,8 @@ public class GrapBet365Handler extends AbstractGrapHandler{
 		//2、遍历每个篮球模块，获取对应模块的比赛队伍
 		List<SportModuleGame> teamList = null;
 		for (SportModule sportModule : sportModuleList) {
-			String url = HttpUtils.getUrl356(sportModule.getGameLinesPd());
-			String responseStr = HttpTool.getSport365(url);
+			String gameLineUrl = HttpUtils.getUrl356(sportModule.getGameLinesPd());
+			String responseStr = HttpTool.getSport365(gameLineUrl);
 			//解析比赛队伍
 			pageGroupPaser.setModuleId(sportModule.getId());
 			pageGroupPaser.setResourceId(resourceId);

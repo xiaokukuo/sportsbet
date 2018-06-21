@@ -13,7 +13,7 @@ public class GrapBet188HandlerTest  extends BaseTest {
 	
 	@Test
 	public void paserTest(){
-		GrapBet188Handler.grabData();
+		GrapBet188Handler.grabData(1,"1212");
 	}
 
 }

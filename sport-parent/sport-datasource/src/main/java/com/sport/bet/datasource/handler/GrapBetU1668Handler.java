@@ -15,7 +15,7 @@ public class GrapBetU1668Handler extends AbstractGrapHandler {
 	private PageU1688Paser pageU1688Paser;
 	
 	@Override
-	public void grabData() throws UnsupportedEncodingException {
+	public void grabData(int resourceId, String url) throws UnsupportedEncodingException {
 		
 		String pageJosnU188 = HttpTool.getSportU16888("http://www.u16888.com/zh-cn/euro/篮球");
 		

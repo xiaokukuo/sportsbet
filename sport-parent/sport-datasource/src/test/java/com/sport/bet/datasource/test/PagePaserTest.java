@@ -14,7 +14,6 @@ import com.sport.bet.datasource.handler.GrapBet365Handler;
 import com.sport.bet.datasource.parsing.bet365.PagePaser;
 import com.sport.bet.datasource.parsing.betu1688.PageU1688Paser;
 import com.sport.bet.datasource.test.base.BaseTest;
-import com.sport.bet.datasource.utils.Native2AsciiUtils;
 
 public class PagePaserTest extends BaseTest{
 	
@@ -39,7 +38,7 @@ public class PagePaserTest extends BaseTest{
 
 	@Test
 	public void test() throws UnsupportedEncodingException{
-		grapBet365Handler.grabData();
+		grapBet365Handler.grabData(1,"");
 	}
 	
 	@Test

@@ -9,12 +9,10 @@ import org.springframework.stereotype.Component;
 
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
-import com.sport.bet.bean.model.Resource;
 import com.sport.bet.bean.model.SportGameOdds;
 import com.sport.bet.bean.model.SportModule;
 import com.sport.bet.bean.model.SportModuleGame;
 import com.sport.bet.common.utils.HttpTool;
-import com.sport.bet.core.service.impl.ResourceServiceImpl;
 import com.sport.bet.core.service.impl.SportGameOddsServiceImpl;
 import com.sport.bet.core.service.impl.SportModuleGameServiceImpl;
 import com.sport.bet.core.service.impl.SportModuleServiceImpl;
@@ -38,26 +36,21 @@ public class GrapBet188Handler extends AbstractGrapHandler{
 	@Autowired
 	private PageGroupTeamBet188Paser pageGroupTeamBet188Paser;
 	
-	
-	@Autowired
-	private ResourceServiceImpl resourceService;
-	
 	@Autowired
 	private SportModuleServiceImpl sportModuleService;
 	
 	@Autowired
-	private SportGameOddsServiceImpl sportGameOddsService;
+	private SportModuleGameServiceImpl sportModuleGameService;
 	
 	@Autowired
-	private SportModuleGameServiceImpl sportModuleGameService;
+	private SportGameOddsServiceImpl sportGameOddsService;
 
 	String url = "https://landing-sb.prdasbb18a1.com/zh-cn/Service/CentralService?GetData&ts=1528967723534";
-	public void grabData(){
+	public void grabData(int resourceId, String url){
 		
-		Resource resource = resourceService.findByCode("basketball");
-		int resourceId = resource.getId();
+		//Resource resource = resourceService.findByCode("basketball");
 		
-		String pageJosn = HttpTool.getSport188(resource.getUrl188());
+		String pageJosn = HttpTool.getSport188(url);
 		
 		JSONObject jsonObject = JSONObject.parseObject(pageJosn);
 		JSONObject lpd = jsonObject.getJSONObject("lpd");

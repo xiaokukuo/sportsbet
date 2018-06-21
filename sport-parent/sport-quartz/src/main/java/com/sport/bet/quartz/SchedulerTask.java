@@ -43,6 +43,7 @@ public class SchedulerTask {
 		task.setTaskGroup("group1");
 		task.setCron("0/2 * * * * ?");
 		task.setClassName("com.sport.bet.quartz.job.JobA");
+		task.setTaskType("Y");
 		
 		List<BatchTaskInfo> taskInfos = new ArrayList<BatchTaskInfo>();
 		taskInfos.add(task);
@@ -61,17 +62,16 @@ public class SchedulerTask {
 	private void flushJob(BatchTaskInfo task,Scheduler scheduler) throws Exception {
 		
 		TriggerKey triggerKey = TriggerKey.triggerKey(task.getTaskName(),task.getTaskGroup());
-		Trigger trigger1 = scheduler.getTrigger(triggerKey);
+		Trigger trigger = scheduler.getTrigger(triggerKey);
 		
 		boolean isNew = true;// 是否为新任务
-		if (trigger1 != null) {
+		if (trigger != null) {
 			isNew = false;
 		}
 		if (isNew) {
 			System.err.println("创建一个新任务");
 			addJob(task, scheduler);
 		}else{
-			
 			JobKey jobKey = JobKey.jobKey(task.getTaskName(),task.getTaskGroup());
 			JobDataMap jdm = scheduler.getJobDetail(jobKey).getJobDataMap();
 			String  oldCron =  (String) jdm.get("jobScheduler");
@@ -80,6 +80,7 @@ public class SchedulerTask {
 			}else{
 				deleteJob(task, scheduler);
 				System.err.println("任务执行时间改变");
+				addJob(task, scheduler);
 			}
 		}
 

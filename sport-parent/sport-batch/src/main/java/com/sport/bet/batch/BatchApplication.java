@@ -6,6 +6,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.PropertySources;
 
+import com.sport.bet.common.utils.mybatis.MapperNameGenerator;
+
 @SpringBootApplication(scanBasePackages={
 		"com.sport.bet.core",
 		"com.sport.bet.quartz",

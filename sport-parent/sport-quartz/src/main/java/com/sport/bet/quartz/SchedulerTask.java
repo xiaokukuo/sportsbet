@@ -44,7 +44,6 @@ public class SchedulerTask {
 		task.setCron("0/2 * * * * ?");
 		task.setClassName("com.sport.bet.quartz.job.JobA");
 		
-		
 		List<BatchTaskInfo> taskInfos = new ArrayList<BatchTaskInfo>();
 		taskInfos.add(task);
 		//List<BatchTaskInfo> taskInfos= batchTaskInfoDao.findAll();

@@ -31,7 +31,7 @@ public class PageU1688Paser extends AbstractPaser<SportGameOdds> {
 		if (scriptObjArr == null || scriptObjArr.length < 0) {
 			return null;
 		}
-
+		
 		// 遍历script标签的节点
 		String scriptStr = null;
 		for (Object scriptObj : scriptObjArr) {

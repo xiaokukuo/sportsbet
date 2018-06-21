@@ -15,7 +15,7 @@
 
 		<dependency>
 			<groupId>com.sport.bet</groupId>
-			<artifactId>sport-core</artifactId>
+			<artifactId>sport-datasource</artifactId>
 			<version>${project.version}</version>
 		</dependency>
 

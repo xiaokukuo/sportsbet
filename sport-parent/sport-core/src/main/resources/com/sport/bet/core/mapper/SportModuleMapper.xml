@@ -7,21 +7,24 @@
 		<id column="resource_id" property="resourceId" />
 		<id column="cid" property="cid" />
 		<id column="group_name" property="groupName" />
+		<id column="group_item_name" property="groupItemName" />
+		<id column="game_lines_pd" property="gameLinesPd" />
+		
 	</resultMap>
 	
 	<select id="selectById" parameterType="java.lang.Integer" resultMap="SportModuleMap">
-		select id, resource_id, cid, group_name from sport_module_${tableName} where id = #{id}
+		select id, resource_id, cid, group_name, group_item_name, game_lines_pd from sport_module_${tableName} where id = #{id}
 	</select>
 
 	<select id="selectAll" resultMap="SportModuleMap">
-		select id, resource_id, cid, group_name from sport_module_${tableName}
+		select id, resource_id, cid, group_name, group_item_name, game_lines_pd from sport_module_${tableName}
 	</select>
 
 	<insert id="insert" keyProperty="id" useGeneratedKeys="true">
 		insert into sport_module_${tableName}
-		(resource_id, cid, group_name, game_lines_pd, create_time)
+		(resource_id, cid, group_name, group_item_name, game_lines_pd, create_time)
 		values
-		(#{entity.resourceId}, #{entity.cid},  #{entity.groupName}, #{entity.gameLinesPd} , now())
+		(#{entity.resourceId}, #{entity.cid},  #{entity.groupName}, #{entity.groupItemName}, #{entity.gameLinesPd} , now())
 	</insert>
 
 	<insert id="insertByBatch" keyProperty="id" useGeneratedKeys="true">
@@ -29,7 +32,7 @@
 		(resource_id, cid, group_name, game_lines_pd, create_time)
         values
         <foreach collection="list" item="item" index="index" separator=",">
-           (#{item.resourceId},  #{item.cid}, #{item.groupName}, #{item.gameLinesPd}, now())
+           (#{item.resourceId},  #{item.cid}, #{item.groupName}, #{item.groupItemName}, #{item.gameLinesPd}, now())
         </foreach>
     </insert>
     

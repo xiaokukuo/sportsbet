@@ -7,11 +7,13 @@ public class SportModule extends BaseBean {
 	private int resourceId;
 	
 	private String cid; // 篮球的那个板块id
-
+	
 	private String groupName;
+	
+	private String groupItemName;
 
 	private String gameLinesPd;
-
+	
 	/*private String firstHalfPd; //上半场
 
 	private String secondHalfPd; //下半场
@@ -34,6 +36,14 @@ public class SportModule extends BaseBean {
 
 	public String getGroupName() {
 		return groupName;
+	}
+
+	public String getGroupItemName() {
+		return groupItemName;
+	}
+
+	public void setGroupItemName(String groupItemName) {
+		this.groupItemName = groupItemName;
 	}
 
 	public void setGroupName(String groupName) {

@@ -17,6 +17,8 @@ public abstract class AbstractPaser<T> {
 
 	protected static String EV = "|EV;";
 	
+	protected volatile int resourceId;
+	
 	protected List<T> list = new ArrayList<T>();
 	
 	public abstract List<T> parsed(String page);
@@ -43,6 +45,13 @@ public abstract class AbstractPaser<T> {
 		}
 		return null;
 	}
-	
 
+	public int getResourceId() {
+		return resourceId;
+	}
+
+	public void setResourceId(int resourceId) {
+		this.resourceId = resourceId;
+	}
+	
 }

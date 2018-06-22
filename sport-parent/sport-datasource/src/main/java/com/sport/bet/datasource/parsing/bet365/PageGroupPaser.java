@@ -14,8 +14,6 @@ public class PageGroupPaser extends AbstractPaser<SportModuleGame> {
 	
 	Logger logger = LoggerFactory.getLogger(PageGroupPaser.class);
 	
-	private volatile int resourceId;
-	
 	private volatile int moduleId;
 	
 	@Override

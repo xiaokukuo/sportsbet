@@ -12,8 +12,6 @@ import com.sport.bet.datasource.parsing.AbstractPaser;
 @Component
 public class PageBet188Paser extends AbstractPaser<SportModule> {
 	
-	private volatile int resourceId;
-	
 	private volatile JSONArray next;
 	
 	@Override

@@ -15,8 +15,6 @@ public class PagePaser extends AbstractPaser<SportModule> {
 	
 	Logger logger = LoggerFactory.getLogger(PagePaser.class);
 	
-	private volatile int resourceId;
-	
 	private List<SportModule> sportModule188List;
 	
 	@Override

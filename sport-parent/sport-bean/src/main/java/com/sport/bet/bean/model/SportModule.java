@@ -68,9 +68,8 @@ public class SportModule extends BaseBean {
 
 	@Override
 	public String toString() {
-		return "SportModule [resourceId=" + resourceId + ", cid=" + cid + ", groupName=" + groupName + ", gameLinesPd="
-				+ gameLinesPd + "]";
+		return "SportModule [resourceId=" + resourceId + ", cid=" + cid + ", groupName=" + groupName
+				+ ", groupItemName=" + groupItemName + ", gameLinesPd=" + gameLinesPd + "]";
 	}
-
 
 }

@@ -19,7 +19,7 @@ import com.sport.bet.quartz.common.ApplicationContextProvider;
 public class JobA implements Job,Serializable {
 	
 	private static final long serialVersionUID = -4606059280525720090L;
-	private static Logger _log = LoggerFactory.getLogger(JobA.class);
+	private static Logger logger = LoggerFactory.getLogger(JobA.class);
 
 	private volatile static Resource commonResource = new Resource();
 	
@@ -32,7 +32,7 @@ public class JobA implements Job,Serializable {
 	
 	public void execute(JobExecutionContext context) throws JobExecutionException {
 		JobKey jobKey = context.getJobDetail().getKey();
-		_log.info("JobA says: " + jobKey + " executing at " + new Date());
+		logger.info("JobA says: " + jobKey + " executing at " + new Date());
 		
 		
 		System.err.println("JobA  "+ commonResource.getCode());

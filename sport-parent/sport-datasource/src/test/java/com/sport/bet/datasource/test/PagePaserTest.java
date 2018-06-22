@@ -3,10 +3,14 @@ package com.sport.bet.datasource.test;
 import java.io.UnsupportedEncodingException;
 import java.util.List;
 
+import org.htmlcleaner.HtmlCleaner;
+import org.htmlcleaner.TagNode;
 import org.htmlcleaner.XPatherException;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.alibaba.fastjson.JSONArray;
+import com.alibaba.fastjson.JSONObject;
 import com.sport.bet.bean.model.SportGameOdds;
 import com.sport.bet.bean.model.SportModule;
 import com.sport.bet.common.utils.HttpTool;
@@ -46,7 +50,7 @@ public class PagePaserTest extends BaseTest{
 	}
 	
 	@Test
-	public void testUrl() throws UnsupportedEncodingException, XPatherException{
+	public void testUrlpin111() throws UnsupportedEncodingException, XPatherException{
 		String pageJosn = HttpTool.getSportPin111("https://www.pin1111.com/zh-cn/rtn");
 		
 		pagePin1111Paser.setResourceId(1);
@@ -66,5 +70,71 @@ public class PagePaserTest extends BaseTest{
 			System.out.println(sportGameOdds.toString());
 		}
 		
+	}
+	
+	@Test
+	public void testUrlpin111Game() throws UnsupportedEncodingException, XPatherException{
+		String pageJosn = HttpTool.getSportPin111("https://www.pin1111.com/zh-cn/odds/match/basketball/argentina/argentina-liga-nacional");
+		
+		HtmlCleaner hc = new HtmlCleaner();
+		TagNode tn = hc.clean(pageJosn);
+		
+		String xpath = "//div[@ng-controller='GuestLinesController']";
+		
+		TagNode divtn = (TagNode) tn.evaluateXPath(xpath)[0];
+		
+		String ngInit = divtn.getAttributeByName("ng-init").substring(5);
+		
+		String[] arr = ngInit.split(",");
+		String urlPre = "https://www.pin1111.com/webapi/1.17/api/v1/GuestLines/Deadball/";
+		String urlEnd = "?callback=angular.callbacks._0"; 
+		
+		String newurl =  urlPre + arr[0].trim() + "/" + arr[1].trim() + urlEnd;
+		
+		String gameJson = HttpTool.getSportPin111(newurl);
+		gameJson = gameJson.substring(gameJson.indexOf("{"), gameJson.indexOf(");"));
+		
+		JSONObject jsonObj = (JSONObject) JSONObject.parse(gameJson);
+		
+		System.out.println(jsonObj.getString("OddsType"));
+		
+		JSONArray leaguesArray = jsonObj.getJSONArray("Leagues");
+		
+		JSONObject leagueJsonObj = null;
+		JSONArray  eventsArray = null;
+		JSONObject eventJsonObj = null;
+		for (Object leagueObj : leaguesArray) {
+			leagueJsonObj= (JSONObject) leagueObj; 
+			eventsArray = leagueJsonObj.getJSONArray("Events");
+			for (Object eveObj : eventsArray) {
+				eventJsonObj = (JSONObject) eveObj;
+				
+				eventJsonObj.getString("EventId");
+				eventJsonObj.getString("LeagueId");
+				eventJsonObj.getString("DateAndTime");
+				
+				//总分信息
+				JSONObject totalsObj = eventJsonObj.getJSONObject("Totals");
+				
+				
+				System.err.println(totalsObj.getInteger("OverPrice"));
+				totalsObj.getInteger("UnderPrice");
+				totalsObj.getString("Min");
+				
+				//让分信息
+				JSONArray  participants = eventJsonObj.getJSONArray("Participants");
+				for (Object participant : participants) {
+					
+					JSONObject particObj = (JSONObject) participant;
+					particObj.getString("Id");
+					particObj.getString("Name");
+					particObj.getInteger("MoneyLine");
+					
+					JSONObject handicapObj = particObj.getJSONObject("Handicap");
+					handicapObj.getInteger("Price");
+					handicapObj.getString("Min");
+				}
+			}
+		}
 	}
 }

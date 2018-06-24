@@ -1,4 +1,4 @@
-package com.sport.bet.core.common.datasource;
+/*package com.sport.bet.core.common.datasource;
 
 
 import javax.sql.DataSource;
@@ -20,4 +20,4 @@ public class DatasourceConfiguration {
 	public DataSource dataSource() {
 		return  DataSourceBuilder.create().type(com.mchange.v2.c3p0.ComboPooledDataSource.class).build();
 	}
-}
+}*/

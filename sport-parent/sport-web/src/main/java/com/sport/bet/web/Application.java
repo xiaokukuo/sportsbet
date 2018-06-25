@@ -8,7 +8,7 @@ import org.springframework.context.annotation.PropertySources;
 
 import com.sport.bet.common.utils.mybatis.MapperNameGenerator;
 
-@SpringBootApplication(scanBasePackages={"com.sport.bet.web.controller",
+@SpringBootApplication(scanBasePackages={"com.sport.bet.web",
 		"com.sport.bet.core"})
 @PropertySources({
 	@PropertySource(encoding="UTF-8",value={"classpath:/config/jdbc.properties"}),

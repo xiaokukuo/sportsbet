@@ -23,7 +23,11 @@ public class PagePin1111Paser extends AbstractPaser<SportModule> {
 		
 		SportModule sportModule = null;
 		try {
-			TagNode spantn = (TagNode) tn.evaluateXPath(xpath)[0];
+			Object[] obj = tn.evaluateXPath(xpath);
+			if(obj == null || obj.length <= 0){
+				return null;
+			}
+			TagNode spantn = (TagNode) obj[0];
 		
 			Object[] subObjArr = spantn.getParent().getParent().evaluateXPath("/ul[@style='display:none']/li");
 			

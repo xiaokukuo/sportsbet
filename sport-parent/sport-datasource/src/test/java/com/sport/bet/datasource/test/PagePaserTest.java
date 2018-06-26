@@ -53,6 +53,9 @@ public class PagePaserTest extends BaseTest{
 	public void testUrlpin111() throws UnsupportedEncodingException, XPatherException{
 		String pageJosn = HttpTool.getSportPin111("https://www.pin1111.com/zh-cn/rtn");
 		
+		
+		System.out.println(pageJosn);
+		
 		pagePin1111Paser.setResourceId(1);
 		List<SportModule> a = pagePin1111Paser.parsed(pageJosn);
 		for (SportModule sportModule : a) {
@@ -79,6 +82,7 @@ public class PagePaserTest extends BaseTest{
 		HtmlCleaner hc = new HtmlCleaner();
 		TagNode tn = hc.clean(pageJosn);
 		
+		System.err.println(pageJosn);
 		String xpath = "//div[@ng-controller='GuestLinesController']";
 		
 		TagNode divtn = (TagNode) tn.evaluateXPath(xpath)[0];

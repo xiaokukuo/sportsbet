@@ -15,6 +15,10 @@ public class Resource extends BaseBean{
 	
 	private String url188;
 	
+	private String urlu1688;
+	
+	private String urlpin111;
+	
 
 	public String getName() {
 		return name;
@@ -48,5 +52,20 @@ public class Resource extends BaseBean{
 		this.url188 = url188;
 	}
 
-	
+	public String getUrlu1688() {
+		return urlu1688;
+	}
+
+	public void setUrlu1688(String urlu1688) {
+		this.urlu1688 = urlu1688;
+	}
+
+	public String getUrlpin111() {
+		return urlpin111;
+	}
+
+	public void setUrlpin111(String urlpin111) {
+		this.urlpin111 = urlpin111;
+	}
+
 }

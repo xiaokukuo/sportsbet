@@ -31,6 +31,8 @@ public class SportGameOdds extends BaseBean {
 
 	private String singleWinerScore; // 强弱盘
 	
+	private String drawScore; //平局
+	
 	private String gameTime;
 	
 	public int getGameId() {
@@ -137,11 +139,20 @@ public class SportGameOdds extends BaseBean {
 		this.gameTime = gameTime;
 	}
 
+	public String getDrawScore() {
+		return drawScore;
+	}
+
+	public void setDrawScore(String drawScore) {
+		this.drawScore = drawScore;
+	}
+
 	@Override
 	public String toString() {
 		return "SportGameOdds [gameId=" + gameId + ", cid=" + cid + ", eid=" + eid + ", scoreType=" + scoreType
 				+ ", score=" + score + ", higher=" + higher + ", lower=" + lower + ", team=" + team + ", team2=" + team2
-				+ ", teamNa=" + teamNa + ", teamScore=" + teamScore + ", singleWinerScore=" + singleWinerScore + "]";
+				+ ", teamNa=" + teamNa + ", teamScore=" + teamScore + ", singleWinerScore=" + singleWinerScore
+				+ ", drawScore=" + drawScore + ", gameTime=" + gameTime + "]";
 	}
 
 }

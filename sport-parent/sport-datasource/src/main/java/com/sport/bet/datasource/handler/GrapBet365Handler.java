@@ -12,8 +12,6 @@ import com.sport.bet.bean.model.SportGameOdds;
 import com.sport.bet.bean.model.SportModule;
 import com.sport.bet.bean.model.SportModuleGame;
 import com.sport.bet.common.utils.HttpTool;
-import com.sport.bet.core.service.impl.SportModuleGameServiceImpl;
-import com.sport.bet.core.service.impl.SportModuleServiceImpl;
 import com.sport.bet.datasource.parsing.bet365.PageGroupPaser;
 import com.sport.bet.datasource.parsing.bet365.PageGroupTeamPaser;
 import com.sport.bet.datasource.parsing.bet365.PagePaser;
@@ -34,12 +32,6 @@ public class GrapBet365Handler extends AbstractGrapHandler{
 	
 	@Autowired
 	private PageGroupTeamPaser pageGroupTeamPaser;
-	
-	@Autowired
-	private SportModuleServiceImpl sportModuleService;
-	
-	@Autowired
-	private SportModuleGameServiceImpl sportModuleGameService;
 	
 	//private static String URL = "https://www.365sport365.com/SportsBook.API/web?lid=10&zid=0&cid=42&ctid=42&pd=";
 	@Override

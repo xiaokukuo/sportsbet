@@ -1,11 +1,14 @@
 package com.sport.bet.datasource.parsing;
 
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.util.StringUtils;
 
 public abstract class AbstractPaser<T> {
+	
+	protected static NumberFormat nf = NumberFormat.getNumberInstance();
 	
 	protected static String SEPARATOR_CL = "\\|CL;";
 
@@ -22,6 +25,10 @@ public abstract class AbstractPaser<T> {
 	protected List<T> list = new ArrayList<T>();
 	
 	public abstract List<T> parsed(String page);
+	
+	static{
+		nf.setMaximumFractionDigits(2);
+	}
 	
 	protected String getLineValue(String[] elements, String name){
 		for (String elem : elements) {

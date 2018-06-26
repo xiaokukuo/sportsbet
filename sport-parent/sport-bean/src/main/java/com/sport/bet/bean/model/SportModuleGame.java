@@ -18,8 +18,6 @@ public class SportModuleGame extends BaseBean {
 
 	private String deailPd;
 
-	private String gameType;
-
 	private String gameTime;
 	
 	public int getResourceId() {
@@ -62,14 +60,6 @@ public class SportModuleGame extends BaseBean {
 		this.deailPd = deailPd;
 	}
 
-	public String getGameType() {
-		return gameType;
-	}
-
-	public void setGameType(String gameType) {
-		this.gameType = gameType;
-	}
-
 	public String getGameTime() {
 		return gameTime;
 	}
@@ -98,7 +88,8 @@ public class SportModuleGame extends BaseBean {
 	public String toString() {
 		return "SportModuleGame [resourceId=" + resourceId + ", sportGroupId=" + sportGroupId + ", cid=" + cid
 				+ ", eid=" + eid + ", teamName1=" + teamName1 + ", teamName2=" + teamName2 + ", deailPd=" + deailPd
-				+ ", gameType=" + gameType + ", gameTime=" + gameTime + "]";
+				+ ", gameTime=" + gameTime + "]";
 	}
+
 	
 }

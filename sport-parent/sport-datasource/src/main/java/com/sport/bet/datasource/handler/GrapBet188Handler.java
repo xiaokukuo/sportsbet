@@ -13,8 +13,6 @@ import com.sport.bet.bean.model.SportGameOdds;
 import com.sport.bet.bean.model.SportModule;
 import com.sport.bet.bean.model.SportModuleGame;
 import com.sport.bet.common.utils.HttpTool;
-import com.sport.bet.core.service.impl.SportModuleGameServiceImpl;
-import com.sport.bet.core.service.impl.SportModuleServiceImpl;
 import com.sport.bet.datasource.parsing.bet188.PageBet188Paser;
 import com.sport.bet.datasource.parsing.bet188.PageGroupBet188Paser;
 import com.sport.bet.datasource.parsing.bet188.PageGroupTeamBet188Paser;
@@ -34,12 +32,6 @@ public class GrapBet188Handler extends AbstractGrapHandler{
 	
 	@Autowired
 	private PageGroupTeamBet188Paser pageGroupTeamBet188Paser;
-	
-	@Autowired
-	private SportModuleServiceImpl sportModuleService;
-	
-	@Autowired
-	private SportModuleGameServiceImpl sportModuleGameService;
 	
 	String url = "https://landing-sb.prdasbb18a1.com/zh-cn/Service/CentralService?GetData&ts=1528967723534";
 	public void grabData(int resourceId, String url){

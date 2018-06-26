@@ -19,7 +19,7 @@ public class PagePin1111Paser extends AbstractPaser<SportModule> {
 		HtmlCleaner hc = new HtmlCleaner();
 		
 		TagNode tn = hc.clean(page);
-		String xpath = "//li[@class='level-2']/span/span[@class='sport-icon basketball']";
+		String xpath = "//li[@class='level-2']/span/span[@class='sport-icon soccer']";
 		
 		SportModule sportModule = null;
 		try {

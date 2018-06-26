@@ -25,13 +25,13 @@
 	</select>
     
     <insert id="insert" keyProperty="entity.id" useGeneratedKeys="true">
-		insert into resource (name, code, url_365, url_188, urlu1688, urlpin111, create_time)
+		insert into resource (name, code, url365, url188, urlu1688, urlpin111, create_time)
 		values
 		(#{entity.name}, #{entity.code}, #{entity.url365}, #{entity.url188}, #{entity.urlu1688}, #{entity.urlpin111}, now())
 	</insert>
 	
 	<insert id="insertByBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into resource (name, code, url_365, url_188, urlu1688, urlpin111, create_time)
+        insert into resource (name, code, url365, url188, urlu1688, urlpin111, create_time)
         values
         <foreach collection="list" item="item" index="index" separator=",">
             (#{item.name}, #{item.code}, #{item.url365}, #{item.url188}, #{item.urlu1688}, #{item.urlpin111}, now())

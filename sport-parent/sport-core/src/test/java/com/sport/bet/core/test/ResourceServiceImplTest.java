@@ -31,4 +31,19 @@ public class ResourceServiceImplTest extends BaseTest {
 		System.out.println(id);
 	}
 	
+	@Test
+	public void saveResource (){
+	
+		Resource re = new Resource();
+		re.setCode("football");
+		re.setName("足球");
+		re.setUrl188("https");
+		re.setUrl365("https");
+		re.setUrlpin111("https://www.pin1111.com/en/rtn");
+		re.setUrlu1688("https");
+		
+		resourceService.save(re, null);
+		
+	}
+	
 }

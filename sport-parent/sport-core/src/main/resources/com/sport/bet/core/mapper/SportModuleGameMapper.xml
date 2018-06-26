@@ -12,7 +12,6 @@
 		<id column="team_name2" property="teamName2" />
 		<id column="deail_pd" property="deailPd" />
 		<id column="game_time" property="gameTime" />
-		<id column="game_type" property="gameType" />
 	</resultMap>
 
 	<select id="selectById" parameterType="java.lang.Integer" resultMap="SportModuleGameMap">
@@ -26,20 +25,20 @@
 
 	<insert id="insert" keyProperty="id" useGeneratedKeys="true">
 		insert into sport_module_game_${tableName}
-		(resource_id, cid, eid, sport_group_id, team_name1, team_name2, deail_pd, game_time,game_type, create_time)
+		(resource_id, cid, eid, sport_group_id, team_name1, team_name2, deail_pd, game_time, create_time)
 		values
 		(#{entity.resourceId}, #{entity.cid}, #{entity.eid}, #{entity.sportGroupId}, #{entity.teamName1}, #{entity.teamName2},
-		 #{entity.deailPd}, #{entity.gameTime}, #{entity.gameType}, now())
+		 #{entity.deailPd}, #{entity.gameTime}, now())
 	</insert>
 	
 	
 	<insert id="insertByBatch" keyProperty="id" useGeneratedKeys="true">
         insert into sport_module_game_${tableName}
-		(resource_id, cid, eid, sport_group_id, team_name1, team_name2, deail_pd, game_time,game_type, create_time)
+		(resource_id, cid, eid, sport_group_id, team_name1, team_name2, deail_pd, game_time, create_time)
         values
         <foreach collection="list" item="item" index="index" separator=",">
             (#{item.resourceId}, #{item.cid}, #{item.eid}, #{item.sportGroupId}, #{item.teamName1}, #{item.teamName2},
-		 		#{item.deailPd}, #{item.gameTime}, #{item.gameType}, now())
+		 		#{item.deailPd}, #{item.gameTime}, now())
         </foreach>
     </insert>
     

@@ -26,7 +26,7 @@ public class GrapBetPin111Handler extends AbstractGrapHandler {
 	@Override
 	public void grabData(int resourceId, String url) throws UnsupportedEncodingException {
 
-		String pageJson = HttpTool.getSportPin111(url);
+		String pageJson = HttpTool.getSportPin111(url+"/zh-cn/rtn");
 		
 		pagePin1111Paser.setResourceId(resourceId);
 		List<SportModule> moduleList = pagePin1111Paser.parsed(pageJson);
@@ -38,9 +38,9 @@ public class GrapBetPin111Handler extends AbstractGrapHandler {
 		List<SportGameOdds> sportGameOddsList = null;
 		for (SportModule sportModule : moduleList) {
 			pageGroupTeamPin111Paser.setResourceId(resourceId);
+			pageGroupTeamPin111Paser.setModuleId(sportModule.getId());
 			pageJson = HttpTool.getSportPin111(url+sportModule.getGameLinesPd());
 			sportGameOddsList = pageGroupTeamPin111Paser.parsed(pageJson);
-			
 		}
 		
 		List<SportModuleGame> moduleGameList = pageGroupTeamPin111Paser.getModuleGameList();

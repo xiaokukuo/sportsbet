@@ -29,7 +29,7 @@
 
 	<insert id="insertByBatch" keyProperty="id" useGeneratedKeys="true">
         insert into sport_module_${tableName}
-		(resource_id, cid, group_name, game_lines_pd, create_time)
+		(resource_id, cid, group_name, group_item_name, game_lines_pd, create_time)
         values
         <foreach collection="list" item="item" index="index" separator=",">
            (#{item.resourceId},  #{item.cid}, #{item.groupName}, #{item.groupItemName}, #{item.gameLinesPd}, now())

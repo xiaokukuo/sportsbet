@@ -24,32 +24,32 @@ public class GrapBetPin111Handler extends AbstractGrapHandler {
 	 
 	//"https://www.pin1111.com/zh-cn/rtn"
 	@Override
-	void grabData(int resourceId, String url) throws UnsupportedEncodingException {
+	public void grabData(int resourceId, String url) throws UnsupportedEncodingException {
 
 		String pageJson = HttpTool.getSportPin111(url);
 		
 		pagePin1111Paser.setResourceId(resourceId);
 		List<SportModule> moduleList = pagePin1111Paser.parsed(pageJson);
 		
-		if(moduleList != null && moduleList.size() < 0){
+		if(moduleList != null && moduleList.size() > 0){
 			sportModuleService.save(moduleList, "pin111");
 		}
 		
 		List<SportGameOdds> sportGameOddsList = null;
 		for (SportModule sportModule : moduleList) {
 			pageGroupTeamPin111Paser.setResourceId(resourceId);
-			pageJson = HttpTool.getSportPin111(sportModule.getGameLinesPd());
+			pageJson = HttpTool.getSportPin111(url+sportModule.getGameLinesPd());
 			sportGameOddsList = pageGroupTeamPin111Paser.parsed(pageJson);
 			
 		}
 		
 		List<SportModuleGame> moduleGameList = pageGroupTeamPin111Paser.getModuleGameList();
 		
-		if(moduleGameList != null && moduleGameList.size() < 0){
+		if(moduleGameList != null && moduleGameList.size() > 0){
 			sportModuleGameService.save(moduleGameList, "pin111");
 		}
 		
-		if(sportGameOddsList != null && sportGameOddsList.size() < 0){
+		if(sportGameOddsList != null && sportGameOddsList.size() > 0){
 			sportGameOddsService.save(sportGameOddsList, "pin111");
 		}
 		

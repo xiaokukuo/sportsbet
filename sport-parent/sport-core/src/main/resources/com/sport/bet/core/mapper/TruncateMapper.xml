@@ -2,10 +2,16 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.sport.bet.core.mapper.TruncateMapper">
 
-	<update id="truncateTable" parameterType="java.lang.String">
+	<update id="truncateModule" parameterType="java.lang.String">
         truncate table sport_module_${tableName};
+    </update>
+    
+    <update id="truncateModuleGame" parameterType="java.lang.String">
         truncate table sport_module_game_${tableName};
-        truncate table sport_game_odds_${tableName};
+    </update>
+    
+    <update id="truncateGameOdds" parameterType="java.lang.String">
+		truncate table sport_game_odds_${tableName};
     </update>
 
 </mapper>

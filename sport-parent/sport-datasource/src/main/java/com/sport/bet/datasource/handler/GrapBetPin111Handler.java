@@ -13,6 +13,7 @@ import com.sport.bet.common.utils.HttpTool;
 import com.sport.bet.datasource.enums.EnumSportType;
 import com.sport.bet.datasource.parsing.pin1111.PageGroupTeamPin111Paser;
 import com.sport.bet.datasource.parsing.pin1111.PagePin1111Paser;
+import com.sport.bet.datasource.utils.TableConstant;
 
 @Component
 public class GrapBetPin111Handler extends AbstractGrapHandler {
@@ -26,16 +27,19 @@ public class GrapBetPin111Handler extends AbstractGrapHandler {
 	//"https://www.pin1111.com/zh-cn/rtn"
 	@Override
 	public void grabData(int resourceId, String url) throws UnsupportedEncodingException {
-
+		truncateServiceImpl.truncateByName(TableConstant.TABALE_NAME_PIN1111);
 		String pageJson = HttpTool.getSportPin111(url+"/zh-cn/rtn");
 		
 		pagePin1111Paser.setResourceId(resourceId);
-		pagePin1111Paser.setSportType(EnumSportType.SOCCER.getcode());
+		pagePin1111Paser.setSportType(EnumSportType.ESPORTS.getcode());
 		List<SportModule> moduleList = pagePin1111Paser.parsed(pageJson);
 		
-		if(moduleList != null && moduleList.size() > 0){
-			sportModuleService.save(moduleList, "pin111");
+		if(moduleList == null || moduleList.size() <= 0){
+			System.err.println("moduleList空");
+			return;
 		}
+		
+		sportModuleService.save(moduleList, TableConstant.TABALE_NAME_PIN1111);
 		
 		List<SportGameOdds> sportGameOddsList = null;
 		for (SportModule sportModule : moduleList) {
@@ -45,15 +49,18 @@ public class GrapBetPin111Handler extends AbstractGrapHandler {
 			sportGameOddsList = pageGroupTeamPin111Paser.parsed(pageJson);
 		}
 		
+		if(sportGameOddsList == null || sportGameOddsList.size() <= 0){
+			System.err.println("pageGroupTeamData:"+pageJson);
+			return;
+		}
+		
 		List<SportModuleGame> moduleGameList = pageGroupTeamPin111Paser.getModuleGameList();
 		
 		if(moduleGameList != null && moduleGameList.size() > 0){
-			sportModuleGameService.save(moduleGameList, "pin111");
+			sportModuleGameService.save(moduleGameList,TableConstant.TABALE_NAME_PIN1111);
 		}
 		
-		if(sportGameOddsList != null && sportGameOddsList.size() > 0){
-			sportGameOddsService.save(sportGameOddsList, "pin111");
-		}
+		sportGameOddsService.save(sportGameOddsList, TableConstant.TABALE_NAME_PIN1111);
 		
 	}
 

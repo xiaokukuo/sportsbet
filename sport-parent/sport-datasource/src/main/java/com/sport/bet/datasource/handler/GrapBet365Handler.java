@@ -36,10 +36,11 @@ public class GrapBet365Handler extends AbstractGrapHandler{
 	//private static String URL = "https://www.365sport365.com/SportsBook.API/web?lid=10&zid=0&cid=42&ctid=42&pd=";
 	@Override
 	public void grabData(int resourceId, String url) throws UnsupportedEncodingException{
-		
+		truncateServiceImpl.truncateByName(TableConstant.TABALE_NAME_365);
 		//1、获取篮球页面的数据--group
 		String pageStr = HttpTool.getSport365(url);
 		
+		//根据188数据获取365
 		List<SportModule> sportModule188List = sportModuleService.findAll(TableConstant.TABALE_NAME_188);
 		pagePaser.setSportModule188List(sportModule188List);
 		pagePaser.setResourceId(resourceId);

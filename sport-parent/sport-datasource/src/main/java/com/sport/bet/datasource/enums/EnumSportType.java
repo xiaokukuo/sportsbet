@@ -2,9 +2,10 @@ package com.sport.bet.datasource.enums;
 
 public enum EnumSportType {
 
-	SOCCER("足球", "Soccer"), 
+	SOCCER("足球", "soccer"), 
 	
-	Basketball("篮球", "Basketball");
+	Basketball("篮球", "basketball"),
+	ESPORTS("篮球", "e-sports");
 	
 	// 成员变量
 	private String code;

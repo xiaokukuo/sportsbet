@@ -9,6 +9,7 @@ import org.springframework.stereotype.Component;
 import com.sport.bet.bean.model.SportGameOdds;
 import com.sport.bet.common.utils.HttpTool;
 import com.sport.bet.datasource.parsing.betu1688.PageU1688Paser;
+import com.sport.bet.datasource.utils.TableConstant;
 
 @Component
 public class GrapBetU1688Handler extends AbstractGrapHandler {
@@ -18,7 +19,7 @@ public class GrapBetU1688Handler extends AbstractGrapHandler {
 	
 	@Override
 	public void grabData(int resourceId, String url) throws UnsupportedEncodingException {
-		
+		truncateServiceImpl.truncateByName(TableConstant.TABALE_NAME_U1688);
 		String pageJosnU188 = HttpTool.getSportU16888(url);
 		
 		pageU1688Paser.setResourceId(resourceId);
@@ -26,7 +27,7 @@ public class GrapBetU1688Handler extends AbstractGrapHandler {
 		
 		
 		if(gameOddslist != null && gameOddslist.size() < 0){
-			sportGameOddsService.save(gameOddslist, "U1688");
+			sportGameOddsService.save(gameOddslist, TableConstant.TABALE_NAME_U1688);
 		}
 		
 	}

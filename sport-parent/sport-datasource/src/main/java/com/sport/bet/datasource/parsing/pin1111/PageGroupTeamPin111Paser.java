@@ -40,7 +40,11 @@ public class PageGroupTeamPin111Paser extends AbstractPaser<SportGameOdds> {
 
 		String ngInit = null;
 		try {
-			TagNode divtn = (TagNode) tn.evaluateXPath(xpath)[0];
+			Object[] tnObje = tn.evaluateXPath(xpath);
+			if(tnObje == null || tnObje.length <= 0){
+				return null;
+			}
+			TagNode divtn = (TagNode) tnObje[0];
 			ngInit = divtn.getAttributeByName("ng-init").substring(5);
 		} catch (XPatherException e) {
 			e.printStackTrace();
@@ -101,12 +105,15 @@ public class PageGroupTeamPin111Paser extends AbstractPaser<SportGameOdds> {
 						teamName2 = particObj.getString("Name");
 						sportGameOdds.setTeam(teamName2);
 					}
+					
+					
 					handicapObj = particObj.getJSONObject("Handicap");
-					sportGameOdds.setTeamNa(handicapObj.getString("Min"));
-					sportGameOdds.setTeamScore(nf.format((-100.0) / handicapObj.getInteger("Price") + 1));
+					if(handicapObj != null && handicapObj.size() >0){
+						sportGameOdds.setTeamNa(handicapObj.getString("Min"));
+						sportGameOdds.setTeamScore(nf.format((-100.0) / handicapObj.getInteger("Price") + 1));
+					}
 					
 					Integer moneyLine = particObj.getInteger("MoneyLine");
-					
 					if(moneyLine != null){
 						sportGameOdds.setSingleWinerScore(nf.format(particObj.getInteger("MoneyLine")/100.0+1));
 					}

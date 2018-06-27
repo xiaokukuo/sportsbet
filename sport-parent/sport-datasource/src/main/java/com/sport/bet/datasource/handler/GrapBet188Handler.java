@@ -39,6 +39,8 @@ public class GrapBet188Handler extends AbstractGrapHandler{
 		
 		String pageJosn = HttpTool.getSport188(url);
 		
+		System.err.println(pageJosn);
+		
 		JSONObject jsonObject = JSONObject.parseObject(pageJosn);
 		JSONObject lpd = jsonObject.getJSONObject("lpd");
 		

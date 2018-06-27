@@ -93,11 +93,11 @@ public class PageGroupTeamPaser extends AbstractPaser<SportGameOdds> {
 						break;
 					}
 					String na = super.getLineValue(elements, "NA");
-					if (na.startsWith("高")) {
+					if (na.startsWith("高")|| na.startsWith("O")) {
 						sportGameOdds.setScore(ha);
 						sportGameOdds.setHigher(super.getLineValue(elements, "OD"));
 					}
-					if (na.startsWith("低")) {
+					if (na.startsWith("低") ||  na.startsWith("U")) {
 						sportGameOdds.setLower(super.getLineValue(elements, "OD"));
 					}
 				}

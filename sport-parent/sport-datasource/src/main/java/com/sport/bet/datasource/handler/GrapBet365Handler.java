@@ -56,7 +56,7 @@ public class GrapBet365Handler extends AbstractGrapHandler{
 		//2、遍历每个篮球模块，获取对应模块的比赛队伍
 		List<SportModuleGame> teamList = null;
 		for (SportModule sportModule : sportModuleList) {
-			String gameLineUrl = HttpUtils.getUrl356(sportModule.getGameLinesPd());
+			String gameLineUrl = HttpUtils.getUrl356("en",sportModule.getGameLinesPd());
 			String responseStr = HttpTool.getSport365(gameLineUrl);
 			//解析比赛队伍
 			pageGroupPaser.setModuleId(sportModule.getId());
@@ -75,7 +75,7 @@ public class GrapBet365Handler extends AbstractGrapHandler{
 		//3、遍历比赛队伍，获取比赛队伍的信息
 		List<SportGameOdds>  gameOddsList = null;
 		for (SportModuleGame sportModuleGame : teamList) {
-			String urlscore = HttpUtils.getUrl356(sportModuleGame.getDeailPd());
+			String urlscore = HttpUtils.getUrl356("en",sportModuleGame.getDeailPd());
 			String pageScoreResponse = HttpTool.getSport365(urlscore);
 			
 			pageGroupTeamPaser.setGameId(sportModuleGame.getId());

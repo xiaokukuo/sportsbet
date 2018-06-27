@@ -22,7 +22,7 @@ public abstract class AbstractPaser<T> {
 	
 	protected volatile int resourceId;
 	
-	protected List<T> list = new ArrayList<T>();
+	protected volatile List<T> list = new ArrayList<T>();
 	
 	public abstract List<T> parsed(String page);
 	
@@ -60,5 +60,8 @@ public abstract class AbstractPaser<T> {
 	public void setResourceId(int resourceId) {
 		this.resourceId = resourceId;
 	}
-	
+
+	public List<T> getList() {
+		return list;
+	}
 }

@@ -33,7 +33,6 @@ public class GrapBet188Handler extends AbstractGrapHandler{
 	@Autowired
 	private PageGroupTeamBet188Paser pageGroupTeamBet188Paser;
 	
-	String url = "https://landing-sb.prdasbb18a1.com/zh-cn/Service/CentralService?GetData&ts=1528967723534";
 	public void grabData(int resourceId, String url){
 		truncateServiceImpl.truncateByName(TableConstant.TABALE_NAME_188);
 		//Resource resource = resourceService.findByCode("basketball");

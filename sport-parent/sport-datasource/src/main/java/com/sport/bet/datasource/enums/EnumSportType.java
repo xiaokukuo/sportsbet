@@ -4,7 +4,7 @@ public enum EnumSportType {
 
 	SOCCER("足球", "soccer"), 
 	
-	Basketball("篮球", "basketball"),
+	BASKETBALL("篮球", "basketball"),
 	ESPORTS("篮球", "e-sports");
 	
 	// 成员变量

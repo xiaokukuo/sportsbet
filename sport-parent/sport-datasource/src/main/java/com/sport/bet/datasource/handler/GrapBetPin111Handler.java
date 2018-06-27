@@ -31,8 +31,9 @@ public class GrapBetPin111Handler extends AbstractGrapHandler {
 		String pageJson = HttpTool.getSportPin111(url+"/zh-cn/rtn");
 		
 		pagePin1111Paser.setResourceId(resourceId);
-		pagePin1111Paser.setSportType(EnumSportType.ESPORTS.getcode());
-		List<SportModule> moduleList = pagePin1111Paser.parsed(pageJson);
+		pagePin1111Paser.setSportType(EnumSportType.BASKETBALL.getcode());
+		pagePin1111Paser.parsed(pageJson);
+		List<SportModule> moduleList = pagePin1111Paser.getList();
 		
 		if(moduleList == null || moduleList.size() <= 0){
 			System.err.println("moduleList空");

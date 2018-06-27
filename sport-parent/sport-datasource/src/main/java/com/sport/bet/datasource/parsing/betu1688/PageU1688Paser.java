@@ -1,5 +1,6 @@
 package com.sport.bet.datasource.parsing.betu1688;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.htmlcleaner.HtmlCleaner;
@@ -8,12 +9,15 @@ import org.htmlcleaner.XPatherException;
 import org.springframework.stereotype.Component;
 
 import com.sport.bet.bean.model.SportGameOdds;
+import com.sport.bet.bean.model.SportModuleGame;
 import com.sport.bet.datasource.parsing.AbstractPaser;
 import com.sport.bet.datasource.utils.Native2AsciiUtils;
 
 @Component
 public class PageU1688Paser extends AbstractPaser<SportGameOdds> {
 
+	private List<SportModuleGame> moduleGameList = new ArrayList<SportModuleGame>();
+	
 	@Override
 	public List<SportGameOdds> parsed(String page) {
 
@@ -34,10 +38,11 @@ public class PageU1688Paser extends AbstractPaser<SportGameOdds> {
 		
 		// 遍历script标签的节点
 		String scriptStr = null;
+		
 		for (Object scriptObj : scriptObjArr) {
 			TagNode tna = (TagNode) scriptObj;
 			scriptStr = tna.getText().toString();
-
+			
 			if (scriptStr.startsWith("function initiateOddsDisplay()")) {
 				
 				String[] scriptStrArr = scriptStr.split("\\],\\[\\],\\[\\]\\]");
@@ -46,6 +51,14 @@ public class PageU1688Paser extends AbstractPaser<SportGameOdds> {
 				scriptStr = Native2AsciiUtils.ascii2Native(scriptStr).replace("'", "");
 				
 				String[] teamArr = scriptStr.split("\\],\\[2,");
+				
+				String team1Name = null;
+				String team2Name = null;
+				
+				String groupCode = null;
+				String teamCode = null;
+				String gameTime = null;
+				SportModuleGame moduleGame = null;
 				SportGameOdds gameOdds = null;
 				
 				for (String teamLine : teamArr) {
@@ -55,12 +68,22 @@ public class PageU1688Paser extends AbstractPaser<SportGameOdds> {
 
 					String teamInfoLine = itemArr[0]; // 队伍信息
 					String[] teamItems = teamInfoLine.split(",");
-					String groupCode = teamItems[0];
-					String teamCode = teamItems[1];
-					String team1Name = teamItems[2];
-					String team2Name = teamItems[3];
-					String gameTime = teamItems[6];
-
+					groupCode = teamItems[0];
+					teamCode = teamItems[1];
+					team1Name = teamItems[2];
+					team2Name = teamItems[3];
+					gameTime = teamItems[6];
+					
+					moduleGame = new SportModuleGame();
+					
+					moduleGame.setResourceId(resourceId);
+					moduleGame.setCid(groupCode);
+					moduleGame.setEid(teamCode);
+					moduleGame.setTeamName1(team1Name);
+					moduleGame.setTeamName2(team2Name);
+					moduleGame.setGameTime(gameTime);
+					moduleGameList.add(moduleGame);
+					
 					for (int i = 2; i < itemArr.length - 1; i = i + 2) {
 						String[] coefficientArr = itemArr[i].split(","); // 系数
 						System.err.println("系数l" + itemArr[i]);
@@ -97,6 +120,14 @@ public class PageU1688Paser extends AbstractPaser<SportGameOdds> {
 		}
 
 		return list;
+	}
+
+	public List<SportModuleGame> getModuleGameList() {
+		return moduleGameList;
+	}
+
+	public void setModuleGameList(List<SportModuleGame> moduleGameList) {
+		this.moduleGameList = moduleGameList;
 	}
 
 }

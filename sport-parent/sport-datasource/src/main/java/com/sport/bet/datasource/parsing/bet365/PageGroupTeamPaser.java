@@ -133,7 +133,7 @@ public class PageGroupTeamPaser extends AbstractPaser<SportGameOdds> {
 		for (String line : semicolonLines) {
 			if (line.startsWith("PD")) {
 				String pd = line.substring(3);
-				String responseStr = HttpTool.getSport365(HttpUtils.getUrl356(pd));
+				String responseStr = HttpTool.getSport365(HttpUtils.getUrl356("en",pd));
 				if (responseStr == null) {
 					break;
 				}
@@ -185,7 +185,7 @@ public class PageGroupTeamPaser extends AbstractPaser<SportGameOdds> {
 		for (String line : semicolonLines) {
 			if (line.startsWith("PD")) {
 				String pd = line.substring(3);
-				String responseStr = HttpTool.getSport365(HttpUtils.getUrl356(pd));
+				String responseStr = HttpTool.getSport365(HttpUtils.getUrl356("en", pd));
 				if (responseStr == null) {
 					break;
 				}

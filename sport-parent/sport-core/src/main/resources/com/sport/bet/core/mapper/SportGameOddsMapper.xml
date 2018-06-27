@@ -12,6 +12,7 @@
 		<id column="higher" property="higher" />
 		<id column="lower" property="lower" />
 		<id column="team" property="team" />
+		<id column="team2" property="team2" />
 		<id column="team_na" property="teamNa" />
 		<id column="team_score" property="teamScore" />
 		<id column="single_winer_score" property="singleWinerScore" />
@@ -43,19 +44,19 @@
 
 	<insert id="insert" keyProperty="id" useGeneratedKeys="true">
 		insert into sport_game_odds_${tableName}
-		(game_id, cid, eid, score_type, score, higher, lower, team, team_na, team_score, single_winer_score,create_time)
+		(game_id, cid, eid, score_type, score, higher, lower, team, team2, team_na, team_score, single_winer_score,create_time)
 		values
 		  (#{entity.gameId}, #{entity.cid}, #{entity.eid}, #{entity.scoreType}, #{entity.score}, #{entity.higher},
-		 		#{entity.lower}, #{entity.team}, #{entity.teamNa},  #{entity.teamScore},  #{entity.singleWinerScore}, now())
+		 		#{entity.lower}, #{entity.team}, #{entity.team2},#{entity.teamNa},  #{entity.teamScore},  #{entity.singleWinerScore}, now())
 	</insert>
 	
 	<insert id="insertByBatch" keyProperty="id" useGeneratedKeys="true">
         insert into sport_game_odds_${tableName}
-		(game_id, cid, eid, score_type, score, higher, lower, team, team_na, team_score, single_winer_score,create_time)
+		(game_id, cid, eid, score_type, score, higher, lower, team, team2, team_na, team_score, single_winer_score,create_time)
         values
         <foreach collection="list" item="item" index="index" separator=",">
             (#{item.gameId}, #{item.cid}, #{item.eid}, #{item.scoreType}, #{item.score}, #{item.higher},
-		 		#{item.lower}, #{item.team}, #{item.teamNa},  #{item.teamScore},  #{item.singleWinerScore}, now())
+		 		#{item.lower}, #{item.team}, #{item.team2}, #{item.teamNa},  #{item.teamScore},  #{item.singleWinerScore}, now())
         </foreach>
     </insert>
     

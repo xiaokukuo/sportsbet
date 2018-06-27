@@ -10,6 +10,7 @@ import com.sport.bet.bean.model.SportGameOdds;
 import com.sport.bet.bean.model.SportModule;
 import com.sport.bet.bean.model.SportModuleGame;
 import com.sport.bet.common.utils.HttpTool;
+import com.sport.bet.datasource.enums.EnumSportType;
 import com.sport.bet.datasource.parsing.pin1111.PageGroupTeamPin111Paser;
 import com.sport.bet.datasource.parsing.pin1111.PagePin1111Paser;
 
@@ -29,6 +30,7 @@ public class GrapBetPin111Handler extends AbstractGrapHandler {
 		String pageJson = HttpTool.getSportPin111(url+"/zh-cn/rtn");
 		
 		pagePin1111Paser.setResourceId(resourceId);
+		pagePin1111Paser.setSportType(EnumSportType.SOCCER.getcode());
 		List<SportModule> moduleList = pagePin1111Paser.parsed(pageJson);
 		
 		if(moduleList != null && moduleList.size() > 0){

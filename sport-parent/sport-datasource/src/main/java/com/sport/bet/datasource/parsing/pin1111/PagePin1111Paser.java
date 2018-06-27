@@ -12,14 +12,15 @@ import com.sport.bet.datasource.parsing.AbstractPaser;
 
 @Component
 public class PagePin1111Paser extends AbstractPaser<SportModule> {
-
+	
+	private volatile String sportType;
 	
 	@Override
 	public List<SportModule> parsed(String page) {
 		HtmlCleaner hc = new HtmlCleaner();
 		
 		TagNode tn = hc.clean(page);
-		String xpath = "//li[@class='level-1 no-live']//li[@class='level-2']/span/span[@class='sport-icon soccer']";
+		String xpath = "//li[@class='level-1 no-live']//li[@class='level-2']/span/span[@class='sport-icon "+sportType+"']";
 		
 		SportModule sportModule = null;
 		try {
@@ -61,4 +62,12 @@ public class PagePin1111Paser extends AbstractPaser<SportModule> {
 		return list;
 	}
 
+	public String getSportType() {
+		return sportType;
+	}
+
+	public void setSportType(String sportType) {
+		this.sportType = sportType;
+	}
+	
 }

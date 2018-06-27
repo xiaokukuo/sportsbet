@@ -104,7 +104,12 @@ public class PageGroupTeamPin111Paser extends AbstractPaser<SportGameOdds> {
 					handicapObj = particObj.getJSONObject("Handicap");
 					sportGameOdds.setTeamNa(handicapObj.getString("Min"));
 					sportGameOdds.setTeamScore(nf.format((-100.0) / handicapObj.getInteger("Price") + 1));
-					sportGameOdds.setSingleWinerScore(nf.format(particObj.getInteger("MoneyLine")/100.0+1));
+					
+					Integer moneyLine = particObj.getInteger("MoneyLine");
+					
+					if(moneyLine != null){
+						sportGameOdds.setSingleWinerScore(nf.format(particObj.getInteger("MoneyLine")/100.0+1));
+					}
 					list.add(sportGameOdds);
 
 				}
@@ -121,14 +126,17 @@ public class PageGroupTeamPin111Paser extends AbstractPaser<SportGameOdds> {
 					sportGameOdds.setLower(nf.format((-100.0) / totalsObj.getInteger("UnderPrice") + 1));
 					list.add(sportGameOdds);
 				}
-				// moduleGameList
-				sportModuleGame.setSportGroupId(moduleId);
-				sportModuleGame.setCid(leagueId);
-				sportModuleGame.setEid(eventId);
-				sportModuleGame.setGameTime(eventJsonObj.getString("DateAndTime"));
-				sportModuleGame.setTeamName1(teamName1);
-				sportModuleGame.setTeamName2(teamName2);
-				moduleGameList.add(sportModuleGame);
+				if(eventJsonObj.getInteger("PeriodNumber") == 0){
+					// moduleGameList
+					sportModuleGame.setResourceId(resourceId);
+					sportModuleGame.setSportGroupId(moduleId);
+					sportModuleGame.setCid(leagueId);
+					sportModuleGame.setEid(eventId);
+					sportModuleGame.setGameTime(eventJsonObj.getString("DateAndTime"));
+					sportModuleGame.setTeamName1(teamName1);
+					sportModuleGame.setTeamName2(teamName2);
+					moduleGameList.add(sportModuleGame);
+				}
 			}
 			
 		}

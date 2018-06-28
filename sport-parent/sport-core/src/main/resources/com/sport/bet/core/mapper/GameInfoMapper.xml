@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sport.bet.core.mapper.GameInfoMapper">
+
+	<resultMap id="GameIfoMap" type="com.sport.bet.bean.model.po.GameInfo">
+		<id column="team_name1" property="teamName1" />
+		<id column="team_name2" property="teamName2" />
+		<id column="game_id" property="gameId" />
+		<id column="cid" property="cid" />
+		<id column="eid" property="eid" />
+		<id column="score_type" property="scoreType" />
+		<id column="score" property="score" />
+		<id column="higher" property="higher" />
+		<id column="lower" property="lower" />
+		<id column="team" property="team" />
+		<id column="team2" property="team2" />
+		<id column="team_na" property="teamNa" />
+		<id column="team_score" property="teamScore" />
+		<id column="single_winer_score" property="singleWinerScore" />
+	</resultMap>
+
+	<select id="selectByEid" resultMap="GameIfoMap">
+		SELECT mg.team_name1,mg.team_name2 ,od.* 
+		FROM sport_game_odds_${tableName} od
+		right join sport_module_game_${tableName} mg
+		on od.eid = mg.eid
+		where od.score_type = #{scoreType}
+	</select>
+	
+	<select id="selectByGameId" resultMap="GameIfoMap">
+		SELECT mg.team_name1,mg.team_name2 ,od.* 
+		FROM sport_game_odds_${tableName} od
+		right join sport_module_game_${tableName} mg
+		on od.game_id = mg.id
+		where od.score_type = #{scoreType}
+	</select>
+
+</mapper>

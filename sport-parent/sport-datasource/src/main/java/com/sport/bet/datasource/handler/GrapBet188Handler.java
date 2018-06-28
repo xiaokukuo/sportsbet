@@ -49,6 +49,11 @@ public class GrapBet188Handler extends AbstractGrapHandler{
 			mod = jsonObject.getJSONObject("mbd");
 		}
 		
+		if(mod == null){
+			logger.error("没有比赛");
+			return;
+		}
+		
 		JSONArray psmdArray = lpd.getJSONObject("psm").getJSONArray("psmd");
 		
 		pageBet188Paser.setResourceId(resourceId);

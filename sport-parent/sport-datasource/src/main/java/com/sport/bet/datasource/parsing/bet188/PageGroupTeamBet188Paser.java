@@ -20,7 +20,7 @@ public class PageGroupTeamBet188Paser extends AbstractPaser<SportGameOdds> {
 	@Override
 	public List<SportGameOdds> parsed(String pageJson) {
 		SportGameOdds sportGameOdds = null;
-		
+		String teamNa = null;
 		// 篮球的板块集合
 		JSONArray moddcArray = JSONObject.parseArray(pageJson);
 		for (Object modcObj : moddcArray) {
@@ -41,6 +41,7 @@ public class PageGroupTeamBet188Paser extends AbstractPaser<SportGameOdds> {
 				JSONObject gameOdds = modeJsonObj.getJSONObject("o"); // 比分集合类
 				
 				JSONArray ahArray = gameOdds.getJSONArray("ah"); // 让分
+				
 				if(ahArray !=null && ahArray.size()>0){
 					for (int i = 0; i < ahArray.size(); i=i+8) {
 						sportGameOdds = new SportGameOdds();
@@ -48,6 +49,12 @@ public class PageGroupTeamBet188Paser extends AbstractPaser<SportGameOdds> {
 						sportGameOdds.setEid(eid); // 篮球板块中队伍Id
 						
 						sportGameOdds.setScoreType(1);
+						
+						teamNa = ahArray.getString(i+1);
+						if(teamNa.startsWith("+")){
+							sportGameOdds.setTeamNa(teamNa.substring(1)); //让分系数
+						}
+						
 						sportGameOdds.setTeamNa(ahArray.getString(i+1)); //让分系数
 						sportGameOdds.setTeamScore(ahArray.getString(i+5));
 						list.add(sportGameOdds);
@@ -57,10 +64,15 @@ public class PageGroupTeamBet188Paser extends AbstractPaser<SportGameOdds> {
 						sportGameOdds.setCid(cid); // 篮球的那个板块id
 						sportGameOdds.setEid(eid); // 篮球板块中队伍Id
 						sportGameOdds.setScoreType(1);
-						sportGameOdds.setTeamNa(ahArray.getString(i+3)); //让分系数
+						
+						teamNa = ahArray.getString(i+3);
+						if(teamNa.startsWith("+")){
+							sportGameOdds.setTeamNa(teamNa.substring(1)); //让分系数
+						}
+					
 						sportGameOdds.setTeamScore(ahArray.getString(i+7));
 						list.add(sportGameOdds);
-					
+						teamNa = null;
 					}
 				}
 				

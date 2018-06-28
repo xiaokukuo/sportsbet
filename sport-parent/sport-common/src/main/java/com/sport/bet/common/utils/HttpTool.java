@@ -67,23 +67,21 @@ public class HttpTool {
 	
 	
 	private static HttpPost newHttpPost188(String url){
-		
-		String cookie = "ASP.NET_SessionId=gkvdovkdli2u0h4lecnuusxs; sb188cashlv=1075842058.20480.0000; settingProfile=OddsType=2&NoOfLinePerEvent=1&SortBy=1&AutoRefreshBetslip=True; _ga=GA1.2.1639691814.1528173435; _gid=GA1.2.334443587.1528955456; CCEnlargeStatus=false; mc=; HighlightedSport=; CCCurrentMbPlay=; timeZone=480";
 		HttpPost request = new HttpPost(url); // 创建httget
-		request.addHeader("User-Agent","Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0");
+		
+		//request.addHeader("Accept", "*/*");
+		/*request.addHeader("Accept-Encoding", "gzip, deflate, br");
+		request.addHeader("Accept-Language", "zh-CN,zh;q=0.9");
+		request.addHeader("Connection", "keep-alive");
+		request.addHeader("Content-Length", "404");
+		request.addHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
+		request.addHeader("User-Agent","Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.75 Safari/537.36");
 		request.addHeader("Cookie",cookie);
 		request.addHeader("Host", "landing-sb.prdasbb18a1.com");
-	
+		request.addHeader("Referer", "https://landing-sb.prdasbb18a1.com/zh-cn/sports/basketball/competition/full-time-asian-handicap-and-over-under");
 		
-		request.addHeader("Accept-Language", "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2");
-		request.addHeader("Accept-Encoding", "gzip, deflate, br*");
-	
-		
-		request.addHeader("Accept", "*/*");
-		request.addHeader("Referer", "https://landing-sb.prdasbb18a1.com/zh-cn/sports/basketball/competition/full-time-asian-handicap-and-over-under?q=&country=CN&currency=RMB&tzoff=-240&allowRacing=false&reg=China&rc=CN");
-		request.addHeader("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
 		request.addHeader("Origin", "https://landing-sb.prdasbb18a1.com");
-		request.addHeader("X-Requested-With", "XMLHttpRequest");
+		request.addHeader("X-Requested-With", "XMLHttpRequest");*/
 		
 		return request;
 	}
@@ -92,26 +90,25 @@ public class HttpTool {
 		HttpPost request = newHttpPost188(url);
 		
 		Map<String,String> map = new HashMap<String,String>();
-		map.put("CompetitionID", "-1");
-		map.put("IsEventMenu",	"false");
+		/*map.put("CompetitionID", "-1");
+		map.put("IsEventMenu",	"false");*/
 		map.put("IsFirstLoad",	"true");
-		map.put("LiveCenterEventId", "0");
+	/*	map.put("LiveCenterEventId", "0");
 		map.put("LiveCenterSportId", "0");
 		map.put("oIsFirstLoad",	"false");
 		map.put("oIsInplayAll",	"false");
 		map.put("oOddsType", "0");
 		map.put("oPageNo",	"0");
 		map.put("oSortBy",	"1");
-		map.put("oVersion",	"63407");
-		map.put("reqUrl",	"/zh-cn/sports/basketball/competition/full-time-asian-handicap-and-over-under?q=&country=CN&currency=RMB&tzoff=-240&allowRacing=false&reg=China&rc=CN");
-		map.put("SportID",	"1");
+		map.put("oVersion",	"63407");*/
+		map.put("reqUrl",	"/zh-cn/sports/basketball/competition/full-time-asian-handicap-and-over-under");
+	/*	map.put("SportID",	"1");
 		map.put("VersionF",	"-1");
-		map.put("VersionH",	"0");
+		map.put("VersionH",	"1:0,2:0,3:0,4:0,9:0,13:0,16:0");
 		map.put("VersionL",	"-1");
 		map.put("VersionS",	"-1");
 		map.put("VersionT",	"-1");
-		map.put("VersionU",	"0");
-		
+		map.put("VersionU",	"0");*/
 		
 		ArrayList<BasicNameValuePair> pairs = new ArrayList<BasicNameValuePair>();// 用于存放表单数据.
 		// 遍历map 将其中的数据转化为表单数据

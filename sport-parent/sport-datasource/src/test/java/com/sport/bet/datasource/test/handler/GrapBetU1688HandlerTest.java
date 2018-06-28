@@ -1,6 +1,7 @@
 package com.sport.bet.datasource.test.handler;
 
 import java.io.UnsupportedEncodingException;
+import java.time.LocalDate;
 
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,7 +16,7 @@ public class GrapBetU1688HandlerTest extends BaseTest {
 	
 	@Test
 	public void paserTest() throws UnsupportedEncodingException{
-		grapBetU1688Handler.grabData(1, "http://www.u16888.com/euro/basketball");
+		grapBetU1688Handler.grabData(1, "http://www.u16888.com/euro/basketball/"+LocalDate.now());
 	}
 	
 }

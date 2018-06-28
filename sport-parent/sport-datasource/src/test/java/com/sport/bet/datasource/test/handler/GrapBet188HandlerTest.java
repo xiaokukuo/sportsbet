@@ -15,7 +15,7 @@ public class GrapBet188HandlerTest extends BaseTest {
 	
 	@Test
 	public void paserTest() throws UnsupportedEncodingException{
-		String url = "https://landing-sb.prdasbb18a1.com/en-gb/Service/CentralService?GetData&ts=1530090534203";
+		String url = "https://landing-sb.prdasbb18a1.com/en-gb/Service/CentralService?GetData&ts=1530172534977";
 		
 		grapBet188Handler.grabData(1, url);
 	}

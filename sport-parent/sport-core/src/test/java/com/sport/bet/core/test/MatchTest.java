@@ -1,6 +1,7 @@
 package com.sport.bet.core.test;
 
 import java.text.DecimalFormat;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -9,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import com.sport.bet.bean.model.po.GameInfo;
 import com.sport.bet.core.mapper.GameInfoMapper;
+import com.sport.bet.core.po.ViewBean;
 import com.sport.bet.core.test.base.BaseTest;
 
 public class MatchTest extends BaseTest  {
@@ -42,16 +44,16 @@ public class MatchTest extends BaseTest  {
 			mapU1688.put(gameInfo.getTeamName1()+gameInfo.getTeamNa(), gameInfo);
 		}
 		 
-		GameInfo odds188 = null;
+		
 		GameInfo oddspin111 = null;
 		GameInfo oddsu1688 = null;
 		String key1 = null;
 		String key2 = null;
+		
+		List<ViewBean> viewList = new ArrayList<>();
 		for (GameInfo odds365 : team365List) {
 			teamNA = odds365.getTeamNa();
 			if(teamNA.startsWith("+")){
-				teamNA = "-"+teamNA.substring(1);
-			}else{
 				teamNA = teamNA.substring(1);
 			}
 			key1 = odds365.getTeamName1()+teamNA;
@@ -60,13 +62,24 @@ public class MatchTest extends BaseTest  {
 			double teamScore365 = getTeamScore365(odds365.getTeamScore());
 			
 			if(map188.containsKey(key1) || map188.containsKey(key2)){
-				odds188 = map188.get(key1);
+				GameInfo odds188 = map188.get(key1);
 				if(odds188 == null){
 					odds188 = map188.get(key2);
 				}
 				
-				calculation(teamScore365, Double.parseDouble(odds188.getTeamScore()));
+				double a = calculation(teamScore365, Double.parseDouble(odds188.getTeamScore()));
+				ViewBean view = new ViewBean();
+				view.setType("让分");
+				view.setWebsite1("365");
+				view.setWebsite2("188");
+				view.setLetCoefficient1(odds365.getTeamNa());
+				view.setLetCoefficient2(teamNA);
+				view.setLetScore1(teamScore365+"");
+				view.setLetScore2(Double.parseDouble(odds188.getTeamScore())+"");
 				
+				view.setProfit(a+"");
+				System.out.println(view.toString());
+				viewList.add(view);
 			}
 			//
 			if(mapPin111.containsKey(key1) || mapPin111.containsKey(key2)){
@@ -113,13 +126,13 @@ public class MatchTest extends BaseTest  {
 		Double fu = (1 - d2/sum)*d2-1;
 		
 		DecimalFormat df = new DecimalFormat("#0.0000");  
-		System.out.println(df.format(sheng) +  "==="+df.format(fu));
+		
+		if(df.format(sheng).equals(df.format(fu))){
+			System.out.println(df.format(sheng));
+			return Double.parseDouble(df.format(sheng));
+		}
 		
 		return 0d;
 	}
 	
-	public static void main(String[] args) {
-		calculation(2.6,2.87);
-	}
-
 }

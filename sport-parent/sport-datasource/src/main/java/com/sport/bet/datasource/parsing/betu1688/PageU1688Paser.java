@@ -74,6 +74,14 @@ public class PageU1688Paser extends AbstractPaser<SportGameOdds> {
 					team2Name = teamItems[3];
 					gameTime = teamItems[6];
 					
+					if(team1Name.contains("(")){
+						team1Name = team1Name.substring(0, team1Name.indexOf("(")).trim();
+					}
+					
+					if(team2Name.contains("(")){
+						team2Name = team2Name.substring(0, team2Name.indexOf("(")).trim();
+					}
+					
 					moduleGame = new SportModuleGame();
 					
 					moduleGame.setResourceId(resourceId);

@@ -31,13 +31,7 @@ public class MatchTest extends BaseTest  {
 		
 		String teamNA = null;
 		for (GameInfo gameInfo : team188List) {
-			teamNA = gameInfo.getTeamNa();
-			if(teamNA.startsWith("+")){
-				map188.put(gameInfo.getTeamName1()+teamNA.substring(1), gameInfo);
-			}else{
-				map188.put(gameInfo.getTeamName1()+teamNA, gameInfo);
-			}
-			teamNA = null;
+			map188.put(gameInfo.getTeamName1()+gameInfo.getTeamNa(), gameInfo);
 		}
 		
 		for (GameInfo gameInfo : teamPinList) {

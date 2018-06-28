@@ -53,9 +53,9 @@ public class PageGroupTeamBet188Paser extends AbstractPaser<SportGameOdds> {
 						teamNa = ahArray.getString(i+1);
 						if(teamNa.startsWith("+")){
 							sportGameOdds.setTeamNa(teamNa.substring(1)); //让分系数
+						}else{
+							sportGameOdds.setTeamNa(teamNa); //让分系数
 						}
-						
-						sportGameOdds.setTeamNa(ahArray.getString(i+1)); //让分系数
 						sportGameOdds.setTeamScore(ahArray.getString(i+5));
 						list.add(sportGameOdds);
 						
@@ -68,6 +68,8 @@ public class PageGroupTeamBet188Paser extends AbstractPaser<SportGameOdds> {
 						teamNa = ahArray.getString(i+3);
 						if(teamNa.startsWith("+")){
 							sportGameOdds.setTeamNa(teamNa.substring(1)); //让分系数
+						}else{
+							sportGameOdds.setTeamNa(teamNa); //让分系数
 						}
 					
 						sportGameOdds.setTeamScore(ahArray.getString(i+7));

@@ -72,6 +72,8 @@ public class MatchTest extends BaseTest  {
 				view.setType("让分");
 				view.setWebsite1("365");
 				view.setWebsite2("188");
+				view.setTeam1(odds365.getTeamName1());
+				view.setTeam2(odds365.getTeamName2());
 				view.setLetCoefficient1(odds365.getTeamNa());
 				view.setLetCoefficient2(teamNA);
 				view.setLetScore1(teamScore365+"");

@@ -21,10 +21,11 @@ public class MatchTest extends BaseTest  {
 	@Test
 	public void matchGameTest (){
 		
-		List<GameInfo> teamPinList = gameInfoMapper.selectByEid(1,"pin111");//正好不带
-		List<GameInfo> teamU1688List = gameInfoMapper.selectByEid(1,"u1688");//正好不带
 		List<GameInfo> team365List = gameInfoMapper.selectByGameId(1,"365");
 		List<GameInfo> team188List = gameInfoMapper.selectByEid(1,"188");
+		List<GameInfo> teamPinList = gameInfoMapper.selectByEid(1,"pin111");//正好不带
+		List<GameInfo> teamU1688List = gameInfoMapper.selectByEid(1,"u1688");//正好不带
+		
 		
 		HashMap<String, GameInfo> map188 = new HashMap<>();
 		HashMap<String, GameInfo> mapPin111 = new HashMap<>();
@@ -45,62 +46,106 @@ public class MatchTest extends BaseTest  {
 		}
 		 
 		
+		
+		
 		GameInfo oddspin111 = null;
 		GameInfo oddsu1688 = null;
 		String key1 = null;
 		String key2 = null;
 		
 		List<ViewBean> viewList = new ArrayList<>();
-		for (GameInfo odds365 : team365List) {
-			teamNA = odds365.getTeamNa();
-			if(teamNA.startsWith("+")){
+		
+		for (GameInfo odds188 : team188List) {
+			teamNA = odds188.getTeamNa();
+			if(teamNA.startsWith("-")){
 				teamNA = teamNA.substring(1);
+			}else{
+				teamNA = "-"+teamNA;
+			}
+			key1 = odds188.getTeamName1()+teamNA;
+			key2 = odds188.getTeamName2()+teamNA;
+			
+			if(mapPin111 != null && mapPin111.size()>0 && (mapPin111.containsKey(key1) || mapPin111.containsKey(key2))){
+				GameInfo oddspin11 = mapPin111.get(key1);
+				if(oddspin11 == null){
+					oddspin11 = mapPin111.get(key2);
+				}
+				double a = calculation(Double.parseDouble(odds188.getTeamScore()), Double.parseDouble(oddspin11.getTeamScore()));
+				System.err.println(a);
+			}
+			
+			if(mapU1688 != null && mapU1688.size()>0 && (mapU1688.containsKey(key1) || mapU1688.containsKey(key2))){
+				GameInfo oddsU1688 = mapU1688.get(key1);
+				if(oddsU1688 == null){
+					oddsU1688 = mapPin111.get(key2);
+				}
+				double a = calculation(Double.parseDouble(odds188.getTeamScore()), Double.parseDouble(oddsU1688.getTeamScore()));
+				System.err.println(a);
+			}
+		}
+		
+		for (GameInfo oddsPin111 : teamPinList) {
+			teamNA = oddsPin111.getTeamNa();
+			if(teamNA.startsWith("-")){
+				teamNA = teamNA.substring(1);
+			}else{
+				teamNA = "-"+teamNA;
+			}
+			key1 = oddsPin111.getTeamName1()+teamNA;
+			key2 = oddsPin111.getTeamName2()+teamNA;
+			
+			
+			if(mapU1688 != null && mapU1688.size()>0 && (mapU1688.containsKey(key1) || mapU1688.containsKey(key2))){
+				GameInfo oddsU1688 = mapU1688.get(key1);
+				if(oddsU1688 == null){
+					oddsU1688 = mapPin111.get(key2);
+				}
+				double a = calculation(Double.parseDouble(oddsPin111.getTeamScore()), Double.parseDouble(oddsU1688.getTeamScore()));
+				System.err.println(a);
+			}
+		}
+		
+		/*for (GameInfo odds365 : team365List) {
+			teamNA = odds365.getTeamNa();
+			if(teamNA.startsWith("-")){
+				teamNA = teamNA.substring(1);
+			}else{
+				teamNA = "-"+teamNA.substring(1);
 			}
 			key1 = odds365.getTeamName1()+teamNA;
 			key2 = odds365.getTeamName2()+teamNA;
 			
 			double teamScore365 = getTeamScore365(odds365.getTeamScore());
 			
-			if(map188.containsKey(key1) || map188.containsKey(key2)){
+			if(map188 != null && map188.size()>0 && (map188.containsKey(key1) || map188.containsKey(key2))){
 				GameInfo odds188 = map188.get(key1);
 				if(odds188 == null){
 					odds188 = map188.get(key2);
 				}
 				
 				double a = calculation(teamScore365, Double.parseDouble(odds188.getTeamScore()));
-				ViewBean view = new ViewBean();
-				view.setType("让分");
-				view.setWebsite1("365");
-				view.setWebsite2("188");
-				view.setTeam1(odds365.getTeamName1());
-				view.setTeam2(odds365.getTeamName2());
-				view.setLetCoefficient1(odds365.getTeamNa());
-				view.setLetCoefficient2(teamNA);
-				view.setLetScore1(teamScore365+"");
-				view.setLetScore2(Double.parseDouble(odds188.getTeamScore())+"");
-				
-				view.setProfit(a+"");
-				System.out.println(view.toString());
-				viewList.add(view);
+				System.err.println(a);
 			}
 			//
-			if(mapPin111.containsKey(key1) || mapPin111.containsKey(key2)){
+			if(mapPin111 != null && mapPin111.size()>0 && (mapPin111.containsKey(key1) || mapPin111.containsKey(key2))){
 				
 				oddspin111 = mapPin111.get(key1);
 				if(oddspin111 == null){
 					oddspin111 = mapPin111.get(key2);
 				}
-				calculation(teamScore365, Double.parseDouble(oddspin111.getTeamScore()));
+				double a = calculation(teamScore365, Double.parseDouble(oddspin111.getTeamScore()));
+				System.err.println(a);
 			}
 			//
-			if(mapU1688.containsKey(key1) || mapU1688.containsKey(key2)){
+			if(mapU1688 != null && mapU1688.size()>0 && (mapU1688.containsKey(key1) || mapU1688.containsKey(key2))){
 				oddsu1688 = mapU1688.get(key1);
 				if(oddsu1688 == null){
 					oddsu1688 = mapU1688.get(key2);
 				}
-				calculation(teamScore365, Double.parseDouble(oddsu1688.getTeamScore()));
+				double a = calculation(teamScore365, Double.parseDouble(oddsu1688.getTeamScore()));
+				System.err.println(a);
 			}
-		}
+		}*/
 		
 	}
 	
@@ -130,7 +175,6 @@ public class MatchTest extends BaseTest  {
 		DecimalFormat df = new DecimalFormat("#0.0000");  
 		
 		if(df.format(sheng).equals(df.format(fu))){
-			System.out.println(df.format(sheng));
 			return Double.parseDouble(df.format(sheng));
 		}
 		

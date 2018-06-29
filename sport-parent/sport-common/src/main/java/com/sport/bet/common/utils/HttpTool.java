@@ -27,10 +27,8 @@ public class HttpTool {
 	 */
 	private static HttpGet newHttpGet365(String url){
 		
-		String cookie = "aps03=oty=2&cg=0&cst=0&tzi=27&hd=N&lng=10&cf=N&ct=42; rmbs=3; pstk=F29C56B7654B43B1B45E5F8151659114000003; bs=bt=1&mo=0&fs=0||&; session=processform=0&id=%7B7A229C4E%2DDA6F%2D4F3D%2DB6C4%2DC745A3CC6EE8%7D&fms=1";
 		HttpGet request = new HttpGet(url); // 创建httget
 		request.addHeader("User-Agent","Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0");
-		request.addHeader("Cookie",cookie);
 		request.addHeader("Host", "www.365sport365.com");
 		request.addHeader("Accept", "*/*");
 		
@@ -172,11 +170,9 @@ public class HttpTool {
 	
 	private static HttpGet newHttpGetU16888(String url){
 		
-		String cookie = "_ga=GA1.2.935692521.1529271305; _gid=GA1.2.1130277983.1529271305; bs-info=; ASP.NET_SessionId=zhqey125fdzextjqozlxpitn; odnbv9=16843018.20480.0000; tag-id=/PTEyJHSN5ylUd6X00HK+g==; ting=3";
 		
 		HttpGet request = new HttpGet(url); // 创建httget
 		request.addHeader("User-Agent","Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:60.0) Gecko/20100101 Firefox/60.0");
-		request.addHeader("Cookie",cookie);
 		request.addHeader("Host", "www.u16888.com");
 		request.addHeader("Accept-Language", "zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2");
 		request.addHeader("Accept-Encoding", "gzip, deflate");

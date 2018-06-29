@@ -31,23 +31,49 @@ public class SchedulerTask {
 
 	@Autowired
 	private SchedulerFactoryBean schedulerFactory;
-
-	public void execute() throws JobExecutionException, Exception {
-		
-		System.err.println("44444444444444444444");
-		Scheduler scheduler = schedulerFactory.getScheduler();
-		
+	private static List<BatchTaskInfo> taskInfos = new ArrayList<BatchTaskInfo>();
+	static{
 		BatchTaskInfo task = new BatchTaskInfo();
 		task.setId(111);
-		task.setTaskName("Job1");
+		task.setTaskName("365");
 		task.setTaskGroup("group1");
-		task.setCron("0/2 * * * * ?");
-		task.setClassName("com.sport.bet.quartz.job.JobA");
+		task.setCron("0 0/5 * * * ?");
+		task.setClassName("com.sport.bet.quartz.job.GrabBet365Job");
 		task.setTaskType("Y");
-		
-		List<BatchTaskInfo> taskInfos = new ArrayList<BatchTaskInfo>();
 		taskInfos.add(task);
-		//List<BatchTaskInfo> taskInfos= batchTaskInfoDao.findAll();
+		
+		task = new BatchTaskInfo();
+		task.setId(111);
+		task.setTaskName("pin111");
+		task.setTaskGroup("group1");
+		task.setCron("0 0/5 * * * ?");
+		task.setClassName("com.sport.bet.quartz.job.GrabBetPin111Job");
+		task.setTaskType("Y");
+		taskInfos.add(task);
+		
+		task = new BatchTaskInfo();
+		task.setId(111);
+		task.setTaskName("188");
+		task.setTaskGroup("group1");
+		task.setCron("0 0/5 * * * ?");
+		task.setClassName("com.sport.bet.quartz.job.GrapBet188Job");
+		task.setTaskType("Y");
+		taskInfos.add(task);
+		
+		task = new BatchTaskInfo();
+		task.setId(111);
+		task.setTaskName("u1688");
+		task.setTaskGroup("group1");
+		task.setCron("0 0/5 * * * ?");
+		task.setClassName("com.sport.bet.quartz.job.GrabBetU1688Job");
+		task.setTaskType("Y");
+		taskInfos.add(task);
+	}
+	
+	public void execute() throws JobExecutionException, Exception {
+		
+		System.err.println("任务启动");
+		Scheduler scheduler = schedulerFactory.getScheduler();
 		
 		for (BatchTaskInfo taskInfo : taskInfos) {
 				if ("N".equals(taskInfo.getStatus())) {
@@ -69,7 +95,7 @@ public class SchedulerTask {
 			isNew = false;
 		}
 		if (isNew) {
-			System.err.println("创建一个新任务");
+			//System.err.println("创建一个新任务");
 			addJob(task, scheduler);
 		}else{
 			JobKey jobKey = JobKey.jobKey(task.getTaskName(),task.getTaskGroup());
@@ -79,7 +105,7 @@ public class SchedulerTask {
 				System.err.println("任务不变");
 			}else{
 				deleteJob(task, scheduler);
-				System.err.println("任务执行时间改变");
+				//System.err.println("任务执行时间改变");
 				addJob(task, scheduler);
 			}
 		}

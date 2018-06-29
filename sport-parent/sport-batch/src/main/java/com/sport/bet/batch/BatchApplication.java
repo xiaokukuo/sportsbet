@@ -10,6 +10,7 @@ import com.sport.bet.common.utils.mybatis.MapperNameGenerator;
 
 @SpringBootApplication(scanBasePackages={
 		"com.sport.bet.core",
+		"com.sport.bet.datasource",
 		"com.sport.bet.quartz",
 		"com.sport.bet.batch"})
 @PropertySources({

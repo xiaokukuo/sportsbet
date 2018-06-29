@@ -31,7 +31,6 @@ public class MatchTest extends BaseTest  {
 		HashMap<String, GameInfo> mapPin111 = new HashMap<>();
 		HashMap<String, GameInfo> mapU1688 = new HashMap<>();
 		
-		
 		String teamNA = null;
 		for (GameInfo gameInfo : team188List) {
 			map188.put(gameInfo.getTeamName1()+gameInfo.getTeamNa(), gameInfo);
@@ -42,10 +41,8 @@ public class MatchTest extends BaseTest  {
 		}
 		
 		for (GameInfo gameInfo : teamU1688List) {
-			mapU1688.put(gameInfo.getTeamName1()+gameInfo.getTeamNa(), gameInfo);
+			mapU1688.put(gameInfo.getTeamName1()+gameInfo.getTeamNa().substring(0, gameInfo.getTeamNa().length()-1), gameInfo);
 		}
-		 
-		
 		
 		
 		GameInfo oddspin111 = null;
@@ -65,6 +62,8 @@ public class MatchTest extends BaseTest  {
 			key1 = odds188.getTeamName1()+teamNA;
 			key2 = odds188.getTeamName2()+teamNA;
 			
+			System.out.println(key1+"---"+key2);
+			
 			if(mapPin111 != null && mapPin111.size()>0 && (mapPin111.containsKey(key1) || mapPin111.containsKey(key2))){
 				GameInfo oddspin11 = mapPin111.get(key1);
 				if(oddspin11 == null){
@@ -77,7 +76,7 @@ public class MatchTest extends BaseTest  {
 			if(mapU1688 != null && mapU1688.size()>0 && (mapU1688.containsKey(key1) || mapU1688.containsKey(key2))){
 				GameInfo oddsU1688 = mapU1688.get(key1);
 				if(oddsU1688 == null){
-					oddsU1688 = mapPin111.get(key2);
+					oddsU1688 = mapU1688.get(key2);
 				}
 				double a = calculation(Double.parseDouble(odds188.getTeamScore()), Double.parseDouble(oddsU1688.getTeamScore()));
 				System.err.println(a);
@@ -98,14 +97,14 @@ public class MatchTest extends BaseTest  {
 			if(mapU1688 != null && mapU1688.size()>0 && (mapU1688.containsKey(key1) || mapU1688.containsKey(key2))){
 				GameInfo oddsU1688 = mapU1688.get(key1);
 				if(oddsU1688 == null){
-					oddsU1688 = mapPin111.get(key2);
+					oddsU1688 = mapU1688.get(key2);
 				}
 				double a = calculation(Double.parseDouble(oddsPin111.getTeamScore()), Double.parseDouble(oddsU1688.getTeamScore()));
 				System.err.println(a);
 			}
 		}
 		
-		/*for (GameInfo odds365 : team365List) {
+		for (GameInfo odds365 : team365List) {
 			teamNA = odds365.getTeamNa();
 			if(teamNA.startsWith("-")){
 				teamNA = teamNA.substring(1);
@@ -124,7 +123,7 @@ public class MatchTest extends BaseTest  {
 				}
 				
 				double a = calculation(teamScore365, Double.parseDouble(odds188.getTeamScore()));
-				System.err.println(a);
+				System.out.println(a);
 			}
 			//
 			if(mapPin111 != null && mapPin111.size()>0 && (mapPin111.containsKey(key1) || mapPin111.containsKey(key2))){
@@ -134,7 +133,7 @@ public class MatchTest extends BaseTest  {
 					oddspin111 = mapPin111.get(key2);
 				}
 				double a = calculation(teamScore365, Double.parseDouble(oddspin111.getTeamScore()));
-				System.err.println(a);
+				System.out.println(a);
 			}
 			//
 			if(mapU1688 != null && mapU1688.size()>0 && (mapU1688.containsKey(key1) || mapU1688.containsKey(key2))){
@@ -143,9 +142,9 @@ public class MatchTest extends BaseTest  {
 					oddsu1688 = mapU1688.get(key2);
 				}
 				double a = calculation(teamScore365, Double.parseDouble(oddsu1688.getTeamScore()));
-				System.err.println(a);
+				System.out.println(a);
 			}
-		}*/
+		}
 		
 	}
 	

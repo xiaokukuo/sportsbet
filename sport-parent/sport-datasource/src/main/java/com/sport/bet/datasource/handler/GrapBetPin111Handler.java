@@ -65,7 +65,7 @@ public class GrapBetPin111Handler extends AbstractGrapHandler {
 		
 		pagePin1111Paser.getList().clear();
 		pageGroupTeamPin111Paser.getList().clear();
-		pageGroupTeamPin111Paser.getModuleGameList();
+		pageGroupTeamPin111Paser.getModuleGameList().clear();
 	}
 
 }

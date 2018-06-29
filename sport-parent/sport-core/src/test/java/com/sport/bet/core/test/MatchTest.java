@@ -62,8 +62,6 @@ public class MatchTest extends BaseTest  {
 			key1 = odds188.getTeamName1()+teamNA;
 			key2 = odds188.getTeamName2()+teamNA;
 			
-			System.out.println(key1+"---"+key2);
-			
 			if(mapPin111 != null && mapPin111.size()>0 && (mapPin111.containsKey(key1) || mapPin111.containsKey(key2))){
 				GameInfo oddspin11 = mapPin111.get(key1);
 				if(oddspin11 == null){

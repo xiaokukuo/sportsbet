@@ -48,7 +48,7 @@ public class SchedledConfiguration implements Serializable{
 	public CronTriggerFactoryBean cronJobTrigger(MethodInvokingJobDetailFactoryBean jobDetail) {
 		CronTriggerFactoryBean tigger = new CronTriggerFactoryBean();
 		tigger.setJobDetail(jobDetail.getObject());
-		tigger.setCronExpression("15 32 * * * ?");// 初始时的cron表达式 ，没5分钟执行一次
+		tigger.setCronExpression("15 36 * * * ?");// 初始时的cron表达式 ，没5分钟执行一次
 		tigger.setName("sportBetGrapTrigger");// trigger的name
 		return tigger;
 

@@ -1,7 +1,6 @@
 package com.sport.bet.datasource.parsing;
 
 import java.text.NumberFormat;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.util.StringUtils;
@@ -21,8 +20,6 @@ public abstract class AbstractPaser<T> {
 	protected static String EV = "|EV;";
 	
 	protected volatile int resourceId;
-	
-	protected volatile List<T> list = new ArrayList<T>();
 	
 	public abstract List<T> parsed(String page);
 	
@@ -61,7 +58,5 @@ public abstract class AbstractPaser<T> {
 		this.resourceId = resourceId;
 	}
 
-	public List<T> getList() {
-		return list;
-	}
+	
 }

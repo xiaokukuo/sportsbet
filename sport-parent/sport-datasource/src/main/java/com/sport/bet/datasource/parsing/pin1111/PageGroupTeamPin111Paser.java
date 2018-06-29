@@ -15,11 +15,10 @@ import com.alibaba.fastjson.JSONObject;
 import com.sport.bet.bean.model.SportGameOdds;
 import com.sport.bet.bean.model.SportModuleGame;
 import com.sport.bet.common.utils.HttpTool;
-import com.sport.bet.datasource.parsing.AbstractPaser;
 import com.sport.bet.datasource.parsing.bet365.PageGroupTeamPaser;
 
 @Component
-public class PageGroupTeamPin111Paser extends AbstractPaser<SportGameOdds> {
+public class PageGroupTeamPin111Paser extends AbstractPin111Paser<SportGameOdds> {
 
 	Logger logger = LoggerFactory.getLogger(PageGroupTeamPaser.class);
 

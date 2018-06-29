@@ -8,10 +8,9 @@ import org.htmlcleaner.XPatherException;
 import org.springframework.stereotype.Component;
 
 import com.sport.bet.bean.model.SportModule;
-import com.sport.bet.datasource.parsing.AbstractPaser;
 
 @Component
-public class PagePin1111Paser extends AbstractPaser<SportModule> {
+public class PagePin1111Paser extends AbstractPin111Paser<SportModule> {
 	
 	private volatile String sportType;
 	

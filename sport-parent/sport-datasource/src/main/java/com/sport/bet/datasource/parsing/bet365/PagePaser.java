@@ -7,11 +7,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
 import com.sport.bet.bean.model.SportModule;
-import com.sport.bet.datasource.parsing.AbstractPaser;
 import com.sport.bet.datasource.utils.StringUtils;
 
 @Component
-public class PagePaser extends AbstractPaser<SportModule> {
+public class PagePaser extends Abstract365Paser<SportModule> {
 	
 	Logger logger = LoggerFactory.getLogger(PagePaser.class);
 	

@@ -8,11 +8,10 @@ import org.springframework.stereotype.Component;
 
 import com.sport.bet.bean.model.SportGameOdds;
 import com.sport.bet.common.utils.HttpTool;
-import com.sport.bet.datasource.parsing.AbstractPaser;
 import com.sport.bet.datasource.utils.HttpUtils;
 
 @Component
-public class PageGroupTeamPaser extends AbstractPaser<SportGameOdds> {
+public class PageGroupTeamPaser extends Abstract365Paser<SportGameOdds> {
 
 	Logger logger = LoggerFactory.getLogger(PageGroupTeamPaser.class);
 

@@ -9,11 +9,10 @@ import org.springframework.stereotype.Component;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.sport.bet.bean.model.SportModuleGame;
-import com.sport.bet.datasource.parsing.AbstractPaser;
 import com.sport.bet.datasource.parsing.bet365.PageGroupPaser;
 
 @Component
-public class PageGroupBet188Paser extends AbstractPaser<SportModuleGame> {
+public class PageGroupBet188Paser extends Abstract188Paser<SportModuleGame> {
 
 Logger logger = LoggerFactory.getLogger(PageGroupPaser.class);
 	

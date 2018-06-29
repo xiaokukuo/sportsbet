@@ -10,11 +10,10 @@ import org.springframework.stereotype.Component;
 
 import com.sport.bet.bean.model.SportGameOdds;
 import com.sport.bet.bean.model.SportModuleGame;
-import com.sport.bet.datasource.parsing.AbstractPaser;
 import com.sport.bet.datasource.utils.Native2AsciiUtils;
 
 @Component
-public class PageU1688Paser extends AbstractPaser<SportGameOdds> {
+public class PageU1688Paser extends Abstract1688Paser<SportGameOdds> {
 
 	private List<SportModuleGame> moduleGameList = new ArrayList<SportModuleGame>();
 	

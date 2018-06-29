@@ -7,10 +7,9 @@ import org.springframework.stereotype.Component;
 import com.alibaba.fastjson.JSONArray;
 import com.alibaba.fastjson.JSONObject;
 import com.sport.bet.bean.model.SportModule;
-import com.sport.bet.datasource.parsing.AbstractPaser;
 
 @Component
-public class PageBet188Paser extends AbstractPaser<SportModule> {
+public class PageBet188Paser extends Abstract188Paser<SportModule> {
 	
 	private volatile JSONArray next;
 	

@@ -62,12 +62,14 @@ public class MatchTest extends BaseTest  {
 			key1 = odds188.getTeamName1()+teamNA;
 			key2 = odds188.getTeamName2()+teamNA;
 			
+			double teamScore188 = Double.parseDouble(odds188.getTeamScore());
+			
 			if(mapPin111 != null && mapPin111.size()>0 && (mapPin111.containsKey(key1) || mapPin111.containsKey(key2))){
 				GameInfo oddspin11 = mapPin111.get(key1);
 				if(oddspin11 == null){
 					oddspin11 = mapPin111.get(key2);
 				}
-				double a = calculation(Double.parseDouble(odds188.getTeamScore()), Double.parseDouble(oddspin11.getTeamScore()));
+				double a = calculation(teamScore188, Double.parseDouble(oddspin11.getTeamScore()));
 				System.err.println(a);
 			}
 			
@@ -76,7 +78,7 @@ public class MatchTest extends BaseTest  {
 				if(oddsU1688 == null){
 					oddsU1688 = mapU1688.get(key2);
 				}
-				double a = calculation(Double.parseDouble(odds188.getTeamScore()), Double.parseDouble(oddsU1688.getTeamScore()));
+				double a = calculation(teamScore188, Double.parseDouble(oddsU1688.getTeamScore()));
 				System.err.println(a);
 			}
 		}
@@ -148,7 +150,7 @@ public class MatchTest extends BaseTest  {
 	
 	public static Double getTeamScore365(String teamScore){
 		String[] arr = teamScore.split("\\/");
-		return Double.parseDouble(arr[0])/Double.parseDouble(arr[1]);
+		return Double.parseDouble(arr[0])/Double.parseDouble(arr[1])+1;
 	}
 	
 	public static Double paserDouble(String str){
@@ -171,11 +173,18 @@ public class MatchTest extends BaseTest  {
 		
 		DecimalFormat df = new DecimalFormat("#0.0000");  
 		
-		if(df.format(sheng).equals(df.format(fu))){
+		if(sheng >0){
 			return Double.parseDouble(df.format(sheng));
 		}
+		if(fu > 0){
+			return Double.parseDouble(df.format(fu));
+		}
 		
-		return 0d;
+		return Double.parseDouble(df.format(fu));
 	}
 	
+	public static void main(String[] args) {
+		double ad = calculation(1.9, 2.0);
+		System.out.println(ad);
+	}
 }

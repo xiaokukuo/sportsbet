@@ -24,4 +24,5 @@ public abstract class AbstractGrapHandler {
 	protected TruncateServiceImpl truncateServiceImpl;
 	
 	abstract void grabData(int resourceId, String url) throws UnsupportedEncodingException;
+	
 }

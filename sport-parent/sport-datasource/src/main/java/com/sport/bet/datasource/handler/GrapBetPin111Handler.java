@@ -63,6 +63,9 @@ public class GrapBetPin111Handler extends AbstractGrapHandler {
 		
 		sportGameOddsService.save(sportGameOddsList, TableConstant.TABALE_NAME_PIN1111);
 		
+		pagePin1111Paser.getList().clear();
+		pageGroupTeamPin111Paser.getList().clear();
+		pageGroupTeamPin111Paser.getModuleGameList();
 	}
 
 }

@@ -93,10 +93,10 @@ public class PageU1688Paser extends Abstract1688Paser<SportGameOdds> {
 					
 					for (int i = 2; i < itemArr.length - 1; i = i + 2) {
 						String[] coefficientArr = itemArr[i].split(","); // 系数
-						System.err.println("系数l" + itemArr[i]);
+						//System.err.println("系数l" + itemArr[i]);
 						String coefficient = coefficientArr[6];
 						
-						System.err.println("系数" + coefficient);
+						//System.err.println("系数" + coefficient);
 
 						String[] odds = itemArr[i + 1].replace("]]", "").split(",");
 

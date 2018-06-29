@@ -89,6 +89,10 @@ public class GrapBet188Handler extends AbstractGrapHandler{
 			return;
 		}
 		sportGameOddsService.save(sportGameOddsList, TableConstant.TABALE_NAME_188);
+		
+		pageBet188Paser.getList().clear();
+		pageGroupBet188Paser.getList().clear();
+		pageGroupTeamBet188Paser.getList().clear();
 	}
 	
 }

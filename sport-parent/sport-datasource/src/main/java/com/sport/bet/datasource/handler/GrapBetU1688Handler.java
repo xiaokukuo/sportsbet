@@ -37,6 +37,8 @@ public class GrapBetU1688Handler extends AbstractGrapHandler {
 			sportGameOddsService.save(gameOddslist, TableConstant.TABALE_NAME_U1688);
 		}
 		
+		pageU1688Paser.getList().clear();
+		pageU1688Paser.getModuleGameList().clear();
 		
 		
 	}

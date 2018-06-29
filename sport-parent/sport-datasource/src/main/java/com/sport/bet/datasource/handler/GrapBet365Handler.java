@@ -87,6 +87,11 @@ public class GrapBet365Handler extends AbstractGrapHandler{
 			}
 		}
 		sportGameOddsService.save(gameOddsList, TableConstant.TABALE_NAME_365);
+		
+		
+		pagePaser.getList().clear();
+		pageGroupPaser.getList().clear();
+		pageGroupTeamPaser.getList().clear();
 				
 	}
 

@@ -10,8 +10,10 @@ public interface IStack<S> {
 	
 	public void clear(); // 清空栈
 	
-	public void isEmpty(); // 判断是否为空，若为空则返回true, 否则返回false
+	public boolean isEmpty(); // 判断是否为空，若为空则返回true, 否则返回false
 	
 	public S top(); // 读取栈首元素
+	
+	public S peek(); //返回栈顶的元素，但不出栈
 	
 }

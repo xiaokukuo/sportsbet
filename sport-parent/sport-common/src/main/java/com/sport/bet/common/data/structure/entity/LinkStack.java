@@ -8,43 +8,59 @@ import com.sport.bet.common.data.structure.interfaces.IStack;
  *
  */
 public class LinkStack<S> implements IStack<S>{
-
-	public StackNode<S> top;
 	
-	public LinkStack(){
-		LinkStack<S> ls = new LinkStack<S>();
-		ls.top = null;
+	class StackNode {
+		
+		S data;
+		StackNode next;
+		//无参构造函数
+		public StackNode(){}
+		
+		public StackNode(S data, StackNode next){
+			this.data=data;
+			this.next=next;
+		}
+
 	}
+
+	public StackNode top;
+	
+	private  int size; //元素个数
+
 
 	@Override
 	public void push(S s) {
-		StackNode<S> p = null;
-		p = new StackNode<S>();
-		p.data = s;
-		p.next = top;
-		top = p;
+		top = new StackNode(s, top);
+		size++;
 	}
 
 	@Override
 	public S pop() {
 		//若栈不空，删除栈顶元素并返回元素值，否则返回空元素 null
-		StackNode<S> p = null;
-		S x;
+		StackNode oldNode = null;
+		S node;
 		if(top == null){
 			return null;
 		}else{
-			x = top.data;
-			p = top;
-			top = p.next;
-			p = null;
-			return x;
+			node = top.data;
+			oldNode = top;
+			top = oldNode.next;
+			oldNode = null; //释放引用
+			size--;
+			return node;
 		}
 	}
 
+	//返回栈顶的元素，但不出栈
+	@Override
+	public S peek(){
+		return top.data;
+	}
+	
 	@Override
 	public int size() {
-		// TODO Auto-generated method stub
-		return 0;
+		//堆栈长度
+		return  size;
 	}
 
 	@Override
@@ -54,9 +70,8 @@ public class LinkStack<S> implements IStack<S>{
 	}
 
 	@Override
-	public void isEmpty() {
-		// TODO Auto-generated method stub
-		
+	public boolean isEmpty() {
+		return size == 0;
 	}
 
 	@Override

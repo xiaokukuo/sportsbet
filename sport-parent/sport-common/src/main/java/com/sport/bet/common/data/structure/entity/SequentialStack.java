@@ -9,7 +9,7 @@ public class SequentialStack {
 	
 	final int maxsize = 100; // 栈的最大容量
 	
-	int elem[] = new int[maxsize];
+	Object elem[] = new Object[maxsize];
 	
 	int top;
 	

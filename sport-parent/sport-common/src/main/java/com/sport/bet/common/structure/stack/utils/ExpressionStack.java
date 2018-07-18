@@ -121,7 +121,7 @@ public class ExpressionStack<E> {
 	public static void main(String[] args) {
 		
 		ExpressionStack<Double> a = new ExpressionStack<Double>();
-		System.out.println("7+(1+1)*2 = " + a.evaluateExpression("7+3*5"));
+		System.out.println("7+(1+1)*2 = " + a.evaluateExpression("7+(1+1)*2"));
 	}
 
 }

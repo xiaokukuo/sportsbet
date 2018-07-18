@@ -16,31 +16,46 @@ public class ExpressionStack3<E> {
 			if (' ' == c) {
 				continue;
 			}
-			if (isOperator(c)) {  // 为运算符
+			//如果遇到左括号，则将左括号压入操作符栈中
+			if(isOpenParenthesis(c)){
+                operatorStack.push(c);
+                continue;
+            }
+			
+			//如果遇到右括号，则计算栈中的数据，直到遇到左括号为止
+            if(isCloseParenthesis(c)){
+                while(operatorStack.peek() != '('){
+                    processOneOperator();
+                }
+                operatorStack.pop();//将进行过计算的左括号弹出
+                continue;
+            } 
+            
+            if (isOperator(c)) {  // 为运算符
 				if (operatorStack.isEmpty()) {
 					operatorStack.push(c);
 				}else{
-					char ac = operatorStack.pop();
+					char ac = operatorStack.peek();
 					if(priority(c) > priority(ac)){
 						operatorStack.push(c);
 					}else{
 						processOneOperator();
 						operatorStack.push(c);
 					}
-					
 				}
 				System.err.println(operatorStack.toString());
 				
-			}else{
-				operandStack.push(String.valueOf(c));
-				System.err.println(operandStack.toString());
+				continue;
 			}
+			operandStack.push(String.valueOf(c));
+			System.err.println(operandStack.toString());
 		}
-        
+		//对栈中数据进行计算，知道栈为空为止
+        while(!operatorStack.isEmpty()){
+            processOneOperator();
+        }
         return operandStack.pop();
 	}
-	
-	
     
 	public void processOneOperator(){
         char op = operatorStack.pop();     //取操作符的栈顶元素
@@ -76,7 +91,7 @@ public class ExpressionStack3<E> {
 	public boolean isCloseParenthesis(char c) {
 		return c == ')';
 	}
-
+	
 	// 判断算法的优先级
 	public int priority(char c) {
 		if (c == '^') {
@@ -91,20 +106,15 @@ public class ExpressionStack3<E> {
 		return 0;
 	}
 	
-	public void test(){
-		E e = null;
-		e.getClass();
-		//System.out.println(clazz.getName());
-		//System.out.println(clazz.equals(Integer.class));
-	}
-
 	public static void main(String[] args) {
 		
-		ExpressionStack3<Integer> a = new ExpressionStack3<Integer>();
+		/*ExpressionStack3<Integer> a = new ExpressionStack3<Integer>();
 		
-		String str = a.evaluateExpression("2+3*5");
+		String str = a.evaluateExpression("7+(1+1)*2-6-2/1");
 		
-		System.out.println("7+(1+1)*2 = " + str);
+		System.out.println("7+(1+1)*2 = " + str);*/
+		
+		System.out.println(Integer.parseInt("2.17"));
 		
 	}
 

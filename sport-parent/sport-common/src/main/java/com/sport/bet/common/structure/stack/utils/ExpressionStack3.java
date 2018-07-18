@@ -69,7 +69,9 @@ public class ExpressionStack3<E> {
         }else if(op == '*'){
         	result =  op2 * op1;
         }else if(op == '/'){
-        	result = (int) op2 / (int) op1;
+        	result =  op2 / op1;
+        }else if(op == '^'){
+        	result = (int) Math.pow(op2, op1);
         }
 		operandStack.push(result.toString());
     }
@@ -108,13 +110,11 @@ public class ExpressionStack3<E> {
 	
 	public static void main(String[] args) {
 		
-		/*ExpressionStack3<Integer> a = new ExpressionStack3<Integer>();
+		ExpressionStack3<Integer> a = new ExpressionStack3<Integer>();
+		String exp = "7+(1+1)*2-3^2";
+		String str = a.evaluateExpression(exp);
 		
-		String str = a.evaluateExpression("7+(1+1)*2-6-2/1");
-		
-		System.out.println("7+(1+1)*2 = " + str);*/
-		
-		System.out.println(Integer.parseInt("2.17"));
+		System.out.println(exp+"= " + str);
 		
 	}
 

@@ -79,6 +79,9 @@ public class ExpressionStack<E> {
             }else if(op == '/'){
             	result = (int) op2 / (int) op1;
                 operandStack.push((E)result);
+            }else if(op == '^'){
+            	result = (int) op2 / (int) op1;
+                operandStack.push((E)result);
             }
     	} 
     }

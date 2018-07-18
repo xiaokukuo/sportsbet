@@ -1,4 +1,4 @@
-package com.sport.bet.common.data.structure.entity;
+package com.sport.bet.common.structure.stack;
 
 /**
  * 顺序栈

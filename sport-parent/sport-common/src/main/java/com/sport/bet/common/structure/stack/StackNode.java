@@ -1,3 +1,4 @@
+package com.sport.bet.common.structure.stack;
 /*package com.sport.bet.common.data.structure.entity;
 
 class StackNode<S> {

@@ -45,6 +45,8 @@ public class BaseController {
 		Pattern p = Pattern.compile("\\s{2,}|\t|\r|\n");
         Matcher m = p.matcher(data);
         data = m.replaceAll("");
+        System.out.println(data.length());
+        System.out.println(data);
 		String macStr = ANSIMacBySms4Utils.getMac99(key, data);
 		return macStr;
 	}

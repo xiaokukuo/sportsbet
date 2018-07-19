@@ -107,6 +107,4 @@ public class LinkStack<S> implements IStack<S>{
 		}
 	}
 	
-	
-
 }

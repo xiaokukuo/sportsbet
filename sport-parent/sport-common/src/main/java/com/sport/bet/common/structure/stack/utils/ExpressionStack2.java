@@ -7,7 +7,6 @@ public class ExpressionStack2<E> {
 	LinkStack<E> operandStack = new LinkStack<E>(); // 存放操作数的栈
 	LinkStack<Character> operatorStack = new LinkStack<Character>();// 存放运算符的栈
 
-	@SuppressWarnings("unchecked")
 	public String evaluateExpression(String expression) {
 		// 将算术表达式转换为后缀表达式的函数，结果一字符串的形式返回
 		String postfix = new String(); // 用于储存后缀表达式

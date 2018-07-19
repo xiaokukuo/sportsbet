@@ -28,7 +28,7 @@ public class LinkStack<S> implements IStack<S>{
 
 	// 创建空链栈
 	public LinkStack() {
-		top = null;
+		top = new StackNode();
 		size = new AtomicInteger(0); 
 	}
 	

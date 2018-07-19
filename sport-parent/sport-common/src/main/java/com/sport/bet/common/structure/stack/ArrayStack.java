@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author Administrator
  *
  */
-public class SequentialStack<S> implements IStack<S> {
+public class ArrayStack<S> implements IStack<S> {
 
 	private final int maxsize = 100; // 栈的最大容量
 
@@ -19,19 +19,19 @@ public class SequentialStack<S> implements IStack<S> {
 
 	private volatile int capacity;// 保存数组的长度
 
-	public SequentialStack() {
+	public ArrayStack() {
 		capacity = maxsize;
 		element = new Object[capacity];
 		size = new AtomicInteger(0);
 	}
 
-	public SequentialStack(int initSize) {
+	public ArrayStack(int initSize) {
 		capacity = initSize;
 		element = new Object[capacity];
 		size = new AtomicInteger(0);
 	}
 
-	public SequentialStack(S element) {
+	public ArrayStack(S element) {
 		this();
 		this.element[0] = element;
 		size.incrementAndGet();

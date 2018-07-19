@@ -24,6 +24,7 @@ public class LinkStack<S> implements IStack<S>{
 	}
 
 	private StackNode top; // 存放栈顶节点 
+	
 	private  AtomicInteger size; //元素个数
 
 	// 创建空链栈
@@ -105,5 +106,7 @@ public class LinkStack<S> implements IStack<S>{
 			return sb.delete(len - 2, len).append("]").toString();
 		}
 	}
+	
+	
 
 }

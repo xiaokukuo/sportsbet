@@ -24,17 +24,18 @@ public class LinkStack<S> implements IStack<S>{
 	}
 
 	public StackNode top; // 存放栈顶节点 
-	private  AtomicInteger size = new AtomicInteger(0); //元素个数
+	private  AtomicInteger size; //元素个数
 
 	// 创建空链栈
 	public LinkStack() {
 		top = null;
+		size = new AtomicInteger(0); 
 	}
 	
 	// 已指定数据元素创建链栈，只有一个元素
 	public LinkStack(S element) {
 		top = new StackNode(element, null);
-		size.incrementAndGet();
+		size = new AtomicInteger(1); 
 	}
 
 

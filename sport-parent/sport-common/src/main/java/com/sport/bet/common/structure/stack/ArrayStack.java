@@ -105,6 +105,7 @@ public class ArrayStack<S> implements IStack<S> {
 		}
 	}
 	
+	@SuppressWarnings("unchecked")
 	public S get(int index){
 		return (S) element[index];
 	}

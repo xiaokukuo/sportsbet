@@ -40,7 +40,7 @@ public class ArrayStack<S> implements IStack<S> {
 	@Override
 	public void push(Object s) {
 		ensureCapacity(size.get() + 1);
-		element[size.incrementAndGet()] = element;
+		element[size.getAndIncrement()] = s;
 	}
 
 	@SuppressWarnings("unchecked")
@@ -48,7 +48,7 @@ public class ArrayStack<S> implements IStack<S> {
 	public S pop() {
 		if (!isEmpty()) {
 			S oldValue = (S) element[size.get() - 1];
-			element[size.decrementAndGet()] = null; // 释放栈顶元素
+			element[size.getAndDecrement()-1] = null; // 释放栈顶元素
 			return oldValue;
 		} else {
 			return null;
@@ -105,8 +105,16 @@ public class ArrayStack<S> implements IStack<S> {
 		}
 	}
 	
+	public S get(int index){
+		return (S) element[index];
+	}
+	
 	public static void main(String[] args) {
+		ArrayStack<Integer> mapStack = new ArrayStack<Integer>(6);
+		mapStack.push(1);
 		
+		System.out.println(mapStack.toString());
+		System.out.println(mapStack.peek());
 	}
 
 }

@@ -16,28 +16,29 @@ public class MapColorStack {
 	}
 	
 	public void mapcolor(){
-		mapStack.push(3); //一号地区涂一号色
-	    //int curarea = 1; //当前应该涂的区域
+		mapStack.push(1); //一号地区涂一号色
+		int curarea = mapStack.size(); //当前应该涂的区域
 	    int color = 1; //颜色
 	    int i = 0;
-	    while (mapStack.size() < areanum){//还没涂完
-	        while (color <= 4 && mapStack.size() < areanum){//每种颜色进行试探
+	    while (curarea < areanum){//还没涂完
+	    	 //当前应该涂的区域
+	        while (color <= 4 && curarea < areanum){//每种颜色进行试探
 	            i = 0;
 	            //与当前区域相邻的已染色区域是否有与此种颜色相同的
-	            while ((i < mapStack.size()) && (mapStack.get(i) * dist[mapStack.size()][i] != color)){
+	            while ((i < curarea) && (mapStack.get(i) * dist[curarea][i] != color)){
 	                i++;
 	            }
-	            if (i<mapStack.size()){//k<curarea,提前退出循环，说明此种颜色不可用，比对下一种颜色
+	            if (i<curarea){//k<curarea,提前退出循环，说明此种颜色不可用，比对下一种颜色
 	                color++;
-	            }
-	            else{//此种颜色可用
+	            }else{//此种颜色可用
 	            	mapStack.push(color);
-	        
+	            	curarea = mapStack.size();
 	                color = 1;//color从一开始
 	            }
 	        }
 	        if (color>4){//color>4说明找不到合适的颜色对当前区域进行染色，回溯，更改上一个区域的颜色，
 	            mapStack.pop();
+	            curarea = mapStack.size();
 	            color = mapStack.peek() + 1;//因为上一个区域已经染色，所以从已染色的下一个颜色开始即可
 	        }
 	    }

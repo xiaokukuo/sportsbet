@@ -115,8 +115,8 @@ public class LinkQueue<E> implements IQueue<E>{
 
 	@Override
 	public void clear() {
-		// TODO Auto-generated method stub
-		
+		front.next = null;
+		rear = front;
 	}
 	
 	public static void main(String[] args) {

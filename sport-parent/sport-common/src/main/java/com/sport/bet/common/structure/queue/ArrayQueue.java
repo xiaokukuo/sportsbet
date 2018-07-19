@@ -106,6 +106,19 @@ public class ArrayQueue<E> implements IQueue<E> {
         }
     }
 	
+	public String toString() {
+		if (isEmpty()) {
+			return "[]";
+		} else {
+			StringBuilder sb = new StringBuilder("[");
+			for (int i = length() - 1; i > -1; i--) {
+				sb.append(element[i].toString() + ", ");
+			}
+			int len = sb.length();
+			return sb.delete(len - 2, len).append("]").toString();
+		}
+	}
+	
 	public static void main(String[] args) {
 		ArrayQueue<Integer> sd = new ArrayQueue<>();
 		

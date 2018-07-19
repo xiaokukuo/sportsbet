@@ -12,7 +12,7 @@ public class CircleArrayQueue<E> implements IQueue<E>{
     private int rear;   //队列尾，允许插入
     
     public CircleArrayQueue(){
-    	this(10);
+    	this(6);
     }
     
     public CircleArrayQueue(int initSize){
@@ -54,7 +54,9 @@ public class CircleArrayQueue<E> implements IQueue<E>{
 			return null;
 		}
 		front = (front + 1)%maxSize;
-		return (E) element[front];
+		E e = (E) element[front];
+		element[front] = null;
+		return e;
 	}
 	
 	@Override
@@ -98,6 +100,40 @@ public class CircleArrayQueue<E> implements IQueue<E>{
 		// 将底层数组所有元素赋为null
 		Arrays.fill(element, null);
 		rear = front=0;
+	}
+	
+	public String toString() {
+		if (isEmpty()) {
+			return "[]";
+		} else {
+			StringBuilder sb = new StringBuilder("[");
+			int i = 1;
+			Object obj = null;
+			while( (obj = element[(front+i+maxSize)%maxSize]) != null){
+				sb.append(obj.toString() + ", ");
+				i++;
+			}
+			int len = sb.length();
+			return sb.delete(len - 2, len).append("]").toString();
+		}
+	}
+	
+	public static void main(String[] args) {
+		CircleArrayQueue<Integer> que = new CircleArrayQueue<>();
+		for (int i = 0; i < 7; i++) {
+			System.out.println(i+"  "+que.add(i));
+		}
+		
+		System.out.println(que.toString());
+		
+		que.poll();
+		que.poll();
+		System.out.println(que.toString());
+		que.add(7);
+		que.add(8);
+		que.add(9);
+		System.out.println(que.toString());
+		
 	}
 	
 }

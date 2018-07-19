@@ -79,7 +79,7 @@ public class SequentialStack<S> implements IStack<S> {
 			return (S) element[size.get() - 1];
 		} else {
 			return null;
-			//throw new IndexOutOfBoundsException("空栈异常");
+			// throw new IndexOutOfBoundsException("空栈异常");
 		}
 	}
 
@@ -90,6 +90,23 @@ public class SequentialStack<S> implements IStack<S> {
 			capacity = temp * 3 / 2 + 1;
 			element = Arrays.copyOf(element, capacity);
 		}
+	}
+
+	public String toString() {
+		if (size.get() == 0) {
+			return "[]";
+		} else {
+			StringBuilder sb = new StringBuilder("[");
+			for (int i = size.get() - 1; i > -1; i--) {
+				sb.append(element[i].toString() + ", ");
+			}
+			int len = sb.length();
+			return sb.delete(len - 2, len).append("]").toString();
+		}
+	}
+	
+	public static void main(String[] args) {
+		
 	}
 
 }

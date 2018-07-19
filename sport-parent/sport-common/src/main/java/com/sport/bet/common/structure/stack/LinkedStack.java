@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * @author Administrator
  *
  */
-public class LinkStack<S> implements IStack<S>{
+public class LinkedStack<S> implements IStack<S>{
 
 	class StackNode {
 		
@@ -28,13 +28,13 @@ public class LinkStack<S> implements IStack<S>{
 	private  AtomicInteger size; //元素个数
 
 	// 创建空链栈
-	public LinkStack() {
+	public LinkedStack() {
 		top = null;
 		size = new AtomicInteger(0); 
 	}
 	
 	// 已指定数据元素创建链栈，只有一个元素
-	public LinkStack(S element) {
+	public LinkedStack(S element) {
 		top = new StackNode(element, null);
 		size = new AtomicInteger(1); 
 	}

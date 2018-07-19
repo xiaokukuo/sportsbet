@@ -1,11 +1,11 @@
 package com.sport.bet.common.structure.stack.utils;
 
-import com.sport.bet.common.structure.stack.LinkStack;
+import com.sport.bet.common.structure.stack.LinkedStack;
 
 public class ExpressionStack2<E> {
 
-	LinkStack<E> operandStack = new LinkStack<E>(); // 存放操作数的栈
-	LinkStack<Character> operatorStack = new LinkStack<Character>();// 存放运算符的栈
+	LinkedStack<E> operandStack = new LinkedStack<E>(); // 存放操作数的栈
+	LinkedStack<Character> operatorStack = new LinkedStack<Character>();// 存放运算符的栈
 
 	public String evaluateExpression(String expression) {
 		// 将算术表达式转换为后缀表达式的函数，结果一字符串的形式返回

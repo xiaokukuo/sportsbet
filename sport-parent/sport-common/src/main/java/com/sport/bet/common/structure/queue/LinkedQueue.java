@@ -1,8 +1,9 @@
 package com.sport.bet.common.structure.queue;
 
-public class LinkQueue<E> implements IQueue<E>{
+public class LinkedQueue<E> implements IQueue<E>{
 	
 	class QueueNode{
+		
 		E data;
 		QueueNode next;
 		
@@ -18,7 +19,7 @@ public class LinkQueue<E> implements IQueue<E>{
 	
 	private QueueNode rear;
 	
-	public LinkQueue(){
+	public LinkedQueue(){
 		front = new QueueNode();
 		front.next = null;
 		rear = front;
@@ -120,7 +121,7 @@ public class LinkQueue<E> implements IQueue<E>{
 	}
 	
 	public static void main(String[] args) {
-		LinkQueue<String> ql = new LinkQueue<String>();
+		LinkedQueue<String> ql = new LinkedQueue<String>();
 		for (int i = 0; i < 2; i++) {
 			ql.add(i+"");
 		}

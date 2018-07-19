@@ -1,13 +1,13 @@
 package com.sport.bet.common.structure.stack.utils;
 
-import com.sport.bet.common.structure.stack.LinkStack;
+import com.sport.bet.common.structure.stack.LinkedStack;
 
 public class ExpressionStack<E> {
 
 	volatile Class<E> clazz;
 
-	LinkStack<String> operandStack = new LinkStack<String>(); // 存放操作数的栈
-	LinkStack<Character> operatorStack = new LinkStack<Character>();// 存放运算符的栈
+	LinkedStack<String> operandStack = new LinkedStack<String>(); // 存放操作数的栈
+	LinkedStack<Character> operatorStack = new LinkedStack<Character>();// 存放运算符的栈
 
 	public String evaluateExpression(String expression) {
 		char[] charArr = expression.toCharArray(); // 将字符串分割成单个字符

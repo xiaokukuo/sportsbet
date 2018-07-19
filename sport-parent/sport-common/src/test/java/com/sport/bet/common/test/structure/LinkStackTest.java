@@ -3,12 +3,12 @@ package com.sport.bet.common.test.structure;
 import java.util.Stack;
 import java.util.concurrent.locks.ReentrantLock;
 
-import com.sport.bet.common.structure.stack.LinkStack;
+import com.sport.bet.common.structure.stack.LinkedStack;
 
 public class LinkStackTest {
 	
 	public static void main(String[] args) throws InterruptedException {
-		LinkStack<Integer> linkStack = new LinkStack<Integer>();
+		LinkedStack<Integer> linkStack = new LinkedStack<Integer>();
 		
 		ReentrantLock lock = new ReentrantLock();
 		

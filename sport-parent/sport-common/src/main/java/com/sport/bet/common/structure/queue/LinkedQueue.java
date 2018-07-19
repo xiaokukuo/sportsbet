@@ -120,16 +120,31 @@ public class LinkedQueue<E> implements IQueue<E>{
 		rear = front;
 	}
 	
+	public String toString(){
+		if(isEmpty()){
+			return "[]";
+		}
+		QueueNode p = front.next;
+		StringBuilder sb = new StringBuilder();
+		sb.append("[");
+		while(p != null){
+			sb.append(p.data.toString() + ", ");
+			p = p.next;
+		}
+		int len = sb.length();
+		return sb.delete(len - 2, len).append("]").toString();
+	}
+	
 	public static void main(String[] args) {
 		LinkedQueue<String> ql = new LinkedQueue<String>();
 		for (int i = 0; i < 2; i++) {
 			ql.add(i+"");
 		}
-		System.out.println(ql.length());
-		for (int i = 0; i < 2; i++) {
+		System.out.println(ql.toString());
+		for (int i = 0; i < 1; i++) {
 			System.out.println(ql.poll());
 		}
-		System.out.println(ql.length());
+		System.out.println(ql.toString());
 		
 	}
 

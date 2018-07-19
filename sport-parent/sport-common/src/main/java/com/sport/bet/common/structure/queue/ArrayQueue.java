@@ -11,13 +11,12 @@ public class ArrayQueue<E> implements IQueue<E> {
     private boolean isCapacity = true; //是否扩容
     
     private Object[] element; // 存储队列数据
-    private int front;  //队列头，允许删除
-    private int rear;   //队列尾，允许插入
+    private int front = 0;  //队列头，允许删除
+    private int rear = 0;   //队列尾，允许插入
     
     public ArrayQueue(){
     	capacity = defaultSize;
     	element = new Object[defaultSize];
-    	front = rear = 0;
     }
     
     public ArrayQueue(int initSize){
@@ -26,7 +25,6 @@ public class ArrayQueue<E> implements IQueue<E> {
     	}
     	capacity = initSize;
     	element = new Object[initSize];
-    	front = rear = 0;
     	this.isCapacity = false;
     }	
 
@@ -64,7 +62,7 @@ public class ArrayQueue<E> implements IQueue<E> {
 	}
 
 	@Override
-	public E peek() {
+	public E head() {
 		if (isEmpty()) return null;
         return (E)element[0];
 	}

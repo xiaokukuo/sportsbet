@@ -32,7 +32,7 @@ public interface IQueue<Q> {
 	    * 返回队头元素,不执行删除操作,若队列为空,返回null
 	    * @reQurn
 	    */
-	   Q peek();
+	   Q head();
 	   
 	   /**
 	    * 出队,执行删除操作,若队列为空,抛出异常:NullPointerException

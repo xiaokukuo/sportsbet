@@ -3,6 +3,12 @@ package com.sport.bet.common.structure.queue;
 import java.util.Arrays;
 import java.util.NoSuchElementException;
 
+/**
+ * 循环队列
+ * @author Yao
+ *
+ * @param <E>
+ */
 @SuppressWarnings("unchecked")
 public class CircleArrayQueue<E> implements IQueue<E>{
 

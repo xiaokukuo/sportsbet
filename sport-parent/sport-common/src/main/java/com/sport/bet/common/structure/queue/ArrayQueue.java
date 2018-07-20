@@ -2,13 +2,18 @@ package com.sport.bet.common.structure.queue;
 
 import java.util.Arrays;
 
+/**
+ * 顺序队列
+ * @author Yao
+ *
+ * @param <E>
+ */
 @SuppressWarnings("unchecked")
 public class ArrayQueue<E> implements IQueue<E> {
 	
 	private static int defaultSize = 16; //默认容量
-    private volatile int capacity;// 保存数组的长度
-    
     private boolean isCapacity = true; //是否扩容
+    private volatile int capacity;// 保存数组的长度
     
     private Object[] element; // 存储队列数据
     private int front = 0;  //队列头，允许删除

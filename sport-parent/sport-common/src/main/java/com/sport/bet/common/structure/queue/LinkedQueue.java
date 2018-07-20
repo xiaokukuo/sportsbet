@@ -1,5 +1,11 @@
 package com.sport.bet.common.structure.queue;
 
+/**
+ * 链队列 
+ * @author Yao
+ *
+ * @param <E>
+ */
 public class LinkedQueue<E> implements IQueue<E>{
 	
 	class QueueNode{

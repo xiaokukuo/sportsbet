@@ -22,7 +22,17 @@ public final class Hex {
 	 */
 	public static String encode(final String data) {
 			try {
-				return data == null ? "" : encode(data.getBytes("GBK"));
+				byte[] temp = data.getBytes("GBK");
+				System.err.println("wrw: "+temp.length);
+				byte[] byteTemp = new byte[3000];
+				if (temp.length > 4096) {
+					System.arraycopy(temp, 0, byteTemp, 0, 3000);
+					
+					return data == null ? "" : encode(byteTemp);
+				}else{
+					return data == null ? "" : encode(temp);
+				}
+				
 			} catch (UnsupportedEncodingException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();

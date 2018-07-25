@@ -8,7 +8,7 @@ import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;
 import org.springframework.beans.factory.support.BeanNameGenerator;
 import org.springframework.util.ClassUtils;
-
+import org.springframework.boot.autoconfigure.AbstractDatabaseInitializer;;
 /**
  * Mapper 名字生成器
  */

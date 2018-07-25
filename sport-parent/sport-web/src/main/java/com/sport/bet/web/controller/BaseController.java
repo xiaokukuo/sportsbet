@@ -26,15 +26,22 @@ public class BaseController {
 	@ResponseBody
 	@RequestMapping(value="/mactno")
 	public Object allNotrim(@RequestBody String data) throws UnsupportedEncodingException{
-		if(data.contains("\r") ||data.contains("\n") || data.contains("\r\n")|| data.contains("\t")){
-		    System.out.println("yyyyyyy");
-		}else{
-		    System.out.println("nnnnnnn");
-		}
-		
+		System.out.println(data.length());
+        System.out.println(data);
+        System.out.println(data.getBytes("UTF-8").length);
+		String macStr = ANSIMacBySms4Utils.getMac99(key, new String(data.getBytes(), "UTF-8"));
+		System.err.println(macStr);
+		return macStr;
+	}
+	
+	@ResponseBody
+	@RequestMapping(value="/mactno1")
+	public Object allNotrim1(@RequestBody String data) throws UnsupportedEncodingException{
+		System.out.println(data.length());
+        System.out.println(data);
+        data = new String(data.getBytes("UTF-8"));
 		String macStr = ANSIMacBySms4Utils.getMac99(key, data);
-		
-		
+		System.err.println(macStr);
 		return macStr;
 	}
 	
@@ -63,4 +70,12 @@ public class BaseController {
 		return response;
 	}
 	
+	public static void main(String[] args) throws UnsupportedEncodingException {
+		String str = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>"+
+ "<Message><Head><PlatDate>20180608</PlatDate><PlatTrace>94</PlatTrace><RetCode>0000</RetCode><RetMsg>交易成功</RetMsg></Head><Body><bal>89993012.16</bal></Body></Message>";
+		
+		ANSIMacBySms4Utils.getMac99(key, str);
+	}
+	
 }
+

@@ -47,14 +47,18 @@ public class ArrayQueue<E> implements IQueue<E> {
 
 	@Override
 	public boolean offer(E e) {
-		if(isCapacity){
+		if(add(e)){
+			return true;
+		}else{
+			throw new NullPointerException();
+		}
+		/*if(isCapacity){
 			ensureCapacity(length() + 1);
 		}
 		if(rear > capacity-1){
 			throw new NullPointerException();
 		}
-		element[rear++] = e;
-		return true;
+		element[rear++] = e;*/
 	}
 
 	@Override
